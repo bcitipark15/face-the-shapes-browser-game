@@ -12,7 +12,7 @@
 	<h2>Eclipse</h2>
 	<ol>
 		<li>Instsall EGit on your eclipse. [Help > Eclipse Marketplace]</li>
-		<li>[Windows > Perspective > Open Perspective > Other > Git]</li>
+		<li>Once installed, open the Git Repositories. [Windows > Perspective > Open Perspective > Other > Git]</li>
 		<li>From the Git Repositories on the left, select 'Clone a Git repository'.</li>
 		<li>Fill in the URI field and Authentication section with your GitHub ID and passwords.</li>
 		<li>Once you get to Local Destination page, set your directory there and finish it.</li>
@@ -22,5 +22,11 @@
 
 <p>
 	<h1>Members of Group 17</h1>
-	<p><b>Ching Choi, Chris Centenera, Evan Chen, Ian Park, and John Park</b></p>
+	<ol>
+		<li>Ching Choi</li>
+		<li>Chris Centenera</li>
+		<li>Evan Chen</li>
+		<li>Ian Park</li>
+		<li>John Park</li>
+	</ol>
 </p>
