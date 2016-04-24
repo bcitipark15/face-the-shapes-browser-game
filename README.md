@@ -4,12 +4,23 @@
 </p>
 <p>
 	<h1>Setup</h1>
+	<h2>Command Line</h2>
 	<ol>
-		<li>Clone the repository to your preferred working directory.</li>
-		<li></li>
+		<li>From the command line, change directory (cd) to your preferred working directory.</li>
+		<li>Clone the repository to the directory. [$ git clone &lt;URI&gt;]</li>
+	</ol>
+	<h2>Eclipse</h2>
+	<ol>
+		<li>Instsall EGit on your eclipse. [Help > Eclipse Marketplace]</li>
+		<li>[Windows > Perspective > Open Perspective > Other > Git]</li>
+		<li>From the Git Repositories on the left, select 'Clone a Git repository'.</li>
+		<li>Fill in the URI field and Authentication section with your GitHub ID and passwords.</li>
+		<li>Once you get to Local Destination page, set your directory there and finish it.</li>
 	</ol>
 </p>
 
 
-
-<p><b>Ching Choi, Chris Centenera, Evan Chen, Ian Park, and John Park</b></p>
+<p>
+	<h1>Members of Group 17</h1>
+	<p><b>Ching Choi, Chris Centenera, Evan Chen, Ian Park, and John Park</b></p>
+</p>
