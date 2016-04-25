@@ -5,7 +5,7 @@
 
 <p>
 	<h1>Project</h1>
-	<p>We are a group of five students at BCIT, currently enrolled in Computer Systems Technology's (CST) two-year diploma program. We are in first level of the program and this is our first team project. Project description will be added here as soon as we get the project details. We will be using GitHub, Eclipse, Discord, and Jira Software for the best result of the project.</p>
+	<p>We are a group of five students at BCIT, currently enrolled in Computer Systems Technology (CST) two-year diploma program. We are in first level of the program and this is our first team project. Project description will be added here as soon as we get the project details. We will be using GitHub, Eclipse, Discord, and Jira Software for the best result of the project.</p>
 </p>
 
 <p>
