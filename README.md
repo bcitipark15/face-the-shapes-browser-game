@@ -11,26 +11,35 @@
 <p>
 	<h1>Setup</h1>
 	<p>
-		<h2>Command Line</h2>
-		<ol>
-			<li>
-				<p>From the command line, change directory (cd) to your preferred working directory.</p>
-				<pre><code>$ cd &lt;working directory&gt;</code></pre>
-			</li>
-			<li>
-				<p>Clone the repository to the directory.</p>
-				<pre><code>$ git clone https://github.com/bcitipark15/G17.git</code></pre>
-			</li>
-		</ol>
+		<h2>GitHub Clone</h2>
+		<p>
+			<h3>Command Line</h3>
+			<ol>
+				<li>
+					<p>From the command line, change directory (cd) to your preferred working directory.</p>
+					<pre><code>$ cd &lt;working directory&gt;</code></pre>
+				</li>
+				<li>
+					<p>Clone the repository to the directory.</p>
+					<pre><code>$ git clone https://github.com/bcitipark15/G17.git</code></pre>
+				</li>
+			</ol>
+		</p>
 	</p>
 	<p>
-		<h2>Eclipse</h2>
+		<h2>Eclipse & GitHub Integration</h2>
 		<ol>
 			<li>Instsall EGit on your eclipse. [Help > Eclipse Marketplace]</li>
 			<li>Once installed, open the Git Repositories. [Windows > Perspective > Open Perspective > Other > Git]</li>
 			<li>From the Git Repositories on the left, select 'Clone a Git repository'.</li>
 			<li>Fill in the URI field and Authentication section with your GitHub ID and passwords.</li>
 			<li>Once you get to Local Destination page, set your directory there and finish it.</li>
+		</ol>
+	</p>
+	<p>
+		<h2>JIRA Software</h2>
+		<ol>
+			<li>Follow the invitation link sent to your email and follow the procedures.</li>
 		</ol>
 	</p>
 </p>
