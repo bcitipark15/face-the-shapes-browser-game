@@ -15,16 +15,16 @@
 		<ol>
 			<li>
 				<p>From the command line, change directory (cd) to your preferred working directory.</p>
-				<pre>
-					<code>$ cd &lt;working directory&gt;</code>
-				</pre>
 			</li>
+			<pre>
+				<code>$ cd &lt;working directory&gt;</code>
+			</pre>
 			<li>
 				<p>Clone the repository to the directory.</p>
-				<pre>
-					<code>$ git clone https://github.com/bcitipark15/G17.git</code>
-				</pre>
 			</li>
+			<pre>
+				<code>$ git clone https://github.com/bcitipark15/G17.git</code>
+			</pre>
 		</ol>
 	</p>
 	<p>
