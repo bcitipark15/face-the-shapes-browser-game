@@ -13,8 +13,13 @@
 	<p>
 		<h2>Command Line</h2>
 		<ol>
-			<li>From the command line, change directory (cd) to your preferred working directory.</li>
-			<li>Clone the repository to the directory. [$ git clone &lt;URI&gt;]</li>
+			<li>
+				<p>From the command line, change directory (cd) to your preferred working directory.</p>
+			</li>
+			<li>
+				<p>Clone the repository to the directory.</p>
+				<code>[$ git clone &lt;URI&gt;]</code>
+			</li>
 		</ol>
 	</p>
 	<p>
