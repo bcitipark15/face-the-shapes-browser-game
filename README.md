@@ -40,8 +40,8 @@
 	<h1>Members of Group 17</h1>
 	<ol>
 		<li>Ching Choi (<a href="mailto:chingchoi128@gmail.com">chingchoi128@gmail.com</a>)</li>
-		<li>Chris Centenera</li>
-		<li>Evan Chen</li>
+		<li>Chris Centenera (<a href="mailto:christopher_centenera@hotmail.com">christopher_centenera@hotmail.com</a>)</li>
+		<li>Evan Chen (<a href"mailto:evan.c1995@gmail.com">evan.c1995@gmail.com</a></li>
 		<li>Ian Park (<a href="mailto:bcitipark15@gmail.com">bcitipark15@gmail.com</a>)</li>
 		<li>John Park (<a href="mailto:john_park_5@hotmail.com">john_park_5@hotmail.com</a>)</li>
 	</ol>
