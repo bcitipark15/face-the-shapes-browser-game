@@ -15,8 +15,7 @@
 		<ol>
 			<li>
 				<p>From the command line, change directory (cd) to your preferred working directory.</p>
-				<pre><code>$ cd &lt;working directory&gt;</code>
-			</pre>
+				<pre><code>$ cd &lt;working directory&gt;</code></pre>
 			</li>
 			<li>
 				<p>Clone the repository to the directory.</p>
