@@ -15,10 +15,15 @@
 		<ol>
 			<li>
 				<p>From the command line, change directory (cd) to your preferred working directory.</p>
+				<pre>
+					<code>$ cd &lt;working directory&gt;</code>
+				</pre>
 			</li>
 			<li>
 				<p>Clone the repository to the directory.</p>
-				<code>[$ git clone &lt;URI&gt;]</code>
+				<pre>
+					<code>$ git clone https://github.com/bcitipark15/G17.git</code>
+				</pre>
 			</li>
 		</ol>
 	</p>
@@ -38,10 +43,10 @@
 <p>
 	<h1>Members of Group 17</h1>
 	<ol>
-		<li>Ching Choi</li>
+		<li>Ching Choi (<a href="mailto:chingchoi128@gmail.com">chingchoi128@gmail.com</a>)</li>
 		<li>Chris Centenera</li>
 		<li>Evan Chen</li>
-		<li>Ian Park</li>
-		<li>John Park</li>
+		<li>Ian Park (<a href="mailto:bcitipark15@gmail.com">bcitipark15@gmail.com</a>)</li>
+		<li>John Park (<a href="mailto:john_park_5@hotmail.com">john_park_5@hotmail.com</a>)</li>
 	</ol>
 </p>
