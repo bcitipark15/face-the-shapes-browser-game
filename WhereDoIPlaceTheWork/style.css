@@ -4,11 +4,14 @@
 }
 
 body {
+    /* Keep the image in place */
     background-image: url("image/background2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+/* Where the contents go */
 #wrapper {
     border-radius: 25px;
     width: 600px;
@@ -22,6 +25,7 @@ body {
 #wrapper h1 {
     padding: 25px;
 }
+
 footer {
     background-color: black;
     color: white;
