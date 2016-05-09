@@ -1,4 +1,4 @@
-# 201610_COMP2910_G17
+# 201610 COMP2910 G17
 <p align="center">
 	<img src="http://students.bcitdev.com/A00869118/comp2910/bcit-cst.png"/>
 </p>
@@ -25,22 +25,6 @@
 				</li>
 			</ol>
 		</p>
-	</p>
-	<p>
-		<h2>Eclipse & GitHub Integration</h2>
-		<ol>
-			<li>Instsall EGit on your eclipse. [Help > Eclipse Marketplace]</li>
-			<li>Once installed, open the Git Repositories. [Windows > Perspective > Open Perspective > Other > Git]</li>
-			<li>From the Git Repositories on the left, select 'Clone a Git repository'.</li>
-			<li>Fill in the URI field and Authentication section with your GitHub ID and passwords.</li>
-			<li>Once you get to Local Destination page, set your directory there and finish it.</li>
-		</ol>
-	</p>
-	<p>
-		<h2>JIRA Software</h2>
-		<ol>
-			<li>Follow the invitation link sent to your email and follow the procedures.</li>
-		</ol>
 	</p>
 </p>
 
