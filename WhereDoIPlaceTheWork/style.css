@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
 }
-
 body {
     /* Keep the image in place */
     background-image: url("image/background1.jpg");
@@ -14,14 +13,15 @@ body {
 /* Where the contents go */
 #wrapper {
     border-radius: 25px;
-    width: 90%;
+    width: 80%;
     height: 700px;
+    max-width: 900px;
     background-color: white;
     text-align: center;
-    margin: 10%;
+    margin-top: 3%;
+    margin-bottom: 3%;
     margin-left: auto;
     margin-right: auto;
-    
 }
 #wrapper h1 {
     padding: 25px;
@@ -35,10 +35,4 @@ body {
     height: 550px;
     margin-left: auto;
     margin-right: auto;
-}
-footer {
-    background-color: black;
-    color: white;
-    padding: 25px;
-    text-align: center;
 }

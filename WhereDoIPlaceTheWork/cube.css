@@ -1,11 +1,3 @@
-@font-face {
-    font-family: cube;
-    src: url(cube02.eps);
-}
-
-body {
-	font-family: cube;
-}
 
 .cubeContainer {
     top: 25%;
