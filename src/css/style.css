@@ -1,3 +1,8 @@
+a {
+	text-decoration: none;
+	color: white;
+}
+
 #title {
 	text-align: center;
 	padding: 20px;
@@ -17,9 +22,25 @@
 	background-color: black;
 	color: white;
 	border-radius: 15px;
-	box-shadow: 10px 10px 5px #888888;
+	box-shadow: 5px 5px 5px #888888;
 }
 
+/*Button to switch inbetween the 2D and 3D screens*/
+.screenToggle {
+	float: right;
+	margin-top: 6%;
+	margin-right: 20px; 	
+	width: 60px;
+	height: 8%;
+	line-height: 40px;
+	text-align: center;
+	background-color: black;
+	color: white;
+	border-radius: 15px;
+	box-shadow: 5px 5px 5px #888888;
+}
+
+/*The present screen*/
 #wrapper {
 	width: 320px;
 	height: 480px;
@@ -28,10 +49,31 @@
 	overflow: hidden;
 }
 
+/*Divs for all the different screens*/
+#screen3D {
+	width: 320px;
+	height: 480px;
+	float: left;
+}
+
+#screen2D {
+	width: 320px;
+	height: 480px;
+	float: left;
+}
+
 #main {
 	float: left;
 	width: 320px;
 	height: 480px;
+}
+
+/*Div for the main menu screen*/
+#menu {
+	float: left;
+	width: 320px;
+	height: 480px;
+	padding-top: 160px;
 }
 
 #cube img {
@@ -45,9 +87,44 @@
 	padding-top: 120px;
 }
 
-#menu {
+/*Div containing the 2D foldout*/
+#foldout {
+	margin-top: 80px;
+	width: 90%;
+	height: 65%;
+	clear: both;
+	margin-right: auto;
+	margin-left: auto;
+	border: 2px black solid;
+}
+
+/*Button to change between colours on 2D screen*/
+#colour {
 	float: left;
-	width: 320px;
-	height: 480px;
-	padding-top: 160px;
+	margin-top: 6%;
+	margin-left: 30px;
+	width: 100px;
+	height: 8%;
+	line-height: 40px;
+	text-align: center;
+	background-color: red;
+	color: white;
+	border-radius: 15px;
+	box-shadow: 5px 5px 5px #888888;
+}
+
+/*Button to submit and validate answer on 2D screen*/
+
+#submit {
+	float: right;
+	margin-top: 6%;
+	margin-right: 30px;
+	width: 100px;
+	height: 8%;
+	line-height: 40px;
+	text-align: center;
+	background-color: black;
+	color: white;
+	border-radius: 15px;
+	box-shadow: 5px 5px 5px #888888;
 }
