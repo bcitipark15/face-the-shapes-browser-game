@@ -1,0 +1,52 @@
+#title {
+	text-align: center;
+	padding: 20px;
+	font-size: 1.2em;
+	font-weight: bold;
+	position: fixed;
+	left: 80px;
+	top: 40px;
+	margin: auto;
+}
+
+.buttons {
+	width: 100px;
+	text-align: center;
+	margin: 20px auto;
+	padding: 5px;
+	background-color: black;
+	color: white;
+	border-radius: 15px;
+}
+
+#wrapper {
+	width: 320px;
+	height: 480px;
+	border: solid 1px gray;
+	border-radius: 15px;
+	overflow: hidden;
+}
+
+#main {
+	float: left;
+	width: 320px;
+	height: 480px;
+}
+
+#cube img {
+	width: 120px;
+	height: 120px;
+}
+
+#cube {
+	text-align: center;
+	padding: 30px;
+	padding-top: 120px;
+}
+
+#menu {
+	float: left;
+	width: 320px;
+	height: 480px;
+	padding-top: 160px;
+}
