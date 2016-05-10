@@ -27,6 +27,8 @@
 		var bottom_rX = 0, bottom_rY = 0, bottom_rZ = 0;
 		var unfolded = false;
 		var frontBreak = 0, backBreak = 0, leftBreak = 0, rightBreak = 0, topBreak = 0, bottomBreak = 0, translate = 20;
+		var unfoldingStop;
+		var foldingStop;
 		
 		document.onmousedown = mouseDown;
 		document.onmouseup = mouseUp;
@@ -102,16 +104,17 @@
 				document.querySelector('#cube .top').style.transform = 'rotateX( '+ top_rX +'deg ) rotateY( '+ top_rY +'deg ) rotateZ( '+ top_rZ +'deg ) translateZ( 100px )';
 				document.querySelector('#cube .bottom').style.transform = 'rotateX( '+ bottom_rX +'deg ) rotateY( '+ bottom_rY +'deg ) rotateZ( '+ bottom_rZ +'deg ) translateZ( 100px )';
 				
-				
-				
 				document.getElementById('pitch').innerHTML = (pitch*100+.5|0) / 100;
 				document.getElementById('yawn').innerHTML = (yawn*100+.5|0) / 100;
 			}
 		}
 		
 		function unfold() {
-			
-			setInterval('unfolding();', 20);
+			if (unfolded === false) {
+				unfoldingStop = setInterval('unfolding();', 20);
+			} else if (unfolded === true) {
+				foldingStop = setInterval('folding();', 20);
+			}
 		};
 		
 		function unfolding() {
@@ -122,8 +125,11 @@
 					rightBreak++;
 					topBreak++;
 					bottomBreak++;
-					translate += 2;
-					
+					if (translate < 20) {
+						translate = 22;
+					} else {
+						translate += 2;
+					}
 					front_rX = 0 + pitch;
 					front_rY = 0 - yawn;
 					back_rX = 180 + pitch + backBreak;
@@ -149,11 +155,61 @@
 					document.querySelector('#cube .bottom').style.transform = 'rotateX( '+ bottom_rX +'deg ) rotateY( '+ bottom_rY +'deg ) rotateZ( '+ bottom_rZ +'deg ) translateZ( 100px ) translateY('+translate+'px)';
 					
 					document.getElementById("folding").innerHTML = "fold";
-			} else {
-			unfolded = true;
-			clearInterval(unfold);
+				} else {
+				unfolded = true;
+				clearInterval(unfoldingStop);
+				}
 			}
 		}
+		
+		function folding() {
+			if (unfolded === true) {
+				if (backBreak > 0) {
+					backBreak -= 2;
+					leftBreak--;
+					rightBreak--;
+					topBreak--;
+					bottomBreak--;
+					if (translate > 180) {
+						translate = 178;
+					} else {
+						translate -= 2;
+					}
+					
+					front_rX = 0 + pitch;
+					front_rY = 0 - yawn;
+					back_rX = 180 + pitch + backBreak;
+					back_rY = 0 + yawn;
+					
+					right_rX = 0 + pitch;
+					right_rY = 90 - yawn - rightBreak;
+					left_rX = 0 + pitch;
+					left_rY = -90 - yawn + leftBreak;
+					top_rX = 90 + pitch - topBreak;
+					top_rZ = 0 + yawn;
+					top_rY = 0;
+					bottom_rX = -90 + pitch + bottomBreak;
+					bottom_rZ = 0 - yawn;
+					bottom_rY = 0;
+					
+		
+					
+					document.querySelector('#cube .front').style.transform = 'rotateX( '+ front_rX +'deg ) rotateY( '+ front_rY +'deg ) rotateZ( '+ front_rZ +'deg ) translateZ( 100px )';
+					document.querySelector('#cube .back').style.transform = 'rotateX( '+ back_rX +'deg ) rotateY( '+ back_rY +'deg ) rotateZ( '+ back_rZ +'deg ) translateZ( 100px ) translateY( ' + (translate * 2) + 'px )';
+					document.querySelector('#cube .right').style.transform = 'rotateX( '+ right_rX +'deg ) rotateY( '+ right_rY +'deg ) rotateZ( '+ right_rZ +'deg ) translateZ( 100px ) translateX( ' + translate + 'px ) ';
+					document.querySelector('#cube .left').style.transform = 'rotateX( '+ left_rX +'deg ) rotateY( '+ left_rY +'deg ) rotateZ( '+ left_rZ +'deg ) translateZ( 100px ) translateX( -' + translate + 'px ) ';
+					document.querySelector('#cube .top').style.transform = 'rotateX( '+ top_rX +'deg ) rotateY( '+ top_rY +'deg ) rotateZ( '+ top_rZ +'deg ) translateZ( 100px ) translateY(-' + translate + 'px)';
+					document.querySelector('#cube .bottom').style.transform = 'rotateX( '+ bottom_rX +'deg ) rotateY( '+ bottom_rY +'deg ) rotateZ( '+ bottom_rZ +'deg ) translateZ( 100px ) translateY('+translate+'px)';
+					
+					document.getElementById("folding").innerHTML = "fold";
+				} else {
+				unfolded = false;
+				clearInterval(foldingStop);
+				}
+				
+				
+				document.getElementById('translate').innerHTML = "" + translate;
+			}
 		}
 		
 	</script>
@@ -162,7 +218,8 @@
 		<section class="container">
 		 <p>
         pitch = <span id="pitch">0</span>deg<br/>
-        yawn = <span id="yawn">0</span>deg
+        yawn = <span id="yawn">0</span>deg<br/>
+		translate = <span id="translate">0<br/>
 		</p>
 		<button onclick="unfold()"><span id="folding">Unfold</span></button>
     <div id="cube">
