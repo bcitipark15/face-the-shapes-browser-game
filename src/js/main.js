@@ -1,1 +1,3 @@
-document.getElementById("menu").style.transition = "all 2s";
+$("#play").click(function() {
+    $('html, body').animate({ scrollTop:$("#menu").offset().top}, 500);
+});
