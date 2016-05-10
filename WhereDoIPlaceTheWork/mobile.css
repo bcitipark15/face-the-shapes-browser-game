@@ -12,9 +12,6 @@ body {
     padding: 10px;
 }
 #gameContainer {
-    background-image: url("image/background2.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: 85vh
+	background-color: #159957;
+    height: 85vh;
 }

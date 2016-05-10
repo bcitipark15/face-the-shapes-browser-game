@@ -1,0 +1,17 @@
+
+body {
+    margin: 0;
+    padding: 0;
+}
+.page-header {
+	display: none;
+}
+.site-footer {
+	display: none;
+}
+.main-content h1 {
+	display: none;
+}
+#gameContainer {
+    height: 90vh;
+}
