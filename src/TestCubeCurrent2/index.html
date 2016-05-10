@@ -108,6 +108,45 @@
 				
 				document.getElementById('pitch').innerHTML = (pitch*100+.5|0) / 100;
 				document.getElementById('yawn').innerHTML = (yawn*100+.5|0) / 100;
+			} else if (unfolded === true) {
+				if (stopYawn != addYawn) {
+				
+					yawn += addYawn;
+					stopYawn = addYawn;
+				}
+				
+				if (stopPitch != addPitch) {
+				
+					pitch += addPitch;
+					stopPitch = addPitch;
+				}
+				
+			
+				front_rX = 0 + pitch;
+				front_rY = 0 - yawn;
+				back_rX = 180 + pitch + backBreak;
+				back_rY = 0 + yawn - yawn - yawn;
+				
+				right_rX = 0 + pitch;
+				right_rY = 90 - yawn - rightBreak;
+				left_rX = 0 + pitch;
+				left_rY = -90 - yawn + leftBreak;
+				top_rX = 90 + pitch - topBreak;
+				top_rZ = 0 + yawn - yawn;
+				top_rY = 0 - yawn;
+				bottom_rX = -90 + pitch + bottomBreak;
+				bottom_rZ = 0;
+				bottom_rY = 0 - yawn;
+				
+				
+				document.querySelector('#cube .front').style.transform = 'rotateX( '+ front_rX +'deg ) rotateY( '+ front_rY +'deg ) rotateZ( '+ front_rZ +'deg ) translateZ( 100px )';
+				document.querySelector('#cube .back').style.transform = 'rotateX( '+ back_rX +'deg ) rotateY( '+ back_rY +'deg ) rotateZ( '+ back_rZ +'deg ) translateZ( 100px ) translateY( ' + (translate * 2) + 'px )';
+				document.querySelector('#cube .right').style.transform = 'rotateX( '+ right_rX +'deg ) rotateY( '+ right_rY +'deg ) rotateZ( '+ right_rZ +'deg ) translateZ( 100px ) translateX( ' + translate + 'px ) ';
+				document.querySelector('#cube .left').style.transform = 'rotateX( '+ left_rX +'deg ) rotateY( '+ left_rY +'deg ) rotateZ( '+ left_rZ +'deg ) translateZ( 100px ) translateX( -' + translate + 'px ) ';
+				document.querySelector('#cube .top').style.transform = 'rotateX( '+ top_rX +'deg ) rotateY( '+ top_rY +'deg ) rotateZ( '+ top_rZ +'deg ) translateZ( 100px ) translateY(-' + translate + 'px)';
+				document.querySelector('#cube .bottom').style.transform = 'rotateX( '+ bottom_rX +'deg ) rotateY( '+ bottom_rY +'deg ) rotateZ( '+ bottom_rZ +'deg ) translateZ( 100px ) translateY('+translate+'px)';
+				document.getElementById('pitch').innerHTML = (pitch*100+.5|0) / 100;
+				document.getElementById('yawn').innerHTML = (yawn*100+.5|0) / 100;
 			}
 		}
 		
@@ -122,17 +161,8 @@
 		function unfolding() {
 			
 			if (Math.floor(pitch) != 0 || Math.floor(yawn) != 0) {
-				if (pitch > 0) {
-					pitch -= 1;
-				} else {
-					pitch += 1;
-				}
-				
-				if (yawn > 0) {
-					yawn -= 0.01;
-				} else {
-					yawn += 0.01;
-				}
+				pitch = 0;
+				yawn = 0;				
 			} else if (unfolded === false) {
 				if (backBreak < 180) {
 					backBreak += 2;
@@ -178,7 +208,10 @@
 		}
 		
 		function folding() {
-			if (unfolded === true) {
+			if (Math.floor(pitch) != 0 || Math.floor(yawn) != 0) {
+				pitch = 0;
+				yawn = 0;				
+			} else if (unfolded === true) {
 				if (backBreak > 0) {
 					backBreak -= 2;
 					leftBreak--;
