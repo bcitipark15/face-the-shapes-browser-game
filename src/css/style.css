@@ -1,51 +1,4 @@
-<<<<<<< HEAD
 main {
-=======
-a {
-	text-decoration: none;
-	color: white;
-}
-
-#title {
-	text-align: center;
-	padding: 20px;
-	font-size: 1.2em;
-	font-weight: bold;
-	position: fixed;
-	left: 80px;
-	top: 40px;
-	margin: auto;
-}
-
-.buttons {
-	width: 100px;
-	text-align: center;
-	margin: 20px auto;
-	padding: 5px;
-	background-color: black;
-	color: white;
-	border-radius: 15px;
-	box-shadow: 5px 5px 5px #888888;
-}
-
-/*Button to switch inbetween the 2D and 3D screens*/
-.screenToggle {
-	float: right;
-	margin-top: 6%;
-	margin-right: 20px; 	
-	width: 60px;
-	height: 8%;
-	line-height: 40px;
-	text-align: center;
-	background-color: black;
-	color: white;
-	border-radius: 15px;
-	box-shadow: 5px 5px 5px #888888;
-}
-
-/*The present screen*/
-#wrapper {
->>>>>>> 8ca2dcafb904ddd8e41c63a4b1a962591523ff27
 	width: 320px;
 	height: 480px;
 	border: solid 1px gray;
@@ -53,31 +6,13 @@ a {
 	overflow: hidden;
 }
 
-<<<<<<< HEAD
 /* Title Screen */
 #title_screen {
-=======
-/*Divs for all the different screens*/
-#screen3D {
-	width: 320px;
-	height: 480px;
-	float: left;
-}
-
-#screen2D {
-	width: 320px;
-	height: 480px;
-	float: left;
-}
-
-#main {
->>>>>>> 8ca2dcafb904ddd8e41c63a4b1a962591523ff27
 	float: left;
 	width: 320px;
 	height: 480px;
 }
 
-<<<<<<< HEAD
 #title {
 	text-align: center;
 	padding-top: 50px;
@@ -95,19 +30,6 @@ a {
 #titleImage img {
 	width: 150px;
 	height: 150px;
-=======
-/*Div for the main menu screen*/
-#menu {
-	float: left;
-	width: 320px;
-	height: 480px;
-	padding-top: 160px;
-}
-
-#cube img {
-	width: 120px;
-	height: 120px;
->>>>>>> 8ca2dcafb904ddd8e41c63a4b1a962591523ff27
 }
 
 /* Buttons */
@@ -139,7 +61,6 @@ li a {
 	text-align: center;
 }
 
-<<<<<<< HEAD
 li a:hover {
 	border: 0px solid #0a3c59;
 	text-shadow: #1e4158 0 1px 0;
@@ -162,46 +83,8 @@ li a:active {
 
 /* Mode Selection Screen */
 #menu_screen {
-=======
-/*Div containing the 2D foldout*/
-#foldout {
-	margin-top: 80px;
-	width: 90%;
-	height: 65%;
-	clear: both;
-	margin-right: auto;
-	margin-left: auto;
-	border: 2px black solid;
-}
-
-/*Button to change between colours on 2D screen*/
-#colour {
->>>>>>> 8ca2dcafb904ddd8e41c63a4b1a962591523ff27
 	float: left;
-	margin-top: 6%;
-	margin-left: 30px;
-	width: 100px;
-	height: 8%;
-	line-height: 40px;
-	text-align: center;
-	background-color: red;
-	color: white;
-	border-radius: 15px;
-	box-shadow: 5px 5px 5px #888888;
-}
-
-/*Button to submit and validate answer on 2D screen*/
-
-#submit {
-	float: right;
-	margin-top: 6%;
-	margin-right: 30px;
-	width: 100px;
-	height: 8%;
-	line-height: 40px;
-	text-align: center;
-	background-color: black;
-	color: white;
-	border-radius: 15px;
-	box-shadow: 5px 5px 5px #888888;
+	width: 320px;
+	height: 480px;
+	padding-top: 160px;
 }
