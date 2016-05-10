@@ -5,7 +5,7 @@
 
 body {
     /* Keep the image in place */
-    background-image: url("image/background2.jpg");
+    background-image: url("image/background1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -14,18 +14,28 @@ body {
 /* Where the contents go */
 #wrapper {
     border-radius: 25px;
-    width: 600px;
-    height: 600px;
+    width: 90%;
+    height: 700px;
     background-color: white;
     text-align: center;
-    margin: 100px;
+    margin: 10%;
     margin-left: auto;
     margin-right: auto;
+    
 }
 #wrapper h1 {
     padding: 25px;
 }
-
+#gameContainer {
+    background-image: url("image/background2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 90%;
+    height: 550px;
+    margin-left: auto;
+    margin-right: auto;
+}
 footer {
     background-color: black;
     color: white;
