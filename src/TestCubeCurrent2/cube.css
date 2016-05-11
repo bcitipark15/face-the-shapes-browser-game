@@ -86,7 +86,7 @@ img {
 #cube .left   { transform: rotateY( -90deg ) translateZ( 100px ); }
 #cube .top    { transform: rotateX(  90deg ) translateZ( 100px ); }
 #cube .bottom { transform: rotateX( -90deg ) translateZ( 100px ); }
-\
+
 
 
 

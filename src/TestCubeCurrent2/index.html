@@ -249,7 +249,7 @@
 					document.querySelector('#cube .top').style.transform = 'rotateX( '+ top_rX +'deg ) rotateY( '+ top_rY +'deg ) rotateZ( '+ top_rZ +'deg ) translateZ( 100px ) translateY(-' + translate + 'px)';
 					document.querySelector('#cube .bottom').style.transform = 'rotateX( '+ bottom_rX +'deg ) rotateY( '+ bottom_rY +'deg ) rotateZ( '+ bottom_rZ +'deg ) translateZ( 100px ) translateY('+translate+'px)';
 					
-					document.getElementById("folding").innerHTML = "fold";
+					document.getElementById("folding").innerHTML = "unfold";
 				} else {
 				unfolded = false;
 				clearInterval(foldingStop);
@@ -264,21 +264,21 @@
 	
 	<body>
 		<section class="container">
-		 <p>
-        pitch = <span id="pitch">0</span>deg<br/>
-        yawn = <span id="yawn">0</span>deg<br/>
-		translate = <span id="translate">0<br/>
-		</p>
-		<button onclick="unfold()"><span id="folding">Unfold</span></button>
-    <div id="cube">
-        <figure class="front"><img src="images.png" alt="arrow"></figure>
-        <figure class="back"><img src="images.png" alt="arrow"></figure>
-        <figure class="right"><img src="images.png" alt="arrow"></figure>
-        <figure class="left"><img src="images.png" alt="arrow"></figure>
-        <figure class="top"><img src="images.png" alt="arrow"></figure>
-        <figure class="bottom"><img src="images.png" alt="arrow"></figure>
-    </div>
-</section>
+			<p>
+				pitch = <span id="pitch">0</span>deg<br/>
+				yawn = <span id="yawn">0</span>deg<br/>
+				translate = <span id="translate">0<br/>
+			</p>
+			<button onclick="unfold()"><span id="folding">Unfold</span></button>
+			<div id="cube">
+				<figure class="front"><img src="images.png" alt="arrow"></figure>
+				<figure class="back"><img src="images.png" alt="arrow"></figure>
+				<figure class="right"><img src="images.png" alt="arrow"></figure>
+				<figure class="left"><img src="images.png" alt="arrow"></figure>
+				<figure class="top"><img src="images.png" alt="arrow"></figure>
+				<figure class="bottom"><img src="images.png" alt="arrow"></figure>
+			</div>
+		</section>
 
 	</body>
 </html>
