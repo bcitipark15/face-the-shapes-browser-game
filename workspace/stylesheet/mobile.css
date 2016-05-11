@@ -12,6 +12,9 @@ body {
 .main-content h1 {
 	display: none;
 }
+.cubeContainer {
+	top: 20%;	
+}
 #gameContainer {
-    height: 90vh;
+    height: 95vh;
 }

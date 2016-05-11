@@ -3,12 +3,15 @@
     padding: 0;
 }
 #gameContainer {
+	margin-top: 3%;
+	margin-bottom: 3%;
 	position: relative;
 	border-radius: 15px;
 	width: 90%;
-	height: 700px;
 	max-width: 900px;
-	margin: auto;
+	height: 700px;
+	margin-left: auto;
+	margin-right: auto;
 	background-color: #159957;
 	background-image: linear-gradient(120deg, #155799, #159957);
 	overflow: hidden;
@@ -43,43 +46,25 @@
 	text-align: center;
 	font-size: 35px;
 	padding-bottom: 20px;
+	color: #159957;
 }
-nav {
-	width: 10%;
-	height: 10%;
-	min-height: 60px;
-	min-width: 60px;
-	padding-top: 30px;
-	padding-left: 30px;
-}
-#hamburger  img{
-	width: 100%;
-	height: 100%;
-}
+
 #hamburger:hover {
 	opacity: 0.4;
+}
+.cubeContainer {
+	top: 30%;
 }
 /* Buttons */
 ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-	width: 100%;
 	text-align: center;
 }
 
-li a {
-	color: #1e6bb8;
-	text-decoration: none;
-	padding-top: 0.75em;
-	padding-bottom: 0.75em;
-}
-
-li a:hover {
-	text-decoration: underline;
-}
-
 .buttons {
+	padding: 20px;
 	display: inline-block;
 	margin-bottom: 1rem;
 	color: rgba(255, 255, 255, 0.7);
@@ -91,11 +76,22 @@ li a:hover {
 	transition: color 0.2s, background-color 0.2s, border-color 0.2s;
 	width: 60%;
 	max-width: 200px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 20px;
 }
 
 .buttons:hover {
 	color: rgba(255, 255, 255, 0.8);
+	background-color: rgba(255, 255, 255, 0.2);
+	border-color: rgba(255, 255, 255, 0.3);
+}
+.buttons a {
+	color: rgba(255, 255, 255, 0.7);
 	text-decoration: none;
+}
+.buttons a:hover {
+	color: rgba(255, 255, 255, 0.8);
 	background-color: rgba(255, 255, 255, 0.2);
 	border-color: rgba(255, 255, 255, 0.3);
 }
