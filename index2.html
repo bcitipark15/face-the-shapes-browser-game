@@ -9,7 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/game.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/cube.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/mobile.css" media="only all and (max-width: 480px)" >
-		<script src="./workspace/js/3DCube.js"></script>
+		<script src="./workspace/js/3DCube&Fold.js"></script>
     </head>
     <body>
         
@@ -33,19 +33,22 @@
 						<li><a class="buttons" href="#scoreMode">Score Attack</a></li>
 						<li><a class="buttons" href="#mainMenu">Back</a></li>
 					</ul>
+					
+					
 				</section>
 				
 				<section id="classicMode">
+					<div class="buttons" onclick="unfold()"></div>
 					<div class="cubeContainer">
-                    <div id="cube">
-                        <figure class="front"><img src="./workspace/image/arrow3.png" alt="arrow"></figure>
-                        <figure class="back"><img src="./workspace/image/arrow3.png" alt="arrow"></figure>
-                        <figure class="right"><img src="./workspace/image/arrow3.png" alt="arrow"></figure>
-                        <figure class="left"><img src="./workspace/image/arrow3.png" alt="arrow"></figure>
-                        <figure class="top"><img src="./workspace/image/arrow3.png" alt="arrow"></figure>
-                        <figure class="bottom"><img src="./workspace/image/arrow3.png" alt="arrow"></figure>
-                    </div>
-                </div>
+						<div id="cube">
+							<figure class="front"><img src="./workspace/image/arrow3.png" alt="arrow"></figure>
+							<figure class="back"><img src="./workspace/image/arrow3.png" alt="arrow"></figure>
+							<figure class="right"><img src="./workspace/image/arrow3.png" alt="arrow"></figure>
+							<figure class="left"><img src="./workspace/image/arrow3.png" alt="arrow"></figure>
+							<figure class="top"><img src="./workspace/image/arrow3.png" alt="arrow"></figure>
+							<figure class="bottom"><img src="./workspace/image/arrow3.png" alt="arrow"></figure>
+						</div>
+					</div>
 				</section>
 				
 			</section>
