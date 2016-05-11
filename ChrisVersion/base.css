@@ -1,0 +1,110 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 9-May-2016, 4:09:35 PM
+    Author     : Extrow - Laptop
+*/
+body{
+    font-family: arial, sans-serif;
+}
+button:focus {
+    outline:0;
+}
+#wrapper{
+    background-color:black;
+    width: 320px;
+    height: 480px;
+    /*
+    ~Smallest phone size~
+    width: 320px;
+    height: 480px;
+    */
+    
+    /*
+    ~Standard comp size~
+    width: 1366px;
+    height: 768px;
+    */
+    /*
+    ~Minimum acceptable comp size~
+    width: 1920px;
+    height: 1080px;
+    */
+}
+
+/*Screen to contain game parts*/
+#gamescreen{
+    border: solid 1px black;
+    border-radius: 25px;
+    background-color: #159957;
+    background-image: linear-gradient(120deg, #155799, #159957);
+    width: 60%;
+    height: 80%;
+    margin: auto;
+    padding: 10%;
+    position: relative;
+}
+
+/*Title text for each screen*/
+.title{
+    color: white;
+    font-size: 2.5em;
+    text-align: center;
+    border: solid 1px;
+    border-radius: 5px;
+    border-color: rgba(255,255,255,0.08);
+    background-color: rgba(255,255,255,0.08);
+}
+
+.menuButton{
+    /*Change text color to white*/
+    color:white;
+    
+    /*Space buttons out relative to container size*/
+    position: relative;
+    margin: 5% 0;
+    display: inline-block;
+    width: 100%;
+    height: 10%;
+    
+    /*Button color and style*/
+    background-image: linear-gradient(120deg, #155799, #159957);
+    text-decoration: none;
+    
+    /*Button border and shadow*/
+    border: solid 1px;
+    border-color: rgba(255,255,255,0.2);
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px #222222;
+}
+.center{
+    display: block;
+    margin:0 auto;
+}
+
+.toprightbutton {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    
+    /*Move this into a general button selector*/
+    /*Button color and style*/
+    background-image: linear-gradient(120deg, #155799, #159957);
+    text-decoration: none;
+    color: white;
+    
+    /*Button border and shadow*/
+    border: solid 1px;
+    border-color: rgba(255,255,255,0.2);
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px #222222;
+}
+img{
+    display: block;
+}
+#foldout{
+    margin: auto;
+}
