@@ -28,17 +28,16 @@
 				<section id="gameMode">
 					<h1 class="title">Game Mode</h1>
 					<ul>
-						<li><a class="buttons" href="#classicMode">Classic</a></li>
+						<li><a class="buttons" href="#mode3D">Classic</a></li>
 						<li><a class="buttons" href="#timeMode">Time Attack</a></li>
 						<li><a class="buttons" href="#scoreMode">Score Attack</a></li>
 						<li><a class="buttons" href="#mainMenu">Back</a></li>
 					</ul>
-					
-					
 				</section>
 				
-				<section id="classicMode">
-					<div class="buttons" onclick="unfold()"></div>
+				<section id="mode3D">
+					<div onclick="unfold()"><a class="buttons">Fold</a></div>
+					<div><a class="buttons" href="#mode2D">2D</a></div>
 					<div class="cubeContainer">
 						<div id="cube">
 							<figure class="front"><img src="./workspace/image/arrow3.png" alt="arrow"></figure>
@@ -49,6 +48,10 @@
 							<figure class="bottom"><img src="./workspace/image/arrow3.png" alt="arrow"></figure>
 						</div>
 					</div>
+					
+				</section>
+				<section id="mode2D">
+					<div><a class="buttons" href="#mode3D">3D</a></div>
 				</section>
 				
 			</section>
