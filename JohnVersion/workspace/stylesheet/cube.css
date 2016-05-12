@@ -1,8 +1,8 @@
 
 .cubeContainer {
-
-    width: 196px;
-    height: 196px;
+	top: 18%;
+    width: 200px;
+    height: 200px;
     position: relative;
     margin: 0 auto 40px;
     text-align: center;
@@ -18,7 +18,7 @@
     -ms-user-select: none;
 }
 
-.cubeCover {
+img {
 	width: 196px;
 	height: 196px;
 	user-drag: none; 
