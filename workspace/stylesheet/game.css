@@ -52,8 +52,9 @@ section {
 }
 .topNav {
 	margin: auto;
-	position: absolute;
-	width: 100%;
+	margin-top: 15%;
+	height: 10%;
+	width: 90%;
 	top: 3%;
 }
 .bottomNav {
@@ -118,5 +119,24 @@ ul {
 	color: rgba(255, 255, 255, 0.8);
 	background-color: rgba(255, 255, 255, 0.2);
 	border-color: rgba(255, 255, 255, 0.3);
-
+}
+#foldoutScreen{
+	margin:auto;
+	bottom:0;
+	height: 65%;
+	width: 50%;
+	border: solid 1px white;
+	border-color: rgba(255,255,255,0.08);
+}
+#foldout{
+	margin:auto;
+}
+.floatleft{
+	float: left;
+}
+.floatright{
+	float: right;
+}
+.clear {
+	clear:both;
 }

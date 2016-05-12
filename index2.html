@@ -9,7 +9,9 @@
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/game.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/cube.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/mobile.css" media="only all and (max-width: 480px)" >
+		<script src="https://cdn.jsdelivr.net/jquery/3.0.0-beta1/jquery.min.js"></script>
 		<script src="./workspace/js/3DCube&Fold.js"></script>
+		<script src="./workspace/js/foldout.js"></script>
     </head>
     <body>
         
@@ -28,7 +30,7 @@
 				<section id="gameMode">
 					<h1 class="title">Game Mode</h1>
 					<ul>
-						<li><a class="buttons desktopBSize" href="#mode3D">Classic</a></li>
+						<li><a class="buttons desktopBSize" href="#mode3D" onclick="foldoutT(); applyFaces();">Classic</a></li>
 						<li><a class="buttons desktopBSize" href="#timeMode">Time Attack</a></li>
 						<li><a class="buttons desktopBSize" href="#scoreMode">Score Attack</a></li>
 						<li><a class="buttons desktopBSize" href="#mainMenu">Back</a></li>
@@ -59,6 +61,7 @@
 						<div><a class="buttons floatRight mobileBSize" href="#mode3D">3D</a></div>
 					</div>
 					
+					<div id="foldoutScreen" style="clear:both"></div>
 					
 					<div class="bottomNav">
 						<div><a class="buttons floatLeft mobileBSize" href="#color">Color/Arrow</a></div>

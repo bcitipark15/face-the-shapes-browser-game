@@ -30,7 +30,14 @@ $(document).ready(function() {
 function makeFace(faceNum){
     var face = {
         //Randomized arrow value (0 = left, 1 = up, 2 = right, 3 = down
-        value: Math.floor(Math.random() * 4)
+		trueValue: Math.floor(Math.random() * 4),
+        value: Math.floor(Math.random() * 4),
+		trueRed: Math.floor(Math.random()* 256),
+        trueGreen: Math.floor(Math.random()* 256), 
+        trueBlue: Math.floor(Math.random()* 256),
+		colRed: Math.floor(Math.random()* 256),
+        colGreen: Math.floor(Math.random()* 256), 
+        colBlue: Math.floor(Math.random()* 256)
     };
     return face;
 }
@@ -58,11 +65,9 @@ function foldoutT(){
                                      '" width="' + size + '">');
         $('#foldoutFace' + i).css('transform', 'rotateZ(' + faceArray[i].value * 90 + 'deg)');
         
-        var colRed = Math.floor(Math.random()* 256);
-        var colGreen = Math.floor(Math.random()* 256);    
-        var colBlue = Math.floor(Math.random()* 256);
-        $('#foldoutFace' + i).css('background-color', 'rgb(' + colRed + ',' +
-                                  colGreen + ',' + colBlue + ')');
+        
+        $('#foldoutFace' + i).css('background-color', 'rgb(' + faceArray[i].colRed + ',' +
+                                  faceArray[i].colGreen + ',' + faceArray[i].colBlue + ')');
     }
     $('.foldoutFace').css({'width': size, 'height': size, 'border': 'solid 1px black'});
 }
@@ -75,4 +80,13 @@ function rotateFace(id){
     currentFace = faceArray[parseInt(id.charAt(id.length -1))];
     currentFace.value = (currentFace.value + 1) % 4;
     $('#' + id).css('transform','rotateZ(' + currentFace.value * 90 + 'deg)');
+}
+
+function applyFaces(){
+	var faceNames = ['front','back','right','left','top','bottom'];
+	for(var i = 0; i < faces; i++){
+		$('.' + faceNames[i]).children().css('transform','rotateZ(' + faceArray[i].value * 90 + 'deg)');
+		$('#cube.' + faceNames[i]).css('background','rgb(' + faceArray[i].trueRed + ',' +
+                                  faceArray[i].trueGreen + ',' + faceArray[i].trueBlue + ')')
+	}
 }
