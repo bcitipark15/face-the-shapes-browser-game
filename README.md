@@ -24,9 +24,26 @@
 				</li>
 			</ol>
 		</p>
+		
+		<h2>Agile Scrum with ZenHub</h2>
+		<p>
+			<ol>
+				<li>
+					<p>Go to <a href="https://www.zenhub.io/">www.zenhub.io</a></p>
+				</li>
+				<li>
+					<p>Click on <img src="http://students.bcitdev.com/A00869118/comp2910/zenhub.png"/> and follow the prompts.</p>
+				</li>
+				<li>
+					<p>When asked for a permission to access your GitHub account, grant the permission.</p>
+				</li>
+				<li>
+					<p>Agile scrum board and burndown applications should now be added to your GitHub.</p>
+				</li>
+			</ol>
+		</p>
 	</p>
 </p>
-
 
 <p>
 	<h1>Members of Group 17</h1>
