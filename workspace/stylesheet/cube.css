@@ -55,11 +55,6 @@
     text-align: center;
 }
 
-#cube figure img {
-    width: 50%;
-    height: 50%;
-}
-
 #cube.panels-backface-invisible figure {
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
