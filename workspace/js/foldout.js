@@ -19,7 +19,12 @@ $(document).ready(function() {
        faceArray.push(makeFace(i));
    }
    //Size of each face scales with screen to provide user with scaled faces
-   size = Math.floor($('#foldoutScreen').width()/4);
+   if($('#foldoutScreen').width() < $('#foldoutScreen').height()){
+	   axis = $('#foldoutScreen').width();
+   } else {
+	   axis = $('#foldoutScreen').height();
+   }
+   size = Math.floor(axis/4);
 });
 
 /**
@@ -43,7 +48,7 @@ function makeFace(faceNum){
 }
 
 function foldoutT(){
-    
+    $('#foldoutScreen').html('');
     //Create table for 2d foldout to be rendered inside of
     $('#foldoutScreen').append('<table id="foldout"></table>');
     
@@ -83,10 +88,19 @@ function rotateFace(id){
 }
 
 function applyFaces(){
-	var faceNames = ['front','back','right','left','top','bottom'];
+	var faceNames = ['top','left','front','right','bottom','back'];
 	for(var i = 0; i < faces; i++){
-		$('.' + faceNames[i]).children().css('transform','rotateZ(' + faceArray[i].value * 90 + 'deg)');
+		$('.' + faceNames[i]).children().css('transform','rotateZ(' + faceArray[i].trueValue * 90 + 'deg)');
 		$('#cube.' + faceNames[i]).css('background','rgb(' + faceArray[i].trueRed + ',' +
                                   faceArray[i].trueGreen + ',' + faceArray[i].trueBlue + ')')
 	}
+}
+function validate(){
+	var correct1 = 'Cube values = ';
+	var correct2 = 'your values = ';
+	for(var i = 0; i< faces; i++){
+		correct1 += faceArray[i].trueValue + ' ';
+		correct2 += faceArray[i].value + ' ';
+	}
+	return correct1 + '\n' + correct2;
 }
