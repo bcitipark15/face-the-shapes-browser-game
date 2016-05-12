@@ -12,9 +12,10 @@ body {
 .main-content h1 {
 	display: none;
 }
-.cubeContainer {
-	top: 25%;	
-}
 #gameContainer {
-    height: 95vh;
+    height: 100vh;
+	width: 100%;
+	margin: 0%;
+	border-radius: 0px;
 }
+
