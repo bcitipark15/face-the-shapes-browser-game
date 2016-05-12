@@ -37,6 +37,7 @@ var alignBreak 			= 0;
 var unfoldingBegin;
 var foldingBegin;
 var translate 			= 0;
+var pressed 			= false;
 
 /* Translate current X and Y position when mouse clicked into starting x and
    y rotation point for pitch and yawn. Also calls the function rotate.*/
@@ -155,9 +156,11 @@ function applyRotation() {
 
 function unfold() {
 
-	if (unfolded === false) {
+	if (unfolded === false && pressed === false) {
+		pressed = true;
 		unfoldingBegin = setInterval('unfolding();', 2);
-	} else if (unfolded === true) {
+	} else if (unfolded === true && pressed === false) {
+		pressed = true;
 		foldingBegin = setInterval('folding();', 2);
 	}
 }
@@ -197,6 +200,7 @@ function unfolding() {
 			unfolded = true;
 			clearInterval(unfoldingBegin);
 			document.getElementById("folding").innerHTML = "fold";
+			pressed = false;
 		}
 	}
 }
@@ -238,6 +242,7 @@ function folding() {
 			unfolded = false;
 			clearInterval(foldingBegin);
 			document.getElementById("folding").innerHTML = "unfold";
+			pressed = false;
 		}
 	}
 }
