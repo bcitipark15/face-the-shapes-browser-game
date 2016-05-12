@@ -30,7 +30,7 @@
 					<a id="hamburger" href="#"><img src="./workspace/image/hamburger.png"></a>
 				</nav>
 				<!-- Title Screen -->
-				<section id="mainMenu">
+				<section id="mainMenu" class="screen">
 					
 					<h2 class="title">Face The Shape</h2>
 					<div id="titleImage"><img src="./workspace/image/cube.png"></div>
@@ -41,7 +41,7 @@
 				</section>
 
 				<!-- Menu Screen -->
-				<section id="gameMode">
+				<section id="gameMode" class="screen">
 					<h2 class="title">Game Mode</h2>
 					<ul>
 						<li><a class="buttons" href="#classicMode3D">Classic</a></li>
@@ -52,7 +52,7 @@
 				</section>
 
 				<!-- 3D Screen -->
-				<section id="classicMode3D">
+				<section id="classicMode3D" class="screen">
 									
 					<div class="screenToggle"><a href="#classicMode2D">2D</a></div>
 
@@ -62,7 +62,7 @@
 				</section>
 
 				<!-- 2D Screen -->
-				<section id="classicMode2D">
+				<section id="classicMode2D" class="screen">
 					<div class="screenToggle"><a href="#classicMode3D">3D</a></div>
 
 					<!-- This div will hold the foldout -->
@@ -70,10 +70,20 @@
 				
 					<div id="colour" onclick="changeColour()"></div>
 				
-					<div id="submit" onclick="validate()">Submit</div>
+					<div id="submit" onclick="validate()"><a href="#postLevel">Submit</a></div>
+				</section>
+				
+				<!-- Post Level Screen -->
+				<section id="postLevel" class="screen">
+					<h1>Correct or Incorrect</h1>
+					
+					<div id="Exit"><a href="#gameMode">Exit</a></div>
+					
+					<div id="continue">Continue</div>
+					
 				</section>
 
-				
+					
 			</section>
 
             <footer class="site-footer">
