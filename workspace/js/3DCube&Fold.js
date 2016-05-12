@@ -111,7 +111,7 @@ function rotate() {
 
 		front_rX 	= 0 	+ pitch;
 		front_rY 	= 0 	- yawn;
-		back_rX 	= 180 	+ pitch 	- alignBreak * 2;
+		back_rX 	= 180 	+ pitch 	+ alignBreak * 2;
 		back_rY 	= 0 	- yawn;
 		right_rX 	= 0 	+ pitch;
 		right_rY 	= 90 	- yawn 		- alignBreak;
@@ -179,7 +179,7 @@ function unfolding() {
 
 			front_rX 	= 0 	+ pitch;
 			front_rY 	= 0 	- yawn;
-			back_rX 	= 180 	+ pitch 	- alignBreak * 2;
+			back_rX 	= 180 	+ pitch 	+ alignBreak * 2;
 			back_rY 	= 0 	- yawn;
 			right_rX 	= 0 	+ pitch;
 			right_rY 	= 90 	- yawn 		- alignBreak;
@@ -219,7 +219,7 @@ function folding() {
 
 			front_rX 	= 0 	+ pitch;
 			front_rY 	= 0 	- yawn;
-			back_rX 	= 180 	+ pitch 	- alignBreak * 2;
+			back_rX 	= 180 	+ pitch 	+ alignBreak * 2;
 			back_rY 	= 0 	- yawn;
 			right_rX 	= 0 	+ pitch;
 			right_rY 	= 90 	- yawn 		- alignBreak;

@@ -104,6 +104,7 @@ var bottom_rX           = 0;
 var bottom_rY           = 0;
 var bottom_rZ           = 0;
 var unfolded            = false;
+var pressed             = false;
 var alignBreak          = 0;
 var unfoldingBegin;
 var foldingBegin;
@@ -182,7 +183,7 @@ function rotate() {
 
         front_rX    = 0     + pitch;
         front_rY    = 0     - yawn;
-        back_rX     = 180   + pitch     - alignBreak * 2;
+        back_rX     = 180   + pitch     + alignBreak * 2;
         back_rY     = 0     - yawn;
         right_rX    = 0     + pitch;
         right_rY    = 90    - yawn      - alignBreak;
@@ -226,9 +227,11 @@ function applyRotation() {
 
 function unfold() {
 
-    if (unfolded === false) {
+    if (unfolded === false && pressed === false) {
+        pressed = true;
         unfoldingBegin = setInterval('unfolding();', 2);
-    } else if (unfolded === true) {
+    } else if (unfolded === true && pressed === false) {
+        pressed = true;
         foldingBegin = setInterval('folding();', 2);
     }
 }
@@ -250,7 +253,7 @@ function unfolding() {
 
             front_rX    = 0     + pitch;
             front_rY    = 0     - yawn;
-            back_rX     = 180   + pitch     - alignBreak * 2;
+            back_rX     = 180   + pitch     + alignBreak * 2;
             back_rY     = 0     - yawn;
             right_rX    = 0     + pitch;
             right_rY    = 90    - yawn      - alignBreak;
@@ -268,6 +271,7 @@ function unfolding() {
             unfolded = true;
             clearInterval(unfoldingBegin);
             document.getElementById("folding").innerHTML = "fold";
+            pressed = false;
         }
     }
 }
@@ -290,7 +294,7 @@ function folding() {
 
             front_rX    = 0     + pitch;
             front_rY    = 0     - yawn;
-            back_rX     = 180   + pitch     - alignBreak * 2;
+            back_rX     = 180   + pitch     + alignBreak * 2;
             back_rY     = 0     - yawn;
             right_rX    = 0     + pitch;
             right_rY    = 90    - yawn      - alignBreak;
@@ -309,6 +313,7 @@ function folding() {
             unfolded = false;
             clearInterval(foldingBegin);
             document.getElementById("folding").innerHTML = "unfold";
+            pressed = false;
         }
     }
 }
