@@ -20,28 +20,27 @@
 					<h1 class="title">Face The Shape</h1>
 					<div id="titleImage"><img src="./workspace/image/cube.png" width="200em" height="200em"></div>
 					<ul>
-						<li><a class="buttons" href="#gameMode">Play</a></li>
-						<li><a class="buttons" href="#leaderBoard">Leaderboard</a></li>
+						<li><a class="buttons desktopBSize" href="#gameMode">Play</a></li>
+						<li><a class="buttons desktopBSize" href="#leaderBoard">Leaderboard</a></li>
 					</ul>
 					
 				</section>
 				<section id="gameMode">
 					<h1 class="title">Game Mode</h1>
 					<ul>
-						<li><a class="buttons" href="#mode3D">Classic</a></li>
-						<li><a class="buttons" href="#timeMode">Time Attack</a></li>
-						<li><a class="buttons" href="#scoreMode">Score Attack</a></li>
-						<li><a class="buttons" href="#mainMenu">Back</a></li>
+						<li><a class="buttons desktopBSize" href="#mode3D">Classic</a></li>
+						<li><a class="buttons desktopBSize" href="#timeMode">Time Attack</a></li>
+						<li><a class="buttons desktopBSize" href="#scoreMode">Score Attack</a></li>
+						<li><a class="buttons desktopBSize" href="#mainMenu">Back</a></li>
 					</ul>
 				</section>
 				
 				<section id="mode3D">
 					<div class="topNav">
-						<div class="buttons floatLeft" id="hamburger"><a href="#mainMenu">Back</div>
-						<div><a class="buttons floatRight" href="#mode2D">2D</a></div>
+						<a href="#mainMenu"><div class="buttons floatLeft mobileBSize" id="hamburger"></div></a>
+						<div><a class="buttons floatRight mobileBSize" href="#mode2D">2D</a></div>
 					</div>
 					
-					<div><a class="buttons" onclick="unfold()">Fold</a></div>
 					<div class="cubeContainer">
 						<div id="cube">
 							<figure class="front"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
@@ -56,14 +55,14 @@
 				</section>
 				<section id="mode2D">
 					<div class="topNav">
-						<div class="buttons floatLeft" id="hamburger"><a href="#mainMenu">Back</a></div>
-						<div><a class="buttons floatRight" href="#mode3D">3D</a></div>
+						<a href="#mainMenu"><div class="buttons floatLeft mobileBSize" id="hamburger"></div></a>
+						<div><a class="buttons floatRight mobileBSize" href="#mode3D">3D</a></div>
 					</div>
 					
 					
 					<div class="bottomNav">
-						<div><a class="buttons floatLeft" href="#color">Color/Arrow</a></div>
-						<div><a class="buttons floatRight" href="#submit">Submit</a></div>
+						<div><a class="buttons floatLeft mobileBSize" href="#color">Color/Arrow</a></div>
+						<div><a class="buttons floatRight mobileBSize" href="#submit">Submit</a></div>
 					</div>
 				</section>
 				

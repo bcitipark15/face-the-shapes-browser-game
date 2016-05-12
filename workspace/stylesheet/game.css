@@ -69,7 +69,7 @@ section {
 	float: left;
 }
 .cubeContainer {
-	top: 15%;
+	top: 25%;
 }
 
 /* Buttons */
@@ -79,7 +79,14 @@ ul {
 	padding: 0;
 	text-align: center;
 }
-
+/*  B = Button  */
+.desktopBSize {
+	width: 180px;
+}
+/*  B = Button  */
+.mobileBSize {
+	width: 20%;
+}
 .buttons {
 	padding: 20px;
 	display: inline-block;
@@ -91,8 +98,6 @@ ul {
 	border-width: 1px;
 	border-radius: 0.3rem;
 	transition: color 0.2s, background-color 0.2s, border-color 0.2s;
-	width: 60%;
-	max-width: 200px;
 	text-align: center;
 	text-decoration: none;
 	font-size: 20px;
@@ -103,10 +108,12 @@ ul {
 	background-color: rgba(255, 255, 255, 0.2);
 	border-color: rgba(255, 255, 255, 0.3);
 }
+
 .buttons a {
 	color: rgba(255, 255, 255, 0.7);
 	text-decoration: none;
 }
+
 .buttons a:hover {
 	color: rgba(255, 255, 255, 0.8);
 	background-color: rgba(255, 255, 255, 0.2);
