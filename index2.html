@@ -18,7 +18,7 @@
 				<!-- Title Screen -->
 				<section id="mainMenu">
 					<h1 class="title">Face The Shape</h1>
-					<div id="titleImage"><img src="./workspace/image/cube.png"></div>
+					<div id="titleImage"><img src="./workspace/image/cube.png" width="200em" height="200em"></div>
 					<ul>
 						<li><a class="buttons" href="#gameMode">Play</a></li>
 						<li><a class="buttons" href="#leaderBoard">Leaderboard</a></li>
@@ -36,22 +36,35 @@
 				</section>
 				
 				<section id="mode3D">
-					<div onclick="unfold()"><a class="buttons">Fold</a></div>
-					<div><a class="buttons" href="#mode2D">2D</a></div>
+					<div class="topNav">
+						<div class="buttons floatLeft" id="hamburger"><a href="#mainMenu">Back</div>
+						<div><a class="buttons floatRight" href="#mode2D">2D</a></div>
+					</div>
+					
+					<div><a class="buttons" onclick="unfold()">Fold</a></div>
 					<div class="cubeContainer">
 						<div id="cube">
-							<figure class="front"><img src="./workspace/image/arrow3.png" alt="arrow"></figure>
-							<figure class="back"><img src="./workspace/image/arrow3.png" alt="arrow"></figure>
-							<figure class="right"><img src="./workspace/image/arrow3.png" alt="arrow"></figure>
-							<figure class="left"><img src="./workspace/image/arrow3.png" alt="arrow"></figure>
-							<figure class="top"><img src="./workspace/image/arrow3.png" alt="arrow"></figure>
-							<figure class="bottom"><img src="./workspace/image/arrow3.png" alt="arrow"></figure>
+							<figure class="front"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+							<figure class="back"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+							<figure class="right"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+							<figure class="left"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+							<figure class="top"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+							<figure class="bottom"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
 						</div>
 					</div>
 					
 				</section>
 				<section id="mode2D">
-					<div><a class="buttons" href="#mode3D">3D</a></div>
+					<div class="topNav">
+						<div class="buttons floatLeft" id="hamburger"><a href="#mainMenu">Back</a></div>
+						<div><a class="buttons floatRight" href="#mode3D">3D</a></div>
+					</div>
+					
+					
+					<div class="bottomNav">
+						<div><a class="buttons floatLeft" href="#color">Color/Arrow</a></div>
+						<div><a class="buttons floatRight" href="#submit">Submit</a></div>
+					</div>
 				</section>
 				
 			</section>
