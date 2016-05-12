@@ -29,7 +29,7 @@
 		<p>
 			<ol>
 				<li>
-					<p>Go to <a href="https://www.zenhub.io"></a></p>
+					<p>Go to <a href="https://www.zenhub.io/">www.zenhub.io</a></p>
 				</li>
 				<li>
 					<p>Click on <img src="http://students.bcitdev.com/A00869118/comp2910/zenhub.png"/> and follow the prompts.</p>
