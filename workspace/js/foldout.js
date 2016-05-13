@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
  //Color array
- var colors = ['red','green','blue','purple','yellow','cyan','orange'];
+var colors = ['red','green','blue','purple','yellow','cyan','orange'];
 
 //Hard code 6 faces for cube
 var faces = 6;
