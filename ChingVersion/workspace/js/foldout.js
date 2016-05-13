@@ -166,8 +166,6 @@ function validate(){
 
 function easterEggTwo() {
 	easterEggTwo = true;
-	faceArray[pivot].trueColor = 'white';
-	faceArray[pivot].playerColor = 'white';
 	var easterEggTwoHead = document.getElementsByTagName('head').item(0);
 	var easterEggTwoStyle = document.createElement("style");
 	easterEggTwoStyle.type = "text/css"; 
