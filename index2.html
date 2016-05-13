@@ -15,7 +15,8 @@
 		<script src="./workspace/js/game.js"></script>
     </head>
     <body>
-
+		
+		<!-- Container for the shown screen -->
         <section id="gameContainer">
 			
             <!-- Title Screen -->
@@ -32,7 +33,7 @@
 
             </section>
 
-            <!-- Game Mode -->
+            <!-- Game Mode Screen -->
             <section id="gameMode">
 
                 <h1 class="title">Game Mode</h1>
@@ -42,11 +43,12 @@
                     <li><a class="buttons menuBSize" href="#timeMode">Time Attack</a></li>
                     <li><a class="buttons menuBSize" href="#scoreMode">Score Attack</a></li>
                     <li><a class="buttons menuBSize" href="#mainMenu">Back</a></li>
+                    <li><a class="buttons menuBSize" id="easterEggTwo" onclick="easterEggTwo()" href="#mainMenu">Death</a></li>
                 </ul>
 
             </section>
 
-            <!-- Level Select -->
+            <!-- Level Select Screen -->
             <section id="levelSelect">
 
                 <h1 class="title">Level Select</h1>
@@ -61,14 +63,15 @@
             </section>
 
 
-            <!-- 3D mode -->
+            <!-- 3D mode Screen -->
             <section id="mode3D">
 
                 <div class="topNav">
                     <div><a id="hamburger" class="buttons floatLeft mobileBSize" href="#mainMenu"></a></div>
                     <div><a class="buttons floatRight mobileBSize" href="#mode2D">To 2D</a></div>
                 </div>
-
+				
+				<!-- Divs for each face of the cube -->
                 <div class="cubeContainer">
                     <div id="cube">
                         <figure class="front"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
@@ -82,7 +85,7 @@
 
             </section>
 
-            <!-- 2D Mode -->
+            <!-- 2D Mode Screen-->
             <section id="mode2D">
 
                 <div class="topNav">

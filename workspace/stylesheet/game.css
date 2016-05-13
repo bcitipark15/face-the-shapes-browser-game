@@ -125,6 +125,20 @@ section {
 	position: absolute;
 }
 
+#easterEgg {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}
+
+#easterEggTwo {
+    opacity: 0;
+}
+
+#easterEggTwo:hover {
+    opacity: 1;
+}
+
 
 /** A list containing the buttons **/
 ul {
