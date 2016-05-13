@@ -3,23 +3,16 @@ body {
     margin: 0;
     padding: 0;
 }
-.page-header {
-	display: none;
-}
-.site-footer {
-	display: none;
-}
-.main-content h1 {
-	display: none;
-}
+
+/** Change the game container to fit for mobile devices **/
 #gameContainer {
     height: 100vh;
 	width: 100%;
 	margin: 0%;
 	border-radius: 0px;
 }
-/** iPhone 4 AKA Chings Phone **/
-@media screen and (min-width: 320px) {
+/** iPhone 4 support **/
+@media screen and (max-width: 320px) {
 	#titleImage {
 		margin-top: 5px;
 		margin-bottom: 15px;
