@@ -3,6 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+$(document).ready(function(){
+    window.location.hash = '#mainmenu';
+});
+
 //Color array; added evan friendly colors
 var easterEggTwo = false;
 var colors = ['hsla( 0, 100%, 50%, 0.7 )','hsla( 60, 100%, 50%, 0.7 )','hsla( 120, 100%, 50%, 0.7 )','hsla( 180, 100%, 50%, 0.7 )','hsla( 240, 100%, 50%, 0.7 )','hsla( 300, 100%, 50%, 0.7 )','hsla( 360, 100%, 50%, 0.7 )'];
@@ -42,7 +46,7 @@ function makeFace(faceNum){
 function generateCube(){
 	for(var i = 0; i < faces; i++){
        //Fill faceArray with new face objects
-       faceArray.push(makeFace(i));
+       faceArray[i] = makeFace(i);
 	}
    //Size of each face scales with screen to provide user with scaled faces
    if($('#foldoutScreen').width() < $('#foldoutScreen').height()){
