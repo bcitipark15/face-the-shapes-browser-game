@@ -15,6 +15,8 @@ var faceArray = [];
 //Global size array to determine size (width/height) of cube faces
 var size;
 
+var colorFlag = false;
+
 $(document).ready(function() {
    for(var i = 0; i < faces; i++){
        //Fill faceArray with new face objects
@@ -89,12 +91,18 @@ function foldoutT(){
  */
 function rotateFace(id){
     currentFace = faceArray[parseInt(id.charAt(id.length -1))];
-	if(currentFace.trueColor !== 'black'){
+	if(currentFace.trueColor !== 'black' && !colorFlag){
 		currentFace.value = (currentFace.value + 1) % 4;
 		$('#' + id).css('transform','rotateZ(' + currentFace.value * 90 + 'deg)');
 	}
+	if(currentFace.trueColor !== 'black' && colorFlag){
+		currentFace.playerColor = colors[(colors.indexOf(currentFace.playerColor) + 1) % colors.length];
+		$('#' + id).css('background-color',currentFace.playerColor);
+	}
 }
-
+function colorChanger(){
+	colorFlag = !colorFlag;
+}
 function applyFaces(){
 	var faceNames = ['top','left','front','right','bottom','back'];
 	for(var i = 0; i < faces; i++){
@@ -111,7 +119,7 @@ function validate(){
 	for(var i = 0; i< faces; i++){
 		correct1 += faceArray[i].trueValue + ' ';
 		correct2 += faceArray[i].value + ' ';
-		if (faceArray[i].trueValue != faceArray[i].value) {
+		if (faceArray[i].trueValue != faceArray[i].value || faceArray[i].playerColor != faceArray[i].trueColor) {
 			match = false;
 		}
 	}
