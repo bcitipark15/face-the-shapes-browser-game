@@ -5,8 +5,7 @@ function tutturu(){
     audio.play();
 }
 
-//function easterEggTwo() {
-window.onload = function() {
+function easterEggTwo() {
 	easterEggTwo = true;
 	var easterEggTwoHead = document.getElementsByTagName('head').item(0);
 	var easterEggTwoStyle = document.createElement("style");
@@ -26,4 +25,3 @@ window.onload = function() {
             + '<figure class="top"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure>'
             + '<figure class="bottom"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure>'
 }
-//}

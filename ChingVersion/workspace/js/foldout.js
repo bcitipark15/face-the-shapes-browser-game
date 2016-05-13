@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
- //Color array; added evan friendly colors
-var colors = ['red','lime','blue','purple','yellow','cyan','orange'];
+//Color array; added evan friendly colors
+var easterEggTwo = false;
+var colors = ['hsla( 0, 100%, 50%, 0.7 )','hsla( 60, 100%, 50%, 0.7 )','hsla( 120, 100%, 50%, 0.7 )','hsla( 180, 100%, 50%, 0.7 )','hsla( 240, 100%, 50%, 0.7 )','hsla( 300, 100%, 50%, 0.7 )','hsla( 360, 100%, 50%, 0.7 )'];
+
 
 //Hard code 6 faces for cube
 var faces = 6;
@@ -30,6 +32,7 @@ $(document).ready(function() {
    //Pick a face to become pivot
 	var pivot = Math.floor(Math.random() * faceArray.length);
 	//Set pivot to be full black
+
 	faceArray[pivot].trueColor = 'black';
 	faceArray[pivot].playerColor = 'black';
 	//set arrow orientation to same as pivot's
@@ -55,7 +58,7 @@ function makeFace(faceNum){
 
 function foldoutT() {	
 
-	if (easterEggTwo) {	
+	if (easterEggTwo === true) {	
 	    $('#foldoutScreen').html('');
 	    //Create table for 2d foldout to be rendered inside of
 	    $('#foldoutScreen').append('<table id="foldout"></table>');
@@ -85,6 +88,7 @@ function foldoutT() {
 		    $('#foldoutFace' + i).css('margin','auto');
 	    }
 	    $('.foldoutFace').css({'width': size, 'height': size, 'border': 'solid 1px black'});
+	    $('.foldoutFace').children().css({'position':'absolute','left':'0','right':'0','bottom':'0','top':'0','margin':'auto'})
 
 	} else {
 	
@@ -157,4 +161,28 @@ function validate(){
 		$('#resultMessage').append('You got a face wrong!!');
 	}
 	$('#correctAnswer').append(correct1 + '<br>' + correct2);
+}
+
+
+function easterEggTwo() {
+	easterEggTwo = true;
+	faceArray[pivot].trueColor = 'white';
+	faceArray[pivot].playerColor = 'white';
+	var easterEggTwoHead = document.getElementsByTagName('head').item(0);
+	var easterEggTwoStyle = document.createElement("style");
+	easterEggTwoStyle.type = "text/css"; 
+	easterEggTwoStyle.appendChild(document.createTextNode("#gameContainer{background-color: #042714;"
+			+ "background-image: linear-gradient(120deg, #021127, #042714);} "
+			+ "body{background-color:black;}"
+			+ ".title{color: rgba(200, 100, 100, 0.7);}"
+			+ ".buttons{color: rgba(200, 100, 100, 0.7);}"
+			+ "#cube img{width: 50%; height: 50%;}"));
+	easterEggTwoHead.appendChild(easterEggTwoStyle);
+	var easterEggTwoCubeFace = document.getElementById('cube');
+	easterEggTwoCubeFace.innerHTML = '<figure class="front"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure> '
+            + '<figure class="back"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure>'
+            + '<figure class="right"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure>'
+            + '<figure class="left"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure>'
+            + '<figure class="top"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure>'
+            + '<figure class="bottom"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure>'
 }
