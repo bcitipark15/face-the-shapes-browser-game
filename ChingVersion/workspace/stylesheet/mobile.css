@@ -18,4 +18,10 @@ body {
 	margin: 0%;
 	border-radius: 0px;
 }
-
+/** iPhone 4 AKA Chings Phone **/
+@media screen and (min-width: 320px) {
+	#titleImage {
+		margin-top: 5px;
+		margin-bottom: 15px;
+	}
+}

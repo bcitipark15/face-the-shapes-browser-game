@@ -1,158 +1,135 @@
 <!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>201610 comp2910 g17 by bcitipark15</title>
+        <link rel="icon" type="image/png" href="./workspace/image/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/game.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/cube.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/mobile.css" media="only all and (max-width: 480px)">
+        <script type="text/javascript"> var easterEggTwo = false;</script>
+        <script src="https://cdn.jsdelivr.net/jquery/3.0.0-beta1/jquery.min.js"></script>
+        <script src="./workspace/js/3DCube&Fold.js"></script>
+        <script src="./workspace/js/foldout.js"></script>
+		<script src="./workspace/js/game.js"></script>
+    </head>
+    <body>
 
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Test Cube</title>
-		<link rel="stylesheet" type="text/css" href="css/cube.css">
-	</head>
-	
-	<script>
-		var mouseDownID = -1;
-		var startx = 0;
-		var starty = 0;
-		var yawn = 0;
-		var pitch = 0;
-		var z_axis = 0;
-		var x = 0;
-		var y = 0;
-		var addYawn = 0;
-		var addPitch = 0;
-		var addZ_axis = 0;
-		var stopYawn = 0;
-		var stopPitch = 0;
-		var stopZ_axis = 0;
-		var front_rX = 0, front_rY = 0, front_rZ = 0;
-		var back_rX = 0, back_rY = 0, back_rZ = 0;
-		var left_rX = 0, left_rY = 0, left_rZ = 0;
-		var right_rX = 0, right_rY = 0, right_rZ = 0;
-		var top_rX = 0, top_rY = 0, top_rZ = 0;
-		var bottom_rX = 0, bottom_rY = 0, bottom_rZ = 0;
-		
-		document.onmousedown = mouseDown;
-		document.onmouseup = mouseUp;
-		
-		function mouseDown(e) {
+        <section id="gameContainer">
 			
-			if (mouseDownID == -1) {
+            <!-- Title Screen -->
+            <section id="mainMenu">
+				<div><a id="easterEgg" onclick="tutturu()"></a></div>
+                <h1 class="title">Face The Shapes</h1>
 				
-				startx = e.clientX - innerWidth/2;
-				starty = e.clientY - innerHeight/2;
-				
-				mouseDownID = setInterval(rotate, 10);
-				
-			}
-		}
-		
-		function mouseUp(e) {
-			if (mouseDownID != -1) {
-				
-				clearInterval(mouseDownID);
-				mouseDownID = -1;
-				startx = e.clientX - innerWidth/2;
-				starty = e.clientY - innerHeight/2;
-			}
-		}
-		
-		
-		document.onmousemove = function (e) {
-			x = startx - (e.clientX - innerWidth/2),
-			y = starty - (e.clientY - innerHeight/2),
-			
-			addYawn = x / innerWidth * 180,
-			addPitch = y / innerHeight * 180;
-			
-			startx = e.clientX - innerWidth/2;
-			starty = e.clientY - innerHeight/2;
-			
-		}
-		
-		function rotate() {
-			if (stopYawn != addYawn) {
-			
-				yawn += addYawn;
-				stopYawn = addYawn;
-			}
-			
-			if (stopPitch != addPitch) {
-			
-				pitch += addPitch;
-				stopPitch = addPitch;
-			}
-			
-			if (stopZ_axis != addZ_axis) {
-				z_axis += addZ_axis;
-			}
-			
-			if (Math.abs(pitch % 360) > 60 && Math.abs(pitch % 360) < 120) {
-			
-				front_rX = 0 + pitch;
-				front_rZ = 0 - yawn;
-				back_rX = 180 + pitch;
-				back_rZ = 0 + yawn;
-				right_rX = 0 - yawn;
-				right_rY = 90 - yawn;
-				left_rX = 0 + yawn;
-				left_rY = -90 - yawn;
-				top_rX = 90 + pitch;
-				top_rY = 0 - yawn;
-				bottom_rX = -90 + pitch;
-				bottom_rY = 0 + yawn;
-				
-				
-				document.querySelector('#cube .front').style.transform = 'rotateX( '+ front_rX +'deg ) rotateY( '+ front_rY +'deg ) rotateZ( '+ front_rZ +'deg ) translateZ( 100px )';
-				document.querySelector('#cube .back').style.transform = 'rotateX( '+ back_rX +'deg ) rotateY( '+ back_rY +'deg ) rotateZ( '+ back_rZ +'deg ) translateZ( 100px )';
-				document.querySelector('#cube .right').style.transform = 'rotateX( '+ right_rX +'deg ) rotateY( '+ right_rY +'deg ) rotateZ( '+ right_rZ +'deg ) translateZ( 100px )';
-				document.querySelector('#cube .left').style.transform = 'rotateX( '+ left_rX +'deg ) rotateY( '+ left_rY +'deg ) rotateZ( '+ left_rZ +'deg ) translateZ( 100px )';
-				document.querySelector('#cube .top').style.transform = 'rotateX( '+ top_rX +'deg ) rotateY( '+ top_rY +'deg ) rotateZ( '+ top_rZ +'deg ) translateZ( 100px )';
-				document.querySelector('#cube .bottom').style.transform = 'rotateX( '+ bottom_rX +'deg ) rotateY( '+ bottom_rY +'deg ) rotateZ( '+ bottom_rZ +'deg ) translateZ( 100px )';
-						
-			} else {
-				
-				front_rX = 0 + pitch;
-				front_rY = 0 - yawn;
-				back_rX = 180 + pitch;
-				back_rY = 0 + yawn;
-				right_rX = 0 + pitch;
-				right_rY = 90 - yawn;
-				left_rX = 0 + pitch;
-				left_rY = -90 - yawn;
-				top_rX = 90 + pitch;
-				top_rZ = 0 + yawn;
-				bottom_rX = -90 + pitch;
-				bottom_rZ = 0 - yawn;
-				
-				document.querySelector('#cube .front').style.transform = 'rotateX( '+ front_rX +'deg ) rotateY( '+ front_rY +'deg ) rotateZ( '+ front_rZ +'deg ) translateZ( 100px )';
-				document.querySelector('#cube .back').style.transform = 'rotateX( '+ back_rX +'deg ) rotateY( '+ back_rY +'deg ) rotateZ( '+ back_rZ +'deg ) translateZ( 100px )';
-				document.querySelector('#cube .right').style.transform = 'rotateX( '+ right_rX +'deg ) rotateY( '+ right_rY +'deg ) rotateZ( '+ right_rZ +'deg ) translateZ( 100px )';
-				document.querySelector('#cube .left').style.transform = 'rotateX( '+ left_rX +'deg ) rotateY( '+ left_rY +'deg ) rotateZ( '+ left_rZ +'deg ) translateZ( 100px )';
-				document.querySelector('#cube .top').style.transform = 'rotateX( '+ top_rX +'deg ) rotateY( '+ top_rY +'deg ) rotateZ( '+ top_rZ +'deg ) translateZ( 100px )';
-				document.querySelector('#cube .bottom').style.transform = 'rotateX( '+ bottom_rX +'deg ) rotateY( '+ bottom_rY +'deg ) rotateZ( '+ bottom_rZ +'deg ) translateZ( 100px )';
-				
-				
-				
-				document.getElementById('pitch').innerHTML = (pitch*100+.5|0) / 100;
-				document.getElementById('yawn').innerHTML = (yawn*100+.5|0) / 100;
-			}
-		}
-		
-	</script>
-	
-	<body>
-		<section class="container">
-		 <p>
-        pitch = <span id="pitch">0</span>deg<br/>
-        yawn = <span id="yawn">0</span>deg
-		</p>
-    <div id="cube">
-        <figure class="front"><img src="img/arrows/images.png" alt="arrow"></figure>
-        <figure class="back"><img src="img/arrows/images.png" alt="arrow"></figure>
-        <figure class="right"><img src="img/arrows/images.png" alt="arrow"></figure>
-        <figure class="left"><img src="img/arrows/images.png" alt="arrow"></figure>
-        <figure class="top"><img src="img/arrows/images.png" alt="arrow"></figure>
-        <figure class="bottom"><img src="img/arrows/images.png" alt="arrow"></figure>
-    </div>
-</section>
+                <div id="titleImage"><img src="./workspace/image/cube.png" width="200em" height="200em"></div>
 
-	</body>
+                <ul>
+                    <li><a class="buttons menuBSize" href="#gameMode">Play</a></li>
+                    <li><a class="buttons menuBSize" href="#leaderboard">Leaderboard</a></li>
+                </ul>
+
+            </section>
+
+            <!-- Game Mode -->
+            <section id="gameMode">
+
+                <h1 class="title">Game Mode</h1>
+
+                <ul>
+                    <li><a class="buttons menuBSize" href="#levelSelect">Classic</a></li>
+                    <li><a class="buttons menuBSize" href="#timeMode">Time Attack</a></li>
+                    <li><a class="buttons menuBSize" href="#scoreMode">Score Attack</a></li>
+                    <li><a class="buttons menuBSize" href="#mainMenu">Back</a></li>
+                    <li><a class="buttons menuBSize" id="easterEggTwo" onclick="easterEggTwo()" href="#mainMenu">Death</a></li>
+                </ul>
+
+            </section>
+
+            <!-- Level Select -->
+            <section id="levelSelect">
+
+                <h1 class="title">Level Select</h1>
+
+                <ul>
+                    <li><a class="buttons menuBSize" href="#mode3D" onclick="foldoutT(); applyFaces();">Level 1</a></li>
+                    <li><a class="buttons menuBSize" href="#level2">Level 2</a></li>
+                    <li><a class="buttons menuBSize" href="#level3">Level 3</a></li>
+                    <li><a class="buttons menuBSize" href="#level4">Level 4</a></li>
+                </ul>
+
+            </section>
+
+
+            <!-- 3D mode -->
+            <section id="mode3D">
+
+                <div class="topNav">
+                    <div><a id="hamburger" class="buttons floatLeft mobileBSize" href="#mainMenu"></a></div>
+                    <div><a class="buttons floatRight mobileBSize" href="#mode2D">To 2D</a></div>
+                </div>
+
+                <div class="cubeContainer">
+                    <div id="cube">
+                        <figure class="front"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+                        <figure class="back"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+                        <figure class="right"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+                        <figure class="left"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+                        <figure class="top"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+                        <figure class="bottom"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- 2D Mode -->
+            <section id="mode2D">
+
+                <div class="topNav">
+                    <a href="#mainMenu"><div class="buttons floatLeft mobileBSize" id="hamburger"></div></a>
+                    <div><a class="buttons floatRight mobileBSize" href="#mode3D">To 3D</a></div>
+                </div>
+
+                <div id="foldoutScreen" class="clear"></div>
+
+                <div class="bottomNav">
+                    <div><a class="buttons floatLeft mobileBSize" href="#color">Color</a></div>
+                    <div><a class="buttons floatRight mobileBSize" href="#resultScreen" onclick="validate();">Submit</a></div>
+                </div>
+
+            </section>
+
+            <!-- Results Screen -->
+            <section id="resultScreen">
+
+                <h1 class="title">Results</h1>
+
+                <div class="messageBox" id="resultMessage"></div>
+
+                <div class="bottomNav">
+                    <div><a class="buttons floatLeft mobileBSize" href="#levelSelect">Levels</a></div>
+                    <div><a class="buttons floatRight mobileBSize" href="#answerScreen">Answer</a></div>
+                </div>
+
+            </section>
+			
+			<!-- Answer Screen -->
+			<section id="answerScreen">
+				
+				<h1 class="title">Answer</h1>
+				
+				<div class="messageBox" id="correctAnswer"></div>
+				
+				<div class="bottomNav">
+                    <div><a class="buttons floatLeft mobileBSize" href="#levelSelect">Levels</a></div>
+                    <div><a class="buttons floatRight mobileBSize" href="#mainMenu">Menu</a></div>
+                </div>
+				
+			</section>
+			
+        </section>
+
+    </body>
 </html>

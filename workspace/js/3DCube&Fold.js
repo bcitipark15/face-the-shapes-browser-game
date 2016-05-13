@@ -81,7 +81,7 @@ function mouseMove(e) {
 	startY		= e.clientY - innerHeight/2;
 }
 
-/* Translate current X and Y position when mouse clicked into starting x and
+/* Translate current X and Y position when touched into starting x and
    y rotation point for pitch and yawn. Also calls the function rotate.*/
 window.addEventListener('load', function(){ // on page load
  
@@ -95,7 +95,7 @@ window.addEventListener('load', function(){ // on page load
  
 }, false)
 
-/* Clear the interval of function rotate upon mouse release. Also update the
+/* Clear the interval of function rotate upon touch release. Also update the
    x and y rotation point.*/
 window.addEventListener('load', function(){ // on page load
  
@@ -111,7 +111,7 @@ window.addEventListener('load', function(){ // on page load
 }, false)
 
 /* Translate current X and Y position into rotating point all the time as 
-   the mouse move.*/
+   the touch moves.*/
 window.addEventListener('load', function(){ // on page load
  
     document.body.addEventListener('touchmove', function(e){
