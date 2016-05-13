@@ -17,26 +17,10 @@ var faceArray = [];
 //Global size array to determine size (width/height) of cube faces
 var size;
 
+//Set pivot color
+var pivotColor = 'black';
 $(document).ready(function() {
-   for(var i = 0; i < faces; i++){
-       //Fill faceArray with new face objects
-       faceArray.push(makeFace(i));
-   }
-   //Size of each face scales with screen to provide user with scaled faces
-   if($('#foldoutScreen').width() < $('#foldoutScreen').height()){
-	   axis = $('#foldoutScreen').width();
-   } else {
-	   axis = $('#foldoutScreen').height();
-   }
-   size = Math.floor(axis/4);
-   //Pick a face to become pivot
-	var pivot = Math.floor(Math.random() * faceArray.length);
-	//Set pivot to be full black
-
-	faceArray[pivot].trueColor = 'black';
-	faceArray[pivot].playerColor = 'black';
-	//set arrow orientation to same as pivot's
-	faceArray[pivot].value = faceArray[pivot].trueValue;
+  
 });
 
 /**
@@ -55,9 +39,33 @@ function makeFace(faceNum){
     return face;
 }
 
+function generateCube(){
+	for(var i = 0; i < faces; i++){
+       //Fill faceArray with new face objects
+       faceArray.push(makeFace(i));
+	}
+   //Size of each face scales with screen to provide user with scaled faces
+   if($('#foldoutScreen').width() < $('#foldoutScreen').height()){
+	   axis = $('#foldoutScreen').width();
+   } else {
+	   axis = $('#foldoutScreen').height();
+   }
+   size = Math.floor(axis/4);
+   //Pick a face to become pivot
+	var pivot = Math.floor(Math.random() * faceArray.length);
+	//Set pivot to be full black
+
+	faceArray[pivot].trueColor = pivotColor;
+	faceArray[pivot].playerColor = pivotColor;
+	//set arrow orientation to same as pivot's
+	faceArray[pivot].value = faceArray[pivot].trueValue;
+}
 
 function foldoutT() {	
-
+	if(easterEggTwo === true){
+		pivotColor = 'white';
+	}
+	generateCube();
 	if (easterEggTwo === true) {	
 	    $('#foldoutScreen').html('');
 	    //Create table for 2d foldout to be rendered inside of
@@ -128,7 +136,7 @@ function foldoutT() {
  */
 function rotateFace(id){
     currentFace = faceArray[parseInt(id.charAt(id.length -1))];
-	if(currentFace.trueColor !== 'black'){
+	if(currentFace.trueColor !== pivotColor){
 		currentFace.value = (currentFace.value + 1) % 4;
 		$('#' + id).css('transform','rotateZ(' + currentFace.value * 90 + 'deg)');
 	}
