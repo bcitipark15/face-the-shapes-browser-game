@@ -39,6 +39,10 @@ section {
 }
 #classicMode {
 }
+#resultMessage {
+	margin: auto;
+	width: 40%;
+}
 #titleImage {
 	text-align: center;
 	margin-top: 30px;
