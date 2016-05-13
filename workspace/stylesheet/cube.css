@@ -1,3 +1,5 @@
+/* Cube container is where the Cube is stored prevent
+the user from dragging and highlighting the cube */
 .cubeContainer {
     width: 196px;
     height: 196px;
@@ -15,7 +17,7 @@
     -webkit-user-select: none;
     -ms-user-select: none;
 }
-
+/* The modifies the image to match the size of the cube */
 .cubeCover {
     width: 196px;
     height: 196px;
@@ -26,7 +28,7 @@
     -webkit-user-select: none;
     -ms-user-select: none;
 }
-
+/* The cube itself where the transformation are applied */
 #cube {
     position: absolute;
     -webkit-transform-style: preserve-3d;
@@ -39,6 +41,7 @@
     transition: transform 1s;
 }
 
+/* The face of the cube */
 #cube figure {
     display: block;
     position: absolute;
@@ -59,54 +62,49 @@
     backface-visibility: hidden;
 }
 
+/* Assigned the color white if the JS fails */
 #cube .front {
     background-color: white;
 }
-
 #cube .back {
     background-color: white;
 }
-
 #cube .right {
     background-color: white;
 }
-
 #cube .left {
     background-color: white;
 }
-
 #cube .top {
     background-color: white;
 }
-
 #cube .bottom {
     background-color: white;
 }
 
+
+/* For future uses */
 #cube .front {
     background: hsla( 0, 100%, 50%, 0.7 );
 }
-
 #cube .back {
     background: hsla( 60, 100%, 50%, 0.7 );
 }
-
 #cube .right {
     background: hsla( 120, 100%, 50%, 0.7 );
 }
-
 #cube .left {
     background: hsla( 180, 100%, 50%, 0.7 );
 }
-
 #cube .top {
     background: hsla( 240, 100%, 50%, 0.7 );
 }
-
 #cube .bottom {
     background: hsla( 300, 100%, 50%, 0.7 );
 }
 
+
+/* Rotates the cube to its proper orientation when moved */
 #cube .front {
     transform: rotateY( 0deg ) translateZ( 100px );
 }
