@@ -1,6 +1,10 @@
-var audio = new Audio('./workspace/audio/tuturu-century-fox.mp3');
-
+var count = 0;
 function tutturu(){
     var audio = new Audio('./workspace/audio/tuturu-century-fox.mp3');
-    audio.play();
+    count++;
+	if (count == 10) {
+		audio.play();
+		count = 0;
+	}
+	
 }

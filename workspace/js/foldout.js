@@ -102,6 +102,11 @@ function rotateFace(id){
 }
 function colorChanger(){
 	colorFlag = !colorFlag;
+	if(colorFlag) {
+		$('#colorArrow').css('opacity', '0.4');
+	} else {
+		$('#colorArrow').css('opacity', '1');
+	}
 }
 function applyFaces(){
 	var faceNames = ['top','left','front','right','bottom','back'];
