@@ -98,9 +98,18 @@ function applyFaces(){
 function validate(){
 	var correct1 = 'Cube values = ';
 	var correct2 = 'your values = ';
+	var match = true;
 	for(var i = 0; i< faces; i++){
 		correct1 += faceArray[i].trueValue + ' ';
 		correct2 += faceArray[i].value + ' ';
+		if (faceArray[i].trueValue != faceArray[i].value) {
+			match = false;
+		}
 	}
-	return correct1 + '\n' + correct2;
+	if (match) {
+		$('#resultMessage').append('U R SMRT <br>');
+	} else {
+		$('#resultMessage').append('U R !SMRT <br>');
+	}
+	$('#correctAnswer').append(correct1 + '<br>' + correct2);
 }

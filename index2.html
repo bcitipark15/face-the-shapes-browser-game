@@ -3,83 +3,130 @@
     <head>
         <meta charset="UTF-8">
         <title>201610 comp2910 g17 by bcitipark15</title>
-		<link rel="icon" type="image/png" href="./workspace/image/favicon.png">
+        <link rel="icon" type="image/png" href="./workspace/image/favicon.png">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/game.css" media="screen">
-		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/cube.css" media="screen">
-		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/mobile.css" media="only all and (max-width: 480px)" >
-		<script src="https://cdn.jsdelivr.net/jquery/3.0.0-beta1/jquery.min.js"></script>
-		<script src="./workspace/js/3DCube&Fold.js"></script>
-		<script src="./workspace/js/foldout.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/game.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/cube.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/mobile.css" media="only all and (max-width: 480px)">
+        <script src="https://cdn.jsdelivr.net/jquery/3.0.0-beta1/jquery.min.js"></script>
+        <script src="./workspace/js/3DCube&Fold.js"></script>
+        <script src="./workspace/js/foldout.js"></script>
     </head>
     <body>
-        
-            <section id="gameContainer">
+
+        <section id="gameContainer">
+
+            <!-- Title Screen -->
+            <section id="mainMenu">
+
+                <h1 class="title">Face The Shape</h1>
+
+                <div id="titleImage"><img src="./workspace/image/cube.png" width="200em" height="200em"></div>
+
+                <ul>
+                    <li><a class="buttons menuBSize" href="#gameMode">Play</a></li>
+                    <li><a class="buttons menuBSize" href="#leaderboard">Leaderboard</a></li>
+                </ul>
+
+            </section>
+
+            <!-- Game Mode -->
+            <section id="gameMode">
+
+                <h1 class="title">Game Mode</h1>
+
+                <ul>
+                    <li><a class="buttons menuBSize" href="#levelSelect">Classic</a></li>
+                    <li><a class="buttons menuBSize" href="#timeMode">Time Attack</a></li>
+                    <li><a class="buttons menuBSize" href="#scoreMode">Score Attack</a></li>
+                    <li><a class="buttons menuBSize" href="#mainMenu">Back</a></li>
+                </ul>
+
+            </section>
+
+            <!-- Level Select -->
+            <section id="levelSelect">
+
+                <h1 class="title">Level Select</h1>
+
+                <ul>
+                    <li><a class="buttons menuBSize" href="#mode3D" onclick="foldoutT(); applyFaces();">Level 1</a></li>
+                    <li><a class="buttons menuBSize" href="#level2">Level 2</a></li>
+                    <li><a class="buttons menuBSize" href="#level3">Level 3</a></li>
+                    <li><a class="buttons menuBSize" href="#level4">Level 4</a></li>
+                </ul>
+
+            </section>
+
+
+            <!-- 3D mode -->
+            <section id="mode3D">
+
+                <div class="topNav">
+                    <div><a id="hamburger" class="buttons floatLeft mobileBSize" href="#mainMenu"></a></div>
+                    <div><a class="buttons floatRight mobileBSize" href="#mode2D">2D</a></div>
+                </div>
+
+                <div class="cubeContainer">
+                    <div id="cube">
+                        <figure class="front"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+                        <figure class="back"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+                        <figure class="right"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+                        <figure class="left"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+                        <figure class="top"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+                        <figure class="bottom"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- 2D Mode -->
+            <section id="mode2D">
+
+                <div class="topNav">
+                    <a href="#mainMenu"><div class="buttons floatLeft mobileBSize" id="hamburger"></div></a>
+                    <div><a class="buttons floatRight mobileBSize" href="#mode3D">3D</a></div>
+                </div>
+
+                <div id="foldoutScreen" class="clear"></div>
+
+                <div class="bottomNav">
+                    <div><a class="buttons floatLeft mobileBSize" href="#color">Color/Arrow</a></div>
+                    <div><a class="buttons floatRight mobileBSize" href="#resultScreen" onclick="validate();">Submit</a></div>
+                </div>
+
+            </section>
+
+            <!-- Results Screen -->
+            <section id="resultScreen">
+
+                <h1 class="title">Results</h1>
+
+                <div class="messageBox" id="resultMessage"></div>
+
+                <div class="bottomNav">
+                    <div><a class="buttons floatLeft mobileBSize" href="#mode3D">Levels</a></div>
+                    <div><a class="buttons floatRight mobileBSize" href="#answerScreen">Answer</a></div>
+                </div>
+
+            </section>
+			
+			<!-- Answer Screen -->
+			<section id="answerScreen">
 				
-				<!-- Title Screen -->
-				<section id="mainMenu">
-					<h1 class="title">Face The Shape</h1>
-					<div id="titleImage"><img src="./workspace/image/cube.png" width="200em" height="200em"></div>
-					<ul>
-						<li><a class="buttons desktopBSize" href="#gameMode">Play</a></li>
-						<li><a class="buttons desktopBSize" href="#leaderboard">Leaderboard</a></li>
-					</ul>
-					
-				</section>
-				<section id="levelSelect">
-				</section>
-				<section id="gameMode">
-					<h1 class="title">Game Mode</h1>
-					<ul>
-						<li><a class="buttons desktopBSize" href="#mode3D" onclick="foldoutT(); applyFaces();">Classic</a></li>
-						<li><a class="buttons desktopBSize" href="#timeMode">Time Attack</a></li>
-						<li><a class="buttons desktopBSize" href="#scoreMode">Score Attack</a></li>
-						<li><a class="buttons desktopBSize" href="#mainMenu">Back</a></li>
-					</ul>
-				</section>
-				<section id="mode3D">
-					<div class="topNav">
-						<a href="#mainMenu"><div class="buttons floatLeft mobileBSize" id="hamburger"></div></a>
-						<div><a class="buttons floatRight mobileBSize" href="#mode2D">2D</a></div>
-					</div>
-					
-					<div class="cubeContainer">
-						<div id="cube">
-							<figure class="front"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
-							<figure class="back"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
-							<figure class="right"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
-							<figure class="left"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
-							<figure class="top"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
-							<figure class="bottom"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
-						</div>
-					</div>
-					
-				</section>
-				<section id="mode2D">
-					<div class="topNav">
-						<a href="#mainMenu"><div class="buttons floatLeft mobileBSize" id="hamburger"></div></a>
-						<div><a class="buttons floatRight mobileBSize" href="#mode3D">3D</a></div>
-					</div>
-					
-					<div id="foldoutScreen" class="clear" ></div>
-					
-					<div class="bottomNav">
-						<div><a class="buttons floatLeft mobileBSize" href="#color">Color/Arrow</a></div>
-						<div><a class="buttons floatRight mobileBSize" href="#result" onclick="alert(validate());">Submit</a></div>
-					</div>
-				</section>
+				<h1 class="title">Answer</h1>
 				
-				<section id="result">
-				<h1 class="title">Results</h1>
-				<div id="resultMessage"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pretium bibendum diam vitae porttitor. Aliquam vulputate erat id justo imperdiet, eu eleifend odio pellentesque. Nullam vitae elit tempor, accumsan felis scelerisque, malesuada elit. Duis accumsan erat eu nibh aliquet blandit. Nam enim odio, tristique eu bibendum quis, cursus eu nulla. Maecenas a ligula quis nisi gravida cursus eget ac urna. Phasellus mauris tellus, lacinia at dapibus eget, volutpat vitae mauris. Cras neque nulla, malesuada id arcu sed, dictum facilisis urna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus sed fermentum dolor. Donec consequat imperdiet neque at semper. Vivamus dignissim, nisi nec consequat vulputate, velit enim tincidunt odio, at sodales enim odio id nunc. Duis justo tortor, sagittis ac orci eget, tincidunt dapibus diam. Sed malesuada vestibulum magna, ut mollis metus ornare eu.</p></div>
+				<div class="messageBox" id="correctAnswer"></div>
+				
 				<div class="bottomNav">
-					<div><a class="buttons floatLeft mobileBSize">Level Select</a></div>
-					<div><a class="buttons floatRight mobileBSize">View Answer</a></div>
-				</div>
-				</section>
+                    <div><a class="buttons floatLeft mobileBSize" href="#mode3D">Levels</a></div>
+                    <div><a class="buttons floatRight mobileBSize">Answer</a></div>
+                </div>
 				
 			</section>
+			
+        </section>
 
     </body>
 </html>

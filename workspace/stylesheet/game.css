@@ -10,151 +10,160 @@
 }
 
 body {
-	font-family: juneGull;
+    font-family: juneGull;
 }
 
 #gameContainer {
-	margin-top: 3%;
-	margin-bottom: 3%;
-	position: relative;
-	border-radius: 15px;
-	width: 90%;
-	max-width: 900px;
-	height: 700px;
-	margin-left: auto;
-	margin-right: auto;
-	background-color: #159957;
-	background-image: linear-gradient(120deg, #155799, #159957);
-	overflow: hidden;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    position: relative;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 900px;
+    height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #159957;
+    background-image: linear-gradient(120deg, #155799, #159957);
+    overflow: hidden;
 }
+
 section {
-	width: 100%;
-	height: 100%;
-	max-width: 900px;
-	position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 900px;
+    position: relative;
 }
-#mainMenu {
-}
-#gameMode {
-}
-#classicMode {
-}
-#resultMessage {
+.messageBox {
 	margin: auto;
-	width: 40%;
+    width: 40%;
 }
+
+
 #titleImage {
-	text-align: center;
-	margin-top: 30px;
-	margin-bottom: 30px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
+
 .title {
-	padding-top: 10%;
-	text-align: center;
-	font-size: 35px;
-	padding-bottom: 20px;
-	color: #159957;
+    padding-top: 10%;
+    text-align: center;
+    font-size: 35px;
+    padding-bottom: 20px;
+    color: #159957;
 }
+
 #hamburger {
-	background-image: url("../image/hamburger.png");
-	background-repeat: no-repeat;
-	background-position: center; 
-	height: 10px;
-	width: 20px;
+    background-image: url("../image/hamburger.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 10px;
+    width: 20px;
 }
+
 #hamburger:hover {
-	opacity: 0.4;
+    opacity: 0.4;
 }
+
 .topNav {
-	position: absolute;
-	top: 0%;
-	left: 0%;
-	right: 0%;
-	margin: auto;
-	padding-top: 2%;
-	width: 95%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    margin: auto;
+    padding-top: 2%;
+    width: 95%;
 }
+
 .bottomNav {
-	position: absolute;
-	bottom: 0%;
-	left: 0%;
-	right: 0%;
-	padding-top: 3%;
-	margin: auto;
-	width: 95%;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    padding-top: 3%;
+    margin: auto;
+    width: 95%;
 }
+
 #foldoutScreen {
-	position: absolute;
-	margin:auto;
-	bottom: 0%;
-	top: 0%;
-	right: 0%;
-	left: 0%;
-	height: 65%;
-	width: 90%;
+    position: absolute;
+    margin: auto;
+    bottom: 0%;
+    top: 0%;
+    right: 0%;
+    left: 0%;
+    height: 65%;
+    width: 90%;
 }
-#foldout{
-	margin: auto;
+
+#foldout {
+    margin: auto;
 }
+
 .floatRight {
-	float: right;
+    float: right;
 }
+
 .floatLeft {
-	float: left;
+    float: left;
 }
+
 .clear {
-	clear: both;
+    clear: both;
 }
+
 .cubeContainer {
-	top: 25%;
+    top: 25%;
 }
 
 /* Buttons */
 ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	text-align: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
+
 /*  B = Button  */
-.desktopBSize {
-	width: 180px;
+.menuBSize {
+    width: 40%;
+	max-width: 180px;
 }
 /*  B = Button  */
 .mobileBSize {
-	width: 20%;
+    width: 20%;
 }
+
 .buttons {
-	padding: 20px;
-	display: inline-block;
-	margin-bottom: 1rem;
-	color: rgba(255, 255, 255, 0.7);
-	background-color: rgba(255, 255, 255, 0.08);
-	border-color: rgba(255, 255, 255, 0.2);
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 0.3rem;
-	transition: color 0.2s, background-color 0.2s, border-color 0.2s;
-	text-align: center;
-	text-decoration: none;
-	font-size: 20px;
+    padding: 20px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.3rem;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
 }
 
 .buttons:hover {
-	color: rgba(255, 255, 255, 0.8);
-	background-color: rgba(255, 255, 255, 0.2);
-	border-color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .buttons a {
-	color: rgba(255, 255, 255, 0.7);
-	text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
 }
 
 .buttons a:hover {
-	color: rgba(255, 255, 255, 0.8);
-	background-color: rgba(255, 255, 255, 0.2);
-	border-color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
 }
-
-
