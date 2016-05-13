@@ -95,9 +95,6 @@ function foldoutT() {
 	        
 	        
 	        $('#foldoutFace' + i).css('background-color', faceArray[i].playerColor);
-
-		    $('#foldoutFace' + i).css('display','block');
-		    $('#foldoutFace' + i).css('margin','auto');
 	    }
 	    $('.foldoutFace').css({'width': size, 'height': size, 'border': 'solid 1px black'});
 	    $('.foldoutFace').children().css({'position':'absolute','left':'0','right':'0','bottom':'0','top':'0','margin':'auto'})
