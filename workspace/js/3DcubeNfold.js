@@ -1,6 +1,7 @@
 document.onmousedown 	= mouseDown;
 document.onmouseup 		= mouseUp;
 document.onmousemove 	= mouseMove;
+document.onkeydown = rotateCubeOnKeyPress;
 
 var mouseDownID 		= -1;
 var touchDownID			= -1;
@@ -295,5 +296,40 @@ function folding() {
 			document.getElementById("folding").innerHTML = "unfold";
 			pressed = false;
 		}
+	}
+}
+
+function rotateCubeOnKeyPress(e)
+{
+	var key = e.keyCode ? e.keyCode : e.which;
+
+	if (document.onkeydown) {
+		addYawn = 0;
+		addPitch = 0;
+	}
+
+	// Left key
+	if (key == 37)
+	{
+		yawn += 10;
+		rotate();
+	}
+	// Up key
+	else if (key == 38)
+	{
+		pitch += 10;
+		rotate();
+	}
+	// Right key
+	else if (key == 39)
+	{
+		yawn -= 10;
+		rotate();
+	}
+	// Down key
+	else if (key == 40)
+	{
+		pitch -= 10;
+		rotate();
 	}
 }
