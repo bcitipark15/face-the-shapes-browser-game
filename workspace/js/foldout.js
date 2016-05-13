@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
- //Color array
-var colors = ['red','green','blue','purple','yellow','cyan','orange'];
+ //Color array; added evan friendly colors
+var colors = ['red','lime','blue','purple','yellow','cyan','orange'];
 
 //Hard code 6 faces for cube
 var faces = 6;
@@ -27,6 +27,13 @@ $(document).ready(function() {
 	   axis = $('#foldoutScreen').height();
    }
    size = Math.floor(axis/4);
+   //Pick a face to become pivot
+	var pivot = Math.floor(Math.random() * faceArray.length);
+	//Set pivot to be full black
+	faceArray[pivot].trueColor = 'black';
+	faceArray[pivot].playerColor = 'black';
+	//set arrow orientation to same as pivot's
+	faceArray[pivot].value = faceArray[pivot].trueValue;
 });
 
 /**
@@ -46,13 +53,7 @@ function makeFace(faceNum){
 }
 
 function foldoutT(){
-	//Pick a face to become pivot
-	var pivot = Math.floor(Math.random() * faceArray.length);
-	//Set pivot to be full black
-	faceArray[pivot].trueColor = 'black';
-	faceArray[pivot].playerColor = 'black';
-	//set arrow orientation to same as pivot's
-	faceArray[pivot].value = faceArray[pivot].trueValue;
+	
 	
     $('#foldoutScreen').html('');
     //Create table for 2d foldout to be rendered inside of
