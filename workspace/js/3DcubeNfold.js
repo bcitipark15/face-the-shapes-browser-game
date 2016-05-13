@@ -311,25 +311,25 @@ function rotateCubeOnKeyPress(e)
 	// Left key
 	if (key == 37)
 	{
-		yawn += 10;
+		yawn += 1;
 		rotate();
 	}
 	// Up key
 	else if (key == 38)
 	{
-		pitch += 10;
+		pitch += 1;
 		rotate();
 	}
 	// Right key
 	else if (key == 39)
 	{
-		yawn -= 10;
+		yawn -= 1;
 		rotate();
 	}
 	// Down key
 	else if (key == 40)
 	{
-		pitch -= 10;
+		pitch -= 1;
 		rotate();
 	}
 }
