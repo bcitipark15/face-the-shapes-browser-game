@@ -1,16 +1,11 @@
-/* Leaderboard */
+/* Test css */
 .tab  li {
 	display: inline-block;
 }
 .tab ul {
-	/* overflow: hidden; */
+	overflow: hidden;
 }
-.subTab {
-	margin-top: 5%;
-}
-.subTab li {
-	display: inline-block;
-}
+
 .tabContent {
 	margin: auto;
 	width: 20%;
@@ -19,7 +14,6 @@
 	display: none;
 	-webkit-animation: fadeEffect 1s;
     animation: fadeEffect 1s;
-	background-color: white;
 }
 
 @-webkit-keyframes fadeEffect {
@@ -32,8 +26,7 @@
     to {opacity: 1;}
 }
 
-/* Leaderboard */
-
+/* End of test */
 * {
     margin: 0;
     padding: 0;

@@ -13,6 +13,7 @@
         <script src="./workspace/js/3DCubeNFold.js"></script>
         <script src="./workspace/js/foldout.js"></script>
 		<script src="./workspace/js/game.js"></script>
+		<script src="./workspace/js/leaderboardTest.js"></script>
     </head>
     <body>
 		
@@ -28,11 +29,66 @@
 
                 <ul>
                     <li><a class="buttons menuBSize" href="#gameMode">Play</a></li>
-                    <li><a class="buttons menuBSize" href="#leaderboard">Leaderboard</a></li>
+                    <li><a class="buttons menuBSize" href="#leaderboard" onclick="changeMode(event, 'online')">Leaderboard</a></li>
                 </ul>
 
             </section>
-
+			
+			<section id="leaderboard">
+				
+				<h1 class="title">Leaderboard</h1>
+				
+				<ul class="tab">
+					<li><a class="buttons tabLink" onclick="changeMode(event, 'online')" href="#">Online</a></li>
+					<li><a class="buttons tabLink" onclick="changeMode(event, 'offline')" href="#">Offline</a></li>
+				</ul>
+				<div id="online" class="tabContent">
+					<table>
+						<tr>
+							<th>Players</th>
+							<th>Score</th>
+						</tr>
+						<tr>
+							<td>Dave</td>
+							<td>45</td>
+						</tr>
+						<tr>
+							<td>Jim</td>
+							<td>46</td>
+						</tr>
+						<tr>
+							<td>Bow</td>
+							<td>46</td>
+						</tr>
+					</table>
+				</div>
+				<div id="offline" class="tabContent">
+					<table>
+						<tr>
+							<th>Players</th>
+							<th>Score</th>
+						</tr>
+						<tr>
+							<td>Goofy</td>
+							<td>56</td>
+						</tr>
+						<tr>
+							<td>Madara</td>
+							<td>134</td>
+						</tr>
+						<tr>
+							<td>Ching</td>
+							<td>999</td>
+						</tr>
+					</table>
+				</div>
+				<ul class="subTab">
+					<li><a class="buttons tabLink" href="#">Game Mode 1</a></li>
+					<li><a class="buttons tabLink" href="#">Game Mode 2</a></li>
+					<li><a class="buttons tabLink" href="#">Game Mode 3</a></li>
+				</ul>
+			</section>
+			
             <!-- Game Mode Screen -->
             <section id="gameMode">
 
