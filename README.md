@@ -54,7 +54,7 @@
 			Passwords: parkian93
 		</p>
 		
-		<h2>Database Access</h2>
+		<h2>MySQL Database Access</h2>
 		<p>
 			Host: mysql6.000webhost.com<br>
 			User: a4492753_g17fts<br>
