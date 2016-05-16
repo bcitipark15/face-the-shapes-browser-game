@@ -189,7 +189,7 @@ function foldoutT(foldoutNum){
 	if(easterEggTwoActivate){
 		img = '<img src="./workspace/image/skull.png" height="50%'
 			  + '" width="50%">';
-		$('.foldoutFace').children().css({'position':'absolute','left':'0','right':'0','bottom':'0','top':'0','margin':'auto'})
+		
 	}
 	//Used to store html in string.
 	var htmlLine;
@@ -229,6 +229,9 @@ function foldoutT(foldoutNum){
 			//Color the face depending on the randomly generated color value.
 			$('#' + foldoutArray[foldoutNum][i].id).css('background-color', foldoutArray[foldoutNum][i].playerColor);
 		}
+	}
+	if(easterEggTwoActivate){
+		$('.foldoutFace').children().css({'position':'absolute','left':'0','right':'0','bottom':'0','top':'0','margin':'auto'})
 	}
 	$('.foldoutFace').css({'width': size, 'height': size, 'border': 'solid 1px black'});
 }
