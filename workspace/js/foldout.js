@@ -22,6 +22,9 @@ var faces = 6;
 //Array of objects that contain face info
 var faceArray = [];
 
+//Array containing the face names of the cube.
+var faceNames = ['facetop','faceleft','facefront','faceright','facebottom','faceback'];
+
 //Size is used to determine face width and height.
 var size;
 
@@ -36,22 +39,37 @@ $(document).ready(function() {
   
 });
 
+//************Test Print Function********************//
+function testPrint(){
+	var str;
+	for(var i = 0; i < faceArray.length; i++){
+		str += faceArray[i].print() + '\n';
+	}
+	alert(str);
+}
+
 /**
  * makeFace creates a face object with a generated arrow value
+ * @param {integer} trueValue The true orientation of the arrow.
+ * @param {integer} value The player's orientation of the arrow.
+ * @param {integer} trueColor The true color of the arrow.
+ * @param {integer} playerColor The player's color of the arrow.
  * @param {integer} faceNum The face number
  * @return {makeFace.face} Face object that is generated
  */
-function makeFace(faceNum){
-    var face = {
-        //Randomized arrow value (0 = left, 1 = up, 2 = right, 3 = down
-		trueValue: Math.floor(Math.random() * 4),
-        value: Math.floor(Math.random() * 4),
-		trueColor: colors[Math.floor(Math.random() * colors.length)],
-		playerColor: colors[Math.floor(Math.random() * colors.length)]
-    };
-    return face;
+function face(trueValue, value, trueColor, playerColor, id){
+	this.trueValue = trueValue;
+	this.value = value;
+	this.trueColor = trueColor;
+	this.playerColor = playerColor;
+	this.id = id;
+	//Print out current object state for debugging.
+	this.print = function(){return "tval=" + trueValue +"val=" + value 
+							+ "tCol=" + trueColor + "col=" + playerColor
+							+ "id=" + this.id;};
 }
 
+//Test function for cube generation
 /**
  * generateCube generates all the cube faces, both 3d and 2d
  * @return {undefined}
@@ -60,14 +78,21 @@ function generateCube(){
 	//Fills array of faces with newly generated faces.
 	for(var i = 0; i < faces; i++){
        //Generate new face objects and store them in faceArray.
-       faceArray[i] = makeFace(i);
-	}
-   //Size of each face scales with screen to provide user with scaled faces
+       faceArray[i] = new face(Math.floor(Math.random() * 4),
+							Math.floor(Math.random() * 4),
+							colors[Math.floor(Math.random() * colors.length)],
+							colors[Math.floor(Math.random() * colors.length)],
+							faceNames[i]);
+	} 
+	
+	
+    //Size of each face scales with screen to provide user with scaled faces
 	if($('#foldoutScreen').width() < $('#foldoutScreen').height()){
 		axis = $('#foldoutScreen').width();
 	} else {
 		axis = $('#foldoutScreen').height();
 	}
+	
 	//Size is a portion of the screen to allow the full foldout to fit.
 	size = Math.floor(axis/4);
 	
@@ -80,13 +105,14 @@ function generateCube(){
 	
 	//set arrow orientation to same as pivot orientation value.
 	faceArray[pivot].value = faceArray[pivot].trueValue;
+	
 }
 
 /**
  * foldoutT Generates a foldout of a cube in the shape of the letter 't'.
  * @return {undefined}
  */
-function foldoutT(){
+function foldoutT(foldoutNum){
 	//If the easter egg has been activated, generate that cube instead.
 	if(easterEggTwoActivate === true){
 		pivotColor = 'white';
@@ -95,92 +121,125 @@ function foldoutT(){
 	//Game generates cube after determining if easter egg is present.
 	generateCube();
 	
-	/*Generate easteregg cube.
-	 *
-	 *   *** This code contains highly similar code to the main cube and NEEDS to be optimized in ***
-	 *   *** later versions.																	  ***
-	 */
-	if (easterEggTwoActivate === true) {
+	$('#foldoutScreen').html('');
+	$('#foldoutScreen').append('<table id="foldout"></table>');
+	
+	var foldoutArray = [];
+	foldoutArray[0] = [ undefined, getFace('facetop'), undefined,
+						getFace('faceleft'), getFace('facefront'), getFace('faceright'),
+						undefined, getFace('facebottom'), undefined,
+						undefined, getFace('faceback'), undefined ];
+						
+	foldoutArray[1] = [ getFace('faceleft'),getFace('facetop'),getFace('faceright'),
+						undefined, getFace('facefront'), undefined,
+						undefined, getFace('facebottom'),undefined,
+						undefined, getFace('faceback'), undefined ];
+						
+	foldoutArray[2] = [ undefined,getFace('facetop'),getFace('faceright'),
+						undefined, getFace('facefront'), undefined,
+						getFace('faceleft'), getFace('facebottom'),undefined,
+						undefined, getFace('faceback'), undefined ];
+						
+	foldoutArray[3] = [ undefined,getFace('facetop'),getFace('faceright'),
+						getFace('faceleft'), getFace('facefront'), undefined,
+						undefined, getFace('facebottom'),undefined,
+						undefined, getFace('faceback'), undefined ];
+						
+	foldoutArray[4] = [ undefined, undefined, getFace('facetop'),
+						getFace('faceleft'), getFace('facefront'), getFace('faceright'),
+						undefined, getFace('facebottom'),undefined,
+						undefined, getFace('faceback'), undefined ];
+						
+	foldoutArray[5] = [ undefined, undefined, getFace('facetop'),
+						undefined, getFace('facefront'), getFace('faceright'),
+						getFace('faceleft'), getFace('facebottom'),undefined,
+						undefined, getFace('faceback'), undefined ];
+						
+	foldoutArray[6] = [ undefined,getFace('facetop'),getFace('faceright'),
+						undefined, getFace('facefront'), undefined,
+						undefined, getFace('facebottom'),undefined,
+						getFace('faceleft'), getFace('faceback'), undefined ];
+						
+	foldoutArray[7] = [ undefined, getFace('facetop'), undefined,
+						undefined, getFace('facefront'), getFace('faceright'),
+						getFace('faceleft'), getFace('facebottom'), undefined,
+						undefined, getFace('faceback'), undefined ];
+						
+	foldoutArray[8] = [ undefined,getFace('facetop'),getFace('faceright'),
+						undefined, getFace('facefront'), undefined,
+						getFace('faceleft'), getFace('facebottom'),undefined,
+						getFace('faceback'), undefined, undefined ];
+						
+	foldoutArray[9] = [ undefined, undefined, getFace('facetop'),
+						undefined, getFace('facefront'), getFace('faceright'),
+						getFace('faceleft'), getFace('facebottom'),undefined,
+						getFace('faceback'), undefined, undefined ];
+						
+	//Max table rows for the foldout.
+	var rows = 4;
+	
+	//Max table columns for the foldout.
+	var cols = 3;
+	
+	//image source for the foldout.
+	
+	var img = '<img src="./workspace/image/arrow3.png" height="' + size
+			  + '" width="' + size + '">';
+			  
+	if(easterEggTwoActivate){
+		img = '<img src="./workspace/image/skull.png" height="50%'
+			  + '" width="50%">';
+		$('.foldoutFace').children().css({'position':'absolute','left':'0','right':'0','bottom':'0','top':'0','margin':'auto'})
+	}
+	//Used to store html in string.
+	var htmlLine;
+	
+	for(var i = 0; i < foldoutArray[foldoutNum].length; i++){
 		
-		//If there is a foldoutScreen id already in place, delete it's contents.
-	    $('#foldoutScreen').html('');
-		
-	    //Create table for 2d foldout to be rendered inside of the foldout screen.
-	    $('#foldoutScreen').append('<table id="foldout"></table>');
-	    
-	    //Fill table with rows and columns to contain faces.
-	    for(var i = 0; i < faces; i++){
-			//Second row has 3 faces side by side.
-	        if(i === 1 || i === 2 || i === 3){
-	            //Appends div containing foldoutFace 1 2 or 3 to the current table column.
-	            $("#foldout").append('<td>' +
-	                                 '<div class="foldoutFace" id="foldoutFace' + i +
-	                                 '" onclick="rotateFace(\'foldoutFace' + i + '\')"' +
-	                                 '></div></td>');
-	        } else {
-				//Appends to the table the rows and columns to give the foldout structure.
-	            $("#foldout").append('<tr><td></td><td>' +
-	                                 '<div class="foldoutFace" id="foldoutFace' + i +
-	                                 '" onclick="rotateFace(\'foldoutFace' + i + '\')"' +
-	                                 '></div></td></tr>');
-	        }
-			
-			//Append the image to the generated faces.
-	        $('#foldoutFace' + i).append('<img src="./workspace/image/skull.png" height="50%"' +
-	                                     '" width="50%">');
-										 
-			//Rotate the image depending on the randomly generated face object value.
-	        $('#foldoutFace' + i).css('transform', 'rotateZ(' + faceArray[i].value * 90 + 'deg)');
-	        
-			//Color the face depending on the randomly generated color value.
-	        $('#foldoutFace' + i).css('background-color', faceArray[i].playerColor);
-	    }
-		
-		//Set the div width and height size and give it a black border to highlight the divs.
-	    $('.foldoutFace').css({'width': size, 'height': size, 'border': 'solid 1px black'});
-		
-		//Centers the image in the div.
-	    $('.foldoutFace').children().css({'position':'absolute','left':'0','right':'0','bottom':'0','top':'0','margin':'auto'})
-
-	} else {
-		//If there is a foldoutScreen id already in place, delete it's contents.
-	    $('#foldoutScreen').html('');
-		
-	    //Create table for 2d foldout to be rendered inside of the foldout screen.
-	    $('#foldoutScreen').append('<table id="foldout"></table>');
-	    
-		//Fill table with rows and columns to contain faces.
-		for(var i = 0; i < faces; i++){
-			
-			//Second row will have 3 faces side by side.
-			if(i === 1 || i === 2 || i === 3){
-				
-				//Appends div containing foldoutFace 1 2 or 3 to the current table column.
-				$("#foldout").append('<td>' +
-									 '<div class="foldoutFace" id="foldoutFace' + i +
-									 '" onclick="rotateFace(\'foldoutFace' + i + '\')"' +
-									 '></div></td>');
-			} else {
-				//Appends to the table the rows and columns to give the foldout structure.
-				$("#foldout").append('<tr><td></td><td>' +
-									 '<div class="foldoutFace" id="foldoutFace' + i +
-									 '" onclick="rotateFace(\'foldoutFace' + i + '\')"' +
-									 '></div></td></tr>');
-			}
-			
-			//Append image to generated faces.
-			$('#foldoutFace' + i).append('<img src="./workspace/image/arrow3.png" height="' + size +
-										 '" width="' + size + '">');
-										 
-			//Rotate the image depending on the randomly generated face object value.
-			$('#foldoutFace' + i).css('transform', 'rotateZ(' + faceArray[i].value * 90 + 'deg)');
-			
-			//Color the face depending on the randomly generated color value.
-			$('#foldoutFace' + i).css('background-color', faceArray[i].playerColor);
+		//Every 3 columns append a new row starting tag
+		if(i % cols == 0){
+			htmlLine = '<tr>';
 		}
 		
-		//Set the div width and height size and give it a black border to highlight the divs.
-		$('.foldoutFace').css({'width': size, 'height': size, 'border': 'solid 1px black'});
+		//append face in a column if there is a face in that array slot
+		if(foldoutArray[foldoutNum][i]){
+			htmlLine += '<td><div class="foldoutFace" id="' 
+					 + foldoutArray[foldoutNum][i].id
+					 + '" onclick="rotateFace(\''
+					 + foldoutArray[foldoutNum][i].id + '\')"></div></td>';
+		} else {
+			//append empty table column if array slot is undefined
+			htmlLine += '<td></td>';
+		}
+		//Append row closing tag after last column is generated
+		if(i % cols == 2) {
+			htmlLine += '</tr>';
+			$('#foldout').append(htmlLine);
+		}
+	}
+	
+	//Apply rotations and images
+	for(var i = 0; i <foldoutArray[foldoutNum].length; i++){
+		if(foldoutArray[foldoutNum][i]){
+			$('#' + foldoutArray[foldoutNum][i].id).append(img);
+			
+			//Rotate image depending on face value.
+			$('#' + foldoutArray[foldoutNum][i].id).css('transform', 'rotateZ(' + foldoutArray[foldoutNum][i].value * 90 + 'deg)');
+			
+			//Color the face depending on the randomly generated color value.
+			$('#' + foldoutArray[foldoutNum][i].id).css('background-color', foldoutArray[foldoutNum][i].playerColor);
+		}
+	}
+	$('.foldoutFace').css({'width': size, 'height': size, 'border': 'solid 1px black'});
+}
+
+function getFace(id){
+	//cycle through face array until id is found
+	for(var i = 0; i < faceArray.length; i++){
+		
+		if(id == faceArray[i].id) {
+			return faceArray[i];
+		}
 	}
 }
 
@@ -193,7 +252,7 @@ function foldoutT(){
 function rotateFace(id){
 	
 	//Takes the passed id and determines which face in the array it is.
-    currentFace = faceArray[parseInt(id.charAt(id.length -1))];
+    currentFace = getFace(id);
 	
 	//Changes the arrow rotation if the face clicked is not the pivot face and if the color flag is not on.
 	if(currentFace.trueColor !== 'black' && !colorFlag){
@@ -230,18 +289,30 @@ function colorChanger(){
  * applyFaces Applies generated 3D face arrow orientations and colors.
  * @return {undefined}
  */
-function applyFaces(){
-	//Array containing the face names of the cube.
-	var faceNames = ['top','left','front','right','bottom','back'];
+function applyFaces(foldoutNum){
+	//Offsets for different foldouts
+	offsets = [];
+	//order is top,left,front,right,bottom,back(Same as faceNames array order)
+	offsets[0] = [0,0,0,0,0,0];
+	offsets[1] = [0,-1,0,1,0,0];
+	offsets[2] = [0,1,0,1,0,0];
+	offsets[3] = [0,0,0,1,0,0];
+	offsets[4] = [-1,0,0,0,0,0];
+	offsets[5] = [-1,1,0,0,0,0];
+	offsets[6] = [0,2,0,1,0,0];
+	offsets[7] = [0,1,0,0,0,0];
+	offsets[8] = [0,1,0,1,0,-1];
+	offsets[9] = [-1,1,0,0,0,-1];
 	
 	//Loop to apply settings to each face.
 	for(var i = 0; i < faces; i++){
 		
 		//Finds class of each face name and rotates it's arrow image according to the trueValue that was generated.
-		$('.' + faceNames[i]).children().css('transform','rotateZ(' + faceArray[i].trueValue * 90 + 'deg)');
+		$('.' + faceNames[i].substring(4)).children().css('transform','rotateZ(' 
+			+ (getFace(faceNames[i]).trueValue + offsets[foldoutNum][i]) * 90 + 'deg)');
 		
 		//Sets the background color of the face according to the trueColor that was generated.
-		$('#cube .' + faceNames[i]).css('background-color',faceArray[i].trueColor);
+		$('#cube .' + faceNames[i].substring(4)).css('background-color',faceArray[i].trueColor);
 	}
 }
 
@@ -268,7 +339,9 @@ function validate(){
 		correct2 += faceArray[i].value + ' ';
 		
 		//Sets match to false if user has any combination wrong.
-		if (faceArray[i].trueValue != faceArray[i].value || faceArray[i].playerColor != faceArray[i].trueColor) {
+		if (getFace(faceNames[i]).trueValue != getFace(faceNames[i]).value
+			|| getFace(faceNames[i]).playerColor != 
+						getFace(faceNames[i]).trueColor) {
 			match = false;
 		}
 	}
