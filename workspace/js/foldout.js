@@ -258,13 +258,13 @@ function rotateFace(id){
     currentFace = getFace(id);
 	
 	//Changes the arrow rotation if the face clicked is not the pivot face and if the color flag is not on.
-	if(currentFace.trueColor !== 'black' && !colorFlag){
+	if(currentFace.trueColor !== pivotColor && !colorFlag){
 		currentFace.value = (currentFace.value + 1) % 4;
 		$('#' + id).css('transform','rotateZ(' + currentFace.value * 90 + 'deg)');
 	}
 	
 	//Changes face color if the face clicked is not the pivot face and if the color flag is on.
-	if(currentFace.trueColor !== 'black' && colorFlag){
+	if(currentFace.trueColor !== pivotColor && colorFlag){
 		//Changes color to next color in the colors array.
 		currentFace.playerColor = colors[(colors.indexOf(currentFace.playerColor) + 1) % colors.length];
 		//Sets background color to newly adjusted color.
