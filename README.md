@@ -43,6 +43,25 @@
 			</ol>
 		</p>
 	</p>
+	
+	<h1>Database</h1>
+	<p>
+		<h2>phpMyAdmin Access</h2>
+		<p>
+			phpMyAdmin for our database can be accessed at <a href="https://members.000webhost.com">https://members.000webhost.com</a> using the following account information.
+			
+			ID: bcitipark15@gmail.com
+			Passwords: parkian93
+		</p>
+		
+		<h2>Database Access</h2>
+		<p>
+			Host: mysql6.000webhost.com
+			User: a4492753_g17fts
+			Passwords: parkian93
+			Database: a4492753_g17fts
+		</p>
+	</p>
 </p>
 
 <p>
