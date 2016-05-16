@@ -71,7 +71,11 @@ section {
     position: relative;
 	
 }
-
+.levelList {
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
 /** Where the message will display for the user to read **/
 .messageBox {
 	padding-top: 5%;

@@ -1,10 +1,20 @@
-var count = 0;
+var easterCount = 0;
 function tutturu(){
     var audio = new Audio('./workspace/audio/tuturu-century-fox.mp3');
-    count++;
-	if (count == 10) {
+    easterCount++;
+	if (easterCount == 10) {
 		audio.play();
-		count = 0;
+		easterCount = 0;
 	}
 	
+}
+
+function screenChange(transition) {
+	var i, section;
+	section = document.getElementsByClassName('screen');
+	for (i = 0; i < section.length; i++) {
+        section[i].style.display = "none";
+    }
+	document.getElementById(transition).style.display = "block";
+    
 }

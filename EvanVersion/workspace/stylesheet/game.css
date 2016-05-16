@@ -57,14 +57,38 @@ body {
 }
 
 /** Section is what will display to the user **/
-section {
-    width: 100%;
+
+.screen {
+	width: 100%;
     height: 100%;
     max-width: 900px;
     position: relative;
+	display: block;
+}
+#mainMenu {
 	
 }
-
+#leaderboard {
+	display: none;
+}
+#gameMode {
+	display: none;
+}
+#levelSelect {
+	display: none;
+}
+#mode3D {
+	display: none;
+}
+#mode2D {
+	display: none;
+}
+#resultScreen {
+	display: none;
+}
+#answerScreen {
+	display: none;
+}
 /** Where the message will display for the user to read **/
 .messageBox {
 	padding-top: 5%;

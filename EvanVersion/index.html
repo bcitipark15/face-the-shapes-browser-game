@@ -18,23 +18,23 @@
     <body>
 		
 		<!-- Container for the shown screen -->
-        <section id="gameContainer">
+        <div id="gameContainer" onload="changeScreen('mainMenu')">
 			
             <!-- Title Screen -->
-            <section id="mainMenu">
+            <section id="mainMenu" class="screen">
 				
                 <h1 class="title">Face The Shapes</h1>
 				
                 <div id="titleImage"><img src="./workspace/image/cube.png" width="200em" height="200em" onclick="tutturu()"></div>
 
                 <ul>
-                    <li><a class="buttons menuBSize" href="#gameMode">Play</a></li>
+                    <li><a class="buttons menuBSize" href="#" onclick="changeScreen('gameMode')">Play</a></li>
                     <li><a class="buttons menuBSize" href="#leaderboard" onclick="changeMode(event, 'online')">Leaderboard</a></li>
                 </ul>
 
             </section>
 			
-			<section id="leaderboard">
+			<section id="leaderboard" class="screen">
 				
 				<h1 class="title">Leaderboard</h1>
 				
@@ -86,7 +86,7 @@
 			</section>
 			
             <!-- Game Mode Screen -->
-            <section id="gameMode">
+            <section id="gameMode" class="screen">
 
                 <h1 class="title">Game Mode</h1>
 
@@ -101,7 +101,7 @@
             </section>
 
             <!-- Level Select Screen -->
-            <section id="levelSelect">
+            <section id="levelSelect" class="screen">
 
                 <h1 class="title">Level Select</h1>
 
@@ -116,7 +116,7 @@
 
 
             <!-- 3D mode Screen -->
-            <section id="mode3D">
+            <section id="mode3D" class="screen">
 
                 <div class="topNav">
                     <div><a id="hamburger" class="buttons floatLeft mobileBSize" href="#mainMenu"></a></div>
@@ -138,7 +138,7 @@
             </section>
 
             <!-- 2D Mode Screen-->
-            <section id="mode2D">
+            <section id="mode2D" class="screen">
 
                 <div class="topNav">
                     <a href="#mainMenu"><div class="buttons floatLeft mobileBSize" id="hamburger"></div></a>
@@ -155,7 +155,7 @@
             </section>
 
             <!-- Results Screen -->
-            <section id="resultScreen">
+            <section id="resultScreen" class="screen">
 
                 <h1 class="title">Results</h1>
 
@@ -169,7 +169,7 @@
             </section>
 			
 			<!-- Answer Screen -->
-			<section id="answerScreen">
+			<section id="answerScreen" class="screen">
 				
 				<h1 class="title">Answer</h1>
 				
@@ -182,7 +182,7 @@
 				
 			</section>
 			
-        </section>
+        </div>
 
     </body>
 </html>
