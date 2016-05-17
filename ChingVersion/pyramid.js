@@ -100,7 +100,8 @@ function rotate() {
 		bottom_rX 	= -90 	+ pitch;
 		bottom_rZ 	= 0 	- yawn;
 
-		applyRotation();
+		/*applyRotation();*/
+		cubeRotation();
 
 	} else if (unfolded === true) {
 
@@ -116,8 +117,15 @@ function rotate() {
 		bottom_rZ 	= 0;
 		bottom_rY 	= 0 	- yawn;
 
-		applyRotation();
+		/*applyRotation();*/
+		cubeRotation();
 	}
+}
+
+function cubeRotation() {
+	document.getElementById('pitch').innerHTML 	= (pitch*100+.5|0) / 100;
+	document.getElementById('yawn').innerHTML 	= (yawn*100+.5|0) / 100;
+	document.querySelector('#cube').style.transform = 'rotateY(' + yawn + 'deg) rotateX(' + pitch + 'deg) translateX(-50px) translateY(-100px)';	
 }
 
 /* Applying the rotation to the cube according to the global variables */
@@ -181,7 +189,8 @@ function unfolding() {
 			bottom_rZ 	= 0;
 			bottom_rY 	= 0 	- yawn;
 
-			applyRotation();
+			/*applyRotation();*/
+			cubeRotation();
 		} else {
 			unfolded = true;
 			clearInterval(unfoldingBegin);
@@ -221,8 +230,8 @@ function folding() {
 			bottom_rZ 	= 0;
 			bottom_rY 	= 0 	- yawn;
 
-			applyRotation();
-
+			/*applyRotation();*/
+			cubeRotation();
 		} else {
 			unfolded = false;
 			clearInterval(foldingBegin);
