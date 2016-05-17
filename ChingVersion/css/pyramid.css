@@ -16,10 +16,28 @@
     -ms-user-select: none;
 }
 
+
 img {
 	width: 96px;
 	height: 96px;
+    display: block;
+    margin: auto;
+    transform: translateX(-50px) translateY(70px);
 	user-drag: none; 
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#cube .back img {
+    width: 96px;
+    height: 96px;
+    display: block;
+    margin: auto;
+    transform: translateX(-50px) translateY(-160px);
+    user-drag: none; 
     user-select: none;
     -moz-user-select: none;
     -webkit-user-drag: none;
@@ -35,10 +53,11 @@ img {
     -moz-transform-style: preserve-3d;
     -o-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    -webkit-transition: -webkit-transform 1s;
-    -moz-transition: -moz-transform 1s;
-    -o-transition: -o-transform 1s;
-    transition: transform 1s;
+    -webkit-transition: -webkit-transform 0.1s;
+    -moz-transition: -moz-transform 0.1s;
+    -o-transition: -o-transform 0.1s;
+    transition: transform 0.1s;
+    transform: translateX(-50px) translateY(-100px);
 }
 
 #cube figure {
@@ -90,14 +109,10 @@ img {
 #cube .left   { border-bottom: 200px solid hsla( 180, 100%, 50%, 0.7 ); }
 #cube .bottom { border-bottom: 200px solid transparent; }
 
-#cube .front  { transform: rotateX(  30deg ) rotateY(   0deg ) translateZ( 100px ); }
-#cube .back   { transform: rotateX( 180deg ) translateZ( 100px ); }
-#cube .right  { transform: rotateY(  90deg ) translateZ( 100px ); }
-#cube .left   { transform: rotateY( -90deg ) translateZ( 100px ); }
+#cube .front  { transform: rotateX(  30deg ) rotateY(   0deg ) translateY(38px) translateZ(36px); }
+#cube .back   { transform: rotateX( 150deg ) rotateY(   0deg ) translateY(-38px) translateZ(36px); }
+#cube .right  { transform: rotateZ( -30deg ) rotateY(  90deg ) translateY(38px) translateZ( 36px ); }
+#cube .left   { transform: rotateZ(  30deg ) rotateY( -90deg ) translateY(38px) translateZ( 36px ); }
 #cube .bottom { transform: rotateX( -90deg ) translateZ( 100px ); }
 
-@-webkit-keyframes spin {
-    from { -webkit-transform: rotateY(0); }
-    to { -webkit-transform: rotateY(360deg); }
-}
 
