@@ -71,7 +71,7 @@ img {
     -moz-transition: -moz-transform 0.1s;
     -o-transition: -o-transform 0.1s;
     transition: transform 0.1s;
-    transform: translateX(-50px) translateY(-100px);
+    transform: translateX(-50px) translateY(-200px);
 }
 
 #cube figure {
@@ -96,15 +96,15 @@ img {
     backface-visibility: hidden;
 }
 
-#cube .front  { border-bottom: 200px solid hsla(   0, 100%, 50%, 0.7 ); }
-#cube .back   { border-top: 200px solid hsla(  60, 100%, 50%, 0.7 ); }
-#cube .right  { border-bottom: 200px solid hsla( 120, 100%, 50%, 0.7 ); }
-#cube .left   { border-bottom: 200px solid hsla( 180, 100%, 50%, 0.7 ); }
+#cube .front  { border-bottom: 200px solid hsla(   0, 100%, 50%, 0.9 ); }
+#cube .back   { border-top: 200px solid hsla(  60, 100%, 50%, 0.9 ); }
+#cube .right  { border-bottom: 200px solid hsla( 120, 100%, 50%, 0.9 ); }
+#cube .left   { border-bottom: 200px solid hsla( 180, 100%, 50%, 0.9 ); }
 
-#cube .frontB  { border-bottom: 200px solid hsla(   0, 100%, 50%, 0.7 ); }
-#cube .backB   { border-top: 200px solid hsla(  60, 100%, 50%, 0.7 ); }
-#cube .rightB  { border-bottom: 200px solid hsla( 120, 100%, 50%, 0.7 ); }
-#cube .leftB   { border-bottom: 200px solid hsla( 180, 100%, 50%, 0.7 ); }
+#cube .frontB  { border-bottom: 200px solid hsla(   0, 100%, 50%, 0.9 ); }
+#cube .backB   { border-top: 200px solid hsla(  60, 100%, 50%, 0.9 ); }
+#cube .rightB  { border-bottom: 200px solid hsla( 120, 100%, 50%, 0.9 ); }
+#cube .leftB   { border-bottom: 200px solid hsla( 180, 100%, 50%, 0.9 ); }
 
 
 #cube .front  { transform: rotateX(  30deg ) rotateY(   0deg ) translateY(38px) translateZ(36px); }

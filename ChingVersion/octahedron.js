@@ -100,7 +100,6 @@ function rotate() {
 		bottom_rX 	= -90 	+ pitch;
 		bottom_rZ 	= 0 	- yawn;
 
-		/*applyRotation();*/
 		cubeRotation();
 
 	} else if (unfolded === true) {
@@ -117,7 +116,6 @@ function rotate() {
 		bottom_rZ 	= 0;
 		bottom_rY 	= 0 	- yawn;
 
-		/*applyRotation();*/
 		cubeRotation();
 	}
 }
@@ -125,29 +123,7 @@ function rotate() {
 function cubeRotation() {
 	document.getElementById('pitch').innerHTML 	= (pitch*100+.5|0) / 100;
 	document.getElementById('yawn').innerHTML 	= (yawn*100+.5|0) / 100;
-	document.querySelector('#cube').style.transform = 'rotateY(' + yawn + 'deg) rotateX(' + pitch + 'deg) translateX(-50px) translateY(-100px)';	
-}
-
-/* Applying the rotation to the cube according to the global variables */
-function applyRotation() {
-
-	document.querySelector('#cube .front').style.transform 	= 'rotateX( '
-		+ front_rX +'deg ) rotateY( '+ front_rY +'deg ) rotateZ( '+ front_rZ 
-		+'deg ) translateZ( 100px )';
-	document.querySelector('#cube .back').style.transform 	= 'rotateX( '
-		+ back_rX +'deg ) rotateY( '+ back_rY +'deg ) rotateZ( '+ back_rZ 
-		+'deg ) translateZ( 100px ) translateY( ' + (translate * 2) + 'px )';
-	document.querySelector('#cube .right').style.transform 	= 'rotateX( '
-		+ right_rX +'deg ) rotateY( '+ right_rY +'deg ) rotateZ( '+ right_rZ 
-		+'deg ) translateZ( 100px ) translateX( ' + translate + 'px ) ';
-	document.querySelector('#cube .left').style.transform 	= 'rotateX( '
-		+ left_rX +'deg ) rotateY( '+ left_rY +'deg ) rotateZ( '+ left_rZ 
-		+'deg ) translateZ( 100px ) translateX( -' + translate + 'px ) ';
-	document.querySelector('#cube .bottom').style.transform = 'rotateX( '
-		+ bottom_rX +'deg ) rotateY( '+ bottom_rY +'deg ) rotateZ( '
-		+ bottom_rZ +'deg ) translateZ( 100px ) translateY('+translate+'px)';
-	document.getElementById('pitch').innerHTML 	= (pitch*100+.5|0) / 100;
-	document.getElementById('yawn').innerHTML 	= (yawn*100+.5|0) / 100;
+	document.querySelector('#cube').style.transform = 'rotateY(' + yawn + 'deg) rotateX(' + pitch + 'deg) translateX(-50px) translateY(-200px)';	
 }
 
 function unfold() {
@@ -230,7 +206,6 @@ function folding() {
 			bottom_rZ 	= 0;
 			bottom_rY 	= 0 	- yawn;
 
-			/*applyRotation();*/
 			cubeRotation();
 		} else {
 			unfolded = false;
