@@ -1,11 +1,16 @@
-/* Test css */
+/* Leaderboard */
 .tab  li {
 	display: inline-block;
 }
 .tab ul {
-	overflow: hidden;
+	/* overflow: hidden; */
 }
-
+.subTab {
+	margin-top: 5%;
+}
+.subTab li {
+	display: inline-block;
+}
 .tabContent {
 	margin: auto;
 	width: 20%;
@@ -14,6 +19,7 @@
 	display: none;
 	-webkit-animation: fadeEffect 1s;
     animation: fadeEffect 1s;
+	background-color: white;
 }
 
 @-webkit-keyframes fadeEffect {
@@ -26,7 +32,8 @@
     to {opacity: 1;}
 }
 
-/* End of test */
+/* Leaderboard */
+
 * {
     margin: 0;
     padding: 0;
@@ -40,33 +47,9 @@
 body {
     font-family: juneGull;
 }
-/** The container where the game is being displayed **/
-#gameContainer {
-    margin-top: 3%;
-    margin-bottom: 3%;
-    position: relative;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 900px;
-    height: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #159957;
-    background-image: linear-gradient(120deg, #155799, #159957);
-    overflow: hidden;
-}
 
-/** Section is what will display to the user **/
-
-.screen {
-	width: 100%;
-    height: 100%;
-    max-width: 900px;
-    position: relative;
-	display: block;
-}
 #mainMenu {
-	
+
 }
 #leaderboard {
 	display: none;
@@ -88,6 +71,38 @@ body {
 }
 #answerScreen {
 	display: none;
+}
+
+/** The container where the game is being displayed **/
+#gameContainer {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    position: relative;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 900px;
+    height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #159957;
+    background-image: linear-gradient(120deg, #155799, #159957);
+    overflow: hidden;
+}
+
+/** Section is what will display to the user **/
+section {
+    width: 100%;
+    height: 100%;
+    max-width: 900px;
+    position: relative;
+	-webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+	
+}
+.levelList {
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
 }
 /** Where the message will display for the user to read **/
 .messageBox {
@@ -166,6 +181,7 @@ body {
 /** foldout is the actual fold out **/
 #foldout {
     margin: auto;
+
 }
 
 .floatRight {
