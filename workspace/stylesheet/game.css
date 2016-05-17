@@ -1,38 +1,3 @@
-/* Leaderboard */
-.tab  li {
-	display: inline-block;
-}
-.tab ul {
-	/* overflow: hidden; */
-}
-.subTab {
-	margin-top: 5%;
-}
-.subTab li {
-	display: inline-block;
-}
-.tabContent {
-	margin: auto;
-	width: 20%;
-	min-width: 180px;
-	border: 1px solid black;
-	display: none;
-	-webkit-animation: fadeEffect 1s;
-    animation: fadeEffect 1s;
-	background-color: white;
-}
-
-@-webkit-keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-@keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-/* Leaderboard */
 
 * {
     margin: 0;
@@ -47,7 +12,57 @@
 body {
     font-family: juneGull;
 }
-/** The container where the game is being displayed **/
+
+/** A list containing the buttons **/
+ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+/** Section is what will display to the user **/
+section {
+    width: 100%;
+    height: 100%;
+    max-width: 900px;
+    position: relative;
+	-webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+}
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Hide from the user */
+#leaderboard {
+	display: none;
+}
+#gameMode {
+	display: none;
+}
+#levelSelect {
+	display: none;
+}
+#mode3D {
+	display: none;
+}
+#mode2D {
+	display: none;
+}
+#resultScreen {
+	display: none;
+}
+#answerScreen {
+	display: none;
+}
+
+/* The container where the game is being displayed */
+
 #gameContainer {
     margin-top: 3%;
     margin-bottom: 3%;
@@ -63,20 +78,13 @@ body {
     overflow: hidden;
 }
 
-/** Section is what will display to the user **/
-section {
-    width: 100%;
-    height: 100%;
-    max-width: 900px;
-    position: relative;
-	
-}
 .levelList {
 	padding: 0;
 	margin-left: auto;
 	margin-right: auto;
 }
-/** Where the message will display for the user to read **/
+
+/* Where the message will display for the user to read */
 .messageBox {
 	padding-top: 5%;
 	margin: auto;
@@ -84,29 +92,32 @@ section {
 	font-size: 40px;
 	
 }
+
+/* Increase the size of the title */
 #resultScreen .title {
 	font-size: 50px;
 }
 #answerScreen .title {
 	font-size: 50px;
 }
-/** Positioning of the main menu images **/
+
+/* Positioning of the main menu images */
 #titleImage {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
 }
-/** For every title in the game **/
+
+/* Default Styling for Title */
 .title {
     padding-top: 10%;
     text-align: center;
     font-size: 35px;
     padding-bottom: 20px;
     color: white;
-	
 }
 
-/** The hamburger **/
+/* The hamburger */
 #hamburger {
     background-image: url("../image/hamburger.png");
     background-repeat: no-repeat;
@@ -114,12 +125,11 @@ section {
     height: 10px;
     width: 20px;
 }
-
 #hamburger:hover {
     opacity: 0.4;
 }
 
-/** To keep the nav on the top **/
+/* To keep the nav on the top */
 .topNav {
     position: absolute;
     top: 0%;
@@ -129,7 +139,8 @@ section {
     padding-top: 2%;
     width: 95%;
 }
-/** To keep the nav on the bottom **/
+
+/* To keep the nav on the bottom */
 .bottomNav {
     position: absolute;
     bottom: 0%;
@@ -139,7 +150,8 @@ section {
     margin: auto;
     width: 95%;
 }
-/** The screen where the fold out will be placed **/
+
+/* The screen where the fold out will be placed */
 #foldoutScreen {
     position: absolute;
     margin: auto;
@@ -150,27 +162,18 @@ section {
     height: 65%;
     width: 90%;
 }
-/** foldout is the actual fold out **/
+
+/* foldout is the actual fold out container */
 #foldout {
     margin: auto;
 }
 
-.floatRight {
-    float: right;
-}
-
-.floatLeft {
-    float: left;
-}
-
-.clear {
-    clear: both;
-}
-/** Where the cube is placed **/
+/* Where the cube is placed**/
 .cubeContainer {
     top: 25%;
 }
 
+/* Easter egg styling */
 #easterEgg {
 	width: 20px;
 	height: 20px;
@@ -185,23 +188,35 @@ section {
     opacity: 1;
 }
 
-
-/** A list containing the buttons **/
-ul {
-    list-style-type: none;
+/* Frame for non-button containers */
+.infoCont {
+	padding: 20px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.3rem;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
     text-align: center;
+    text-decoration: none;
+    font-size: 20px;
 }
 
-/**  B = Button  **/
+
+/*  B = Button  */
 .menuBSize {
     width: 40%;
 	max-width: 180px;
 }
-/**  B = Button  **/
+/*  B = Button **/
 .mobileBSize {
     width: 20%;
 }
-/** Default button design **/
+
+/* Default button design */
 .buttons {
     padding: 20px;
     display: inline-block;
@@ -217,6 +232,7 @@ ul {
     text-decoration: none;
     font-size: 20px;
 }
+
 
 /* Leaderboard Screen */
 #leaderboard > div > table {
@@ -268,4 +284,18 @@ ul {
     color: rgba(255, 255, 255, 0.8);
     background-color: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Quick float right, left, and clear */
+
+.floatRight {
+    float: right;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.clear {
+    clear: both;
 }

@@ -11,6 +11,9 @@ body {
 	margin: 0%;
 	border-radius: 0px;
 }
+#mode3D {
+	touch-action: none;
+}
 /** iPhone 4 support **/
 @media screen and (max-width: 320px) {
 	#titleImage {

@@ -8,3 +8,8 @@ function tutturu(){
 	}
 	
 }
+
+function screenChange(current, next) {
+	document.getElementById(next).style.display = "block";
+	document.getElementById(current).style.display = "none";
+}
