@@ -28,20 +28,11 @@ var faceNames = ['facetop','faceleft','facefront','faceright','facebottom','face
 //Size is used to determine face width and height.
 var size;
 
-//Flags used to indicate different actions.
+//Used to determine if user is editing a color instead of arrow orientation.
 var colorFlag = false;
-var timeModeFlag = false;
 
 //Set pivot color, default is set to black.
 var pivotColor = 'black';
-
-//Current elapsed time in competitive modes.
-var time = 0;
-
-//Levels will contain randomized level order
-var levels = [];
-//level is current level.
-var level;
 
 //To be used at a later date.
 $(document).ready(function() {
@@ -133,7 +124,6 @@ function foldoutT(foldoutNum){
 	$('#foldoutScreen').html('');
 	$('#foldoutScreen').append('<table id="foldout"></table>');
 	
-	//2D array, first dimension is foldout type, second dimension is foldout layout.
 	var foldoutArray = [];
 	foldoutArray[0] = [ undefined, getFace('facetop'), undefined,
 						getFace('faceleft'), getFace('facefront'), getFace('faceright'),
@@ -195,7 +185,7 @@ function foldoutT(foldoutNum){
 	
 	var img = '<img src="./workspace/image/arrow3.png" height="' + size
 			  + '" width="' + size + '">';
-	
+			  
 	if(easterEggTwoActivate){
 		img = '<img src="./workspace/image/skull.png" height="50%'
 			  + '" width="50%">';
@@ -240,18 +230,16 @@ function foldoutT(foldoutNum){
 			$('#' + foldoutArray[foldoutNum][i].id).css('background-color', foldoutArray[foldoutNum][i].playerColor);
 		}
 	}
-	
-	//Image centering happens after all images are applied.
 	if(easterEggTwoActivate){
 		$('.foldoutFace').children().css({'position':'absolute','left':'0','right':'0','bottom':'0','top':'0','margin':'auto'})
 	}
-	
 	$('.foldoutFace').css({'width': size, 'height': size, 'border': 'solid 1px black'});
 }
 
 function getFace(id){
 	//cycle through face array until id is found
 	for(var i = 0; i < faceArray.length; i++){
+		
 		if(id == faceArray[i].id) {
 			return faceArray[i];
 		}
@@ -370,23 +358,6 @@ function validate(){
 	
 	//Displays answer for debugging.
 	$('#correctAnswer').append(correct1 + '<br>' + correct2);
-	
-	$('#answerScreen div.bottomNav').html('');
-	if(timeModeFlag){
-		if(level < levels.length){
-			if(match){
-				$('#answerScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#mode3D" onclick="foldoutT(\''+ levels[level] + '\');applyFaces(\''+ levels[level] + '\')">Next Level</a></div>');
-			} else {
-				$('#answerScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#mode3D">Back</a></div>');
-			}
-		} else {
-			timeModeFlag = false;
-			clearInterval(timer);
-		}
-	} else {
-		$('#answerScreen div.bottomNav').append('<div><a class="buttons floatLeft mobileBSize" href="#levelSelect">Levels</a></div>');
-		$('#answerScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#mainMenu">Menu</a></div>');
-	}
 }
 
 /** 
@@ -413,32 +384,4 @@ function easterEggTwo() {
             + '<figure class="left"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure>'
             + '<figure class="top"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure>'
             + '<figure class="bottom"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure>'
-}
-
-function startTimeMode(){
-	time = 0;
-	timer = setInterval(drawTimer, 1000);
-	timeModeFlag = true;
-	levels = [0,1,2,3,4,5,6,7,8,9];
-	level = 0;
-	randomizeOrder(levels);
-	foldoutT(levels[level]);
-	applyFaces(levels[level]);
-	$('#mode3D').append('<p id="time" style="position:absolute; bottom:0; left:0; right:0; margin:auto;">' + time + '</p>');
-	level++;
-	window.location.hash = '#mode3D';
-}
-
-function randomizeOrder(){
-	for(var i = 0; i < levels.length; i++){
-		var tempIndex = Math.floor(Math.random() * 10);
-		var temp = levels[tempIndex];
-		levels[tempIndex] = levels[i];
-		levels[i] = temp;
-	}
-}
-
-function drawTimer(){
-	time++;
-	$('#time').text(time);
 }

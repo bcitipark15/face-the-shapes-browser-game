@@ -9,7 +9,21 @@ function tutturu(){
 	
 }
 
+setInterval(removeNavBar, 10) 
+
+function removeNavBar() {
+	/*window.scrollTo(0, 1);*/
+}
+
+
 function screenChange(current, next) {
 	document.getElementById(next).style.display = "block";
 	document.getElementById(current).style.display = "none";
 }
+/*
+window.addEventListener("orientationchange", function() {
+	if (window.innerWidth > window.innerHeight) {
+		$('body').css('transform', 'rotate(90deg)');
+	}
+}, false);
+*/

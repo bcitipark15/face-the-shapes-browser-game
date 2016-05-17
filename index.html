@@ -3,11 +3,11 @@
     <head>
         <meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-        <title>Face The Shapes</title>
+        <title>201610 comp2910 g17 by bcitipark15</title>
         <link rel="icon" type="image/png" href="./workspace/image/favicon.png">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
         
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+		
         <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/game.css" media="screen">
         <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/cube.css" media="screen">
         <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/portraitMode.css" media="only all and (max-width: 480px)">
@@ -17,7 +17,7 @@
         <script src="./workspace/js/3DCubeNFold.js"></script>
         <script src="./workspace/js/foldout.js"></script>
 		<script src="./workspace/js/game.js"></script>
-		<script src="./workspace/js/leaderboardTest.js"></script>
+		
 		
     </head>
     <body>
@@ -38,25 +38,24 @@
                 </ul>
 
             </section>
-
-                        <!-- Leaderboard Screen -->
-            <section id="leaderboard">
+			
+			<section id="leaderboard">
                 <h1 class="title">Leaderboard</h1>
                 <div>
                     <nav>
                         <ul>
-                            <li><a href="#leaderboard_classic">Classic</a></li>
-                            <li><a href="#leaderboard_time">Time Attack</a></li>
-                            <li><a href="#leaderboard_score">Score Attack</a></li>
+                            <li><a href="#leaderboardClassic">Classic</a></li>
+                            <li><a href="#leaderboardTime">Time Attack</a></li>
+                            <li><a href="#leaderboardScore">Score Attack</a></li>
                         </ul>
                     </nav>
-                    <table id="leaderboard_classic">
+                    <table id="leaderboardClassic">
                         <thead>
                             <tr>
-                                <th id="leaderboard_rank">Rank</th>
-                                <th id="leaderboard_name">Name</th>
-                                <th id="leaderboard_score">Score</th>
-                                <th id="leaderboard_date">Date</th>
+                                <th id="leaderboardRank">Rank</th>
+                                <th id="leaderboardName">Name</th>
+                                <th id="leaderboardScore">Score</th>
+                                <th id="leaderboardDate">Date</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -125,7 +124,6 @@
                 </div>
             </section>
 			
-			
             <!-- Game Mode Screen -->
             <section id="gameMode">
 
@@ -148,7 +146,7 @@
 				
 				<table class="levelList">
 					<tr>
-						<td><a class="buttons menuBSize" href="#mode2D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('0'); applyFaces('0');">Level 1</a></td>
+						<td><a class="buttons menuBSize" href="#mode2D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('0'); applyFaces('0'); ">Level 1</a></td>
 						<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode3D'); foldoutT('1'); applyFaces('1');">Level 2</a></td>
 					</tr>
 					<tr>

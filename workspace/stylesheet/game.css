@@ -249,10 +249,10 @@ section {
     width: 100%;
 }
 
-#leaderboard_rank,
-#leaderboard_name,
-#leaderboard_score,
-#leaderboard_date {
+#leaderboardRank,
+#leaderboardName,
+#leaderboardScore,
+#leaderboardDate {
     padding: 0px 1em 0px 1em;
 }
 
