@@ -104,7 +104,7 @@ function generateCube(){
 	
 	//Size is a portion of the screen to allow the full foldout to fit.
 	size = Math.floor(axis/4);
-	generatePivots(0);
+	generatePivots();
 }
 
 /**
@@ -205,7 +205,7 @@ function foldoutT(foldoutNum){
 		if(foldoutArray[foldoutNum][i]){
 			htmlLine += '<td><div class="foldoutFace" id="' 
 					 + foldoutArray[foldoutNum][i].id
-					 + '" onclick="rotateFace(\''
+					 + '"onclick="rotateFace(\''
 					 + foldoutArray[foldoutNum][i].id + '\')"></div></td>';
 		} else {
 			//append empty table column if array slot is undefined
@@ -477,7 +477,7 @@ function startTimeMode(){
 }
 
 function startScoreMode(){
-	length = 1000;
+	length = 10;
 	score = 0;
 	levels = [0,1,2,3,4,5,6,7,8,9];
 	level = 0;
@@ -490,8 +490,8 @@ function startScoreMode(){
 	window.location.hash = '#mode3D';
 }
 function drawCountdownTimer(){
-	$('#timer p').text(length);
 	length--;
+	$('#timer p').text(length);
 	if(length <= 0){
 		endGame();
 		clearInterval(timer);
@@ -499,8 +499,12 @@ function drawCountdownTimer(){
 }
 
 function endGame(){
-	$('#answerScreen.messageBox').html('');
-	$('#answerScreen.messageBox').append('Your score: ' + score);
+	screenChange('mode2D','answerScreen');
+	screenChange('mode3D','answerScreen');
+	window.location.hash = '#mode3D';
+	
+	$('#answerScreen div.messageBox').html('');
+	$('#answerScreen div.messageBox').append('<p>Your score: ' + score + '</p>');
 }
 function updateScore(value){
 	score += value;
