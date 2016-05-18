@@ -48,18 +48,18 @@
 	<p>
 		<h2>phpMyAdmin Access</h2>
 		<p>
-			phpMyAdmin for our database can be accessed at <a href="https://members.000webhost.com">https://members.000webhost.com</a> using the following account information.
+			phpMyAdmin for our database can be accessed through cPanel at <a href="http://www.facetheshapes.tk/cpanel">www.facetheshapes.tk/cpanel</a> using the following account information.
 			<br><br>
-			ID: bcitipark15@gmail.com<br>
+			ID: group17<br>
 			Passwords: parkian93
 		</p>
 		
 		<h2>MySQL Database Access</h2>
 		<p>
-			Host: mysql6.000webhost.com<br>
-			User: a4492753_g17fts<br>
+			Host: localhost<br>
+			User: group17<br>
 			Passwords: parkian93<br>
-			Database: a4492753_g17fts<br>
+			Database: group17_FaceThsShapes<br>
 		</p>
 	</p>
 </p>
