@@ -56,6 +56,8 @@
 		
 		<h2>MySQL Database Access</h2>
 		<p>
+			Use the follosing database information to remotely connect to the database.
+			<br><br>
 			Host: localhost<br>
 			User: group17<br>
 			Passwords: parkian93<br>
