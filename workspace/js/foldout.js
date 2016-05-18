@@ -104,17 +104,7 @@ function generateCube(){
 	
 	//Size is a portion of the screen to allow the full foldout to fit.
 	size = Math.floor(axis/4);
-	
-	//Pick a face to become pivot
-	var pivot = Math.floor(Math.random() * faceArray.length);
-	
-	//Set pivot to be the pivot color.
-	faceArray[pivot].trueColor = pivotColor;
-	faceArray[pivot].playerColor = pivotColor;
-	
-	//set arrow orientation to same as pivot orientation value.
-	faceArray[pivot].value = faceArray[pivot].trueValue;
-	
+	generatePivots(0);
 }
 
 /**
@@ -372,16 +362,21 @@ function validate(){
 	$('#correctAnswer').append(correct1 + '<br>' + correct2);
 	
 	$('#answerScreen div.bottomNav').html('');
-	if(timeModeFlag){
-		if(level < levels.length){
-			if(match){
-				$('#answerScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#mode3D" onclick="foldoutT(\''+ levels[level] + '\');applyFaces(\''+ levels[level] + '\')">Next Level</a></div>');
-			} else {
-				$('#answerScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#mode3D">Back</a></div>');
+	if(timeModeFlag || scoreModeFlag){
+		//If user completed all 10 time mode levels, send to end game screen.
+		if(timeModeFlag && level >= 10){
+			endGame();
+		} else if(match){
+			if(scoreModeFlag){
+				updateScore(100);
 			}
+			$('#answerScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#mode3D" onclick="foldoutT(\''+ levels[level % 10] + '\');applyFaces(\''+ levels[level % 10] 
+													+ '\');screenChange(\'answerScreen\', \'mode3D\');">Next Level</a></div>');
 		} else {
-			timeModeFlag = false;
-			clearInterval(timer);
+			if(scoreModeFlag){
+				updateScore(-25);
+			}
+			$('#answerScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#mode3D" onclick="screenChange(\'answerScreen\',\'mode3D\')">back</a></div>');
 		}
 	} else {
 		$('#answerScreen div.bottomNav').append('<div><a class="buttons floatLeft mobileBSize" href="#levelSelect">Levels</a></div>');
@@ -415,6 +410,59 @@ function easterEggTwo() {
             + '<figure class="bottom"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure>'
 }
 
+function generatePivots(difficulty){
+	var pivotCount = 0;
+	var pivots = 0;
+	switch(difficulty){
+		case 0:
+			pivotCount = 1;
+			break;
+		case 1:
+			pivotCount = 2;
+			break;
+		case 2:
+			pivotCount = 3;
+			break;
+	}
+	//Make pivots proportional to difficulty chosen.
+	while (pivots < pivotCount) {
+		
+		var pivot = Math.floor(Math.random() * faceArray.length);
+		
+		//Set chosen pivot to pivot properties.
+		if(faceArray[pivot].trueColor != pivotColor){
+			faceArray[pivot].trueColor = pivotColor;
+			faceArray[pivot].playerColor = pivotColor;
+			faceArray[pivot].value = faceArray[pivot].trueValue;
+			//Increment pivots when a new one is made.
+			pivots++;
+		}
+	}
+}
+
+function selectMode(mode){
+	clearInterval(timer);
+	timeModeFlag = false;
+	scoreModeFlag = false;
+	switch(mode){
+		case 'classic':
+			$('#timer').css('display', 'none');
+			$('#score').css('display', 'none');
+			break;
+		case 'time':
+			$('#timer').css('display', 'initial');
+			$('#score').css('display', 'none');
+			startTimeMode();
+			break;
+		case 'score':
+			$('#timer').css('display', 'initial');
+			$('#score').css('display', 'initial');
+			startScoreMode();
+			break;
+	}
+}
+
+
 function startTimeMode(){
 	time = 0;
 	timer = setInterval(drawTimer, 1000);
@@ -424,11 +472,40 @@ function startTimeMode(){
 	randomizeOrder(levels);
 	foldoutT(levels[level]);
 	applyFaces(levels[level]);
-	$('#mode3D').append('<p id="time" style="position:absolute; bottom:0; left:0; right:0; margin:auto;">' + time + '</p>');
 	level++;
 	window.location.hash = '#mode3D';
 }
 
+function startScoreMode(){
+	length = 1000;
+	score = 0;
+	levels = [0,1,2,3,4,5,6,7,8,9];
+	level = 0;
+	randomizeOrder(levels);
+	scoreModeFlag = true;
+	timer = setInterval(drawCountdownTimer, 1000, length);
+	foldoutT(levels[level]);
+	applyFaces(levels[level]);
+	level++;
+	window.location.hash = '#mode3D';
+}
+function drawCountdownTimer(){
+	$('#timer p').text(length);
+	length--;
+	if(length <= 0){
+		endGame();
+		clearInterval(timer);
+	}
+}
+
+function endGame(){
+	$('#answerScreen.messageBox').html('');
+	$('#answerScreen.messageBox').append('Your score: ' + score);
+}
+function updateScore(value){
+	score += value;
+	$('#score p').text(score);
+}
 function randomizeOrder(){
 	for(var i = 0; i < levels.length; i++){
 		var tempIndex = Math.floor(Math.random() * 10);
@@ -440,5 +517,5 @@ function randomizeOrder(){
 
 function drawTimer(){
 	time++;
-	$('#time').text(time);
+	$('#timer p').text(time);
 }

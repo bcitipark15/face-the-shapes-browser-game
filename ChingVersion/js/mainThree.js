@@ -10,7 +10,7 @@ document.body.appendChild(renderer.domElement);
 
 
 
-var geometry = new three.BoxGeometry(1, 1, 1);
+var geometry = new three.BoxGeometry(1,1,1);
 //var material = new three.MeshNormalMaterial();
 /* * /
 var material = new three.MeshBasicMaterial({
