@@ -491,7 +491,7 @@ function startScoreMode(){
 }
 function drawCountdownTimer(){
 	length--;
-	$('#timer p').text(length);
+	$('#timer').text(length);
 	if(length <= 0){
 		endGame();
 		clearInterval(timer);
@@ -503,14 +503,25 @@ function endGame(){
 	screenChange('mode2D','answerScreen');
 	screenChange('mode3D','answerScreen');
 	window.location.hash = '#mode3D';
+	$('#answerScreen div.bottomNav').html('');
 	
+	$('#answerScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#" onclick="toLeaderboard();">Post!</a></div>');
+	$('#answerScreen div.bottomNav').append('<div><a class="buttons floatleft mobileBSize" href="#mainMenu" onclick="screenChange(\'answerScreen\',\'mainMenu\')">back</a></div>');
 	$('#answerScreen div.messageBox').html('');
 	$('#answerScreen div.messageBox').append('<p>Your score: ' + score + '</p><input type="text" id="username" name="username"style="z-index: 999; position: relative"></input>');
 	$('#username').focus();
 	
 }
 
-function()
+function toLeaderboard(){
+	var name = $('#username').val();
+	alert("Sent\nYour Name: " + name + "\nYour Score: " + score);
+	inputHighScore(name,score);
+	$('#answerScreen div.bottomNav').html('');
+	$('#answerScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#">Post!</a></div>');
+	$('#answerScreen div.bottomNav').append('<div><a class="buttons floatleft mobileBSize" href="#mainMenu" onclick="screenChange(\'answerScreen\',\'mainMenu\')">back</a></div>');
+}
+
 function updateScore(value){
 	score += value;
 	$('#score p').text(score);
@@ -526,5 +537,5 @@ function randomizeOrder(){
 
 function drawTimer(){
 	time++;
-	$('#timer p').text(time);
+	$('#timer').text(time);
 }
