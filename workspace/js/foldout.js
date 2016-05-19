@@ -37,25 +37,11 @@ var pivotColor = 'black';
 
 //Current elapsed time in competitive modes.
 var time = 0;
-
 //Levels will contain randomized level order
 var levels = [];
 //level is current level.
 var level;
 
-//To be used at a later date.
-$(document).ready(function() {
-  
-});
-
-//************Test Print Function********************//
-function testPrint(){
-	var str;
-	for(var i = 0; i < faceArray.length; i++){
-		str += faceArray[i].print() + '\n';
-	}
-	alert(str);
-}
 
 /**
  * makeFace creates a face object with a generated arrow value
@@ -78,7 +64,6 @@ function face(trueValue, value, trueColor, playerColor, id){
 							+ "id=" + this.id;};
 }
 
-//Test function for cube generation
 /**
  * generateCube generates all the cube faces, both 3d and 2d
  * @return {undefined}
@@ -239,6 +224,11 @@ function foldoutT(foldoutNum){
 	$('.foldoutFace').css({'width': size, 'height': size, 'border': 'solid 1px black'});
 }
 
+/**
+ * getFace Finds the face object associated with given id
+ * @param id The id of the face object.
+ * @return {Object} Face object with given id.
+ */
 function getFace(id){
 	//cycle through face array until id is found
 	for(var i = 0; i < faceArray.length; i++){
@@ -274,7 +264,7 @@ function rotateFace(id){
 	}
 }
 
-/** 
+/** ~~~Move to game.js~~~
  * colorChanger Turns on/off color changing flag.
  *				true = on, false = off
  * @return {undefined}
@@ -290,7 +280,7 @@ function colorChanger(){
 	}
 }
 
-/** 
+/**  ~~~Move to cube.js~~~
  * applyFaces Applies generated 3D face arrow orientations and colors.
  * @return {undefined}
  */
@@ -321,7 +311,7 @@ function applyFaces(foldoutNum){
 	}
 }
 
-/** 
+/** ~~~ Move to game.js ~~~
  * validate Tests user's arrow orientation vs true arrow orientation along with user's colors vs true colors.
  * 			If user's answers perfectly align, results screen displays success message. Otherwise it displays
  *			
@@ -329,20 +319,12 @@ function applyFaces(foldoutNum){
  */
 function validate(){
 	
-	//Strings for debugging purposes to display user's arrow values vs true arrow values.
-	var correct1 = 'Cube values = ';
-	var correct2 = 'your values = ';
 	
 	//Clears results screen along with answer screen before editing them.
 	$('#resultMessage').html('');
 	$('#correctAnswer').html('');
 	var match = true;
 	for(var i = 0; i< faces; i++){
-		
-		//Concatenate each of the face values.
-		correct1 += faceArray[i].trueValue + ' ';
-		correct2 += faceArray[i].value + ' ';
-		
 		//Sets match to false if user has any combination wrong.
 		if (getFace(faceNames[i]).trueValue != getFace(faceNames[i]).value
 			|| getFace(faceNames[i]).playerColor != 
@@ -353,14 +335,12 @@ function validate(){
 
 	//Appropriate message is displayed according to the result.
 	if (match) {
-		$('#resultMessage').append('Cube is a perfect match!');
+		$('#resultMessage').append('Foldout is a perfect match!');
 	} else {
-		$('#resultMessage').append('Cube Does Not Match');
+		$('#resultMessage').append('Foldout does not match!');
 	}
 	
-	//Displays answer for debugging.
-	$('#correctAnswer').append(correct1 + '<br>' + correct2);
-	
+	//Set answerScreen buttons depending on which game mode you are in.
 	$('#answerScreen div.bottomNav').html('');
 	if(timeModeFlag || scoreModeFlag){
 		//If user completed all 10 time mode levels, send to end game screen.
@@ -384,7 +364,7 @@ function validate(){
 	}
 }
 
-/** 
+/** ~~~Move to easteregg.js~~~
  * ** Will be updated in later version to be more efficient/modular. **
  * easterEggTwo Edits the game's style to compliment the easter egg.
  * @return {undefined}
@@ -410,7 +390,14 @@ function easterEggTwo() {
             + '<figure class="bottom"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure>'
 }
 
+
+
 difficultyNum = 0;
+
+/**
+ * setDifficulty Difficulty button for number of pivots generated.
+ * @return {undefined}
+ */
 function setDifficulty(){
 	difficultyNum = (difficultyNum + 1) % 3;
 	switch(difficultyNum){
@@ -426,6 +413,12 @@ function setDifficulty(){
 	}
 	$('#setDifficulty').text('Difficulty: ' + difficulty);
 }
+
+/**
+ * generatePivots Generates number of pivots on the cube depending on selected difficulty.
+ * @param {integer} difficultyNum The difficulty selected, 0 = easy, 1 = medium, 2 = hard.
+ * @return {undefined}
+ */
 function generatePivots(difficultyNum){
 	var pivotCount = 0;
 	var pivots = 0;
@@ -456,6 +449,10 @@ function generatePivots(difficultyNum){
 	}
 }
 
+/** ~~~ Move to game.js ~~~
+ * selectMode Pre renders certain pages and activates modes depending on selected mode.
+ * @param {String} mode The mode selected.
+ */
 function selectMode(mode){
 	clearInterval(timer);
 	timeModeFlag = false;
@@ -478,33 +475,59 @@ function selectMode(mode){
 	}
 }
 
-
+/** ~~~ Move to game.js ~~~
+ * startTimeMode Manages transition into time mode.
+ * @return {undefined}
+ */
 function startTimeMode(){
+	//Total time elapsed.
 	time = 0;
+	//Updates time every 1 seconds and draws it to the 3D mode screen.
 	timer = setInterval(drawTimer, 1000);
+	//Sets timer flag to true for screen rendering.
 	timeModeFlag = true;
+	//List of all levels.
 	levels = [0,1,2,3,4,5,6,7,8,9];
+	//Starting level
 	level = 0;
 	randomizeOrder(levels);
+	
+	//Build foldout and apply generated faces to 3D cube.
 	foldoutT(levels[level]);
 	applyFaces(levels[level]);
+	//Set up for next level load.
 	level++;
-	window.location.hash = '#mode3D';
 }
 
+/** ~~~ Move to game.js ~~~
+ * startScoreMode Manages transition into score mode.
+ * @return {undefined}
+ */
 function startScoreMode(){
+	//Time remaining for game mode.
 	length = 3;
+	//User's score.
 	score = 0;
+	//Randomize levels **** NEEDS TO BE PUT INTO FUNCTION ****
 	levels = [0,1,2,3,4,5,6,7,8,9];
 	level = 0;
 	randomizeOrder(levels);
+	//flag set for screen rendering.
 	scoreModeFlag = true;
+	//Sets interval for when to update countdown timer.
 	timer = setInterval(drawCountdownTimer, 1000, length);
+	
+	//Move to level 1 **** NEEDS TO BE PUT INTO FUNCTION (CALL IT nextLevel());
 	foldoutT(levels[level]);
 	applyFaces(levels[level]);
 	level++;
-	window.location.hash = '#mode3D';
 }
+
+/** ~~~ Move to game.js ~~~
+ * drawCountdownTimer Updates the text for the timer on the 3D screen. 
+ *					  Timer goes towards 0 and ends game when length <= 0.
+ * @return {undefined}
+ */
 function drawCountdownTimer(){
 	length--;
 	$('#timer').text(length);
@@ -514,6 +537,10 @@ function drawCountdownTimer(){
 	}
 }
 
+/** ~~~ Move to game.js ~~~
+ * endGame Ends all game timers and brings user to end game screen (Modified version of answerScreen).
+ * @return {undefined}
+ */
 function endGame(){
 	//Change to answerScreen from either screen.
 	screenChange('mode2D','answerScreen');
@@ -524,11 +551,16 @@ function endGame(){
 	$('#answerScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#" onclick="toLeaderboard();">Post!</a></div>');
 	$('#answerScreen div.bottomNav').append('<div><a class="buttons floatleft mobileBSize" href="#mainMenu" onclick="screenChange(\'answerScreen\',\'mainMenu\')">back</a></div>');
 	$('#answerScreen div.messageBox').html('');
-	$('#answerScreen div.messageBox').append('<p>Your score: ' + score + '</p><input type="text" id="username" name="username"style="z-index: 999; position: relative"></input>');
+	$('#answerScreen div.messageBox').append('<p>Your score: ' + score + '</p><br><br><p>Enter Your Name:</p><br>' +
+											'<input type="text" id="username" name="username"style="z-index: 999; position: relative"></input>');
 	$('#username').focus();
 	
 }
 
+/** ~~~ Move to game.js ~~~
+ * toLeaderBoard takes user's name and score and sends it to the database with AJAX and PHP.
+ * @return {undefined}
+ */
 function toLeaderboard(){
 	var name = $('#username').val();
 	alert("Sent\nYour Name: " + name + "\nYour Score: " + score);
@@ -538,10 +570,20 @@ function toLeaderboard(){
 	$('#answerScreen div.bottomNav').append('<div><a class="buttons floatleft mobileBSize" href="#mainMenu" onclick="screenChange(\'answerScreen\',\'mainMenu\')">back</a></div>');
 }
 
+/** ~~~ Move to game.js ~~~
+ * updateScore Updates the visual representation of the user's score on the 3D screen.
+ * @param value The value to be added to the current score.
+ * @return {undefined}
+ */
 function updateScore(value){
 	score += value;
 	$('#score p').text(score);
 }
+
+/** ~~~ Move to game.js ~~~
+ * randomizeOrder Randomizes the level order.
+ * @return {undefined}
+ */
 function randomizeOrder(){
 	for(var i = 0; i < levels.length; i++){
 		var tempIndex = Math.floor(Math.random() * 10);
@@ -551,6 +593,10 @@ function randomizeOrder(){
 	}
 }
 
+/** ~~~ Move to game.js ~~~
+ * drawTimer Updates the visual representation of the timer in Timed mode on 3D screen.
+ * @return {undefined}
+ */
 function drawTimer(){
 	time++;
 	$('#timer').text(time);
