@@ -104,7 +104,7 @@ function generateCube(){
 	
 	//Size is a portion of the screen to allow the full foldout to fit.
 	size = Math.floor(axis/4);
-	generatePivots();
+	generatePivots(difficultyNum);
 }
 
 /**
@@ -410,18 +410,34 @@ function easterEggTwo() {
             + '<figure class="bottom"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure>'
 }
 
-function generatePivots(difficulty){
+difficultyNum = 0;
+function setDifficulty(){
+	difficultyNum = (difficultyNum + 1) % 3;
+	switch(difficultyNum){
+		case 0:
+			difficulty = 'easy'
+			break;
+		case 1:
+			difficulty = 'med'
+			break;
+		case 2:
+			difficulty = 'hard'
+			break;
+	}
+	$('#setDifficulty').text('Difficulty: ' + difficulty);
+}
+function generatePivots(difficultyNum){
 	var pivotCount = 0;
 	var pivots = 0;
-	switch(difficulty){
+	switch(difficultyNum){
 		case 0:
-			pivotCount = 1;
+			pivotCount = 3;
 			break;
 		case 1:
 			pivotCount = 2;
 			break;
 		case 2:
-			pivotCount = 3;
+			pivotCount = 1;
 			break;
 	}
 	//Make pivots proportional to difficulty chosen.
