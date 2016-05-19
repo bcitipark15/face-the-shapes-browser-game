@@ -20,7 +20,7 @@
 		
 		
     </head>
-    <body>
+    <body onload="navBar();" onresize="navBar();">
 		
 		<!-- Container for the shown screen -->
         <section id="gameContainer">
@@ -126,9 +126,9 @@
 			
             <!-- Game Mode Screen -->
             <section id="gameMode">
-
+				
                 <h1 class="title">Game Mode</h1>
-
+				
                 <ul>
                     <li><a class="buttons menuBSize" href="#levelSelect" onclick="screenChange('gameMode', 'levelSelect')">Classic</a></li>
                     <li><a class="buttons menuBSize" href="#timeMode">Time Attack</a></li>
@@ -143,30 +143,33 @@
             <section id="levelSelect">
 
                 <h1 class="title">Level Select</h1>
-				
-				<table class="levelList">
-					<tr>
-						<td><a class="buttons menuBSize" href="#mode2D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('0'); applyFaces('0'); ">Level 1</a></td>
-						<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode3D'); foldoutT('1'); applyFaces('1');">Level 2</a></td>
-					</tr>
-					<tr>
-						<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('2'); applyFaces('2');">Level 3</a></td>
-						<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('3'); applyFaces('3');">Level 4</a></td>
-					</tr>
-					<tr>
-						<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('4'); applyFaces('4');">Level 5</a></td>
-						<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('5'); applyFaces('5');">Level 6</a></td>
-					</tr>
-					<tr>
-						<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('6'); applyFaces('6');">Level 7</a></td>
-						<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('7'); applyFaces('7');">Level 8</a></td>
-					</tr>
-					<tr>
-						<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('8'); applyFaces('8');">Level 9</a></td>
-						<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('9'); applyFaces('9');">Level 10</a></td>
-					</tr>
-				</table>
-
+				<div class="levelContainer">
+					<table class="levelList">
+						<tr>
+							<td><a class="buttons menuBSize" href="#mode2D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('0'); applyFaces('0');">Level 1</a></td>
+							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode3D'); foldoutT('1'); applyFaces('1');">Level 2</a></td>
+							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('2'); applyFaces('2');">Level 3</a></td>
+						</tr>
+						<tr>
+							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('3'); applyFaces('3');">Level 4</a></td>
+							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('4'); applyFaces('4');">Level 5</a></td>
+							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('5'); applyFaces('5');">Level 6</a></td>
+						</tr>
+						<tr>
+							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('6'); applyFaces('6');">Level 7</a></td>
+							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('7'); applyFaces('7');">Level 8</a></td>
+							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('8'); applyFaces('8');">Level 9</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('9'); applyFaces('9');">Level 10</a></td>
+							<td></td>
+						</tr>
+					</table>					
+				</div>
+				<ul>
+					<li><a class="buttons menuBSize" href="#difficulty">Set Difficulty</a></li>
+				</ul>
             </section>
 
 

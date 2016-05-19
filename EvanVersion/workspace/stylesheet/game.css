@@ -15,6 +15,7 @@ body {
 
 /** A list containing the buttons **/
 ul {
+	padding-top: 3%;
     list-style-type: none;
     text-align: center;
 }
@@ -37,6 +38,9 @@ section {
     from {opacity: 0;}
     to {opacity: 1;}
 }
+
+
+
 
 /* Hide from the user */
 #leaderboard {
@@ -69,8 +73,9 @@ section {
     position: relative;
     border-radius: 15px;
     width: 90%;
-    max-width: 900px;
     height: 700px;
+	max-height: 700px;
+	max-width: 900px;
     margin-left: auto;
     margin-right: auto;
     background-color: #159957;
@@ -83,6 +88,7 @@ section {
 	margin-left: auto;
 	margin-right: auto;
 }
+
 
 /* Where the message will display for the user to read */
 .messageBox {
