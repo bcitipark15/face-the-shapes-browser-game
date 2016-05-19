@@ -1,0 +1,14 @@
+/* Easter egg styling */
+#easterEgg {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+}
+
+#easterEggTwo {
+    opacity: 0;
+}
+
+#easterEggTwo:hover {
+    opacity: 1;
+}
