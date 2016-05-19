@@ -1,0 +1,23 @@
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/** Change the game container to fit for mobile devices **/
+#gameContainer {
+    height: 100vh;
+	width: 100%;
+	margin: 0%;
+	border-radius: 0px;
+}
+#mode3D {
+	touch-action: none;
+}
+/** iPhone 4 support **/
+@media screen and (max-width: 320px) {
+	#titleImage {
+		margin-top: 5px;
+		margin-bottom: 15px;
+	}
+}

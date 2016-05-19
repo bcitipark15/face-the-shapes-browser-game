@@ -32,17 +32,7 @@ img {
 }
 
 #cube .back img {
-    width: 96px;
-    height: 96px;
-    display: block;
-    margin: auto;
     transform: translateX(-50px) translateY(-160px);
-    user-drag: none; 
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
 }
 
 #cube {
@@ -72,17 +62,59 @@ img {
     font-weight: bold;
     color: white;
     text-align: center;
-    content: "";
 }
 
-#cube figure:last-child{
+#cube figure:nth-child(n) {
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 95px solid transparent;
+    border-right: 95px solid transparent;
+    line-height: 196px;
+    font-size: 120px;
+    font-weight: bold;
+    color: white;
+    text-align: center
+}
+
+
+#cube figure:nth-child(n+6) {
     display: block;
     position: absolute;
     width: 0;
     height: 0;
     border-left: 100px solid transparent;
     border-right: 100px solid transparent;
-    background-color: black;
+    line-height: 196px;
+    font-size: 120px;
+    font-weight: bold;
+    color: white;
+    text-align: center
+}
+
+
+#cube figure:nth-child(5){
+    display: block;
+    position: absolute;
+    width: 195px;
+    height: 195px;
+    border: 0;
+    background-color: gray;
+    line-height: 196px;
+    font-size: 120px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+#cube figure:nth-child(10){
+    display: block;
+    position: absolute;
+    width: 200;
+    height: 200;
+    border: 0;
+    background-color: gray;
     line-height: 196px;
     font-size: 120px;
     font-weight: bold;
@@ -97,14 +129,26 @@ img {
     backface-visibility: hidden;
 }
 
-#cube .front  { border-bottom: 200px solid hsla(   0, 100%, 50%, 0.7 ); }
-#cube .back   { border-top: 200px solid hsla(  60, 100%, 50%, 0.7 ); }
-#cube .right  { border-bottom: 200px solid hsla( 120, 100%, 50%, 0.7 ); }
-#cube .left   { border-bottom: 200px solid hsla( 180, 100%, 50%, 0.7 ); }
-#cube .bottom { border-bottom: 200px solid transparent; }
+#cube .front  { border-bottom: 195px solid hsla(   0, 100%, 50%, 0.7 ); }
+#cube .back   { border-top: 195px solid hsla(  60, 100%, 50%, 0.7 ); }
+#cube .right  { border-bottom: 195px solid hsla( 120, 100%, 50%, 0.7 ); }
+#cube .left   { border-bottom: 195px solid hsla( 180, 100%, 50%, 0.7 ); }
+#cube .bottom { border-bottom: 195px solid transparent; }
 
-#cube .front  { transform: rotateX(  30deg ) rotateY(   0deg ) translateY(38px) translateZ(36px); }
-#cube .back   { transform: rotateX( 150deg ) rotateY(   0deg ) translateY(-38px) translateZ(36px); }
-#cube .right  { transform: rotateZ( -30deg ) rotateY(  90deg ) translateY(38px) translateZ( 36px ); }
-#cube .left   { transform: rotateZ(  30deg ) rotateY( -90deg ) translateY(38px) translateZ( 36px ); }
+#cube .front  { transform: rotateX(  30deg ) rotateY(   0deg ) translateY(41px) translateZ(36px) translateX(5px); }
+#cube .back   { transform: rotateX( 150deg ) rotateY(   0deg ) translateY(-41px) translateZ(36px) translateX(5px); }
+#cube .right  { transform: rotateZ( -30deg ) rotateY(  90deg ) translateY(45px) translateZ( 40px ); }
+#cube .left   { transform: rotateZ(  30deg ) rotateY( -90deg ) translateY(38px) translateZ( 30px ); }
 #cube .bottom { transform: rotateX( -90deg ) translateZ( 100px ); }
+
+#cube .frontBorder  { border-bottom: 200px solid black; }
+#cube .backBorder   { border-top: 200px solid black; }
+#cube .rightBorder  { border-bottom: 200px solid black; }
+#cube .leftBorder   { border-bottom: 200px solid black; }
+#cube .bottomBorder { border-bottom: 200px solid black; }
+
+#cube .frontBorder  { transform: rotateX(  30deg ) rotateY(   0deg ) translateY(38px) translateZ(36px); }
+#cube .backBorder   { transform: rotateX( 150deg ) rotateY(   0deg ) translateY(-38px) translateZ(35px); }
+#cube .rightBorder  { transform: rotateZ( -30deg ) rotateY(  90deg ) translateY(38px) translateZ( 33px ); }
+#cube .leftBorder   { transform: rotateZ(  30deg ) rotateY( -90deg ) translateY(38px) translateZ( 35px ); }
+#cube .bottomBorder { transform: rotateX( -90deg ) translateZ( 99px ); }
