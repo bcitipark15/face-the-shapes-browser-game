@@ -1,14 +1,16 @@
 <?php 
 
 $name = ($_GET['name']);
-$score = ($_GET['score']);
+$name = mysql_real_escape($name);
+$score = intval($_GET['score']);
 
-$con = new mysqli_connect('mysql6.000webhost.com','a4492753_g17fts','parkian93') or 
+$con =  mysqli_connect('localhost','group17','parkian93') or 
+
+mysqli_select_db($con, 'group17_FaceTheShapes') or 
 	die(mysqli_error($con));
 
-mysqli_select_db($con, 'a4492753_g17fts') or 
-	die(mysqli_error($con));
-
-$query = "INSERT INTO scores(name, time_score) VALUES($name, $score)";
+$query = "INSERT INTO scores(name, score) VALUES('$name', $score)";
 
 mysqli_query($con, $query);
+
+mysqli_close($con);
