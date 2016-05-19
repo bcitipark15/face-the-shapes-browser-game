@@ -477,7 +477,7 @@ function startTimeMode(){
 }
 
 function startScoreMode(){
-	length = 10;
+	length = 3;
 	score = 0;
 	levels = [0,1,2,3,4,5,6,7,8,9];
 	level = 0;
@@ -499,13 +499,18 @@ function drawCountdownTimer(){
 }
 
 function endGame(){
+	//Change to answerScreen from either screen.
 	screenChange('mode2D','answerScreen');
 	screenChange('mode3D','answerScreen');
 	window.location.hash = '#mode3D';
 	
 	$('#answerScreen div.messageBox').html('');
-	$('#answerScreen div.messageBox').append('<p>Your score: ' + score + '</p>');
+	$('#answerScreen div.messageBox').append('<p>Your score: ' + score + '</p><input type="text" id="username" name="username"style="z-index: 999; position: relative"></input>');
+	$('#username').focus();
+	
 }
+
+function()
 function updateScore(value){
 	score += value;
 	$('#score p').text(score);
