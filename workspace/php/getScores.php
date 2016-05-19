@@ -6,10 +6,10 @@ $con = mysqli_connect('localhost','ftsg17','parkian93') or
 mysqli_select_db($con, 'ftsg17_FaceTheShapes') or 
 	die(mysqli_error($con));
 
-$query = "SELECT * FROM scores ORDER BY score DESC LIMIT 10"
-$info = mysqli_query($con, $query);
+$query = "SELECT * FROM scores ORDER BY score DESC LIMIT 10";
+//$info = mysqli_query($con, $query);
 
-while($row = mysqli_fetch_array($info)) {
+while($row = mysqli_fetch_assoc(mysqli_query($con, $query))) {
 	echo "<tr>";
 	echo "<td>" . $row['rank'] . "</td>";
 	echo "<td>" . $row['name'] . "</td>";
