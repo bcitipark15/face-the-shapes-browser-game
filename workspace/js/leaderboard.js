@@ -11,7 +11,7 @@ function getHighScores() {
 	xmlhttp.onreadystatechange = function() {
 
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-			document.getElementById("DIV FOR TABLE").innerHTML = xmlhttp.responseText;
+			document.getElementById("ScoreAttackScores").innerHTML = xmlhttp.responseText;
 		}
 	}
 
