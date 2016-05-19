@@ -1,0 +1,301 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: juneGull;
+    src: url(../font/junegullrg.ttf);
+}
+
+body {
+    font-family: juneGull;
+}
+
+/** A list containing the buttons **/
+ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+/** Section is what will display to the user **/
+section {
+    width: 100%;
+    height: 100%;
+    max-width: 900px;
+    position: relative;
+	-webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+}
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Hide from the user */
+#leaderboard {
+	display: none;
+}
+#gameMode {
+	display: none;
+}
+#levelSelect {
+	display: none;
+}
+#mode3D {
+	display: none;
+}
+#mode2D {
+	display: none;
+}
+#resultScreen {
+	display: none;
+}
+#answerScreen {
+	display: none;
+}
+
+/* The container where the game is being displayed */
+
+#gameContainer {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    position: relative;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 900px;
+    height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #159957;
+    background-image: linear-gradient(120deg, #155799, #159957);
+    overflow: hidden;
+}
+
+.levelList {
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Where the message will display for the user to read */
+.messageBox {
+	padding-top: 5%;
+	margin: auto;
+    width: 40%;
+	font-size: 40px;
+	
+}
+
+/* Increase the size of the title */
+#resultScreen .title {
+	font-size: 50px;
+}
+#answerScreen .title {
+	font-size: 50px;
+}
+
+/* Positioning of the main menu images */
+#titleImage {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Default Styling for Title */
+.title {
+    padding-top: 10%;
+    text-align: center;
+    font-size: 35px;
+    padding-bottom: 20px;
+    color: white;
+}
+
+/* The hamburger */
+#hamburger {
+    background-image: url("../image/hamburger.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 10px;
+    width: 20px;
+}
+#hamburger:hover {
+    opacity: 0.4;
+}
+
+/* To keep the nav on the top */
+.topNav {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    margin: auto;
+    padding-top: 2%;
+    width: 95%;
+}
+
+/* To keep the nav on the bottom */
+.bottomNav {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    padding-top: 3%;
+    margin: auto;
+    width: 95%;
+}
+
+/* The screen where the fold out will be placed */
+#foldoutScreen {
+    position: absolute;
+    margin: auto;
+    bottom: 0%;
+    top: 0%;
+    right: 0%;
+    left: 0%;
+    height: 65%;
+    width: 90%;
+}
+
+/* foldout is the actual fold out container */
+#foldout {
+    margin: auto;
+}
+
+/* Where the cube is placed**/
+.cubeContainer {
+    top: 25%;
+}
+
+/* Easter egg styling */
+#easterEgg {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+}
+
+#easterEggTwo {
+    opacity: 0;
+}
+
+#easterEggTwo:hover {
+    opacity: 1;
+}
+
+/* Frame for non-button containers */
+.infoCont {
+	padding: 20px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.3rem;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+/*  B = Button  */
+.menuBSize {
+    width: 40%;
+	max-width: 180px;
+}
+/*  B = Button **/
+.mobileBSize {
+    width: 20%;
+}
+
+/* Default button design */
+.buttons {
+    padding: 20px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.3rem;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+/* Leaderboard Screen */
+#leaderboard > div > table {
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.3rem;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+}
+
+#leaderboardRank,
+#leaderboardName,
+#leaderboardScore,
+#leaderboardDate {
+    padding: 0px 1em 0px 1em;
+}
+
+#leaderboard > div {
+    width: 50em;
+    margin: 0 auto;
+}
+
+#leaderboard > div > nav li {
+    float: left;
+    color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    border-style: solid;
+    border-width: 1px 1px 0px 1px;
+    border-radius: 0.3rem;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+
+}
+
+#leaderboard > div > nav li a {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color: inherit;
+}
+
+#leaderboard > div > nav li:hover {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Quick float right, left, and clear */
+
+.floatRight {
+    float: right;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.clear {
+    clear: both;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>201610 comp2910 g17 by bcitipark15</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/game.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/cube.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/mobile.css" media="only all and (max-width: 480px)" >
+		<script src="./workspace/js/3DCube.js"></script>
+		<script src="./workspace/js/game.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <section class="page-header">
+            <h1 class="project-name">Face The Shapes</h1>
+            <h2 class="project-tagline">201610 COMP2910 G17</h2>
+            <a href="https://github.com/bcitipark15/201610_COMP2910_G17" class="btn">View on GitHub</a>
+            <a href="https://github.com/bcitipark15/201610_COMP2910_G17/zipball/master" class="btn">Download .zip</a>
+            <a href="https://github.com/bcitipark15/201610_COMP2910_G17/tarball/master" class="btn">Download .tar.gz</a>
+        </section>
+
+        <section class="main-content">
+			<h1>Face The Shapes</h1>
+            <section id="gameContainer">
+				<nav>
+					<a id="hamburger" href="#"><img src="./workspace/image/hamburger.png"></a>
+				</nav>
+				<!-- Title Screen -->
+				<section id="mainMenu" class="screen">
+					
+					<h2 class="title">Face The Shape</h2>
+					<div id="titleImage"><img src="./workspace/image/cube.png"></div>
+					<ul>
+						<li><a class="buttons" href="#gameMode">Play</a></li>
+						<li><a class="buttons" href="#">Leaderboard</a></li>
+					</ul>
+				</section>
+
+				<!-- Menu Screen -->
+				<section id="gameMode" class="screen">
+					<h2 class="title">Game Mode</h2>
+					<ul>
+						<li><a class="buttons" href="#classicMode3D">Classic</a></li>
+						<li><a class="buttons" href="#timeMode">Time Attack</a></li>
+						<li><a class="buttons" href="#scoreMode">Score Attack</a></li>
+						<li><a class="buttons" href="#mainMenu">Back</a></li>
+					</ul>
+				</section>
+
+				<!-- 3D Screen -->
+				<section id="classicMode3D" class="screen">
+									
+					<div class="screenToggle"><a href="#classicMode2D">2D</a></div>
+
+					<!-- This div will hold the 3D cube -->
+					<div id="shape3D"></div>
+
+				</section>
+
+				<!-- 2D Screen -->
+				<section id="classicMode2D" class="screen">
+					<div class="screenToggle"><a href="#classicMode3D">3D</a></div>
+
+					<!-- This div will hold the foldout -->
+					<div id="foldout"></div>
+				
+					<div id="colour" onclick="changeColour()"></div>
+				
+					<div id="submit" onclick="validate()"><a href="#postLevel">Submit</a></div>
+				</section>
+				
+				<!-- Post Level Screen -->
+				<section id="postLevel" class="screen">
+					<h1>Correct or Incorrect</h1>
+					
+					<div id="Exit"><a href="#gameMode">Exit</a></div>
+					
+					<div id="continue">Continue</div>
+					
+				</section>
+
+					
+			</section>
+
+            <footer class="site-footer">
+                <span class="site-footer-owner"><a href="https://github.com/bcitipark15/201610_COMP2910_G17">Face The Shapes</a> is maintained by <a href="https://github.com/bcitipark15">bcitipark15</a>, <a href="https://github.com/ChingChoi">ChingChoi</a>, <a href="https://github.com/ChristopherCentenera">ChristopherCentenera</a>, <a href="https://github.com/Evan89">Evan89</a>, and <a href="https://github.com/JohnNJPark">JohnNJPark</a>.</span>
+            </footer>
+        </section>
+    </body>
+</html>

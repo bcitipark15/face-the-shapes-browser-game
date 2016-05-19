@@ -1,0 +1,154 @@
+.container {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin: 0 auto 40px;
+    text-align: center;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -o-perspective: 1000px;
+    perspective: 1000px;
+	user-drag: none; 
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+
+img {
+	width: 96px;
+	height: 96px;
+    display: block;
+    margin: auto;
+    transform: translateX(-50px) translateY(70px);
+	user-drag: none; 
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#cube .back img {
+    transform: translateX(-50px) translateY(-160px);
+}
+
+#cube {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 0.1s;
+    -moz-transition: -moz-transform 0.1s;
+    -o-transition: -o-transform 0.1s;
+    transition: transform 0.1s;
+    transform: translateX(-50px) translateY(-100px);
+}
+
+#cube figure {
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    line-height: 196px;
+    font-size: 120px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+#cube figure:nth-child(n) {
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 95px solid transparent;
+    border-right: 95px solid transparent;
+    line-height: 196px;
+    font-size: 120px;
+    font-weight: bold;
+    color: white;
+    text-align: center
+}
+
+
+#cube figure:nth-child(n+6) {
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    line-height: 196px;
+    font-size: 120px;
+    font-weight: bold;
+    color: white;
+    text-align: center
+}
+
+
+#cube figure:nth-child(5){
+    display: block;
+    position: absolute;
+    width: 195px;
+    height: 195px;
+    border: 0;
+    background-color: gray;
+    line-height: 196px;
+    font-size: 120px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+#cube figure:nth-child(10){
+    display: block;
+    position: absolute;
+    width: 200;
+    height: 200;
+    border: 0;
+    background-color: gray;
+    line-height: 196px;
+    font-size: 120px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+#cube.panels-backface-invisible figure {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+#cube .front  { border-bottom: 195px solid hsla(   0, 100%, 50%, 0.7 ); }
+#cube .back   { border-top: 195px solid hsla(  60, 100%, 50%, 0.7 ); }
+#cube .right  { border-bottom: 195px solid hsla( 120, 100%, 50%, 0.7 ); }
+#cube .left   { border-bottom: 195px solid hsla( 180, 100%, 50%, 0.7 ); }
+#cube .bottom { border-bottom: 195px solid transparent; }
+
+#cube .front  { transform: rotateX(  30deg ) rotateY(   0deg ) translateY(41px) translateZ(36px) translateX(5px); }
+#cube .back   { transform: rotateX( 150deg ) rotateY(   0deg ) translateY(-41px) translateZ(36px) translateX(5px); }
+#cube .right  { transform: rotateZ( -30deg ) rotateY(  90deg ) translateY(45px) translateZ( 40px ); }
+#cube .left   { transform: rotateZ(  30deg ) rotateY( -90deg ) translateY(38px) translateZ( 30px ); }
+#cube .bottom { transform: rotateX( -90deg ) translateZ( 100px ); }
+
+#cube .frontBorder  { border-bottom: 200px solid black; }
+#cube .backBorder   { border-top: 200px solid black; }
+#cube .rightBorder  { border-bottom: 200px solid black; }
+#cube .leftBorder   { border-bottom: 200px solid black; }
+#cube .bottomBorder { border-bottom: 200px solid black; }
+
+#cube .frontBorder  { transform: rotateX(  30deg ) rotateY(   0deg ) translateY(38px) translateZ(36px); }
+#cube .backBorder   { transform: rotateX( 150deg ) rotateY(   0deg ) translateY(-38px) translateZ(35px); }
+#cube .rightBorder  { transform: rotateZ( -30deg ) rotateY(  90deg ) translateY(38px) translateZ( 33px ); }
+#cube .leftBorder   { transform: rotateZ(  30deg ) rotateY( -90deg ) translateY(38px) translateZ( 35px ); }
+#cube .bottomBorder { transform: rotateX( -90deg ) translateZ( 99px ); }
