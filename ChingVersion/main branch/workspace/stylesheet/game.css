@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +13,6 @@ body {
     font-family: juneGull;
 }
 
-<<<<<<< HEAD
 /** A list containing the buttons **/
 ul {
     list-style-type: none;
@@ -66,9 +62,6 @@ section {
 }
 
 /* The container where the game is being displayed */
-
-=======
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 #gameContainer {
     margin-top: 3%;
     margin-bottom: 3%;
@@ -84,7 +77,6 @@ section {
     overflow: hidden;
 }
 
-<<<<<<< HEAD
 .levelList {
 	padding: 0;
 	margin-left: auto;
@@ -109,45 +101,22 @@ section {
 }
 
 /* Positioning of the main menu images */
-=======
-section {
-    width: 100%;
-    height: 100%;
-    max-width: 900px;
-    position: relative;
-}
-.messageBox {
-	margin: auto;
-    width: 40%;
-}
-
-
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 #titleImage {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
 }
 
-<<<<<<< HEAD
 /* Default Styling for Title */
-=======
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 .title {
     padding-top: 10%;
     text-align: center;
     font-size: 35px;
     padding-bottom: 20px;
     color: white;
-<<<<<<< HEAD
 }
 
 /* The hamburger */
-=======
-	
-}
-
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 #hamburger {
     background-image: url("../image/hamburger.png");
     background-repeat: no-repeat;
@@ -155,18 +124,12 @@ section {
     height: 10px;
     width: 20px;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 #hamburger:hover {
     opacity: 0.4;
 }
 
-<<<<<<< HEAD
 /* To keep the nav on the top */
-=======
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 .topNav {
     position: absolute;
     top: 0%;
@@ -177,10 +140,7 @@ section {
     width: 95%;
 }
 
-<<<<<<< HEAD
 /* To keep the nav on the bottom */
-=======
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 .bottomNav {
     position: absolute;
     bottom: 0%;
@@ -191,10 +151,7 @@ section {
     width: 95%;
 }
 
-<<<<<<< HEAD
 /* The screen where the fold out will be placed */
-=======
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 #foldoutScreen {
     position: absolute;
     margin: auto;
@@ -206,39 +163,17 @@ section {
     width: 90%;
 }
 
-<<<<<<< HEAD
 /* foldout is the actual fold out container */
-=======
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 #foldout {
     margin: auto;
 }
 
-<<<<<<< HEAD
 /* Where the cube is placed**/
 .cubeContainer {
     top: 20%;
 }
 
 /* Easter egg styling */
-=======
-.floatRight {
-    float: right;
-}
-
-.floatLeft {
-    float: left;
-}
-
-.clear {
-    clear: both;
-}
-
-.cubeContainer {
-    top: 25%;
-}
-
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 #easterEgg {
 	width: 20px;
 	height: 20px;
@@ -253,7 +188,6 @@ section {
     opacity: 1;
 }
 
-<<<<<<< HEAD
 /* Frame for non-button containers */
 .infoCont {
 	padding: 20px;
@@ -271,35 +205,17 @@ section {
     font-size: 20px;
 }
 
-
-=======
-
-/* Buttons */
-ul {
-    list-style-type: none;
-    
-    text-align: center;
-}
-
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 /*  B = Button  */
 .menuBSize {
     width: 40%;
 	max-width: 180px;
 }
-<<<<<<< HEAD
 /*  B = Button **/
-=======
-/*  B = Button  */
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 .mobileBSize {
     width: 20%;
 }
 
-<<<<<<< HEAD
 /* Default button design */
-=======
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 .buttons {
     padding: 20px;
     display: inline-block;
@@ -316,7 +232,6 @@ ul {
     font-size: 20px;
 }
 
-<<<<<<< HEAD
 
 /* Leaderboard Screen */
 #leaderboard > div > table {
@@ -365,15 +280,11 @@ ul {
 }
 
 #leaderboard > div > nav li:hover {
-=======
-.buttons:hover {
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
     color: rgba(255, 255, 255, 0.8);
     background-color: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.3);
 }
 
-<<<<<<< HEAD
 /* Quick float right, left, and clear */
 
 .floatRight {
@@ -387,6 +298,3 @@ ul {
 .clear {
     clear: both;
 }
-=======
-
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f

@@ -7,28 +7,16 @@
  
 
 //Fixes bug where refreshes does not take player to main menu screen.
-=======
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 $(document).ready(function(){
     window.location.hash = '#mainmenu';
 });
 
-<<<<<<< HEAD
 //variable that determine if easter egg two is activated
 var easterEggTwoActivate = false;
 
  //Color array for face colors.
 var colors = ['red','lime','blue','purple','yellow','cyan','orange'];
-=======
-//Color array; added evan friendly colors
-var easterEggTwo = false;
-var colors = ['hsla( 0, 100%, 50%, 0.7 )','hsla( 60, 100%, 50%, 0.7 )','hsla( 120, 100%, 50%, 0.7 )','hsla( 180, 100%, 50%, 0.7 )','hsla( 240, 100%, 50%, 0.7 )','hsla( 300, 100%, 50%, 0.7 )','hsla( 360, 100%, 50%, 0.7 )'];
 
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 
 //Hard code 6 faces for cube
 var faces = 6;
@@ -36,7 +24,6 @@ var faces = 6;
 //Array of objects that contain face info
 var faceArray = [];
 
-<<<<<<< HEAD
 //Array containing the face names of the cube.
 var faceNames = ['facetop','faceleft','facefront','faceright','facebottom','faceback'];
 
@@ -59,18 +46,11 @@ var levels = [];
 var level;
 
 //To be used at a later date.
-=======
-//Global size array to determine size (width/height) of cube faces
-var size;
 
-//Set pivot color
-var pivotColor = 'black';
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 $(document).ready(function() {
   
 });
 
-<<<<<<< HEAD
 //************Test Print Function********************//
 function testPrint(){
 	var str;
@@ -384,7 +364,6 @@ function foldoutT() {
  * @return {undefined}
  */
 function rotateFace(id){
-<<<<<<< HEAD
 	
 	//Takes the passed id and determines which face in the array it is.
     currentFace = getFace(id);
@@ -464,31 +443,11 @@ function validate(){
 	var correct2 = 'your values = ';
 	
 	//Clears results screen along with answer screen before editing them.
-=======
-    currentFace = faceArray[parseInt(id.charAt(id.length -1))];
-	if(currentFace.trueColor !== pivotColor){
-		currentFace.value = (currentFace.value + 1) % 4;
-		$('#' + id).css('transform','rotateZ(' + currentFace.value * 90 + 'deg)');
-	}
-}
 
-function applyFaces(){
-	var faceNames = ['top','left','front','right','bottom','back'];
-	for(var i = 0; i < faces; i++){
-		$('.' + faceNames[i]).children().css('transform','rotateZ(' + faceArray[i].trueValue * 90 + 'deg)');
-		$('#cube .' + faceNames[i]).css('background-color',faceArray[i].trueColor);
-	}
-}
-
-function validate(){
-	var correct1 = 'Cube values = ';
-	var correct2 = 'your values = ';
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 	$('#resultMessage').html('');
 	$('#correctAnswer').html('');
 	var match = true;
 	for(var i = 0; i< faces; i++){
-<<<<<<< HEAD
 		
 		//Concatenate each of the face values.
 		correct1 += faceArray[i].trueValue + ' ';
@@ -546,50 +505,23 @@ function easterEggTwo() {
 	var easterEggTwoActivateStyle = document.createElement("style");
 	easterEggTwoActivateStyle.type = "text/css"; 
 	easterEggTwoActivateStyle.appendChild(document.createTextNode("#gameContainer{background-color: #042714;"
-=======
-		correct1 += faceArray[i].trueValue + ' ';
-		correct2 += faceArray[i].value + ' ';
-		if (faceArray[i].trueValue != faceArray[i].value) {
-			match = false;
-		}
-	}
-	if (match) {
-		$('#resultMessage').append('You did it!');
-	} else {
-		$('#resultMessage').append('You got a face wrong!!');
-	}
-	$('#correctAnswer').append(correct1 + '<br>' + correct2);
-}
 
-
-function easterEggTwo() {
-	easterEggTwo = true;
-	var easterEggTwoHead = document.getElementsByTagName('head').item(0);
-	var easterEggTwoStyle = document.createElement("style");
-	easterEggTwoStyle.type = "text/css"; 
-	easterEggTwoStyle.appendChild(document.createTextNode("#gameContainer{background-color: #042714;"
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 			+ "background-image: linear-gradient(120deg, #021127, #042714);} "
 			+ "body{background-color:black;}"
 			+ ".title{color: rgba(200, 100, 100, 0.7);}"
 			+ ".buttons{color: rgba(200, 100, 100, 0.7);}"
 			+ "#cube img{width: 50%; height: 50%;}"));
-<<<<<<< HEAD
+
 	easterEggTwoActivateHead.appendChild(easterEggTwoActivateStyle);
 	var easterEggTwoActivateCubeFace = document.getElementById('cube');
 	easterEggTwoActivateCubeFace.innerHTML = '<figure class="front"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure> '
-=======
-	easterEggTwoHead.appendChild(easterEggTwoStyle);
-	var easterEggTwoCubeFace = document.getElementById('cube');
-	easterEggTwoCubeFace.innerHTML = '<figure class="front"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure> '
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
+
             + '<figure class="back"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure>'
             + '<figure class="right"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure>'
             + '<figure class="left"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure>'
             + '<figure class="top"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure>'
             + '<figure class="bottom"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure>'
 }
-<<<<<<< HEAD
 
 function generatePivots(difficulty){
 	var pivotCount = 0;
@@ -700,5 +632,3 @@ function drawTimer(){
 	time++;
 	$('#timer p').text(time);
 }
-=======
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f

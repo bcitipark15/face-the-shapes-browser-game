@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var count = 0;
 function tutturu(){
     var audio = new Audio('./workspace/audio/tuturu-century-fox.mp3');
@@ -28,11 +27,3 @@ window.addEventListener("orientationchange", function() {
 	}
 }, false);
 */
-=======
-var audio = new Audio('./workspace/audio/tuturu-century-fox.mp3');
-
-function tutturu(){
-    var audio = new Audio('./workspace/audio/tuturu-century-fox.mp3');
-    audio.play();
-}
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
