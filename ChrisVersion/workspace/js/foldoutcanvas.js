@@ -1,5 +1,5 @@
 /**
- *	Canvas version of rendering in the foldouts.
+ *	Experimental version of rendering in the foldouts.
  *
  *
  *
@@ -165,10 +165,4 @@ function Face(arrow3D, arrow2D, color3D, color2D){
 	this.arrow2D = Math.floor(Math.random() * 4);
 	this.color3D = colors[Math.floor(Math.random() * colors.length)];
 	this.color2D = colors[Math.floor(Math.random() * colors.length)];
-	rotate = function(){
-		this.arrow2D = (this.arrow2D + 1) % 4;
-		$(this).css('transform','rotate(' + this.arrow2D * 90 + 'deg)');
-	}
-	this.onclick = self.rotate;
-	//Print out current object state for debugging.
 }
