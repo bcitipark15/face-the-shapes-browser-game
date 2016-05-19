@@ -5,7 +5,7 @@ $con =  mysqli_connect('localhost','group17','parkian93') or
 mysqli_select_db($con, 'group17_FaceTheShapes') or 
 	die(mysqli_error($con));
 
-$query = "SELECT * FROM scores ORDER BY time_score DESC LIMIT 10"
+$query = "SELECT * FROM scores ORDER BY score DESC LIMIT 10"
 $info = mysqli_query($con, $query);
 
 while($row = mysqli_fetch_array($info)) {
