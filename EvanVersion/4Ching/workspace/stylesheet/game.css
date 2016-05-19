@@ -125,6 +125,11 @@ section {
     position: absolute;
 }
 
+#octahedronModel {
+    width: 150px;
+    height: 150px;
+}
+
 
 /* Where the message will display for the user to read */
 .messageBox {

@@ -29,8 +29,8 @@ function init() {
     // position and point the camera to the center of the scene
     camera.position.x = 0;
     camera.position.y = 0;
-    camera.position.z = 30;
-    camera.lookAt(new THREE.Vector3(0, 0, 0));
+    camera.position.z = 30;/*
+    camera.lookAt(new THREE.Vector3(0, 0, 0));*/
 
     // add the output of the renderer to the html element
     $('#mode3D div.cubeContainer').append(webGLRenderer.domElement);
