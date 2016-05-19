@@ -31,13 +31,8 @@ var material = new three.MeshFaceMaterial([
         color: "hsla(  60, 100%, 50%, 0.7 )"
     }),
     new three.MeshBasicMaterial({
-<<<<<<< HEAD
       /*  color: 0x0000ff,*/
         map: texture
-=======
-        color: 0x0000ff,
-        /*map: texture*/
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
     }),
     new three.MeshBasicMaterial({
         color: 0xffff00
