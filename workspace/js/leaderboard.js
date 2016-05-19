@@ -1,7 +1,7 @@
 function inputHighScore(name, score) {
 	xmlhttp = new XMLHttpRequest();
 
-	xmlhttp.open("GET", "inputScore.php?name=" + name + "&?score=" + score, true);
+	xmlhttp.open("GET", "../php/inputScore.php?name=" + name + "&?score=" + score, true);
 	xmlhttp.send();
 }
 
@@ -15,6 +15,6 @@ function getHighScores() {
 		}
 	}
 
-	xmlhttp.open("GET", "getScore.php", true);
+	xmlhttp.open("GET", "../php/getScore.php", true);
 	xmlhttp.send();
 }
