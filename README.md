@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Face The Shapes
 <p align="center">
 	<img src="http://students.bcitdev.com/A00869118/comp2910/bcit-cst.png"/>
@@ -156,4 +155,3 @@
 		<li>John Park (<a href="mailto:john_park_5@hotmail.com">john_park_5@hotmail.com</a>)</li>
 	</ol>
 </p>
->>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
