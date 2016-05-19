@@ -3,12 +3,10 @@ var three = THREE;
 var scene = new three.Scene();
 var camera = new three.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
 
-var renderer = new three.WebGLRenderer();
+var renderer = new three.WebGLRenderer({alpha: true});
 renderer.setSize(window.innerWidth, window.innerHeight);
 
 document.body.appendChild(renderer.domElement);
-
-
 
 var geometry = new three.BoxGeometry(1,1,1);
 //var material = new three.MeshNormalMaterial();
