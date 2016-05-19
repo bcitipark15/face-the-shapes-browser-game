@@ -24,3 +24,4 @@ function screenChange(current, next) {
 }
 
 window.addEventListener("orientationchange", navBar, false);
+

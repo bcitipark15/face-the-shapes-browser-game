@@ -28,7 +28,9 @@ body {
 	font-size: 30px;
 	height: 50px;
 }
-
+.messageBox {
+	font-size: 20px;
+}
 /** iPhone 4 support **/
 @media screen and (max-width: 320px) {
 	#titleImage {
