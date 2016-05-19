@@ -9,12 +9,21 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
 		
         <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/game.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/cube.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/portraitMode.css" media="only all and (max-width: 480px)">
+		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/button.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/leaderboard.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/easterEgg.css" media="screen">
+		
+		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/portraitMode.css" media="only all and (max-width: 480px)">
         <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/landscapeMode.css" media="only all and (max-height: 480px)">
 		
+		
+        <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/cube.css" media="screen">
+        
+		
         <script src="https://cdn.jsdelivr.net/jquery/3.0.0-beta1/jquery.min.js"></script>
-        <script src="./workspace/js/3DCubeNFold.js"></script>
+        
+		
+		<script src="./workspace/js/3DCubeNFold.js"></script>
         <script src="./workspace/js/foldout.js"></script>
 		<script src="./workspace/js/game.js"></script>
 		
@@ -134,7 +143,7 @@
                     <li><a class="buttons menuBSize" href="#timeMode" onclick="screenChange('gameMode','mode3D');selectMode('time');">Time Attack</a></li>
                     <li><a class="buttons menuBSize" href="#scoreMode" onclick="screenChange('gameMode','mode3D');selectMode('score');">Score Attack</a></li>
                     <li><a class="buttons menuBSize" href="#mainMenu" onclick="screenChange('gameMode', 'mainMenu')">Back</a></li>
-                    <li><a class="buttons menuBSize" id="easterEggTwo" onclick="easterEggTwo()" href="#mainMenu">Death</a></li>
+                    <li><a class="buttons menuBSize" id="easterEggTwo" onclick="easterEggTwo(); screenChange('gameMode', 'mainMenu')" href="#mainMenu">Death</a></li>
                 </ul>
 
             </section>

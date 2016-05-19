@@ -173,21 +173,6 @@ section {
     top: 25%;
 }
 
-/* Easter egg styling */
-#easterEgg {
-	width: 20px;
-	height: 20px;
-	position: absolute;
-}
-
-#easterEggTwo {
-    opacity: 0;
-}
-
-#easterEggTwo:hover {
-    opacity: 1;
-}
-
 /* Frame for non-button containers */
 .infoCont {
 	padding: 20px;
@@ -203,87 +188,6 @@ section {
     text-align: center;
     text-decoration: none;
     font-size: 20px;
-}
-
-
-/*  B = Button  */
-.menuBSize {
-    width: 40%;
-	max-width: 180px;
-}
-/*  B = Button **/
-.mobileBSize {
-    width: 20%;
-}
-
-/* Default button design */
-.buttons {
-    padding: 20px;
-    display: inline-block;
-    margin-bottom: 1rem;
-    color: rgba(255, 255, 255, 0.7);
-    background-color: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 0.3rem;
-    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
-    text-align: center;
-    text-decoration: none;
-    font-size: 20px;
-}
-
-
-/* Leaderboard Screen */
-#leaderboard > div > table {
-    padding: 20px;
-    color: rgba(255, 255, 255, 0.7);
-    background-color: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 0.3rem;
-    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
-    text-align: center;
-    font-size: 20px;
-    width: 100%;
-}
-
-#leaderboardRank,
-#leaderboardName,
-#leaderboardScore,
-#leaderboardDate {
-    padding: 0px 1em 0px 1em;
-}
-
-#leaderboard > div {
-    width: 50em;
-    margin: 0 auto;
-}
-
-#leaderboard > div > nav li {
-    float: left;
-    color: rgba(255, 255, 255, 0.7);
-    background-color: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
-    border-style: solid;
-    border-width: 1px 1px 0px 1px;
-    border-radius: 0.3rem;
-    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
-
-}
-
-#leaderboard > div > nav li a {
-    display: block;
-    padding: 1em;
-    text-decoration: none;
-    color: inherit;
-}
-
-#leaderboard > div > nav li:hover {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Quick float right, left, and clear */
