@@ -102,7 +102,7 @@ the user from dragging and highlighting the cube */
 #cube .bottom {
     background: hsla( 300, 100%, 50%, 0.7 );
 }
-
+	
 /* Rotates the cube to its proper orientation when moved */
 #cube .front {
     transform: rotateY( 0deg ) translateZ( 100px );
