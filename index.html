@@ -30,7 +30,7 @@
 		
 		
     </head>
-    <body>
+    <body onload="navBar();">
 		
 		<!-- Container for the shown screen -->
         <section id="gameContainer">
@@ -79,9 +79,9 @@
 			
             <!-- Game Mode Screen -->
             <section id="gameMode">
-
+				
                 <h1 class="title">Game Mode</h1>
-
+				
                 <ul>
                     <li><a class="buttons menuBSize" href="#levelSelect" onclick="screenChange('gameMode', 'levelSelect'); selectMode('classic');">Classic</a></li>
                     <li><a class="buttons menuBSize" href="#timeMode" onclick="screenChange('gameMode','mode3D');selectMode('time');">Time Attack</a></li>
@@ -89,7 +89,7 @@
                     <li><a class="buttons menuBSize" href="#mainMenu" onclick="screenChange('gameMode', 'mainMenu')">Back</a></li>
                     <li><a class="buttons menuBSize" id="easterEggTwo" onclick="easterEggTwo(); screenChange('gameMode', 'mainMenu')" href="#mainMenu">Death</a></li>
                 </ul>
-
+				
             </section>
 
             <!-- Level Select Screen -->
@@ -150,13 +150,13 @@
                     <div class="infoCont floatLeft mobileBSize">
 						<ul>
 							<li>Timer</li>
-							<li><p id="timer">123</p></li>
+							<li><p id="timer">&nbsp;&nbsp;&nbsp;</p></li>
 						</ul>
 					</div>
                     <div class="infoCont floatRight mobileBSize">
 						<ul>
 							<li>Score</li>
-							<li><p id="score">123</p></li>
+							<li><p id="score">&nbsp;&nbsp;&nbsp;</p></li>
 						</ul>
 					</div>
                 </div>

@@ -24,6 +24,10 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
+#username {
+	font-size: 30px;
+	height: 50px;
+}
 
 /** iPhone 4 support **/
 @media screen and (max-width: 320px) {
