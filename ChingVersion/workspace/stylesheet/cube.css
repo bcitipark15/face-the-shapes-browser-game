@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 /* Cube container is where the Cube is stored prevent
 the user from dragging and highlighting the cube */
 .cubeContainer {
     width: 500px;
     height: 420px;
+=======
+.cubeContainer {
+    width: 196px;
+    height: 196px;
+>>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
     position: relative;
     margin: 0 auto 40px;
     text-align: center;
@@ -17,7 +23,11 @@ the user from dragging and highlighting the cube */
     -webkit-user-select: none;
     -ms-user-select: none;
 }
+<<<<<<< HEAD
 /* The modifies the image to match the size of the cube */
+=======
+
+>>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 .cubeCover {
     width: 196px;
     height: 196px;
@@ -28,7 +38,11 @@ the user from dragging and highlighting the cube */
     -webkit-user-select: none;
     -ms-user-select: none;
 }
+<<<<<<< HEAD
 /* The cube itself where the transformation are applied */
+=======
+
+>>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 #cube {
     position: absolute;
     -webkit-transform-style: preserve-3d;
@@ -41,7 +55,10 @@ the user from dragging and highlighting the cube */
     transition: transform 1s;
 }
 
+<<<<<<< HEAD
 /* The face of the cube */
+=======
+>>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 #cube figure {
     display: block;
     position: absolute;
@@ -62,6 +79,7 @@ the user from dragging and highlighting the cube */
     backface-visibility: hidden;
 }
 
+<<<<<<< HEAD
 /* Assigned the color white if the JS fails */
 #cube .front {
     background-color: white;
@@ -78,10 +96,33 @@ the user from dragging and highlighting the cube */
 #cube .top {
     background-color: white;
 }
+=======
+#cube .front {
+    background-color: white;
+}
+
+#cube .back {
+    background-color: white;
+}
+
+#cube .right {
+    background-color: white;
+}
+
+#cube .left {
+    background-color: white;
+}
+
+#cube .top {
+    background-color: white;
+}
+
+>>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 #cube .bottom {
     background-color: white;
 }
 
+<<<<<<< HEAD
 
 /* For future uses */
 #cube .front {
@@ -99,12 +140,37 @@ the user from dragging and highlighting the cube */
 #cube .top {
     background: hsla( 240, 100%, 50%, 0.7 );
 }
+=======
+#cube .front {
+    background: hsla( 0, 100%, 50%, 0.7 );
+}
+
+#cube .back {
+    background: hsla( 60, 100%, 50%, 0.7 );
+}
+
+#cube .right {
+    background: hsla( 120, 100%, 50%, 0.7 );
+}
+
+#cube .left {
+    background: hsla( 180, 100%, 50%, 0.7 );
+}
+
+#cube .top {
+    background: hsla( 240, 100%, 50%, 0.7 );
+}
+
+>>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 #cube .bottom {
     background: hsla( 300, 100%, 50%, 0.7 );
 }
 
+<<<<<<< HEAD
 
 /* Rotates the cube to its proper orientation when moved */
+=======
+>>>>>>> 370d913b24e68b87513a9ee710a7bfe858bbf11f
 #cube .front {
     transform: rotateY( 0deg ) translateZ( 100px );
 }
