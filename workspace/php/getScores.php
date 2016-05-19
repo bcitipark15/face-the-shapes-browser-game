@@ -1,8 +1,8 @@
 <?php 
 
-$con = mysqli_connect('localhost','group17','parkian93') or 
+$con = mysqli_connect('localhost','ftsg17','parkian93') or 
 
-mysqli_select_db($con, 'group17_FaceTheShapes') or 
+mysqli_select_db($con, 'ftsg17_FaceTheShapes') or 
 	die(mysqli_error($con));
 
 $query = "SELECT * FROM scores ORDER BY score DESC LIMIT 10"
