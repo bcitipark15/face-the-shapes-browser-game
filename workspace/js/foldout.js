@@ -359,8 +359,8 @@ function validate(){
 			$('#answerScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#mode3D" onclick="screenChange(\'answerScreen\',\'mode3D\')">back</a></div>');
 		}
 	} else {
-		$('#answerScreen div.bottomNav').append('<div><a class="buttons floatLeft mobileBSize" href="#levelSelect">Levels</a></div>');
-		$('#answerScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#mainMenu">Menu</a></div>');
+		$('#answerScreen div.bottomNav').append('<div><a class="buttons floatLeft mobileBSize" href="#levelSelect" onclick="screenChange(\'answerScreen\',\'levelSelect\')">Levels</a></div>');
+		$('#answerScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#mainMenu" onclick="screenChange(\'answerScreen\',\'mainMenu\')">Menu</a></div>');
 	}
 }
 
