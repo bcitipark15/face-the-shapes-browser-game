@@ -106,12 +106,16 @@
 				
 				
 				
-				document.querySelector('#cube .front').style.transform = 'rotateX( '+ (0+pitch) +'deg ) rotateY( '+ (0-yawn) +'deg ) translateZ( 100px )';
-				document.querySelector('#cube .back').style.transform = 'rotateX( '+ (180+pitch) +'deg ) rotateY( '+ (0+yawn) +'deg ) translateZ( 100px )';
-				document.querySelector('#cube .right').style.transform = 'rotateX( '+ (0+pitch) +'deg ) rotateY( '+ (90-yawn) +'deg ) translateZ( 100px )';
-				document.querySelector('#cube .left').style.transform = 'rotateX( '+ (0+pitch) +'deg ) rotateY( '+ (-90-yawn) +'deg ) translateZ( 100px )';
-				document.querySelector('#cube .top').style.transform = 'rotateX( '+ (90+pitch) +'deg ) rotateZ( '+ (0+yawn) +'deg ) translateZ( 100px )';
-				document.querySelector('#cube .bottom').style.transform = 'rotateX( '+ (-90+pitch) +'deg ) rotateZ( '+ (0-yawn) +'deg ) translateZ( 100px )';
+				document.querySelector('#cube .frontL').style.transform 	= 'rotateX( '+ (0+pitch) +'deg ) 	rotateY( '+ (0-yawn) +'deg ) translateZ( 100px)  translateX(-100px)';
+				document.querySelector('#cube .backL').style.transform 		= 'rotateX( '+ (180+pitch) +'deg ) 	rotateY( '+ (0+yawn) +'deg ) translateZ( 100px)  translateX(-100px)';
+				document.querySelector('#cube .left').style.transform 		= 'rotateX( '+ (0+pitch) +'deg ) 	rotateY( '+ (-90-yawn) +'deg) translateZ( 200px )';
+				document.querySelector('#cube .topL').style.transform 		= 'rotateX( '+ (90+pitch) +'deg ) 	rotateZ( '+ (0+yawn) +'deg ) translateZ( 100px ) translateX(-100px)';
+				document.querySelector('#cube .bottomL').style.transform 	= 'rotateX( '+ (-90+pitch) +'deg ) 	rotateZ( '+ (0-yawn) +'deg ) translateZ( 100px ) translateX(-100px)';
+				document.querySelector('#cube .frontR').style.transform 	= 'rotateX( '+ (0+pitch) +'deg ) 	rotateY( '+ (0-yawn) +'deg ) translateZ( 100px)  translateX( 100px)';
+				document.querySelector('#cube .backR').style.transform 		= 'rotateX( '+ (180+pitch) +'deg ) 	rotateY( '+ (0+yawn) +'deg ) translateZ( 100px)  translateX( 100px)';
+				document.querySelector('#cube .right').style.transform	 	= 'rotateX( '+ (0+pitch) +'deg ) 	rotateY( '+ (90-yawn) +'deg ) translateZ( 200px )';
+				document.querySelector('#cube .topR').style.transform 		= 'rotateX( '+ (90+pitch) +'deg ) 	rotateZ( '+ (0+yawn) +'deg ) translateZ( 100px ) translateX( 100px)';
+				document.querySelector('#cube .bottomR').style.transform 	= 'rotateX( '+ (-90+pitch) +'deg ) 	rotateZ( '+ (0-yawn) +'deg ) translateZ( 100px ) translateX( 100px)';
 				
 				
 				
@@ -129,12 +133,17 @@
         yawn = <span id="yawn">0</span>deg
 		</p>
     <div id="cube">
-        <figure class="front"><img src="img/arrows/images.png" alt="arrow"></figure>
-        <figure class="back"><img src="img/arrows/images.png" alt="arrow"></figure>
-        <figure class="right"><img src="img/arrows/images.png" alt="arrow"></figure>
+        <figure class="frontL"><img src="img/arrows/images.png" alt="arrow"></figure>
+        <figure class="backL"><img src="img/arrows/images.png" alt="arrow"></figure>
         <figure class="left"><img src="img/arrows/images.png" alt="arrow"></figure>
-        <figure class="top"><img src="img/arrows/images.png" alt="arrow"></figure>
-        <figure class="bottom"><img src="img/arrows/images.png" alt="arrow"></figure>
+        <figure class="topL"><img src="img/arrows/images.png" alt="arrow"></figure>
+        <figure class="bottomL"><img src="img/arrows/images.png" alt="arrow"></figure>
+        <figure class="frontR"><img src="img/arrows/images.png" alt="arrow"></figure>
+        <figure class="backR"><img src="img/arrows/images.png" alt="arrow"></figure>
+        <figure class="right"><img src="img/arrows/images.png" alt="arrow"></figure>
+        <figure class="topR"><img src="img/arrows/images.png" alt="arrow"></figure>
+        <figure class="bottomR"><img src="img/arrows/images.png" alt="arrow"></figure>
+
     </div>
 </section>
 

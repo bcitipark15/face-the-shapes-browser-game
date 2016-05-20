@@ -18,12 +18,9 @@ function init() {
 
 	document.getElementById('octahedronModel').appendChild(renderer.domElement);
 
-	document.getElementById('tetrahedronModel').appendChild(renderer2.domElement);
-	/*
-	var mat = new THREE.MeshBasicMaterial({
-		color: "black"
-	});*/
+	document.getElementById('pyramidModel').appendChild(renderer2.domElement);
 
+/*
 
 
     var	group = new THREE.Group();
@@ -47,7 +44,7 @@ function init() {
 		    }),
 		    new THREE.MeshBasicMaterial({
 		      /*  color: 0x0000ff,*/
-		        map: texture
+	/*	        map: texture
 		    }),
 		    new THREE.MeshBasicMaterial({
 		        map: texture
@@ -64,24 +61,24 @@ function init() {
 
 		group.add( mesh );
 		}
-	);
+	);*/
 
 
 
-/*	var polyhedronMat	= new THREE.MeshLambertMaterial({
-			map: loadedTexture,
+	var polyhedronMat	= new THREE.MeshLambertMaterial({
+			color: 0xffffff,
             polygonOffset: true,
             polygonOffsetFactor: 1,
             polygonOffsetUnits: 1 });
 	var polyhedron = new THREE.Mesh(new THREE.OctahedronGeometry(10, 0), polyhedronMat);
-	polyhedron.castShadow = true;*/
+	polyhedron.castShadow = true;
 
-/*	var helper = new THREE.EdgesHelper(polyhedron, 0x000000);
+	var helper = new THREE.EdgesHelper(polyhedron, 0x000000);
 	helper.material.linewidth = 2;
 	scene.add(helper);
 
 	scene.add(polyhedron);
-*/
+
 	var polyhedronMat2	= new THREE.MeshLambertMaterial({color: 0xFFFFFF,
             polygonOffset: true,
             polygonOffsetFactor: 1,
@@ -117,8 +114,8 @@ function init() {
 	render();
 
 	function render() {
-/*		polyhedron.rotation.y = step += 0.005;
-*/		polyhedron2.rotation.y = step += 0.005;
+		polyhedron.rotation.y = step += 0.005;
+		polyhedron2.rotation.y = step += 0.005;
 		requestAnimationFrame(render);
 		renderer.render(scene, camera);
 		renderer2.render(scene2, camera);

@@ -77,19 +77,29 @@ img {
 #cube .top    { background-color: white; }
 #cube .bottom { background-color: white; }
 
-#cube .front  { background: hsla(   0, 100%, 50%, 0.7 ); }
-#cube .back   { background: hsla(  60, 100%, 50%, 0.7 ); }
-#cube .right  { background: hsla( 120, 100%, 50%, 0.7 ); }
-#cube .left   { background: hsla( 180, 100%, 50%, 0.7 ); }
-#cube .top    { background: hsla( 240, 100%, 50%, 0.7 ); }
-#cube .bottom { background: hsla( 300, 100%, 50%, 0.7 ); }
+#cube .frontL  { background: hsla(   0, 100%, 50%, 0.7 ); }
+#cube .backL   { background: hsla(  60, 100%, 50%, 0.7 ); }
+#cube .left    { background: hsla( 180, 100%, 50%, 0.7 ); }
+#cube .topL    { background: hsla( 240, 100%, 50%, 0.7 ); }
+#cube .bottomL { background: hsla( 300, 100%, 50%, 0.7 ); }
+#cube .frontR  { background: hsla(   0, 100%, 50%, 0.7 ); }
+#cube .backR   { background: hsla(  60, 100%, 50%, 0.7 ); }
+#cube .right   { background: hsla( 120, 100%, 50%, 0.7 ); }
+#cube .topR    { background: hsla( 240, 100%, 50%, 0.7 ); }
+#cube .bottomR { background: hsla( 300, 100%, 50%, 0.7 ); }
 
-#cube .front  { transform: rotateY(   0deg ) translateZ( 100px ); }
-#cube .back   { transform: rotateX( 180deg ) translateZ( 100px ); }
-#cube .right  { transform: rotateY(  90deg ) translateZ( 100px ); }
-#cube .left   { transform: rotateY( -90deg ) translateZ( 100px ); }
-#cube .top    { transform: rotateX(  90deg ) translateZ( 100px ); }
-#cube .bottom { transform: rotateX( -90deg ) translateZ( 100px ); }
+#cube .frontL  { transform: rotateY(   0deg ) translateZ( 100px ) translateX( -100px ); }
+#cube .backL   { transform: rotateX( 180deg ) translateZ( 100px ) translateX( -100px ); }
+#cube .left   { transform: rotateY( -90deg ) translateZ( 200px ); }
+#cube .topL    { transform: rotateX(  90deg ) translateZ( 100px ) translateX( -100px ); }
+#cube .bottomL { transform: rotateX( -90deg ) translateZ( 100px ) translateX( -100px ); }
+
+#cube .frontR  { transform: rotateY(   0deg ) translateZ( 100px ) translateX(  100px ); }
+#cube .backR   { transform: rotateX( 180deg ) translateZ( 100px ) translateX(  100px ); }
+#cube .right   { transform: rotateY(  90deg ) translateZ( 200px ); }
+#cube .topR    { transform: rotateX(  90deg ) translateZ( 100px ) translateX(  100px ); }
+#cube .bottomR { transform: rotateX( -90deg ) translateZ( 100px ) translateX(  100px ); }
+
 
 
 

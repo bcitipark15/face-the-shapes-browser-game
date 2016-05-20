@@ -14,24 +14,20 @@
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/leaderboard.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/easterEgg.css" media="screen">
         <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/pyramid.css" media="screen">
-
+        <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/rectangle.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/square.css" media="screen">
 		
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/portraitMode.css" media="only all and (max-width: 480px)">
         <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/landscapeMode.css" media="only all and (max-height: 480px)">
-		
-		
-        <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/cube.css" media="screen">
-        
-		
+
         <script src="https://cdn.jsdelivr.net/jquery/3.0.0-beta1/jquery.min.js"></script>
         
-		
-		<script src="./workspace/js/3DCubeNFold.js"></script>
 		<script src="./workspace/js/leaderboard.js"></script>
         <script src="./workspace/js/foldout.js"></script>
-		<script src="./workspace/js/game.js"></script>
-        <script src="./workspace/js/octahedron.js"></script>
-        <script src="./workspace/js/pyramid.js"></script>
+		<script src="./workspace/js/game.js"></script> 
+        <script src="./workspace/js/rotation.js"></script>
+        <script src="./workspace/js/three.js"></script>
+        <script src="./workspace/js/modelSpin.js"></script>
 		
 		
     </head>
@@ -98,57 +94,69 @@
             </section>
     
             <section id="selectShape">
-                <h1 class="title">Select the Shape</h1>
+                <h1 class="title">Shapes Selections</h1>
                 <div id="shapeContainer">
                     <div id="triangle2DContainer">
-                        <div id="triangle2D" onclick="screenChange('selectShape', 'selectModel')" ></div>
+                        <div id="triangle2D" onclick="screenChange('selectShape', 'selectTriangleModel')" ></div>
                     </div>
                     <div id="square2DContainer">
-                        <div id="square2D" onclick="screenChange('selectShape', 'selectModel')"></div>
+                        <div id="square2D" onclick="screenChange('selectShape', 'selectSquareModel')"></div>
                     </div>
                 </div>
+                <ul>
+                    <li><a id="setDifficulty" class="buttons menuBSize" href="#difficulty" onclick="setDifficulty()">Set Difficulty</a></li>
+                </ul>
             </section>
             
-            <section id="selectModel">
+            <section id="selectTriangleModel">
                 
-                <div id="modelContainer">
-                    <h1 class="title">Select the Model</h1>
-                    <div id="pyramidModel" onclick="screenChange('selectModel', 'pyramidContainer');">tetrahedron</div>
-                    <div id="octahedronModel" onclick="screenChange('selectModel', 'octahedronContainer')">octahedron</div>
+                <div class="modelContainer">
+                    <h1 class="title">Model Selections</h1>
+                    <div id="pyramidModel" onclick="screenChange('selectTriangleModel', 'pyramidContainer');"></div>
+                    <div id="octahedronModel" onclick="screenChange('selectTriangleModel', 'octahedronContainer');"></div>
                 </div>
             
             </section>
-            <!-- Level Select Screen -->
+
+            <section id="selectSquareModel">
+                
+                <div class="modelContainer">
+                    <h1 class="title">Model Selections</h1>
+                    <div id="squareModel" onclick="screenChange('selectSquareModel', 'squareContainer');"></div>
+                    <div id="rectangleModel" onclick="screenChange('selectSquareModel', 'rectangleContainer');"></div>
+                </div>
+            
+            </section>
+
+            <!-- Foldout Select Screen -->
             <section id="levelSelect">
 
-                <h1 class="title">Level Select</h1>
+                <h1 class="title">Foldout Selections</h1>
 				<div class="levelContainer">
 					<table class="levelList">
 						<tr>
-							<td><a class="buttons menuBSize" href="#mode2D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('0'); applyFaces('0');">Level 1</a></td>
-							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode3D'); foldoutT('1'); applyFaces('1');">Level 2</a></td>
-							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('2'); applyFaces('2');">Level 3</a></td>
+							<td><a class="buttons menuBSize" href="#mode2D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('0'); applyFaces('0');">Foldout 1</a></td>
+							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode3D'); foldoutT('1'); applyFaces('1');">Foldout 2</a></td>
+							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('2'); applyFaces('2');">Foldout 3</a></td>
 						</tr>
 						<tr>
-							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('3'); applyFaces('3');">Level 4</a></td>
-							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('4'); applyFaces('4');">Level 5</a></td>
-							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('5'); applyFaces('5');">Level 6</a></td>
+							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('3'); applyFaces('3');">Foldout 4</a></td>
+							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('4'); applyFaces('4');">Foldout 5</a></td>
+							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('5'); applyFaces('5');">Foldout 6</a></td>
 						</tr>
 						<tr>
-							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('6'); applyFaces('6');">Level 7</a></td>
-							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('7'); applyFaces('7');">Level 8</a></td>
-							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('8'); applyFaces('8');">Level 9</a></td>
+							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('6'); applyFaces('6');">Foldout 7</a></td>
+							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('7'); applyFaces('7');">Foldout 8</a></td>
+							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('8'); applyFaces('8');">Foldout 9</a></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('9'); applyFaces('9');">Level 10</a></td>
+							<td><a class="buttons menuBSize" href="#mode3D" onclick="screenChange('levelSelect', 'mode2D'); foldoutT('9'); applyFaces('9');">Foldout 10</a></td>
 							<td></td>
 						</tr>
 					</table>					
 				</div>
-				<ul>
-					<li><a id="setDifficulty" class="buttons menuBSize" href="#difficulty" onclick="setDifficulty()">Set Difficulty</a></li>
-				</ul>
+
             </section>
 
 
@@ -160,15 +168,30 @@
                     <div><a class="buttons floatRight mobileBSize" href="#mode2D" onclick="screenChange('mode3D', 'mode2D');">To 2D</a></div>
                 </div>
 				
-				<!-- Divs for each face of the cube -->
-                <div id="cubeContainer">
-                    <div id="cube">
-                        <figure class="front"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
-                        <figure class="back"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
-                        <figure class="right"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
-                        <figure class="left"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
-                        <figure class="top"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
-                        <figure class="bottom"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+				<!-- Divs for each face of the square -->
+                <div id="squareContainer">
+                    <div id="squareRotatable">
+                        <figure class="front"><img class="squareCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+                        <figure class="back"><img class="squareCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+                        <figure class="right"><img class="squareCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+                        <figure class="left"><img class="squareCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+                        <figure class="top"><img class="squareCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+                        <figure class="bottom"><img class="squareCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+                    </div>
+                </div>
+
+                <div id="rectangleContainer">
+                    <div id="rectangleRotatable">
+                        <figure class="frontL"><img src="./workspace/image/images.png" alt="arrow"></figure>
+                        <figure class="backL"><img src="./workspace/image/images.png" alt="arrow"></figure>
+                        <figure class="left"><img src="./workspace/image/images.png" alt="arrow"></figure>
+                        <figure class="topL"><img src="./workspace/image/images.png" alt="arrow"></figure>
+                        <figure class="bottomL"><img src="./workspace/image/images.png" alt="arrow"></figure>
+                        <figure class="frontR"><img src="./workspace/image/images.png" alt="arrow"></figure>
+                        <figure class="backR"><img src="./workspace/image/images.png" alt="arrow"></figure>
+                        <figure class="right"><img src="./workspace/image/images.png" alt="arrow"></figure>
+                        <figure class="topR"><img src="./workspace/image/images.png" alt="arrow"></figure>
+                        <figure class="bottomR"><img src="./workspace/image/images.png" alt="arrow"></figure>
                     </div>
                 </div>
 				
@@ -199,8 +222,9 @@
 						<ul>
 							<li>Timer</li>
 							<li><p id="timer">&nbsp;&nbsp;&nbsp;</p></li>
-						</ul>
+                        </ul>
 					</div>
+                    <div><a class="infoCont mobileBSize" onclick="screenChange('mode2D', 'levelSelect')">Fold outs</a></div>
                     <div class="infoCont floatRight mobileBSize">
 						<ul>
 							<li>Score</li>

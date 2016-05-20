@@ -1,0 +1,90 @@
+#rectangleContainer {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: 0 auto 40px;
+    text-align: center;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -o-perspective: 1000px;
+    perspective: 1000px;
+    transform: translateY(300px) translateX(0px);
+}
+
+#rectangleRotatable img {
+    width: 96px;
+    height: 96px;
+    display: block;
+    margin: auto;
+    transform: translateY(50px);
+}
+
+#rectangleRotatable {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 0.1s;
+    -moz-transition: -moz-transform 0.1s;
+    -o-transition: -o-transform 0.1s;
+    transition: transform 0.1s;
+    transform: translateX(-50px) translateY(-100px);
+}
+
+#rectangleRotatable figure {
+    display: block;
+    position: absolute;
+    width: 196px;
+    height: 196px;
+    border: 5px solid black;
+    line-height: 196px;
+    font-size: 120px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+
+#rectangleRotatable.panels-backface-invisible figure {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+#rectangleRotatable .front  { background-color: white; }
+#rectangleRotatable .back   { background-color: white; }
+#rectangleRotatable .right  { background-color: white; }
+#rectangleRotatable .left   { background-color: white; }
+#rectangleRotatable .top    { background-color: white; }
+#rectangleRotatable .bottom { background-color: white; }
+
+#rectangleRotatable .frontL  { background: hsla(   0, 100%, 50%, 0.7 ); }
+#rectangleRotatable .backL   { background: hsla(  60, 100%, 50%, 0.7 ); }
+#rectangleRotatable .left    { background: hsla( 180, 100%, 50%, 0.7 ); }
+#rectangleRotatable .topL    { background: hsla( 240, 100%, 50%, 0.7 ); }
+#rectangleRotatable .bottomL { background: hsla( 300, 100%, 50%, 0.7 ); }
+#rectangleRotatable .frontR  { background: hsla(   0, 100%, 50%, 0.7 ); }
+#rectangleRotatable .backR   { background: hsla(  60, 100%, 50%, 0.7 ); }
+#rectangleRotatable .right   { background: hsla( 120, 100%, 50%, 0.7 ); }
+#rectangleRotatable .topR    { background: hsla( 240, 100%, 50%, 0.7 ); }
+#rectangleRotatable .bottomR { background: hsla( 300, 100%, 50%, 0.7 ); }
+
+#rectangleRotatable .frontL  { transform: rotateY(   0deg ) translateZ( 100px ) translateX( -100px ); }
+#rectangleRotatable .backL   { transform: rotateX( 180deg ) translateZ( 100px ) translateX( -100px ); }
+#rectangleRotatable .left   { transform: rotateY( -90deg ) translateZ( 200px ); }
+#rectangleRotatable .topL    { transform: rotateX(  90deg ) translateZ( 100px ) translateX( -100px ); }
+#rectangleRotatable .bottomL { transform: rotateX( -90deg ) translateZ( 100px ) translateX( -100px ); }
+
+#rectangleRotatable .frontR  { transform: rotateY(   0deg ) translateZ( 100px ) translateX(  100px ); }
+#rectangleRotatable .backR   { transform: rotateX( 180deg ) translateZ( 100px ) translateX(  100px ); }
+#rectangleRotatable .right   { transform: rotateY(  90deg ) translateZ( 200px ); }
+#rectangleRotatable .topR    { transform: rotateX(  90deg ) translateZ( 100px ) translateX(  100px ); }
+#rectangleRotatable .bottomR { transform: rotateX( -90deg ) translateZ( 100px ) translateX(  100px ); }
+
+
+
+

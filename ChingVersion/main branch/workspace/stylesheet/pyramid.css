@@ -77,7 +77,7 @@
     width: 200px;
     height: 200px;
     border: 0;
-    background-color: hsla( 240, 100%, 50%, 0.7 );
+    background-color: hsla( 240, 100%, 50%, 0.9 );
     line-height: 196px;
     font-size: 120px;
     font-weight: bold;
@@ -92,10 +92,10 @@
     backface-visibility: hidden;
 }
 
-#pyramidRotatable .front  { border-bottom: 200px solid hsla(   0, 100%, 50%, 0.7 ); }
-#pyramidRotatable .back   { border-top: 200px solid hsla(  60, 100%, 50%, 0.7 ); }
-#pyramidRotatable .right  { border-bottom: 200px solid hsla( 120, 100%, 50%, 0.7 ); }
-#pyramidRotatable .left   { border-bottom: 200px solid hsla( 180, 100%, 50%, 0.7 ); }
+#pyramidRotatable .front  { border-bottom: 200px solid hsla(   0, 100%, 50%, 0.9 ); }
+#pyramidRotatable .back   { border-top: 200px solid hsla(  60, 100%, 50%, 0.9 ); }
+#pyramidRotatable .right  { border-bottom: 200px solid hsla( 120, 100%, 50%, 0.9 ); }
+#pyramidRotatable .left   { border-bottom: 200px solid hsla( 180, 100%, 50%, 0.9 ); }
 #pyramidRotatable .bottom { border-bottom: 200px solid transparent; }
 
 #pyramidRotatable .front  { transform: rotateX(  30deg ) rotateY(   0deg ) translateY(38px) translateZ(35px); }

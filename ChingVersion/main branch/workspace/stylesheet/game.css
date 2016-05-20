@@ -95,6 +95,26 @@ section {
     display: none;
 }
 
+#squareContainer {
+    display: none;
+}
+
+#rectangleContainer {
+    display: none;
+}
+
+#selectTriangleModel {
+    display: none;
+}
+
+#selectShape {
+    display: none;
+}
+
+#selectSquareModel {
+    display: none;
+}
+
 /* The container where the game is being displayed */
 
 #gameContainer {
@@ -123,6 +143,7 @@ section {
     width: 50%;
     height: 50%;
     margin: auto;
+    margin-top: 10%;
 }
 #triangle2DContainer {
     width: 30%;
@@ -161,7 +182,7 @@ section {
     height: 150px;
     border: 5px solid black;
     background-color: white;
-    position: absolute;
+    float: left;
 }
 
 #octahedronModel {
@@ -169,17 +190,55 @@ section {
     height: 250px;
     margin: 0;
     float: left;
+    margin-top: 10%;
+    margin-left: 10%;  
+    border: 10px solid black;
+    background: linear-gradient(120deg, #ffffff, #aaaaaa);
+    border-radius: 50%;
 }
 
 
 
-#tetrahedronModel {
+#pyramidModel {
     width: 250px;
     height: 250px;
     margin: 0;
     float: left;
+    margin-left: 12%;
+    margin-right: 5%;
+    margin-top: 10%;
+    border: 10px solid black;
+    background: linear-gradient(120deg, #ffffff, #aaaaaa);
+    border-radius: 50%;
 }
 
+
+#rectangleModel {
+    width: 250px;
+    height: 250px;
+    margin: 0;
+    float: left;
+    margin-top: 10%;
+    margin-left: 10%;  
+    border: 10px solid black;
+    background: linear-gradient(120deg, #ffffff, #aaaaaa);
+    border-radius: 50%;
+}
+
+
+
+#squareModel {
+    width: 250px;
+    height: 250px;
+    margin: 0;
+    float: left;
+    margin-left: 12%;
+    margin-right: 5%;
+    margin-top: 10%;
+    border: 10px solid black;
+    background: linear-gradient(120deg, #ffffff, #aaaaaa);
+    border-radius: 50%;
+}
 
 /* Where the message will display for the user to read */
 .messageBox {

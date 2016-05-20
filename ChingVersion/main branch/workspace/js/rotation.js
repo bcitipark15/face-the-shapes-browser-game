@@ -3,7 +3,6 @@ document.onmouseup 		= mouseUp;
 document.onmousemove 	= mouseMove;
 
 var mouseDownID 		= -1;
-var touchDownID			= -1;
 var x 					= 0;
 var y 					= 0;
 var startX 				= 0;
@@ -14,6 +13,7 @@ var addYawn				= 0;
 var addPitch			= 0;
 var stopYawn			= 0;
 var stopPitch			= 0;
+
 
 /* Translate current X and Y position when mouse clicked into starting x and
    y rotation point for pitch and yawn. Also calls the function rotate.*/
@@ -51,51 +51,6 @@ function mouseMove(e) {
 	startY		= e.clientY - innerHeight/2;
 }
 
-/* Translate current X and Y position when touched into starting x and
-   y rotation point for pitch and yawn. Also calls the function rotate.*/
-window.addEventListener('load', function(){ // on page load
- 
-    document.body.addEventListener('touchstart', function(e){
-        if (touchDownID == -1) {
-			startX 		= e.changedTouches[0].pageX - innerWidth/2;
-			startY 		= e.changedTouches[0].pageY - innerHeight/2;
-			mouseDownID = setInterval(rotate, 10);
-		}
-	}, false)
- 
-}, false)
-
-/* Clear the interval of function rotate upon touch release. Also update the
-   x and y rotation point.*/
-window.addEventListener('load', function(){ // on page load
- 
-    document.body.addEventListener('touchend', function(e){
-        if (touchDownID != -1) {
-			clearInterval(mouseDownID);
-			touchDownID = -1;
-			startX 		= e.changedTouches[0].pageX - innerWidth/2;
-			startY 		= e.changedTouches[0].pageY - innerHeight/2;
-		}
-	}, false)
- 
-}, false)
-
-/* Translate current X and Y position into rotating point all the time as 
-   the touch moves.*/
-window.addEventListener('load', function(){ // on page load
- 
-    document.body.addEventListener('touchmove', function(e){
-        x 			= startX - (e.changedTouches[0].pageX - innerWidth/2);
-		y 			= startY - (e.changedTouches[0].pageY - innerHeight/2);
-
-		addYawn 	= x / innerWidth * 180;
-		addPitch 	= y / innerHeight * 180;
-
-		startX 		= e.changedTouches[0].pageX - innerWidth/2;
-		startY		= e.changedTouches[0].pageY - innerHeight/2;
-	}, false)
- 
-}, false)
 /* Rotating the cube based on mouse X and Y position changes as the mouse is
    pressed down and moves.*/
 function rotate() {
@@ -110,12 +65,26 @@ function rotate() {
 		pitch 		+= addPitch;
 		stopPitch 	 = addPitch;
 	}
-	
 
-		cubeRotation();
+	octahedronRotation();
+	pyramidRotation();
+	squareRotation();
+	rectangleRotation();
 }
 
-function cubeRotation() {
+function octahedronRotation() {
+	document.querySelector('#octahedronRotatable').style.transform = 'rotateY(' + yawn + 'deg) rotateX(' + pitch + 'deg) translateX(-50px) translateY(-150px)';	
+}
+
+function pyramidRotation() {
 	document.querySelector('#pyramidRotatable').style.transform = 'rotateY(' + yawn + 'deg) rotateX(' + pitch + 'deg) translateX(-50px) translateY(-100px)';	
+}
+
+function squareRotation() {
+	document.querySelector('#squareRotatable').style.transform = 'rotateY(' + yawn + 'deg) rotateX(' + pitch + 'deg) translateX(-50px) translateY(-100px)';	
+}
+
+function rectangleRotation() {
+	document.querySelector('#rectangleRotatable').style.transform = 'rotateY(' + yawn + 'deg) rotateX(' + pitch + 'deg) translateX(-50px) translateY(-100px)';	
 }
 
