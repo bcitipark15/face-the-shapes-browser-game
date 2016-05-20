@@ -10,7 +10,7 @@ $(document).ready(function(){
     window.location.hash = '#mainmenu';
 });
 
-function resize(){
+function resizeGame(){
 	if($('#foldoutScreen').width() < $('#foldoutScreen').height()){
 		axis = $('#foldoutScreen').width();
 	} else {
@@ -23,7 +23,7 @@ function resize(){
 	
 	$('#foldout tr td div').children().css({'width': size, 'height': size});
 }
-
+window.onresize = resizeGame;
 //variable that determine if easter egg two is activated
 var easterEggTwoActivate = false;
 
@@ -358,18 +358,26 @@ function validate(){
 	$('#answerScreen div.bottomNav').html('');
 	if(timeModeFlag || scoreModeFlag){
 		//If user completed all x time mode levels, send to end game screen. ~~Specify how many levels later, 2 set for testing purposes.~~
-		if(timeModeFlag && level >= 2){
-			endGame();
-		} else if(match){
+		if(match){
+			//update score if in score mode
 			if(scoreModeFlag){
 				updateScore(100);
 			}
+			//level is changed
+			level++;
+			//button takes you to next level
 			$('#answerScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#mode3D" onclick="foldoutT(\''+ levels[level % 10] + '\');applyFaces(\''+ levels[level % 10] 
 													+ '\');screenChange(\'answerScreen\', \'mode3D\');">Next Level</a></div>');
+			//ends game if you've completed all the levels
+			if(timeModeFlag && level >= 2){
+				endGame();
+			}
 		} else {
+			//score is deducted if in score mode
 			if(scoreModeFlag){
 				updateScore(-25);
 			}
+			//button leads you back.
 			$('#answerScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#mode3D" onclick="screenChange(\'answerScreen\',\'mode3D\')">back</a></div>');
 		}
 	} else {
@@ -509,8 +517,6 @@ function startTimeMode(){
 	//Build foldout and apply generated faces to 3D cube.
 	foldoutT(levels[level]);
 	applyFaces(levels[level]);
-	//Set up for next level load.
-	level++;
 }
 
 /** ~~~ Move to game.js ~~~
@@ -519,7 +525,7 @@ function startTimeMode(){
  */
 function startScoreMode(){
 	//Time remaining for game mode.
-	length = 60;
+	time = 60;
 	//User's score.
 	score = 0;
 	//Randomize levels **** NEEDS TO BE PUT INTO FUNCTION ****
@@ -529,7 +535,7 @@ function startScoreMode(){
 	//flag set for screen rendering.
 	scoreModeFlag = true;
 	//Sets interval for when to update countdown timer.
-	timer = setInterval(drawCountdownTimer, 1000, length);
+	timer = setInterval(drawCountdownTimer, 1000, time);
 	
 	//Move to level 1 **** NEEDS TO BE PUT INTO FUNCTION (CALL IT nextLevel());
 	foldoutT(levels[level]);
@@ -543,9 +549,9 @@ function startScoreMode(){
  * @return {undefined}
  */
 function drawCountdownTimer(){
-	length--;
-	$('#timer').text(length);
-	if(length <= 0){
+	time--;
+	$('#timer').text(time);
+	if(time <= 0){
 		endGame();
 		clearInterval(timer);
 	}
@@ -561,11 +567,17 @@ function endGame(){
 	screenChange('mode3D','answerScreen');
 	window.location.hash = '#mode3D';
 	$('#answerScreen div.bottomNav').html('');
-	
 	$('#answerScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#" onclick="toLeaderboard();">Post!</a></div>');
 	$('#answerScreen div.bottomNav').append('<div><a class="buttons floatleft mobileBSize" href="#mainMenu" onclick="screenChange(\'answerScreen\',\'mainMenu\')">back</a></div>');
 	$('#answerScreen div.messageBox').html('');
-	$('#answerScreen div.messageBox').append('<p>Your score: ' + score + '</p><br><br><p>Enter Your Name:</p><br>' +
+	
+	if(scoreModeFlag){
+		$('#answerScreen div.messageBox').append('<p>Your score: ' + score + '</p>');
+	}
+	if(timeModeFlag){
+		$('#answerScreen div.messageBox').append('<p>Your time: ' + time + '</p>');
+	}
+	$('#answerScreen div.messageBox').append('<br><p>Enter Your Name:</p>' +
 											'<input type="text" id="username" name="username"style="z-index: 999; position: relative"></input>');
 	$('#username').focus();
 	
@@ -577,10 +589,16 @@ function endGame(){
  */
 function toLeaderboard(){
 	var name = $('#username').val();
-	alert("Sent\nYour Name: " + name + "\nYour Score: " + score);
-	inputHighScore(name,score);
+	if(scoreModeFlag){
+		inputHighScore(name,score);
+		alert("Sent\nYour Name: " + name + "\nYour Score: " + score);
+	}
+	
+	
+	//*****inputBestTime here******
+	
 	$('#answerScreen div.bottomNav').html('');
-	$('#answerScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#">Post!</a></div>');
+	$('#answerScreen div.bottomNav').append('<div><p class="deadButton floatRight mobileBSize">Post!</p></div>');
 	$('#answerScreen div.bottomNav').append('<div><a class="buttons floatleft mobileBSize" href="#mainMenu" onclick="screenChange(\'answerScreen\',\'mainMenu\')">back</a></div>');
 }
 
