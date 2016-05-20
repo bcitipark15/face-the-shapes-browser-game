@@ -5,11 +5,15 @@
  */
  
 
-//Fixes bug where refreshes does not take player to main menu screen.
+//Fixes bug where refreshes does not take player to main menu screen. ~~~ Move to game.js ~~~
 $(document).ready(function(){
     window.location.hash = '#mainmenu';
 });
 
+/** ~~ Move to game.js ~~
+ * resizeGame Resizes the foldout according to the new screen size.
+ * @return {undefined}
+ */
 function resizeGame(){
 	if($('#foldoutScreen').width() < $('#foldoutScreen').height()){
 		axis = $('#foldoutScreen').width();
@@ -23,39 +27,8 @@ function resizeGame(){
 	
 	$('#foldout tr td div').children().css({'width': size, 'height': size});
 }
+
 window.onresize = resizeGame;
-//variable that determine if easter egg two is activated
-var easterEggTwoActivate = false;
-
- //Color array for face colors.
-var colors = ['red','lime','blue','purple','yellow','cyan','orange'];
-
-//Hard code 6 faces for cube
-var faces = 6;
-
-//Array of objects that contain face info
-var faceArray = [];
-
-//Array containing the face names of the cube.
-var faceNames = ['facetop','faceleft','facefront','faceright','facebottom','faceback'];
-
-//Size is used to determine face width and height.
-var size;
-
-//Flags used to indicate different actions.
-var colorFlag = false;
-var timeModeFlag = false;
-
-//Set pivot color, default is set to black.
-var pivotColor = 'black';
-
-//Current elapsed time in competitive modes.
-var time = 0;
-//Levels will contain randomized level order
-var levels = [];
-//level is current level.
-var level;
-
 
 /**
  * makeFace creates a face object with a generated arrow value
@@ -362,6 +335,8 @@ function validate(){
 			//update score if in score mode
 			if(scoreModeFlag){
 				updateScore(100);
+				$('#score').text(score);
+				time += 30;
 			}
 			//level is changed
 			level++;
@@ -375,7 +350,9 @@ function validate(){
 		} else {
 			//score is deducted if in score mode
 			if(scoreModeFlag){
-				updateScore(-25);
+				if(score >= 25)
+					updateScore(-25);
+				$('#score').text(score);
 			}
 			//button leads you back.
 			$('#answerScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#mode3D" onclick="screenChange(\'answerScreen\',\'mode3D\')">back</a></div>');
@@ -411,10 +388,6 @@ function easterEggTwo() {
             + '<figure class="top"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure>'
             + '<figure class="bottom"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure>'
 }
-
-
-
-difficultyNum = 0;
 
 /**
  * setDifficulty Difficulty button for number of pivots generated.
@@ -481,17 +454,19 @@ function selectMode(mode){
 	scoreModeFlag = false;
 	switch(mode){
 		case 'classic':
-			$('#timer').css('display', 'none');
-			$('#score').css('display', 'none');
+			$('#timerBox').css('display', 'none');
+			$('#scoreBox').css('display', 'none');
 			break;
 		case 'time':
-			$('#timer').css('display', 'initial');
-			$('#score').css('display', 'none');
+			difficultyNum = 2;
+			$('#timerBox').css('display', 'initial');
+			$('#scoreBox').css('display', 'none');
 			startTimeMode();
 			break;
 		case 'score':
-			$('#timer').css('display', 'initial');
-			$('#score').css('display', 'initial');
+			difficultyNum = 2;
+			$('#timerBox').css('display', 'initial');
+			$('#scoreBox').css('display', 'initial');
 			startScoreMode();
 			break;
 	}
@@ -513,7 +488,7 @@ function startTimeMode(){
 	//Starting level
 	level = 0;
 	randomizeOrder(levels);
-	
+	$('#timer').text(time);
 	//Build foldout and apply generated faces to 3D cube.
 	foldoutT(levels[level]);
 	applyFaces(levels[level]);
@@ -536,11 +511,11 @@ function startScoreMode(){
 	scoreModeFlag = true;
 	//Sets interval for when to update countdown timer.
 	timer = setInterval(drawCountdownTimer, 1000, time);
-	
+	$('#timer').text(time);
+	$('#score').text(score);
 	//Move to level 1 **** NEEDS TO BE PUT INTO FUNCTION (CALL IT nextLevel());
 	foldoutT(levels[level]);
 	applyFaces(levels[level]);
-	level++;
 }
 
 /** ~~~ Move to game.js ~~~
@@ -571,14 +546,17 @@ function endGame(){
 	$('#answerScreen div.bottomNav').append('<div><a class="buttons floatleft mobileBSize" href="#mainMenu" onclick="screenChange(\'answerScreen\',\'mainMenu\')">back</a></div>');
 	$('#answerScreen div.messageBox').html('');
 	
+	//Change score message depending on mode
 	if(scoreModeFlag){
 		$('#answerScreen div.messageBox').append('<p>Your score: ' + score + '</p>');
 	}
 	if(timeModeFlag){
 		$('#answerScreen div.messageBox').append('<p>Your time: ' + time + '</p>');
 	}
+	//Input field for name
 	$('#answerScreen div.messageBox').append('<br><p>Enter Your Name:</p>' +
 											'<input type="text" id="username" name="username"style="z-index: 999; position: relative"></input>');
+	//Weird bug where input field is unclickable. Added this as temporary work around.
 	$('#username').focus();
 	
 }
@@ -593,10 +571,12 @@ function toLeaderboard(){
 		inputHighScore(name,score);
 		alert("Sent\nYour Name: " + name + "\nYour Score: " + score);
 	}
+	if(timeModeFlag){
+		inputHighTime(name, time)
+		alert("Sent\nYour Name: " + name + "\nYour Time: " + time);
+	}
 	
-	
-	//*****inputBestTime here******
-	
+	//Edit buttons to prevent posting same information more than one time.
 	$('#answerScreen div.bottomNav').html('');
 	$('#answerScreen div.bottomNav').append('<div><p class="deadButton floatRight mobileBSize">Post!</p></div>');
 	$('#answerScreen div.bottomNav').append('<div><a class="buttons floatleft mobileBSize" href="#mainMenu" onclick="screenChange(\'answerScreen\',\'mainMenu\')">back</a></div>');

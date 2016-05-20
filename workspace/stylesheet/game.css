@@ -1,19 +1,3 @@
-#username {
-	border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 4px;
-    box-sizing: border-box;
-	text-align: center;
-	width: 100%;
-	height: 40px;
-	margin: auto;
-	font-size: 25px;
-	font-family: juneGull;
-	background-color: rgba(255, 255, 255, 0.00);
-}
-#username:focus {
-	border: 1px solid rgba(255, 255, 255, 1);
-}
-
 
 * {
     margin: 0;
@@ -48,43 +32,25 @@ section {
     from {opacity: 0;}
     to {opacity: 1;}
 }
-
 @keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
 }
 
 /* Hide from the user */
-#leaderboard {
-	display: none;
-}
-#gameMode {
-	display: none;
-}
-#levelSelect {
-	display: none;
-}
-#selectShape {
-	display: none;
-}
-#selectModel {
-	display: none;
-}
-#mode3D {
-	display: none;
-}
-#mode2D {
-	display: none;
-}
-#resultScreen {
-	display: none;
-}
+#leaderboard,
+#gameMode,
+#levelSelect,
+#selectShape,
+#selectModel,
+#mode3D,
+#mode2D,
+#resultScreen,
 #answerScreen {
 	display: none;
 }
 
 /* The container where the game is being displayed */
-
 #gameContainer {
     margin-top: 3%;
     margin-bottom: 3%;
@@ -101,6 +67,24 @@ section {
     overflow: hidden;
 }
 
+/* The text box for the user to input a Name */
+#username {
+	border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    box-sizing: border-box;
+	text-align: center;
+	width: 100%;
+	height: 40px;
+	margin: auto;
+	font-size: 25px;
+	font-family: juneGull;
+	background-color: rgba(255, 255, 255, 0.00);
+}
+#username:focus {
+	border: 1px solid rgba(255, 255, 255, 1);
+}
+
+/* Level table is stored in */
 .levelList {
 	padding: 0;
 	margin-left: auto;
@@ -138,18 +122,6 @@ section {
     font-size: 35px;
     padding-bottom: 20px;
     color: white;
-}
-
-/* The hamburger */
-#hamburger {
-    background-image: url("../image/hamburger.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 10px;
-    width: 20px;
-}
-#hamburger:hover {
-    opacity: 0.4;
 }
 
 /* To keep the nav on the top */
@@ -214,15 +186,12 @@ section {
 }
 
 /* Quick float right, left, and clear */
-
 .floatRight {
     float: right;
 }
-
 .floatLeft {
     float: left;
 }
-
 .clear {
     clear: both;
 }
