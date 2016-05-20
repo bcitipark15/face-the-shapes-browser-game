@@ -24,26 +24,64 @@ function init() {
 		color: "black"
 	});*/
 
-	THREE.ImageUtils.crossOrigin = '';
+
+
+    var	group = new THREE.Group();
 
 	var loader = new THREE.TextureLoader();
 
-	var loadedTexture = loader.load('./workspace/image/images.png');
+	scene.add(group);
 
-	var polyhedronMat	= new THREE.MeshLambertMaterial({
+	THREE.ImageUtils.crossOrigin = '';
+
+	loader.load('./workspace/image/octahedron.png', function (
+		texture ) {
+
+		var geometry = new THREE.BoxGeometry( 50, 50, 50);
+		var material = new THREE.MeshFaceMaterial([
+		    new THREE.MeshNormalMaterial({
+		        map: texture
+		    }),
+		    new THREE.MeshBasicMaterial({
+		        map: texture
+		    }),
+		    new THREE.MeshBasicMaterial({
+		      /*  color: 0x0000ff,*/
+		        map: texture
+		    }),
+		    new THREE.MeshBasicMaterial({
+		        map: texture
+		    }),
+		    new THREE.MeshBasicMaterial({
+		        map: texture
+		    }),
+		    new THREE.MeshBasicMaterial({
+		        map: texture
+		    })
+		]);
+
+		var mesh = new THREE.Mesh( geometry, material);
+
+		group.add( mesh );
+		}
+	);
+
+
+
+/*	var polyhedronMat	= new THREE.MeshLambertMaterial({
 			map: loadedTexture,
             polygonOffset: true,
             polygonOffsetFactor: 1,
             polygonOffsetUnits: 1 });
 	var polyhedron = new THREE.Mesh(new THREE.OctahedronGeometry(10, 0), polyhedronMat);
-	polyhedron.castShadow = true;
+	polyhedron.castShadow = true;*/
 
-	var helper = new THREE.EdgesHelper(polyhedron, 0x000000);
+/*	var helper = new THREE.EdgesHelper(polyhedron, 0x000000);
 	helper.material.linewidth = 2;
 	scene.add(helper);
 
 	scene.add(polyhedron);
-
+*/
 	var polyhedronMat2	= new THREE.MeshLambertMaterial({color: 0xFFFFFF,
             polygonOffset: true,
             polygonOffsetFactor: 1,
@@ -79,8 +117,8 @@ function init() {
 	render();
 
 	function render() {
-		polyhedron.rotation.y = step += 0.005;
-		polyhedron2.rotation.y = step += 0.005;
+/*		polyhedron.rotation.y = step += 0.005;
+*/		polyhedron2.rotation.y = step += 0.005;
 		requestAnimationFrame(render);
 		renderer.render(scene, camera);
 		renderer2.render(scene2, camera);

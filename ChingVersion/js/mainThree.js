@@ -17,7 +17,7 @@ var material = new three.MeshBasicMaterial({
 /* */
 /* */
 three.ImageUtils.crossOrigin = '';
-var texture = three.ImageUtils.loadTexture('http://i.imgur.com/CEGihbB.gif');
+var texture = three.ImageUtils.loadTexture('img/arrows/images.png');
 texture.anisotropy = renderer.getMaxAnisotropy();
 
 var material = new three.MeshFaceMaterial([
