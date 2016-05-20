@@ -1,6 +1,6 @@
 #octahedronContainer {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     position: relative;
     margin: 0 auto 40px;
     text-align: center;
@@ -8,12 +8,7 @@
     -moz-perspective: 1000px;
     -o-perspective: 1000px;
     perspective: 1000px;
-	user-drag: none; 
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+    transform: translateY(300px) translateX(0px);
 }
 
 #octahedronRotatable img {
@@ -21,41 +16,16 @@
 	height: 96px;
     display: block;
     margin: auto;
+    position: absolute;
     transform: translateX(-50px) translateY(70px);
-	user-drag: none; 
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
 }
 
 #octahedronRotatable .back img {
-    width: 96px;
-    height: 96px;
-    display: block;
-    margin: auto;
     transform: translateX(-50px) translateY(-160px);
-    user-drag: none; 
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
 }
 
 #octahedronRotatable .backB img {
-    width: 96px;
-    height: 96px;
-    display: block;
-    margin: auto;
     transform: translateX(-50px) translateY(-160px);
-    user-drag: none; 
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
 }
 
 #octahedronRotatable {
@@ -70,7 +40,7 @@
     -moz-transition: -moz-transform 0.1s;
     -o-transition: -o-transform 0.1s;
     transition: transform 0.1s;
-    transform: translateX(-50px) translateY(-200px);
+    transform: translateX(-50px) translateY(-150px);
 }
 
 #octahedronRotatable figure {

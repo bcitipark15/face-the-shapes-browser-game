@@ -121,9 +121,7 @@ function rotate() {
 }
 
 function cubeRotation() {
-	document.getElementById('pitch').innerHTML 	= (pitch*100+.5|0) / 100;
-	document.getElementById('yawn').innerHTML 	= (yawn*100+.5|0) / 100;
-	document.querySelector('#cube').style.transform = 'rotateY(' + yawn + 'deg) rotateX(' + pitch + 'deg) translateX(-50px) translateY(-200px)';	
+	document.querySelector('#octahedronRotatable').style.transform = 'rotateY(' + yawn + 'deg) rotateX(' + pitch + 'deg) translateX(-50px) translateY(-150px)';	
 }
 
 function unfold() {
