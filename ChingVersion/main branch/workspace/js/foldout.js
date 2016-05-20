@@ -307,7 +307,7 @@ function applyFaces(foldoutNum){
 			+ (getFace(faceNames[i]).trueValue + offsets[foldoutNum][i]) * 90 + 'deg)');
 		
 		//Sets the background color of the face according to the trueColor that was generated.
-		$('#cube .' + faceNames[i].substring(4)).css('background-color',faceArray[i].trueColor);
+		$('#cubeRotatable .' + faceNames[i].substring(4)).css('background-color',faceArray[i].trueColor);
 	}
 }
 
@@ -379,7 +379,7 @@ function easterEggTwo() {
 			+ "body{background-color:black;}"
 			+ ".title{color: rgba(200, 100, 100, 0.7);}"
 			+ ".buttons{color: rgba(200, 100, 100, 0.7);}"
-			+ "#cube img{width: 50%; height: 50%;}"));
+			+ "#cubeRotatable img{width: 50%; height: 50%;}"));
 	easterEggTwoActivateHead.appendChild(easterEggTwoActivateStyle);
 	var easterEggTwoActivateCubeFace = document.getElementById('cube');
 	easterEggTwoActivateCubeFace.innerHTML = '<figure class="front"><img class="cubeCover" src="./workspace/image/skull.png" alt="arrow"></figure> '

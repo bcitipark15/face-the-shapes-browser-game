@@ -1,6 +1,6 @@
-/* square container is where the square is stored prevent
-the user from dragging and highlighting the square */
-#squareContainer {
+/* cube container is where the cube is stored prevent
+the user from dragging and highlighting the cube */
+#cubeContainer {
     width: 100px;
     height: 100px;
     position: relative;
@@ -10,15 +10,15 @@ the user from dragging and highlighting the square */
     -moz-perspective: 1000px;
     -o-perspective: 1000px;
     perspective: 1000px;
-    transform: translateY(300px) translateX(0px);
+    transform: translateY(150px) translateX(0px);
 }
-/* The modifies the image to match the size of the square */
-.squareCover {
+/* The modifies the image to match the size of the cube */
+.cubeCover {
     width: 196px;
     height: 196px;
 }
-/* The square itself where the transformation are applied */
-#squareRotatable {
+/* The cube itself where the transformation are applied */
+#cubeRotatable {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -33,8 +33,8 @@ the user from dragging and highlighting the square */
     transform: translateX(-50px) translateY(-100px);
 }
 
-/* The face of the square */
-#squareRotatable figure {
+/* The face of the cube */
+#cubeRotatable figure {
     display: block;
     position: absolute;
     width: 196px;
@@ -47,7 +47,7 @@ the user from dragging and highlighting the square */
     text-align: center;
 }
 
-#square.panels-backface-invisible figure {
+#cube.panels-backface-invisible figure {
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -o-backface-visibility: hidden;
@@ -55,68 +55,68 @@ the user from dragging and highlighting the square */
 }
 
 /* Assigned the color white if the JS fails */
-#squareRotatable .front {
+#cubeRotatable .front {
     background-color: white;
 }
-#squareRotatable .back {
+#cubeRotatable .back {
     background-color: white;
 }
-#squareRotatable .right {
+#cubeRotatable .right {
     background-color: white;
 }
-#squareRotatable .left {
+#cubeRotatable .left {
     background-color: white;
 }
-#squareRotatable .top {
+#cubeRotatable .top {
     background-color: white;
 }
-#squareRotatable .bottom {
+#cubeRotatable .bottom {
     background-color: white;
 }
 
 
 /* For future uses */
-#squareRotatable .front {
+#cubeRotatable .front {
     background: hsla( 0, 100%, 50%, 0.7 );
 }
-#squareRotatable .back {
+#cubeRotatable .back {
     background: hsla( 60, 100%, 50%, 0.7 );
 }
-#squareRotatable .right {
+#cubeRotatable .right {
     background: hsla( 120, 100%, 50%, 0.7 );
 }
-#squareRotatable .left {
+#cubeRotatable .left {
     background: hsla( 180, 100%, 50%, 0.7 );
 }
-#squareRotatable .top {
+#cubeRotatable .top {
     background: hsla( 240, 100%, 50%, 0.7 );
 }
-#squareRotatable .bottom {
+#cubeRotatable .bottom {
     background: hsla( 300, 100%, 50%, 0.7 );
 }
 
 
-/* Rotates the square to its proper orientation when moved */
-#squareRotatable .front {
+/* Rotates the cube to its proper orientation when moved */
+#cubeRotatable .front {
     transform: rotateY( 0deg ) translateZ( 100px );
 }
 
-#squareRotatable .back {
+#cubeRotatable .back {
     transform: rotateX( 180deg ) translateZ( 100px );
 }
 
-#squareRotatable .right {
+#cubeRotatable .right {
     transform: rotateY( 90deg ) translateZ( 100px );
 }
 
-#squareRotatable .left {
+#cubeRotatable .left {
     transform: rotateY( -90deg ) translateZ( 100px );
 }
 
-#squareRotatable .top {
+#cubeRotatable .top {
     transform: rotateX( 90deg ) translateZ( 100px );
 }
 
-#squareRotatable .bottom {
+#cubeRotatable .bottom {
     transform: rotateX( -90deg ) translateZ( 100px );
 }

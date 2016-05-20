@@ -15,7 +15,7 @@
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/easterEgg.css" media="screen">
         <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/pyramid.css" media="screen">
         <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/rectangle.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/square.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/cube.css" media="screen">
 		
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/portraitMode.css" media="only all and (max-width: 480px)">
         <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/landscapeMode.css" media="only all and (max-height: 480px)">
@@ -85,8 +85,8 @@
 				
                 <ul>
                     <li><a class="buttons menuBSize" href="#levelSelect" onclick="screenChange('gameMode', 'selectShape'); selectMode('classic');">Classic</a></li>
-                    <li><a class="buttons menuBSize" href="#timeMode" onclick="screenChange('gameMode','mode3D');selectMode('time');">Time Attack</a></li>
-                    <li><a class="buttons menuBSize" href="#scoreMode" onclick="screenChange('gameMode','mode3D');selectMode('score');">Score Attack</a></li>
+                    <li><a class="buttons menuBSize" href="#timeMode" onclick="screenChange('gameMode','cubeContainer');selectMode('time');">Time Attack</a></li>
+                    <li><a class="buttons menuBSize" href="#scoreMode" onclick="screenChange('gameMode','cubeContainer');selectMode('score');">Score Attack</a></li>
                     <li><a class="buttons menuBSize" href="#mainMenu" onclick="screenChange('gameMode', 'mainMenu')">Back</a></li>
                     <li><a class="buttons menuBSize" id="easterEggTwo" onclick="easterEggTwo(); screenChange('gameMode', 'mainMenu')" href="#mainMenu">Death</a></li>
                 </ul>
@@ -122,7 +122,7 @@
                 
                 <div class="modelContainer">
                     <h1 class="title">Model Selections</h1>
-                    <div id="squareModel" onclick="screenChange('selectSquareModel', 'squareContainer');"></div>
+                    <div id="squareModel" onclick="screenChange('selectSquareModel', 'cubeContainer');"></div>
                     <div id="rectangleModel" onclick="screenChange('selectSquareModel', 'rectangleContainer');"></div>
                 </div>
             
@@ -168,15 +168,15 @@
                     <div><a class="buttons floatRight mobileBSize" href="#mode2D" onclick="screenChange('mode3D', 'mode2D');">To 2D</a></div>
                 </div>
 				
-				<!-- Divs for each face of the square -->
-                <div id="squareContainer">
-                    <div id="squareRotatable">
-                        <figure class="front"><img class="squareCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
-                        <figure class="back"><img class="squareCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
-                        <figure class="right"><img class="squareCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
-                        <figure class="left"><img class="squareCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
-                        <figure class="top"><img class="squareCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
-                        <figure class="bottom"><img class="squareCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+				<!-- Divs for each face of the cube -->
+                <div id="cubeContainer">
+                    <div id="cubeRotatable">
+                        <figure class="front"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+                        <figure class="back"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+                        <figure class="right"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+                        <figure class="left"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+                        <figure class="top"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
+                        <figure class="bottom"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
                     </div>
                 </div>
 

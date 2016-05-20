@@ -22,12 +22,12 @@ function screenChange(current, next) {
 	document.getElementById(next).style.display = "block";
 	document.getElementById(current).style.display = "none";
 	if (	next === 'octahedronContainer' 	|| 	next === 'pyramidContainer' || 
-			next === 'squareContainer' 		|| 	next === 'rectangleContainer') {
+			next === 'cubeContainer' 		|| 	next === 'rectangleContainer') {
 		document.getElementById('mode3D').style.display = "block";
 	} else if (next === 'mainMenu') {
 		document.getElementById('octahedronContainer').style.display = "none";
 		document.getElementById('pyramidContainer').style.display = "none";
-		document.getElementById('squareContainer').style.display = "none";
+		document.getElementById('cubeContainer').style.display = "none";
 		document.getElementById('rectangleContainer').style.display = "none";
 	}
 }

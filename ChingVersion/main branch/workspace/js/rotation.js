@@ -68,7 +68,7 @@ function rotate() {
 
 	octahedronRotation();
 	pyramidRotation();
-	squareRotation();
+	cubeRotation();
 	rectangleRotation();
 }
 
@@ -80,8 +80,8 @@ function pyramidRotation() {
 	document.querySelector('#pyramidRotatable').style.transform = 'rotateY(' + yawn + 'deg) rotateX(' + pitch + 'deg) translateX(-50px) translateY(-100px)';	
 }
 
-function squareRotation() {
-	document.querySelector('#squareRotatable').style.transform = 'rotateY(' + yawn + 'deg) rotateX(' + pitch + 'deg) translateX(-50px) translateY(-100px)';	
+function cubeRotation() {
+	document.querySelector('#cubeRotatable').style.transform = 'rotateY(' + yawn + 'deg) rotateX(' + pitch + 'deg) translateX(-50px) translateY(-100px)';	
 }
 
 function rectangleRotation() {
