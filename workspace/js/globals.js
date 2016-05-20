@@ -25,8 +25,10 @@ var pivotColor = 'black';
 
 //Current elapsed time in competitive modes.
 var time = 0;
+
 //Levels will contain randomized level order
 var levels = [];
+
 //level is current level.
 var level;
 

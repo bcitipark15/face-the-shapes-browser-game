@@ -28,6 +28,7 @@ section {
 	-webkit-animation: fadeEffect 1s;
     animation: fadeEffect 1s;
 }
+/*  ****Interferes with foldout resizing, to be retested later. ****
 @-webkit-keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
@@ -35,7 +36,7 @@ section {
 @keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
-}
+}*/
 
 /* Hide from the user */
 #leaderboard,
