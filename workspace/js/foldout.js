@@ -571,10 +571,12 @@ function toLeaderboard(){
 		inputHighScore(name,score);
 		alert("Sent\nYour Name: " + name + "\nYour Score: " + score);
 	}
+	if(timeModeFlag){
+		inputHighTime(name, time)
+		alert("Sent\nYour Name: " + name + "\nYour Time: " + time);
+	}
 	
-	
-	//*****inputBestTime here******
-	
+	//Edit buttons to prevent posting same information more than one time.
 	$('#answerScreen div.bottomNav').html('');
 	$('#answerScreen div.bottomNav').append('<div><p class="deadButton floatRight mobileBSize">Post!</p></div>');
 	$('#answerScreen div.bottomNav').append('<div><a class="buttons floatleft mobileBSize" href="#mainMenu" onclick="screenChange(\'answerScreen\',\'mainMenu\')">back</a></div>');
