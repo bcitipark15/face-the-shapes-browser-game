@@ -2,6 +2,7 @@ var renderer 	= new THREE.WebGLRenderer({alpha: true, antialias: true});
 var renderer2 	= new THREE.WebGLRenderer({alpha: true, antialias: true});
 var renderer3 	= new THREE.WebGLRenderer({alpha: true, antialias: true});
 var renderer4 	= new THREE.WebGLRenderer({alpha: true, antialias: true});
+var renderer5 	= new THREE.WebGLRenderer({alpha: true, antialias: true});
 
 function init() {
 
@@ -9,6 +10,7 @@ function init() {
 	var scene2	= new THREE.Scene();
 	var scene3	= new THREE.Scene();
 	var scene4	= new THREE.Scene();
+	var scene5	= new THREE.Scene();
 
 	var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
 
@@ -28,6 +30,10 @@ function init() {
 	renderer4.setSize($('#pyramidModel').innerWidth(), $('#pyramidModel').innerHeight());
 	renderer4.shadowMapEnabled = true;
 
+	renderer5.setClearColor(0x000000, 0);
+	renderer5.setSize($('#titleImage').innerWidth(), $('#titleImage').innerHeight());
+	renderer5.shadowMapEnabled = true;
+
 	document.getElementById('octahedronModel').appendChild(renderer.domElement);
 
 	document.getElementById('pyramidModel').appendChild(renderer2.domElement);
@@ -35,6 +41,8 @@ function init() {
 	document.getElementById('squareModel').appendChild(renderer3.domElement);
 
 	document.getElementById('rectangleModel').appendChild(renderer4.domElement);
+
+	document.getElementById('titleImage').appendChild(renderer5.domElement);
 
 	var polyhedronMat	= new THREE.MeshLambertMaterial({
 			color: 0xffffff,
@@ -92,6 +100,20 @@ function init() {
 
 	scene4.add(polyhedron4);
 
+	var polyhedronMat5	= new THREE.MeshLambertMaterial({
+			color: 0xffffff,
+            polygonOffset: true,
+            polygonOffsetFactor: 1,
+            polygonOffsetUnits: 1 });
+	var polyhedron5 = new THREE.Mesh(new THREE.BoxGeometry(15, 7.5, 15), polyhedronMat5);
+	polyhedron5.castShadow = true;
+
+	var helper5 = new THREE.EdgesHelper(polyhedron5, 0xFFFFFF);
+	helper5.material.linewidth = 2;
+	scene5.add(helper5);
+
+	scene5.add(polyhedron5);
+
 	camera.position.z = 28;
 
 	var step = 0;
@@ -116,6 +138,11 @@ function init() {
 	spotLight4.castShadow = true;
 	scene4.add(spotLight4);
 
+	var spotLight5 = new THREE.SpotLight(0x111111);
+	spotLight5.position.set(0, 60, 60);
+	spotLight5.castShadow = true;
+	scene5.add(spotLight5);
+
 	render();
 
 	function render() {
@@ -123,11 +150,13 @@ function init() {
 		polyhedron2.rotation.y = step += 0.005;
 		polyhedron3.rotation.y = step += 0.005;
 		polyhedron4.rotation.y = step += 0.005;
+		polyhedron5.rotation.y = step += 0.001;
 		requestAnimationFrame(render);
 		renderer.render(scene, camera);
 		renderer2.render(scene2, camera);
 		renderer3.render(scene3, camera);
 		renderer4.render(scene4, camera);
+		renderer5.render(scene5, camera);
 	}
 }
 
