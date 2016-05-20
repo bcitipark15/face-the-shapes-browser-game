@@ -21,11 +21,11 @@
 }
 
 #octahedronRotatable .back img {
-    transform: translateX(-50px) translateY(-160px);
+    transform: translateX(-50px) translateY(-170px);
 }
 
 #octahedronRotatable .backB img {
-    transform: translateX(-50px) translateY(-160px);
+    transform: translateX(-50px) translateY(-170px);
 }
 
 #octahedronRotatable {

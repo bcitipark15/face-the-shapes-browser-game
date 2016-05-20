@@ -21,9 +21,9 @@ function navBar() {
 function screenChange(current, next) {
 	document.getElementById(next).style.display = "block";
 	document.getElementById(current).style.display = "none";
-	if (next === 'octahedronContainer') {
+	if (next === 'octahedronContainer' || next === 'pyramidContainer') {
 		document.getElementById('mode3D').style.display = "block";
-	}
+	} 
 }
 
 window.addEventListener("orientationchange", navBar, false);

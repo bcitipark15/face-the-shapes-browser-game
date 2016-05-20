@@ -13,6 +13,8 @@
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/button.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/leaderboard.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/easterEgg.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/pyramid.css" media="screen">
+
 		
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/portraitMode.css" media="only all and (max-width: 480px)">
         <link rel="stylesheet" type="text/css" href="./workspace/stylesheet/landscapeMode.css" media="only all and (max-height: 480px)">
@@ -29,6 +31,7 @@
         <script src="./workspace/js/foldout.js"></script>
 		<script src="./workspace/js/game.js"></script>
         <script src="./workspace/js/octahedron.js"></script>
+        <script src="./workspace/js/pyramid.js"></script>
 		
 		
     </head>
@@ -110,7 +113,7 @@
                 
                 <div id="modelContainer">
                     <h1 class="title">Select the Model</h1>
-                    <div id="tetrahedronModel" onclick="screenChange('selectModel', 'tetrahedronContainer');">tetrahedron</div>
+                    <div id="pyramidModel" onclick="screenChange('selectModel', 'pyramidContainer');">tetrahedron</div>
                     <div id="octahedronModel" onclick="screenChange('selectModel', 'octahedronContainer')">octahedron</div>
                 </div>
             
@@ -182,6 +185,15 @@
                     </div>
                 </div>
 
+                <div id="pyramidContainer">
+                    <div id="pyramidRotatable">
+                        <figure class="front"><img src="./workspace/image/images.png" alt="arrow"></figure>
+                        <figure class="back"><img src="./workspace/image/images.png" alt="arrow"></figure>
+                        <figure class="right"><img src="./workspace/image/images.png" alt="arrow"></figure>
+                        <figure class="left"><img src="./workspace/image/images.png" alt="arrow"></figure>
+                        <figure class="bottom"><img src="./workspace/image/images.png" alt="arrow"></figure>
+                    </div>
+                </div>
 				<div class="bottomNav">
                     <div class="infoCont floatLeft mobileBSize">
 						<ul>

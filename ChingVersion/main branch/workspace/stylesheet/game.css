@@ -91,6 +91,10 @@ section {
     display: none;
 }
 
+#pyramidContainer {
+    display: none;
+}
+
 /* The container where the game is being displayed */
 
 #gameContainer {
