@@ -4,6 +4,7 @@
     width: 40%;
 	max-width: 180px;
 }
+
 /*  B = Button **/
 .mobileBSize {
     width: 20%;
@@ -25,12 +26,12 @@
     text-decoration: none;
     font-size: 20px;
 }
-
 .buttons:hover {
 	color: rgba(255, 255, 255, 0.8);
 	background-color: rgba(255, 255, 255, 0.2);
 	border-color: rgba(255, 255, 255, 0.3);
 }
+
 /* Grays out the button */
 .deadButton {
 	padding: 20px;
@@ -47,4 +48,22 @@
     text-decoration: none;
     font-size: 20px;
 	cursor: default;
+}
+
+/* The backButton */
+#backButton {
+    background-image: url("../image/chevron.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+	width: 5%;
+}
+
+/* The hamburger */
+#hamburger {
+    background-image: url("../image/hamburger.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 10px;
+    width: 20px;
 }
