@@ -64,6 +64,12 @@ section {
 #levelSelect {
 	display: none;
 }
+#selectShape {
+	display: none;
+}
+#selectModel {
+	display: none;
+}
 #mode3D {
 	display: none;
 }

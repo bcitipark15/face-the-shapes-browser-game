@@ -83,13 +83,13 @@
                 <h1 class="title">Game Mode</h1>
 				
                 <ul>
-                    <li><a class="buttons menuBSize" href="#levelSelect" onclick="screenChange('gameMode', 'selectShape'); selectMode('classic');">Classic</a></li>
+                    <li><a class="buttons menuBSize" href="#levelSelect" onclick="screenChange('gameMode', 'levelSelect'); selectMode('classic');">Classic</a></li>
                     <li><a class="buttons menuBSize" href="#timeMode" onclick="screenChange('gameMode','mode3D');selectMode('time');">Time Attack</a></li>
                     <li><a class="buttons menuBSize" href="#scoreMode" onclick="screenChange('gameMode','mode3D');selectMode('score');">Score Attack</a></li>
                     <li><a class="buttons menuBSize" href="#mainMenu" onclick="screenChange('gameMode', 'mainMenu')">Back</a></li>
                     <li><a class="buttons menuBSize" id="easterEggTwo" onclick="easterEggTwo(); screenChange('gameMode', 'mainMenu')" href="#mainMenu">Death</a></li>
                 </ul>
-
+			</section>
             <section id="selectShape">
                 <h1 class="title">Select the Shape</h1>
                 <div id="shapeContainer">
@@ -108,13 +108,11 @@
                     <h1 class="title">Select the Model</h1>
                     <div id="tetrahedronModel"></div>
                     <div id="octahedronModel"></div>
-                    
-                    
                 </div>
             
             </section>
 				
-            </section>
+            
 
             <!-- Level Select Screen -->
             <section id="levelSelect">
@@ -155,7 +153,7 @@
 
                 <div class="topNav">
                     <div><a id="hamburger" class="buttons floatLeft mobileBSize" href="#mainMenu" onclick="screenChange('mode3D', 'mainMenu')"></a></div>
-                    <div><a class="buttons floatRight mobileBSize" href="#mode2D" onclick="screenChange('mode3D', 'mode2D');">To 2D</a></div>
+                    <div><a class="buttons floatRight mobileBSize" href="#mode2D" onclick="screenChange('mode3D', 'mode2D'); resize();">To 2D</a></div>
                 </div>
 				
 				<!-- Divs for each face of the cube -->

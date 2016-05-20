@@ -10,6 +10,20 @@ $(document).ready(function(){
     window.location.hash = '#mainmenu';
 });
 
+function resize(){
+	if($('#foldoutScreen').width() < $('#foldoutScreen').height()){
+		axis = $('#foldoutScreen').width();
+	} else {
+		axis = $('#foldoutScreen').height();
+	}
+	
+	//Size is a portion of the screen to allow the full foldout to fit.
+	size = Math.floor(axis/4);
+	$('#foldout tr td').children().css({'width': size, 'height': size, 'border': 'solid 1px black'});
+	
+	$('#foldout tr td div').children().css({'width': size, 'height': size});
+}
+
 //variable that determine if easter egg two is activated
 var easterEggTwoActivate = false;
 
@@ -343,8 +357,8 @@ function validate(){
 	//Set answerScreen buttons depending on which game mode you are in.
 	$('#answerScreen div.bottomNav').html('');
 	if(timeModeFlag || scoreModeFlag){
-		//If user completed all 10 time mode levels, send to end game screen.
-		if(timeModeFlag && level >= 10){
+		//If user completed all x time mode levels, send to end game screen. ~~Specify how many levels later, 2 set for testing purposes.~~
+		if(timeModeFlag && level >= 2){
 			endGame();
 		} else if(match){
 			if(scoreModeFlag){
@@ -505,7 +519,7 @@ function startTimeMode(){
  */
 function startScoreMode(){
 	//Time remaining for game mode.
-	length = 3;
+	length = 60;
 	//User's score.
 	score = 0;
 	//Randomize levels **** NEEDS TO BE PUT INTO FUNCTION ****
