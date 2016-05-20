@@ -1,8 +1,8 @@
 /* Cube container is where the Cube is stored prevent
 the user from dragging and highlighting the cube */
 .cubeContainer {
-    width: 500px;
-    height: 420px;
+    width: 196px;
+    height: 196px;
     position: relative;
     margin: 0 auto 40px;
     text-align: center;
@@ -17,7 +17,6 @@ the user from dragging and highlighting the cube */
     -webkit-user-select: none;
     -ms-user-select: none;
 }
-
 /* The modifies the image to match the size of the cube */
 .cubeCover {
     width: 196px;
@@ -29,7 +28,6 @@ the user from dragging and highlighting the cube */
     -webkit-user-select: none;
     -ms-user-select: none;
 }
-
 /* The cube itself where the transformation are applied */
 #cube {
     position: absolute;
@@ -83,6 +81,8 @@ the user from dragging and highlighting the cube */
 #cube .bottom {
     background-color: white;
 }
+
+
 /* For future uses */
 #cube .front {
     background: hsla( 0, 100%, 50%, 0.7 );
@@ -102,7 +102,8 @@ the user from dragging and highlighting the cube */
 #cube .bottom {
     background: hsla( 300, 100%, 50%, 0.7 );
 }
-	
+
+
 /* Rotates the cube to its proper orientation when moved */
 #cube .front {
     transform: rotateY( 0deg ) translateZ( 100px );

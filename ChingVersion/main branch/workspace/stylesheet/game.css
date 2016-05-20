@@ -1,3 +1,19 @@
+#username {
+	border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    box-sizing: border-box;
+	text-align: center;
+	width: 100%;
+	height: 40px;
+	margin: auto;
+	font-size: 25px;
+	font-family: juneGull;
+	background-color: rgba(255, 255, 255, 0.00);
+}
+#username:focus {
+	border: 1px solid rgba(255, 255, 255, 1);
+}
+
 
 * {
     margin: 0;
@@ -61,7 +77,16 @@ section {
 	display: none;
 }
 
+#cubeContainer {
+    display: none;
+}
+
+#octahedronContainer {
+    display: none;
+}
+
 /* The container where the game is being displayed */
+
 #gameContainer {
     margin-top: 3%;
     margin-bottom: 3%;
@@ -70,6 +95,7 @@ section {
     width: 90%;
     max-width: 900px;
     height: 700px;
+	max-height: 700px;
     margin-left: auto;
     margin-right: auto;
     background-color: #159957;
@@ -82,6 +108,68 @@ section {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+#shapeContainer {
+    width: 50%;
+    height: 50%;
+    margin: auto;
+}
+#triangle2DContainer {
+    width: 30%;
+    float: left;
+    bottom: 90%;
+    margin-top: -15%;
+}
+#square2DContainer{
+    width: 40%;
+    margin-top: 5%;
+    float: right;
+}
+
+#triangle2D::before {
+    width: 0px;
+    height: 0px;
+    border: 100px solid transparent;
+    border-bottom: 150px solid black;
+    content: "";
+    position: absolute;
+}
+
+#triangle2D::after {
+    width: 0px;
+    height: 0px;
+    border: 90px solid transparent;
+    border-bottom: 135px solid white;
+    content: "";
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+#square2D {
+    width: 150px;
+    height: 150px;
+    border: 5px solid black;
+    background-color: white;
+    position: absolute;
+}
+
+#octahedronModel {
+    width: 250px;
+    height: 250px;
+    margin: 0;
+    float: left;
+}
+
+
+
+#tetrahedronModel {
+    width: 250px;
+    height: 250px;
+    margin: 0;
+    float: left;
+}
+
 
 /* Where the message will display for the user to read */
 .messageBox {
@@ -124,7 +212,6 @@ section {
     height: 10px;
     width: 20px;
 }
-
 #hamburger:hover {
     opacity: 0.4;
 }
@@ -169,23 +256,8 @@ section {
 }
 
 /* Where the cube is placed**/
-.cubeContainer {
-    top: 20%;
-}
-
-/* Easter egg styling */
-#easterEgg {
-	width: 20px;
-	height: 20px;
-	position: absolute;
-}
-
-#easterEggTwo {
-    opacity: 0;
-}
-
-#easterEggTwo:hover {
-    opacity: 1;
+#cubeContainer {
+    top: 25%;
 }
 
 /* Frame for non-button containers */
@@ -203,86 +275,6 @@ section {
     text-align: center;
     text-decoration: none;
     font-size: 20px;
-}
-
-/*  B = Button  */
-.menuBSize {
-    width: 40%;
-	max-width: 180px;
-}
-/*  B = Button **/
-.mobileBSize {
-    width: 20%;
-}
-
-/* Default button design */
-.buttons {
-    padding: 20px;
-    display: inline-block;
-    margin-bottom: 1rem;
-    color: rgba(255, 255, 255, 0.7);
-    background-color: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 0.3rem;
-    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
-    text-align: center;
-    text-decoration: none;
-    font-size: 20px;
-}
-
-
-/* Leaderboard Screen */
-#leaderboard > div > table {
-    padding: 20px;
-    color: rgba(255, 255, 255, 0.7);
-    background-color: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 0.3rem;
-    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
-    text-align: center;
-    font-size: 20px;
-    width: 100%;
-}
-
-#leaderboardRank,
-#leaderboardName,
-#leaderboardScore,
-#leaderboardDate {
-    padding: 0px 1em 0px 1em;
-}
-
-#leaderboard > div {
-    width: 50em;
-    margin: 0 auto;
-}
-
-#leaderboard > div > nav li {
-    float: left;
-    color: rgba(255, 255, 255, 0.7);
-    background-color: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
-    border-style: solid;
-    border-width: 1px 1px 0px 1px;
-    border-radius: 0.3rem;
-    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
-
-}
-
-#leaderboard > div > nav li a {
-    display: block;
-    padding: 1em;
-    text-decoration: none;
-    color: inherit;
-}
-
-#leaderboard > div > nav li:hover {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Quick float right, left, and clear */
