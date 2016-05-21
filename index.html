@@ -35,10 +35,14 @@
 		<script src="./workspace/js/game.js"></script>
 		<script src="./workspace/js/mode.js"></script>
 		<script src="./workspace/js/easterEgg.js"></script>
-		
+		<script src="./workspace/js/audio.js"></script>
+
 		
     </head>
     <body onresize="navBar();" onload="navBar();">
+
+    	<!-- Button audio -->
+    	<audio id="buttonSound" src="./workspace/audio/Buttons/Bubble.mp3" autostart="true"></audio>
 		
 		<!-- Container for the shown screen -->
         <section id="gameContainer">
@@ -51,8 +55,8 @@
                 <div id="titleImage"><img src="./workspace/image/cube.png" width="200em" height="200em" onclick="tutturu();"></div>
 
                 <ul>
-                    <li><a class="buttons menuBSize" href="#gameMode" onclick="screenChange('mainMenu', 'gameMode')">Play</a></li>
-                    <li><a class="buttons menuBSize" href="#leaderboard" onclick="screenChange('mainMenu', 'leaderboard'); getHighScores();">Leaderboard</a></li>
+                    <li><a class="buttons menuBSize" href="#gameMode" onclick="screenChange('mainMenu', 'gameMode');buttonClick();">Play</a></li>
+                    <li><a class="buttons menuBSize" href="#leaderboard" onclick="screenChange('mainMenu', 'leaderboard');buttonClick(); getHighScores();">Leaderboard</a></li>
                 </ul>
 
             </section>

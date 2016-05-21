@@ -17,7 +17,7 @@ $connect = mysqli_connect($dbhost, $dbuser, $dbpass) or die("Unable to Connect t
 mysqli_select_db($connect, $dbname) or die("Could not open the db '$dbname'");
 
 // Query to insert the name and score values to the table 'scores'. 
-$query = "INSERT INTO times(name, time) VALUES('$name', '$time')";
+$query = "INSERT INTO time(name, time) VALUES('$name', '$time')";
 
 // Perform the query on the database
 mysqli_query($con, $query);
