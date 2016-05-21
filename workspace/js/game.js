@@ -81,8 +81,8 @@ function validate(){
 		$('#resultMessage').append('Foldout does not match!');
 	}
 	
-	//Set answerScreen buttons depending on which game mode you are in.
-	$('#answerScreen div.bottomNav').html('');
+	//Set resultScreen buttons depending on which game mode you are in.
+	$('#resultScreen div.bottomNav').html('');
 	if(timeModeFlag || scoreModeFlag){
 		//If user completed all x time mode levels, send to end game screen. ~~Specify how many levels later, 2 set for testing purposes.~~
 		if(match){
@@ -95,10 +95,10 @@ function validate(){
 			//level is changed
 			level++;
 			//button takes you to next level
-			$('#answerScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#mode3D" onclick="foldoutT(\''+ levels[level % 10] + '\');applyFaces(\''+ levels[level % 10] 
-													+ '\');screenChange(\'answerScreen\', \'mode3D\');">Next Level</a></div>');
+			$('#resultScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#mode3D" onclick="foldoutT(\''+ levels[level % 10] + '\');applyFaces(\''+ levels[level % 10] 
+													+ '\');screenChange(\'resultScreen\', \'mode3D\');">Next Level</a></div>');
 			//ends game if you've completed all the levels
-			if(timeModeFlag && level >= 2){
+			if(timeModeFlag && level == 2){
 				endGame();
 			}
 		} else {
@@ -109,11 +109,11 @@ function validate(){
 				$('#score').text(score);
 			}
 			//button leads you back.
-			$('#answerScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#mode3D" onclick="screenChange(\'answerScreen\',\'mode3D\')">back</a></div>');
+			$('#resultScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#mode3D" onclick="screenChange(\'resultScreen\',\'mode3D\')">back</a></div>');
 		}
 	} else {
-		$('#answerScreen div.bottomNav').append('<div><a class="buttons floatLeft mobileBSize" href="#levelSelect" onclick="screenChange(\'answerScreen\',\'levelSelect\')">Levels</a></div>');
-		$('#answerScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#mainMenu" onclick="screenChange(\'answerScreen\',\'mainMenu\')">Menu</a></div>');
+		$('#resultScreen div.bottomNav').append('<div><a class="buttons floatLeft mobileBSize" href="#levelSelect" onclick="screenChange(\'resultScreen\',\'levelSelect\')">Levels</a></div>');
+		$('#resultScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#answerScreen" onclick="screenChange(\'resultScreen\',\'answerScreen\')">Answer</a></div>');
 	}
 }
 

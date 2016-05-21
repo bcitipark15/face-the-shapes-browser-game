@@ -134,29 +134,29 @@ function clearTimer(){
 }
 
 /**
- * endGame Ends all game timers and brings user to end game screen (Modified version of answerScreen).
+ * endGame Ends all game timers and brings user to end game screen (Modified version of resultsScreen).
  * @return {undefined}
  */
 function endGame(){
-	//Change to answerScreen from either screen.
-	screenChange('mode2D','answerScreen');
-	screenChange('mode3D','answerScreen');
+	//Change to resultsScreen from either screen.
+	screenChange('mode2D','resultScreen');
+	screenChange('mode3D','resultScreen');
 	//May not be necessary.
 	window.location.hash = '#mode3D';
-	$('#answerScreen div.bottomNav').html('');
-	$('#answerScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#" onclick="toLeaderboard();">Post!</a></div>');
-	$('#answerScreen div.bottomNav').append('<div><a class="buttons floatleft mobileBSize" href="#mainMenu" onclick="screenChange(\'answerScreen\',\'mainMenu\')">back</a></div>');
-	$('#answerScreen div.messageBox').html('');
+	$('#resultScreen div.bottomNav').html('');
+	$('#resultScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#" onclick="toLeaderboard();">Post!</a></div>');
+	$('#resultScreen div.bottomNav').append('<div><a class="buttons floatleft mobileBSize" href="#mainMenu" onclick="screenChange(\'resultScreen\',\'mainMenu\')">back</a></div>');
+	$('#resultScreen div.messageBox').html('');
 	
 	//Change score message depending on mode
 	if(scoreModeFlag){
-		$('#answerScreen div.messageBox').append('<p>Your score: ' + score + '</p>');
+		$('#resultScreen div.messageBox').append('<p>Your score: ' + score + '</p>');
 	}
 	if(timeModeFlag){
-		$('#answerScreen div.messageBox').append('<p>Your time: ' + time + '</p>');
+		$('#resultScreen div.messageBox').append('<p>Your time: ' + time + '</p>');
 	}
 	//Input field for name
-	$('#answerScreen div.messageBox').append('<br><p>Enter Your Name:</p>' +
+	$('#resultScreen div.messageBox').append('<br><p>Enter Your Name:</p>' +
 											'<input type="text" id="username" name="username"style="z-index: 999; position: relative"></input>');
 	//Weird bug where input field is unclickable. Added this as temporary work around.
 	$('#username').focus();
