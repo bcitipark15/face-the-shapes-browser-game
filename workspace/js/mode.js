@@ -32,7 +32,7 @@ function selectMode(mode){
 			break;
 	}
 }
- 
+
 /** ~~~ Move to game.js ~~~
  * startScoreMode Manages transition into score mode.
  * @return {undefined}
@@ -121,8 +121,16 @@ function drawCountdownTimer(){
 	$('#timer').text(time);
 	if(time <= 0){
 		endGame();
-		clearInterval(timer);
+		clearTimer();
 	}
+}
+
+/** 
+ * clearTimer Clears interval timer so endGame doesn't activate if score mode is left.
+ * @return {undefined}
+ */
+function clearTimer(){
+	clearInterval(timer);
 }
 
 /**

@@ -3,15 +3,14 @@
  */
 
 
-
+var tutturuCount = 0;
 /** Front page easter egg.
  *  Will play when tutturuCount hits 10. 
  */
-var tutturuCount = 0;
 function tutturu(){
     var audio = new Audio('./workspace/audio/tuturu-century-fox.mp3');
     tutturuCount++;
-	if (tutturuCountt == 10) {
+	if (tutturuCount == 10) {
 		audio.play();
 		tutturuCount = 0;
 	}
