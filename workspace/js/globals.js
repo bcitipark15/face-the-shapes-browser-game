@@ -1,3 +1,8 @@
+/* 
+ * Author: Team 17 (Chris Centenera, Evan Chen, Ching Choi, John Park, Ian Park)
+ * Description: Contains global variables.
+ */
+
 //variable that determine if easter egg two is activated
 var easterEggTwoActivate = false;
 

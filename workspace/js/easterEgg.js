@@ -1,5 +1,6 @@
-/*
- *	easterEgg.js contains all JavaScript related to easter eggs.
+/* 
+ * Author: Team 17 (Chris Centenera, Evan Chen, Ching Choi, John Park, Ian Park)
+ * Description: Contains all JavaScript related to easter eggs.
  */
 
 

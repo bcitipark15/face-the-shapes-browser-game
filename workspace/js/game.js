@@ -1,4 +1,7 @@
-
+/* 
+ * Author: Team 17 (Chris Centenera, Evan Chen, Ching Choi, John Park, Ian Park)
+ * Description: Game mechanics and screen transitions(for now) are located in here.
+ */
 
 
 /** 

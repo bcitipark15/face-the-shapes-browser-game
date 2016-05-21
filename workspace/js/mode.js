@@ -1,7 +1,6 @@
-/*	
- *	Mode.js contains all functions that are used for the competitive game modes.
- *	
- *	
+/* 
+ * Author: Team 17 (Chris Centenera, Evan Chen, Ching Choi, John Park, Ian Park)
+ * Description: Contains all functions that are used for the competitive game modes.
  */
 
  
