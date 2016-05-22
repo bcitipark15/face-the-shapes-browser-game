@@ -143,8 +143,8 @@ function endGame(){
 	//May not be necessary.
 	window.location.hash = '#mode3D';
 	$('#resultScreen div.bottomNav').html('');
-	$('#resultScreen div.bottomNav').append('<button class="buttonDesign floatRight mobileBSize" onclick="toLeaderboard();">Post!</button>');
-	$('#resultScreen div.bottomNav').append('<button class="buttonDesign floatleft mobileBSize" onclick="screenChange(\'mainMenu\')">back</button>');
+	$('#resultScreen div.bottomNav').append('<button class="buttonDesign floatRight" onclick="toLeaderboard();">Post!</button>');
+	$('#resultScreen div.bottomNav').append('<button class="buttonDesign floatleft" onclick="screenChange(\'mainMenu\')">back</button>');
 	$('#resultScreen div.messageBox').html('');
 	
 	//Change score message depending on mode

@@ -18,13 +18,11 @@ body {
 .levelContainer {
 	padding-top: 5%;
 	width: 90%;
-	height: 40%;
+	height: 60%;
 	margin-left: auto;
 	margin-right: auto;
 }
-#setDifficulty {
-	margin-top: 25%;
-}
+
 #username {
 	font-size: 30px;
 	height: 50px;

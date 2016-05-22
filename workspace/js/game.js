@@ -101,7 +101,7 @@ function validate(){
 			//level is changed
 			level++;
 			//button takes you to next level
-			$('#resultScreen div.bottomNav').append('<button class="buttonDesign floatRight mobileBSize" onclick="foldoutT(\''+ levels[level % 10] + '\');applyFaces(\''+ levels[level % 10] 
+			$('#resultScreen div.bottomNav').append('<button class="buttonDesign floatRight" onclick="foldoutT(\''+ levels[level % 10] + '\');applyFaces(\''+ levels[level % 10] 
 													+ '\'); screenChange(\'mode3D\');">Next Level</button>');
 			//ends game if you've completed all the levels
 			if(timeModeFlag && level == 2){
@@ -115,11 +115,11 @@ function validate(){
 				$('#score').text(score);
 			}
 			//button leads you back.
-			$('#resultScreen div.bottomNav').append('<button class="buttonDesign floatRight mobileBSize" onclick="screenChange(\'mode3D\')">back</button>');
+			$('#resultScreen div.bottomNav').append('<button class="buttonDesign floatRight" onclick="screenChange(\'mode3D\')">back</button>');
 		}
 	} else {
-		$('#resultScreen div.bottomNav').append('<button class="buttonDesign floatLeft mobileBSize" onclick="screenChange(\'levelSelect\')">Levels</button>');
-		$('#resultScreen div.bottomNav').append('<button class="buttonDesign floatRight mobileBSize" onclick="screenChange(\'answerScreen\')">Answer</button>');
+		$('#resultScreen div.bottomNav').append('<button class="buttonDesign floatLeft" onclick="screenChange(\'levelSelect\')">Levels</button>');
+		$('#resultScreen div.bottomNav').append('<button class="buttonDesign floatRight" onclick="screenChange(\'answerScreen\')">Answer</button>');
 	}
 }
 
