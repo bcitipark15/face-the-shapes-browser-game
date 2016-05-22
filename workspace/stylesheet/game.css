@@ -70,7 +70,9 @@ section {
     background-image: linear-gradient(120deg, #155799, #159957);
     overflow: hidden;
 }
-
+.foldoutFace {
+	cursor: pointer;
+}
 /* The text box for the user to input a Name */
 #username {
 	border: 1px solid rgba(255, 255, 255, 0.5);

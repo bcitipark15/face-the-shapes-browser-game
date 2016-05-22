@@ -78,6 +78,7 @@ button {
     width: 20px;
 }
 .levelsButton {
+	cursor: pointer;
 	width: 80px;
 	height: 80px;
 	line-height: 80px;
