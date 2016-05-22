@@ -55,6 +55,22 @@ window.onclick = function(event) {
     }
 }
 
+function levelLoad(lowerBound, upperBound, numAnswers) {
+	levels = [0,1,2,3,4,5,6,7,8,9];
+	
+	generatedLevel = Math.floor(Math.random() * (upperBound - lowerBound + 1)) + lowerBound;
+	
+	foldoutT(levels[generatedLevel], numAnswers);
+	applyFaces(levels[generatedLevel]);
+	
+}
+
+
+
+
+
+
+
 /** ~~~ Move to game.js ~~~
  * validate Tests user's arrow orientation vs true arrow orientation along with user's colors vs true colors.
  * 			If user's answers perfectly align, results screen displays success message. Otherwise it displays
@@ -62,8 +78,6 @@ window.onclick = function(event) {
  * @return {undefined}
  */
 function validate(){
-	
-	
 	//Clears results screen along with answer screen before editing them.
 	$('#resultMessage').html('');
 	$('#correctAnswer').html('');
@@ -115,8 +129,8 @@ function validate(){
 			$('#resultScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#mode3D" onclick="screenChange(\'resultScreen\',\'mode3D\')">back</a></div>');
 		}
 	} else {
-		$('#resultScreen div.bottomNav').append('<div><a class="buttons floatLeft mobileBSize" href="#levelSelect" onclick="screenChange(\'resultScreen\',\'levelSelect\')">Levels</a></div>');
-		$('#resultScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#answerScreen" onclick="screenChange(\'resultScreen\',\'answerScreen\')">Answer</a></div>');
+		$('#resultScreen div.bottomNav').append('<div><a class="buttons floatLeft mobileBSize" href="#levelSelect" onclick="screenChange(\'resultScreen\',\'levelSelect\');showAnswer();">Levels</a></div>');
+		$('#resultScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#answerScreen" onclick="screenChange(\'resultScreen\',\'answerScreen\');showAnswer();">Answer</a></div>');
 	}
 }
 
@@ -125,12 +139,19 @@ function validate(){
  * @return {undefined}
  */
 function resizeGame(){
-	if($('#foldoutScreen').width() < $('#foldoutScreen').height()){
-		axis = $('#foldoutScreen').width();
+	if($('#foldoutScreen').width() > $('#correctAnswer').width()){
+		if($('#foldoutScreen').width() < $('#foldoutScreen').height()){
+			axis = $('#foldoutScreen').width();
+		} else {
+			axis = $('#foldoutScreen').height();
+		}
 	} else {
-		axis = $('#foldoutScreen').height();
+		if($('#correctAnswer').width() < $('#correctAnswer').height()){
+			axis = $('#correctAnswer').width();
+		} else {
+			axis = $('#correctAnswer').height();
+		}
 	}
-	
 	//Size is a portion of the screen to allow the full foldout to fit.
 	size = Math.floor(axis/4);
 	$('#foldout tr td').children().css({'width': size, 'height': size, 'border': 'solid 1px black'});

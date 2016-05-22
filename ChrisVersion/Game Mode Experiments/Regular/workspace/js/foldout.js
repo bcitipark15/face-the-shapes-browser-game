@@ -39,14 +39,14 @@ function face(trueValue, value, trueColor, playerColor, id){
  * generateCube generates all the cube faces, both 3d and 2d
  * @return {undefined}
  */
-function generateCube(){
+function generateCube(numAnswers){
 	//Fills array of faces with newly generated faces.
 	for(var i = 0; i < faces; i++){
        //Generate new face objects and store them in faceArray.
        faceArray[i] = new face(Math.floor(Math.random() * 4),
 							Math.floor(Math.random() * 4),
-							colors[Math.floor(Math.random() * colors.length)],
-							colors[Math.floor(Math.random() * colors.length)],
+							colors[Math.floor(Math.random() * (colors.length - 1)) + 1],
+							'white',
 							faceNames[i]);
 	} 
 	
@@ -61,16 +61,25 @@ function generateCube(){
 	//Size is a portion of the screen to allow the full foldout to fit.
 	size = Math.floor(axis/4);
 	//generatePivots(difficultyNum);
-	scaleDifficulty();
+	scaleDifficulty(numAnswers);
 }
 
-
-
-
-function scaleDifficulty(){
+function scaleDifficulty(numAnswers){
+	
 	//Generate 1 pivot
 	generatePivots(2);
-	//Loop until answer != pivot
+	var blankCount = 0;
+	
+	while(blankCount + numAnswers != 5){
+		var newBlank = Math.floor(Math.random() * faceArray.length);
+		//if selected face is not a pivot, turn it into a blank. If it's already blank, reselect.
+		if(faceArray[newBlank].trueColor !== 'black' && faceArray[newBlank].trueColor !== 'white'){
+			faceArray[newBlank].value = faceArray[newBlank].trueValue;
+			faceArray[newBlank].trueColor = 'white';
+			blankCount++;
+		}
+	}
+	/*Old version
 	do{
 		var answer = Math.floor(Math.random() * faceArray.length);
 	} while (faceArray[answer].trueColor === 'black' || faceArray[answer] === 'white');
@@ -85,39 +94,24 @@ function scaleDifficulty(){
 			}
 			faceArray[i].playerColor = 'white';
 		}
-	}
+	}*/
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /**
- * foldoutT Generates a foldout of a cube in the shape of the letter 't'.
+ * foldoutT Generates a foldout of a cube depending on foldout number selected.
  * @return {undefined}
  */
-function foldoutT(foldoutNum){
+function foldoutT(foldoutNum, numAnswers){
 	//If the easter egg has been activated, generate that cube instead.
 	if(easterEggTwoActivate === true){
 		pivotColor = 'white';
 	}
 	
 	//Game generates cube after determining if easter egg is present.
-	generateCube();
+	generateCube(numAnswers);
 	$('#foldoutScreen').html('');
 	$('#foldoutScreen').append('<table id="foldout"></table>');
-	
-	//2D array, first dimension is foldout type, second dimension is foldout layout.
 	var foldoutArray = [];
+
 	foldoutArray[0] = [ undefined, getFace('facetop'), undefined,
 						getFace('faceleft'), getFace('facefront'), getFace('faceright'),
 						undefined, getFace('facebottom'), undefined,
@@ -167,17 +161,9 @@ function foldoutT(foldoutNum){
 						undefined, getFace('facefront'), getFace('faceright'),
 						getFace('faceleft'), getFace('facebottom'),undefined,
 						getFace('faceback'), undefined, undefined ];
-						
-	//Max table rows for the foldout.
+	//Max table rows and columns for the foldout.
 	var rows = 4;
-	
-	//Max table columns for the foldout.
 	var cols = 3;
-	
-	//image source for the foldout.
-	
-	var img = '<img src="./workspace/image/arrow3.png" height="' + size
-			  + '" width="' + size + '">';
 	
 	if(easterEggTwoActivate){
 		img = '<img src="./workspace/image/skull.png" height="50%'
@@ -232,8 +218,24 @@ function foldoutT(foldoutNum){
 	if(easterEggTwoActivate){
 		$('.foldoutFace').children().css({'position':'absolute','left':'0','right':'0','bottom':'0','top':'0','margin':'auto'})
 	}
-	
+	$('.foldoutFace').children().css({'height': size, 'width': size});
 	$('.foldoutFace').css({'width': size, 'height': size, 'border': 'solid 1px black'});
+}
+
+function showAnswer(){
+	//Create clone
+	$('#foldout').clone().appendTo('#correctAnswer').attr('id','foldoutClone');
+	$('#foldoutClone > tr > td > div#facetop').attr('id','facetopClone');
+	for(var i = 0; i < faceArray.length; i++){
+		//Change all cloned id's to reflect in actual id.
+		$('#foldoutClone > tr > td > div#' + faceArray[i].id).attr('id', faceArray[i].id + 'Clone');
+		//Change color to true colors to reveal answer.
+		$('#' + faceArray[i].id + 'Clone').css('background-color', faceArray[i].trueColor);
+		//Reapply image if face isn't white.
+		if(faceArray[i].trueColor !== 'white'){
+			$('#' + faceArray[i].id + 'Clone img').css('display','block');
+		}
+	}
 }
 
 /**
