@@ -19,6 +19,7 @@ ul {
     text-align: center;
 }
 
+
 /** Section is what will display to the user **/
 section {
     width: 100%;
@@ -40,6 +41,8 @@ section {
 
 /* Hide from the user */
 #leaderboard,
+#store,
+#settings,
 #gameMode,
 #levelSelect,
 #selectShape,
@@ -92,6 +95,10 @@ section {
 	margin-right: auto;
 }
 
+#setDifficulty {
+	margin-top: 5%;
+}
+
 /* Where the message will display for the user to read */
 .messageBox {
 	padding-top: 5%;
@@ -118,7 +125,7 @@ section {
 
 /* Default Styling for Title */
 .title {
-    padding-top: 10%;
+    padding-top: 5%;
     text-align: center;
     font-size: 35px;
     padding-bottom: 20px;
@@ -168,6 +175,7 @@ section {
 .cubeContainer {
     top: 25%;
 }
+
 
 /* Frame for non-button containers */
 .infoCont {

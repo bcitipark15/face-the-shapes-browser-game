@@ -22,20 +22,20 @@ body {
 	float: left;
 }
 #mainMenu ul {
-	margin-top: 8%;
+	margin-top: 5%;
 }
 #gameMode li {
 	display: inline;
-	margin: 5%;
+	margin: 2%;
 }
 #gameMode ul {
-	margin-top: 5%;
+	margin-top: 3%;
 }
 #mode3D {
 	touch-action: none;
 }
 .levelContainer {
-	padding-top: 5%;
+	padding-top: 2%;
 	padding-left: 3%;
 	overflow: scroll;
 	width: 90%;
@@ -43,6 +43,15 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
+#setDifficulty {
+	margin-top: 3%;
+}
 .messageBox {
 	font-size: 20px;
+}
+.modal {
+	padding-top: 5%;
+}
+.modalContent {
+	height: 80%;
 }

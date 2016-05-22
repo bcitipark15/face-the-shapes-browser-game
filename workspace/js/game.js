@@ -18,9 +18,12 @@ function navBar() {
 /** 
  * Will perform the screen change by removing the current and display the next. 
  */
-function screenChange(current, next) {
-	document.getElementById(next).style.display = 'block';
-	document.getElementById(current).style.display = 'none';
+function screenChange(screen) {
+	var x = document.getElementsByTagName('section');
+	for (var i = 0; i < x.length; i++) {
+        x[i].style.display = "none"; 
+    }
+    document.getElementById(screen).style.display = "block"; 
 }
 
 /** 

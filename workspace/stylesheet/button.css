@@ -1,7 +1,17 @@
-
+@font-face {
+    font-family: juneGull;
+    src: url(../font/junegullrg.ttf);
+}
+button {
+	font-family: juneGull;
+	cursor: pointer;
+	font-size: 20px;
+	padding: 20px;
+	margin-bottom: 1rem;
+}
 /*  B = Button  */
 .menuBSize {
-    width: 40%;
+    width: 50%;
 	max-width: 180px;
 }
 
@@ -11,10 +21,7 @@
 }
 
 /* Default button design */
-.buttons {
-    padding: 20px;
-    display: inline-block;
-    margin-bottom: 1rem;
+.buttonDesign {
     color: rgba(255, 255, 255, 0.7);
     background-color: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.2);
@@ -22,11 +29,8 @@
     border-width: 1px;
     border-radius: 0.3rem;
     transition: color 0.2s, background-color 0.2s, border-color 0.2s;
-    text-align: center;
-    text-decoration: none;
-    font-size: 20px;
 }
-.buttons:hover {
+.buttonDesign:hover {
 	color: rgba(255, 255, 255, 0.8);
 	background-color: rgba(255, 255, 255, 0.2);
 	border-color: rgba(255, 255, 255, 0.3);
@@ -35,7 +39,6 @@
 /* Grays out the button */
 .deadButton {
 	padding: 20px;
-    display: inline-block;
     margin-bottom: 1rem;
     color: rgba(255, 255, 255, 0.7);
     background-color: rgba(255, 255, 255, 0.02);
@@ -44,14 +47,12 @@
     border-width: 1px;
     border-radius: 0.3rem;
     transition: color 0.2s, background-color 0.2s, border-color 0.2s;
-    text-align: center;
-    text-decoration: none;
     font-size: 20px;
 	cursor: default;
 }
 
 /* The backButton */
-#backButton {
+.backButton {
     background-image: url("../image/chevron.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -60,10 +61,28 @@
 }
 
 /* The hamburger */
-#hamburger {
+.hamburger {
     background-image: url("../image/hamburger.png");
     background-repeat: no-repeat;
     background-position: center;
     height: 10px;
     width: 20px;
+}
+
+/* The settings button */
+.gear {
+    background-image: url("../image/gears.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 20px;
+    width: 20px;
+}
+.levelsButton {
+	width: 80px;
+	height: 80px;
+	line-height: 80px;
+	border-radius: 40px;
+	font-size: 50px;
+	text-align: center;
+	vertical-align: middle;
 }

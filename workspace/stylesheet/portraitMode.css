@@ -17,12 +17,13 @@ body {
 
 .levelContainer {
 	padding-top: 5%;
-	padding-left: 3%;
-	overflow: scroll;
 	width: 90%;
 	height: 40%;
 	margin-left: auto;
 	margin-right: auto;
+}
+#setDifficulty {
+	margin-top: 25%;
 }
 #username {
 	font-size: 30px;
@@ -30,6 +31,12 @@ body {
 }
 .messageBox {
 	font-size: 20px;
+}
+.modalContent {
+	width: 80%;
+}
+.modalContent h1 {
+	padding-top: 10%;
 }
 /** iPhone 4 support **/
 @media screen and (max-width: 320px) {
