@@ -44,11 +44,19 @@ function generateCube(numAnswers){
 	//Fills array of faces with newly generated faces.
 	for(var i = 0; i < faces; i++){
        //Generate new face objects and store them in faceArray.
-       faceArray[i] = new face(Math.floor(Math.random() * 4),
-							4,
-							colors[Math.floor(Math.random() * colors.length)],
-							colors[Math.floor(Math.random() * colors.length)],
-							faceNames[i]);
+	   if(difficultyNum == 0){
+		   faceArray[i] = new face(Math.floor(Math.random() * 4),
+								4,
+								selectedColor,
+								selectedColor,
+								faceNames[i]);
+	   } else {
+		   faceArray[i] = new face(Math.floor(Math.random() * 4),
+								4,
+								colors[Math.floor(Math.random() * colors.length)],
+								colors[Math.floor(Math.random() * colors.length)],
+								faceNames[i]);
+		}
 	} 
 	
 	
@@ -221,7 +229,7 @@ function foldoutT(foldoutNum, numAnswers){
 	//Alter image size.
 	$('.foldoutFace').children().css({'height': size, 'width': size});
 	//Alter image container size.
-	$('.foldoutFace').css({'width': size, 'height': size, 'border': 'solid 1px black'});
+	//$('.foldoutFace').css({'width': size, 'height': size, 'border': 'solid 5px black'});
 }
 
 /**
@@ -232,14 +240,16 @@ function showAnswer(){
 	//Create clone
 	$('#foldout').clone().appendTo('#correctAnswer').attr('id','foldoutClone');
 	$('#foldoutClone > tr > td > div#facetop').attr('id','facetopClone');
+	
 	for(var i = 0; i < faceArray.length; i++){
 		//Change all cloned id's to reflect in actual id.
 		$('#foldoutClone > tr > td > div#' + faceArray[i].id).attr('id', faceArray[i].id + 'Clone');
-		//Change color to true colors to reveal answer.
+		
 		//Reapply image if face isn't white.
 		if(faceArray[i].trueValue !== 4){
 			$('#' + faceArray[i].id + 'Clone img').css('display','block');
 			$('#' + faceArray[i].id + 'Clone').css('background-color', faceArray[i].trueColor);
+			$('#' + faceArray[i].id + 'Clone').css('transform','rotate(' + 90 * faceArray[i].trueValue + 'deg)');
 		} else {
 			$('#' + faceArray[i].id + 'Clone').css('background-color', 'white');
 		}
@@ -285,11 +295,11 @@ function rotateFace(id){
 	}
 	
 	//Changes face color if the face clicked is not the pivot face and if the color flag is on.
-	if(currentFace.trueColor !== pivotColor && colorFlag){
+	if(currentFace.trueColor !== pivotColor && colorFlag && difficultyNum == 1){
 		//Changes color to next color in the colors array.
 		currentFace.playerColor = colors[(colors.indexOf(currentFace.playerColor) + 1) % colors.length];
 		//Sets background color to newly adjusted color.
-		$('#' + id).css('background-color',currentFace.playerColor);
+		$('#' + id).children().css('background-color',currentFace.playerColor);
 	}
 }
 

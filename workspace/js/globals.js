@@ -42,3 +42,6 @@ var difficultyNum = 0;
 
 //Image source for cube faces.
 var img = '<img src="./workspace/image/arrow3.png">';
+
+//Selected color for basic mode
+var selectedColor = 'red'

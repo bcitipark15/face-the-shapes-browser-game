@@ -226,6 +226,7 @@ function showAnswer(){
 	//Create clone
 	$('#foldout').clone().appendTo('#correctAnswer').attr('id','foldoutClone');
 	$('#foldoutClone > tr > td > div#facetop').attr('id','facetopClone');
+	
 	for(var i = 0; i < faceArray.length; i++){
 		//Change all cloned id's to reflect in actual id.
 		$('#foldoutClone > tr > td > div#' + faceArray[i].id).attr('id', faceArray[i].id + 'Clone');

@@ -92,7 +92,7 @@ function levelLoad(lowerBound, upperBound, numAnswers) {
  *			
  * @return {undefined}
  */
-function validate(){
+function validate(levelNumber){
 	
 	
 	//Clears results screen along with answer screen before editing them.
@@ -104,6 +104,7 @@ function validate(){
 		if (getFace(faceNames[i]).trueValue != getFace(faceNames[i]).value){
 			match = false;
 		}
+		
 		//Only checks for color match on non-white faces.
 		if(getFace(faceNames[i]).trueValue != 4){
 			if(getFace(faceNames[i]).playerColor != getFace(faceNames[i]).trueColor){
@@ -178,7 +179,8 @@ function resizeGame(){
 	}
 	//Size is a portion of the screen to allow the full foldout to fit.
 	size = Math.floor(axis/4);
-	$('#foldout tr td').children().css({'width': size, 'height': size, 'border': 'solid 1px black'});
+	$('#foldout').css('border-collapse','collapse');
+	$('#foldout tr td').children().css({'width': size, 'height': size, 'border': 'solid 5px black'});
 	
 	$('#foldout tr td div').children().css({'width': size, 'height': size});
 }
@@ -213,7 +215,7 @@ function setDifficulty(){
 			difficulty = 'Advanced'
 			break;
 	}
-	$('#setDifficulty').text('Difficulty: ' + difficulty);
+	$('#setDifficulty').text(difficulty);
 }
 
 /** ~~~ Move to game.js ~~~
