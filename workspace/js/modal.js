@@ -23,7 +23,7 @@ function displayModal() {
 						+ '<br>'
 						+ '<br>'
 						+ 	'<ol>' 
-						+ 		'<li><button class="buttonDesign menuBSize" onclick="screenChange("mainMenu"); hideModal(); clearTimer();">Yes</button></li>'
+						+ 		'<li><button class="buttonDesign menuBSize" onclick="screenChange(\'mainMenu\'); hideModal(); clearTimer();">Yes</button></li>'
 						+		'<li><button class="buttonDesign menuBSize" onclick="hideModal();">No</button></li>'
 						+ 	'</ol>');
 	
