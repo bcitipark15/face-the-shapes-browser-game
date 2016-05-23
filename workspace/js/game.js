@@ -36,40 +36,6 @@ window.addEventListener('orientationchange', navBar, false);
 window.onresize = resizeGame;
 
 /**
- * Fade in for modal
- */
-function modalFadeIn() {
-	$('#modalBox').fadeIn(400);
-}
-function modalFadeOut() {
-	$('#modalBox').fadeOut(400);
-}
-/** 
- * Will display the modal. 
- */
-function displayModal() {
-    modalFadeIn();
-	var timer = setTimeout(function() {document.getElementById('modalBox').style.display = 'block';}, 400);
-}
-
-/** 
- * Will hide the modal. 
- */
-function hideModal() {
-	modalFadeOut();
-	var timer = setTimeout(function() {document.getElementById('modalBox').style.display = 'none';}, 400);
-}
-
-/** 
- * When the user clicks anywhere outside of the modal, this will close it. 
- */
-window.onclick = function(event) {
-    if (event.target == document.getElementById('modalBox')) {
-        hideModal();
-    }
-}
-
-/**
  * levelLoad Loads the levels specifics once level is selected.
  * @param lowerBound The lowest foldout difficulty to be generated.
  * @param upperBound The highest foldout difficulty to be generated.

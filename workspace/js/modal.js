@@ -1,0 +1,89 @@
+
+/**
+ * Fade in the modal.
+ */
+function modalFadeIn() {
+	$('#modalBox').fadeIn(400);
+}
+
+/**
+ * Face out the modal.
+ */
+function modalFadeOut() {
+	$('#modalBox').fadeOut(400);
+}
+
+/** 
+ * Will display the modal. 
+ */
+function displayModal() {
+	$('.modalContent').html('');
+	$('.modalContent').append('<h1>Quit?</h1>' 
+						+ '<br>'
+						+ '<br>'
+						+ '<br>'
+						+ 	'<ol>' 
+						+ 		'<li><button class="buttonDesign menuBSize" onclick="screenChange("mainMenu"); hideModal(); clearTimer();">Yes</button></li>'
+						+		'<li><button class="buttonDesign menuBSize" onclick="hideModal();">No</button></li>'
+						+ 	'</ol>');
+	
+    modalFadeIn();
+	var timer = setTimeout(function() {document.getElementById('modalBox').style.display = 'block';}, 400);
+}
+
+/** 
+ * Will hide the modal. 
+ */
+function hideModal() {
+	modalFadeOut();
+	var timer = setTimeout(function() {document.getElementById('modalBox').style.display = 'none';}, 400);
+}
+
+/** 
+ * When the user clicks anywhere outside of the modal, this will close it. 
+ */
+window.onclick = function(event) {
+    if (event.target == document.getElementById('modalBox')) {
+        hideModal();
+    }
+}
+/**
+ * Will display when the user has a matching fold-out.
+ */
+function modalCorrect() {
+	var msgList = ['Well done. Here come the test results: "You are a horrible person." That\'s what it says. We weren\'t even testing for that.', 
+				'You did it!', 
+				'*Generic congratulatory Message*', 
+				'Well Done.']
+	var msg = msgList[Math.floor(Math.random() * msgList.length)];
+	$('.modalContent').html('');
+	$('.modalContent').append('<h1>' + msg + '</h1>' 
+							+ 	'<p>Insert a hexagon with level in the center change next level button to display next level</p>'
+							+ 	'<div class="bottomNav">'
+							+ 		'<ul>' 
+							+ 			'<li><button class="buttonDesign menuBSize" onclick="screenChange(\'levelSelect\');">Level List</button></li>'
+							+ 			'<li><button class="buttonDesign menuBSize">Next Level</button></li>'
+							+		'</ul>'
+							+ 	'</div>');
+	modalFadeIn();
+	var timer = setTimeout(function() {document.getElementById('modalBox').style.display = 'block';}, 400);
+}
+
+/**
+ * Will display when the user has a mismatch fold-out.
+ */
+function modalIncorrect() {
+	$('.modalContent').html('');
+	$('.modalContent').append('<h1>Incorrect Screen</h1>' 
+							+ 	'<p>Input Message</p>'
+							+ 	'<div class="bottomNav">'
+							+ 		'<ul>' 
+							+ 			'<li><button class="buttonDesign menuBSize" onclick="screenChange(\'levelSelect\');">Level List</button></li>'
+							+ 			'<li><button class="buttonDesign menuBSize">Fuck If I know</button></li>'
+							+		'</ul>'
+							+ 	'</div>');
+	modalFadeIn();
+	var timer = setTimeout(function() {document.getElementById('modalBox').style.display = 'block';}, 400);
+}
+
+
