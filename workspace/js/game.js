@@ -133,8 +133,7 @@ function validate(){
 			//level is changed
 			level++;
 			//button takes you to next level
-			$('#resultScreen div.bottomNav').append('<button class="buttonDesign floatRight" onclick="foldoutT(\''+ levels[level % 10] + '\');applyFaces(\''+ levels[level % 10] 
-													+ '\'); screenChange(\'mode3D\');">Next Level</button>');
+			$('#resultScreen div.bottomNav').append('<button class="buttonDesign floatRight" onclick="levelLoad(' + level + ',' + level + ',3); screenChange(\'mode3D\');">Next Level</button>');
 			//ends game if you've completed all the levels
 			if(timeModeFlag && level == 2){
 				endGame();
@@ -145,6 +144,9 @@ function validate(){
 				if(score >= 25)
 					updateScore(-25);
 				$('#score').text(score);
+			}
+			if(timeModeFlag){
+				time += timeMode;
 			}
 			//button leads you back.
 			$('#resultScreen div.bottomNav').append('<button class="buttonDesign floatRight" onclick="screenChange(\'mode3D\')">back</button>');

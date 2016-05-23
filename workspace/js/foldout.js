@@ -82,7 +82,6 @@ function scaleDifficulty(numAnswers){
 		if(faceArray[newBlank].trueColor !== 'black' && faceArray[newBlank].trueValue != 4){
 			faceArray[newBlank].trueValue = 4;
 			blankCount++;
-			alert(faceArray[newBlank].id + "'s true value is " + faceArray[newBlank].trueValue)
 		}
 	}
 }
