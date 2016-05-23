@@ -18,13 +18,13 @@ function selectMode(mode){
 			$('#scoreBox').css('display', 'none');
 			break;
 		case 'time':
-			difficultyNum = 2;
+			difficultyNum = 0;
 			$('#timerBox').css('display', 'initial');
 			$('#scoreBox').css('display', 'none');
 			startTimeMode();
 			break;
 		case 'score':
-			difficultyNum = 2;
+			difficultyNum = 0;
 			$('#timerBox').css('display', 'initial');
 			$('#scoreBox').css('display', 'initial');
 			startScoreMode();

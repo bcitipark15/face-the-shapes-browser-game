@@ -37,14 +37,15 @@ function face(trueValue, value, trueColor, playerColor, id){
 
 /**
  * generateCube generates all the cube faces, both 3d and 2d
+ * @param numAnswer The number of faces for the user to solve.
  * @return {undefined}
  */
-function generateCube(){
+function generateCube(numAnswers){
 	//Fills array of faces with newly generated faces.
 	for(var i = 0; i < faces; i++){
        //Generate new face objects and store them in faceArray.
        faceArray[i] = new face(Math.floor(Math.random() * 4),
-							Math.floor(Math.random() * 4),
+							4,
 							colors[Math.floor(Math.random() * colors.length)],
 							colors[Math.floor(Math.random() * colors.length)],
 							faceNames[i]);
@@ -60,21 +61,47 @@ function generateCube(){
 	
 	//Size is a portion of the screen to allow the full foldout to fit.
 	size = Math.floor(axis/4);
-	generatePivots(difficultyNum);
+	
+	scaleDifficulty(numAnswers);
 }
 
 /**
+ * scaleDifficulty Takes the newly generated cube and adjusts the number of answers the user needs to solve.
+ * @param numAnswers The number of faces that need to be solved.
+ */
+function scaleDifficulty(numAnswers){
+	
+	//Generate 1 pivot
+	generatePivots(2);
+	var blankCount = 0;
+	
+	//Generate blank faces. Number of blank faces + number of faces to be solved has to equal 5 since there is 1 pivot face.
+	while(blankCount + numAnswers != 5){
+		var newBlank = Math.floor(Math.random() * faceArray.length);
+		//if selected face is not a pivot, turn it into a blank. If it's already blank, reselect.
+		if(faceArray[newBlank].trueColor !== 'black' && faceArray[newBlank].trueValue != 4){
+			faceArray[newBlank].trueValue = 4;
+			blankCount++;
+			alert(faceArray[newBlank].id + "'s true value is " + faceArray[newBlank].trueValue)
+		}
+	}
+}
+
+
+/**
  * foldoutT Generates a foldout of a cube in the shape of the letter 't'.
+ * @param foldoutNum The foldout that will be generated.
+ * @param numAnswers The number of faces that needs to be solved by the player.
  * @return {undefined}
  */
-function foldoutT(foldoutNum){
+function foldoutT(foldoutNum, numAnswers){
 	//If the easter egg has been activated, generate that cube instead.
 	if(easterEggTwoActivate === true){
 		pivotColor = 'white';
 	}
 	
 	//Game generates cube after determining if easter egg is present.
-	generateCube();
+	generateCube(numAnswers);
 	
 	$('#foldoutScreen').html('');
 	$('#foldoutScreen').append('<table id="foldout"></table>');
@@ -137,11 +164,6 @@ function foldoutT(foldoutNum){
 	//Max table columns for the foldout.
 	var cols = 3;
 	
-	//image source for the foldout.
-	
-	var img = '<img src="./workspace/image/arrow3.png" height="' + size
-			  + '" width="' + size + '">';
-	
 	if(easterEggTwoActivate){
 		img = '<img src="./workspace/image/skull.png" height="50%'
 			  + '" width="50%">';
@@ -179,11 +201,17 @@ function foldoutT(foldoutNum){
 		if(foldoutArray[foldoutNum][i]){
 			$('#' + foldoutArray[foldoutNum][i].id).append(img);
 			
-			//Rotate image depending on face value.
-			$('#' + foldoutArray[foldoutNum][i].id).css('transform', 'rotateZ(' + foldoutArray[foldoutNum][i].value * 90 + 'deg)');
-			
-			//Color the face depending on the randomly generated color value.
-			$('#' + foldoutArray[foldoutNum][i].id).css('background-color', foldoutArray[foldoutNum][i].playerColor);
+			//Print faces
+			if(foldoutArray[foldoutNum][i].value != 4){
+				//Rotate image depending on face value.
+				$('#' + foldoutArray[foldoutNum][i].id).css('transform', 'rotateZ(' + foldoutArray[foldoutNum][i].value * 90 + 'deg)');
+				
+				//Color the face depending on the randomly generated color value.
+				$('#' + foldoutArray[foldoutNum][i].id).css('background-color', foldoutArray[foldoutNum][i].playerColor);
+			} else {
+				$('#' + foldoutArray[foldoutNum][i].id).children().css('display','none');
+				$('#' + foldoutArray[foldoutNum][i].id).css('background-color','white');
+			}
 		}
 	}
 	
@@ -191,8 +219,32 @@ function foldoutT(foldoutNum){
 	if(easterEggTwoActivate){
 		$('.foldoutFace').children().css({'position':'absolute','left':'0','right':'0','bottom':'0','top':'0','margin':'auto'})
 	}
-	
+	//Alter image size.
+	$('.foldoutFace').children().css({'height': size, 'width': size});
+	//Alter image container size.
 	$('.foldoutFace').css({'width': size, 'height': size, 'border': 'solid 1px black'});
+}
+
+/**
+ * showAnswer Creates a foldout of the original cube and displays it on the answer screen.
+ * @return {undefined}
+ */
+function showAnswer(){
+	//Create clone
+	$('#foldout').clone().appendTo('#correctAnswer').attr('id','foldoutClone');
+	$('#foldoutClone > tr > td > div#facetop').attr('id','facetopClone');
+	for(var i = 0; i < faceArray.length; i++){
+		//Change all cloned id's to reflect in actual id.
+		$('#foldoutClone > tr > td > div#' + faceArray[i].id).attr('id', faceArray[i].id + 'Clone');
+		//Change color to true colors to reveal answer.
+		//Reapply image if face isn't white.
+		if(faceArray[i].trueValue !== 4){
+			$('#' + faceArray[i].id + 'Clone img').css('display','block');
+			$('#' + faceArray[i].id + 'Clone').css('background-color', faceArray[i].trueColor);
+		} else {
+			$('#' + faceArray[i].id + 'Clone').css('background-color', 'white');
+		}
+	}
 }
 
 /**
@@ -222,8 +274,15 @@ function rotateFace(id){
 	
 	//Changes the arrow rotation if the face clicked is not the pivot face and if the color flag is not on.
 	if(currentFace.trueColor !== pivotColor && !colorFlag){
-		currentFace.value = (currentFace.value + 1) % 4;
-		$('#' + id).css('transform','rotateZ(' + currentFace.value * 90 + 'deg)');
+		currentFace.value = (currentFace.value + 1) % 5;
+		if(currentFace.value === 4){
+			$('#' + id + ' img').css('display','none');
+			$('#' + id).css('background-color','white');
+		} else {
+			$('#' + id + ' img').css('display','block');
+			$('#' + id).css('transform','rotateZ(' + currentFace.value * 90 + 'deg)');
+			$('#' + id).css('background-color',currentFace.playerColor);
+		}
 	}
 	
 	//Changes face color if the face clicked is not the pivot face and if the color flag is on.
@@ -237,6 +296,7 @@ function rotateFace(id){
 
 /**
  * applyFaces Applies generated 3D face arrow orientations and colors.
+ * @param foldoutNum The foldout to be generated.
  * @return {undefined}
  */
 function applyFaces(foldoutNum){
@@ -258,11 +318,15 @@ function applyFaces(foldoutNum){
 	for(var i = 0; i < faces; i++){
 		
 		//Finds class of each face name and rotates it's arrow image according to the trueValue that was generated.
-		$('.' + faceNames[i].substring(4)).children().css('transform','rotateZ(' 
-			+ (getFace(faceNames[i]).trueValue + offsets[foldoutNum][i]) * 90 + 'deg)');
-		
-		//Sets the background color of the face according to the trueColor that was generated.
-		$('#cube .' + faceNames[i].substring(4)).css('background-color',faceArray[i].trueColor);
+		if(getFace(faceNames[i]).trueValue === 4){
+			$('.' + faceNames[i].substring(4)).children().css('display','none');
+			$('.' + faceNames[i].substring(4)).css('background-color','white');
+		} else {
+			$('.' + faceNames[i].substring(4)).children().css('display','block');
+			$('.' + faceNames[i].substring(4)).children().css('transform','rotateZ(' 
+				+ (getFace(faceNames[i]).trueValue + offsets[foldoutNum][i]) * 90 + 'deg)');
+			$('#cube .' + faceNames[i].substring(4)).css('background-color',faceArray[i].trueColor);
+		}
 	}
 }
 

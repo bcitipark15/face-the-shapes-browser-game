@@ -69,6 +69,23 @@ window.onclick = function(event) {
     }
 }
 
+/**
+ * levelLoad Loads the levels specifics once level is selected.
+ * @param lowerBound The lowest foldout difficulty to be generated.
+ * @param upperBound The highest foldout difficulty to be generated.
+ * @param numAnswers The number of faces that the player needs to solve.
+ * @return {undefined}
+ */
+function levelLoad(lowerBound, upperBound, numAnswers) {
+	levels = [0,1,2,3,4,5,6,7,8,9];
+	
+	generatedLevel = Math.floor(Math.random() * (upperBound - lowerBound + 1)) + lowerBound;
+	
+	foldoutT(levels[generatedLevel], numAnswers);
+	applyFaces(levels[generatedLevel]);
+	
+}
+
 /** ~~~ Move to game.js ~~~
  * validate Tests user's arrow orientation vs true arrow orientation along with user's colors vs true colors.
  * 			If user's answers perfectly align, results screen displays success message. Otherwise it displays
@@ -84,10 +101,14 @@ function validate(){
 	var match = true;
 	for(var i = 0; i< faces; i++){
 		//Sets match to false if user has any combination wrong.
-		if (getFace(faceNames[i]).trueValue != getFace(faceNames[i]).value
-			|| getFace(faceNames[i]).playerColor != 
-						getFace(faceNames[i]).trueColor) {
+		if (getFace(faceNames[i]).trueValue != getFace(faceNames[i]).value){
 			match = false;
+		}
+		//Only checks for color match on non-white faces.
+		if(getFace(faceNames[i]).trueValue != 4){
+			if(getFace(faceNames[i]).playerColor != getFace(faceNames[i]).trueColor){
+				match = false;
+			}
 		}
 	}
 
@@ -130,7 +151,7 @@ function validate(){
 		}
 	} else {
 		$('#resultScreen div.bottomNav').append('<button class="buttonDesign floatLeft" onclick="screenChange(\'levelSelect\')">Levels</button>');
-		$('#resultScreen div.bottomNav').append('<button class="buttonDesign floatRight" onclick="screenChange(\'answerScreen\')">Answer</button>');
+		$('#resultScreen div.bottomNav').append('<button class="buttonDesign floatRight" onclick="screenChange(\'answerScreen\');showAnswer();">Answer</button>');
 	}
 }
 
@@ -139,12 +160,20 @@ function validate(){
  * @return {undefined}
  */
 function resizeGame(){
-	if($('#foldoutScreen').width() < $('#foldoutScreen').height()){
-		axis = $('#foldoutScreen').width();
+	//Resizes foldout depending on which screen you're on
+	if($('#foldoutScreen').width() > $('#correctAnswer').width()){
+		if($('#foldoutScreen').width() < $('#foldoutScreen').height()){
+			axis = $('#foldoutScreen').width();
+		} else {
+			axis = $('#foldoutScreen').height();
+		}
 	} else {
-		axis = $('#foldoutScreen').height();
+		if($('#correctAnswer').width() < $('#correctAnswer').height()){
+			axis = $('#correctAnswer').width();
+		} else {
+			axis = $('#correctAnswer').height();
+		}
 	}
-	
 	//Size is a portion of the screen to allow the full foldout to fit.
 	size = Math.floor(axis/4);
 	$('#foldout tr td').children().css({'width': size, 'height': size, 'border': 'solid 1px black'});
@@ -173,16 +202,13 @@ function colorChanger(){
  * @return {undefined}
  */
 function setDifficulty(){
-	difficultyNum = (difficultyNum + 1) % 3;
+	difficultyNum = (difficultyNum + 1) % 2;
 	switch(difficultyNum){
 		case 0:
-			difficulty = 'easy'
+			difficulty = 'Standard'
 			break;
 		case 1:
-			difficulty = 'med'
-			break;
-		case 2:
-			difficulty = 'hard'
+			difficulty = 'Advanced'
 			break;
 	}
 	$('#setDifficulty').text('Difficulty: ' + difficulty);
@@ -216,6 +242,7 @@ function generatePivots(difficultyNum){
 		if(faceArray[pivot].trueColor != pivotColor){
 			faceArray[pivot].trueColor = pivotColor;
 			faceArray[pivot].playerColor = pivotColor;
+			faceArray[pivot].trueValue = Math.floor(Math.random() * 4);
 			faceArray[pivot].value = faceArray[pivot].trueValue;
 			//Increment pivots when a new one is made.
 			pivots++;

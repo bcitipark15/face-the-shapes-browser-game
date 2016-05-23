@@ -39,3 +39,6 @@ var level;
 
 //base difficulty.
 var difficultyNum = 0;
+
+//Image source for cube faces.
+var img = '<img src="./workspace/image/arrow3.png">';

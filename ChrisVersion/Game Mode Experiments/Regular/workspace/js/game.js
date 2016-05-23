@@ -129,7 +129,7 @@ function validate(){
 			$('#resultScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#mode3D" onclick="screenChange(\'resultScreen\',\'mode3D\')">back</a></div>');
 		}
 	} else {
-		$('#resultScreen div.bottomNav').append('<div><a class="buttons floatLeft mobileBSize" href="#levelSelect" onclick="screenChange(\'resultScreen\',\'levelSelect\');showAnswer();">Levels</a></div>');
+		$('#resultScreen div.bottomNav').append('<div><a class="buttons floatLeft mobileBSize" href="#levelSelect" onclick="screenChange(\'resultScreen\',\'levelSelect\');">Levels</a></div>');
 		$('#resultScreen div.bottomNav').append('<div><a class="buttons floatRight mobileBSize" href="#answerScreen" onclick="screenChange(\'resultScreen\',\'answerScreen\');showAnswer();">Answer</a></div>');
 	}
 }
