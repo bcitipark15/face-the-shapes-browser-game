@@ -35,18 +35,29 @@ window.addEventListener('orientationchange', navBar, false);
  */
 window.onresize = resizeGame;
 
+/**
+ * Fade in for modal
+ */
+function modalFadeIn() {
+	$('#modalBox').fadeIn(400);
+}
+function modalFadeOut() {
+	$('#modalBox').fadeOut(400);
+}
 /** 
  * Will display the modal. 
  */
 function displayModal() {
-    document.getElementById('modalBox').style.display = 'block';
+    modalFadeIn();
+	var timer = setTimeout(function() {document.getElementById('modalBox').style.display = 'block';}, 400);
 }
 
 /** 
  * Will hide the modal. 
  */
 function hideModal() {
-	document.getElementById('modalBox').style.display = 'none';
+	modalFadeOut();
+	var timer = setTimeout(function() {document.getElementById('modalBox').style.display = 'none';}, 400);
 }
 
 /** 

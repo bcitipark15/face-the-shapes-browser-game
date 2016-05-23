@@ -92,11 +92,13 @@ section {
 
 /* Level table is stored in */
 .levelList {
-	padding: 0;
 	margin-left: auto;
 	margin-right: auto;
 }
-
+.levelList td {
+	padding: 5px;
+	
+}
 #setDifficulty {
 	margin-top: 5%;
 }
@@ -132,6 +134,7 @@ section {
     font-size: 35px;
     padding-bottom: 20px;
     color: white;
+	text-shadow: 0px 4px 8px #000000;
 }
 
 /* To keep the nav on the top */
