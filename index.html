@@ -16,6 +16,7 @@
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/store.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/leaderboard.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/easterEgg.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/settings.css" media="screen">
 		
 		
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/portraitMode.css" media="only all and (max-width: 480px)">
@@ -45,6 +46,11 @@
 
     	<!-- Button audio -->
     	<audio id="buttonSound" src="./workspace/audio/Buttons/Bubble.mp3" autostart="true"></audio>
+
+    	<!-- Background Music -->
+    	<audio id="bgm" autoplay loop muted="true">
+            <source src="./workspace/audio/Main.mp3">
+        </audio>
 		
 		<!-- Container for the shown screen -->
         <div id="gameContainer">
@@ -128,7 +134,9 @@
                 </div>
 				<h1 class="title">Settings</h1>
 				<div id="settingContent">
-					<p>What the hell am I suppose to add here?</p>
+					<input id="volume" type="range" min="0" max="1" step="0.01" oninput="volume(value)" onchange="volume(value)"><br>
+					<button id="muteButton" class="buttonDesign muteButtons" type="button" onclick="mute()">Mute</button><br>
+        			<button id="unmuteButton" class="buttonDesign muteButtons" type="button" onclick="unmute()">Unmute</button>
 				</div>
 			</section>
 			
