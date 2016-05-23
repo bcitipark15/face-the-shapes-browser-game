@@ -52,8 +52,7 @@ function startScoreMode(){
 	$('#timer').text(time);
 	$('#score').text(score);
 	//Move to level 1 **** NEEDS TO BE PUT INTO FUNCTION (CALL IT nextLevel());
-	foldoutT(levels[level]);
-	applyFaces(levels[level]);
+	levelLoad(2,2,3);
 }
 
 /**
@@ -74,8 +73,7 @@ function startTimeMode(){
 	randomizeOrder(levels);
 	$('#timer').text(time);
 	//Build foldout and apply generated faces to 3D cube.
-	foldoutT(levels[level]);
-	applyFaces(levels[level]);
+	levelLoad(2,2,3);
 }
 
 /**
