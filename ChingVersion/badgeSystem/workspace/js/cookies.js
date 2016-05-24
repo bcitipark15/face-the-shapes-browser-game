@@ -44,8 +44,15 @@ function checkCookies() {
 
 // Set the current level of standard mode to lv selected
 function setLevel(lv) {
-	currentLevelStandard = lv;
-	standardMode = true;
+	alert("setLevel called");
+	if (lv <= levelStandardHigh) { 
+		alert("level difference sensed");
+		currentLevelStandard = lv;
+		standardMode = true;
+		screenChange('mode3D')
+	} else {
+		alert("Level Locked");
+	}
 }
 
 // Check and change badge level completed on classic standard mode
@@ -58,7 +65,14 @@ function setBadgeStandard() {
 	if (badge < currentLevelStandard) {
 		setCookies("badgeLevel", currentLevelStandard, 365);
 		alert("low level detected and set success");
+		levelStandardHigh = currentLevelStandard + 1;
 		$("#standardBadge").html('');
 		$("#standardBadge").append(currentLevelStandard);
 	}
+}
+
+// Delete all cookies written by ElliotSchmelliot
+function resetCookies() {
+
+	setCookies("badgeLevel", 0, 365);
 }

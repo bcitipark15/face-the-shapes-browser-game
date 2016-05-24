@@ -40,6 +40,9 @@ var level;
 //Current level of standard mode.
 var currentLevelStandard;
 
+//Highest level of standard mode unlocked.
+var levelStandardHigh = 1;
+
 //Define if user is in standard mode.1
 var standardMode = false;
 

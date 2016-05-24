@@ -77,15 +77,16 @@ section {
     margin: 0;
     text-align: center;
     height: 30%;
+    width: 150px;
     padding-top: 5%;
-    width: auto;
+    background: url("../image/blueTetrahedronGem.png");
     float: left;
     position: absolute;
 }
 
 /* Format standard badges sizes*/
 #standardBadge {
-    color: #6C6; 
+    color: white; 
     font-size: 135px;
 }
 
