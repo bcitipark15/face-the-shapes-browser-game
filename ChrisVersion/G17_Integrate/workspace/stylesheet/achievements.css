@@ -1,0 +1,35 @@
+#achievementContent {
+	margin-top: 40px;
+}
+
+.AchievementBlocks {
+	border: 5px ridge gold;
+	width: 75%;
+	height: 100px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 20px;
+	border-radius: 15px;
+
+}
+
+.badge {
+	border: 1px solid black;
+	height: 80px;
+	width: 80px;
+	border-radius: 50%;
+	margin-left: -25px;
+	margin-top: -15px;
+	background-color: white;
+	float: left;
+}
+
+h3 {
+	margin-top: 0px;
+	text-align: center;
+	margin-left: 40px;
+}
+
+h1 {
+	text-align: center;
+}
