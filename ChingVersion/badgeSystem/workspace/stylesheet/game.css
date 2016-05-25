@@ -88,7 +88,7 @@ section {
 }
 
 /* Format standard badges sizes*/
-#standardBadge {
+#badgeOfCurrentHigh {
     color: white; 
     font-size: 35px;
     line-height: 200%;
