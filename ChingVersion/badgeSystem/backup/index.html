@@ -16,6 +16,8 @@
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/store.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/leaderboard.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/easterEgg.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/settings.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/achievements.css" media="screen">
 		
 		
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/portraitMode.css" media="only all and (max-width: 480px)">
@@ -37,6 +39,7 @@
 		<script src="./workspace/js/game.js"></script>
 		<script src="./workspace/js/mode.js"></script>
 		<script src="./workspace/js/easterEgg.js"></script>
+		<script src="./workspace/js/modal.js"></script>
 		<script src="./workspace/js/audio.js"></script>
 		<script src="./workspace/js/cookies.js"></script>
 
@@ -46,6 +49,11 @@
 
     	<!-- Button audio -->
     	<audio id="buttonSound" src="./workspace/audio/Buttons/Bubble.mp3" autostart="true"></audio>
+
+    	<!-- Background Music -->
+    	<audio id="bgm" autoplay loop muted="true">
+            <source src="./workspace/audio/Main.mp3">
+        </audio>
 		
 		<!-- Container for the shown screen -->
         <div id="gameContainer">
@@ -53,8 +61,8 @@
 			<!-- Badges division -->
 			<section id="badges" >
 				<div id="standardBadge">0</span></div>
-			</section>
-						
+			</section>			
+
             <!-- Title Screen -->
             <section id="mainMenu">
 				
@@ -134,8 +142,41 @@
                 </div>
 				<h1 class="title">Settings</h1>
 				<div id="settingContent">
-					<p>What the hell am I suppose to add here?</p>
+					<input id="volume" type="range" min="0" max="1" step="0.01" oninput="volume(value)" onchange="volume(value)"><br>
+					<button id="muteButton" class="buttonDesign muteButtons" type="button" onclick="mute()">Mute</button><br>
+        			<button id="unmuteButton" class="buttonDesign muteButtons" type="button" onclick="unmute()">Unmute</button>
+        			<button id="unmuteButton" class="buttonDesign muteButtons" type="button" onclick="resetCookies()">Reset</button>
+
 				</div>
+			</section>
+
+			<!-- Achievements Page -->
+			<section id="achievements">
+				<div class="topNav">
+                    <button class="backButton buttonDesign floatLeft" onclick="screenChange('mainMenu');"></button>
+                </div>
+                <h1 class="title">Achievements</h1>
+                <div id="achievementContent">
+                	<div id = "badge1" class="AchievementBlocks">
+						<h3>Achievement 1</h3>
+						<div class="badge"></div>
+						<p>Finish solving a cube</p>
+					</div>
+					<div id = "badge2" class="AchievementBlocks">
+						<h3>Achievement 2</h3>
+						<div class="badge"></div>
+					</div>
+					<div id = "badge3" class="AchievementBlocks">
+						<h3>Achievement 3</h3>
+						<div class="badge"></div>
+					</div>
+					<div id = "badge4" class="AchievementBlocks">
+						<h3>Achievement 4</h3>
+						<div class="badge"></div>
+					</div>
+
+                </div>
+
 			</section>
 			
             <!-- Game Mode Screen -->
@@ -200,32 +241,32 @@
 				<div class="levelContainer">
 					<table class="levelList">
 						<tr>
-							<td><p class="levelsButton buttonDesign" onclick="screenChange('mode3D'); levelLoad(0,0,1); setLevel(1);">1</p></td>
-							<td><p class="levelsButton buttonDesign" onclick="screenChange('mode3D'); levelLoad(0,1,1); setLevel(2);">2</p></td>
-							<td><p class="levelsButton buttonDesign" onclick="screenChange('mode3D'); levelLoad(0,2,1); setLevel(3);">3</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(0,0,1); setLevel(1);">1</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(0,1,1); setLevel(2);">2</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(0,2,1); setLevel(3);">3</p></td>
 						</tr>
 						<tr>
-							<td><p class="levelsButton buttonDesign" onclick="screenChange('mode3D'); levelLoad(0,2,2); setLevel(4);">4</p></td>
-							<td><p class="levelsButton buttonDesign" onclick="screenChange('mode3D'); levelLoad(1,3,2); setLevel(5);">5</p></td>
-							<td><p class="levelsButton buttonDesign" onclick="screenChange('mode3D'); levelLoad(1,4,2); setLevel(6);">6</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(0,2,2); setLevel(4);">4</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(1,3,2); setLevel(5);">5</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(1,4,2); setLevel(6);">6</p></td>
 						</tr>
 						<tr>
-							<td><p class="levelsButton buttonDesign" onclick="screenChange('mode3D'); levelLoad(1,4,3); setLevel(7);">7</p></td>
-							<td><p class="levelsButton buttonDesign" onclick="screenChange('mode3D'); levelLoad(2,5,3); setLevel(8);">8</p></td>
-							<td><p class="levelsButton buttonDesign" onclick="screenChange('mode3D'); levelLoad(2,6,3); setLevel(9);">9</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(1,4,3); setLevel(7);">7</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(2,5,3); setLevel(8);">8</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(2,6,3); setLevel(9);">9</p></td>
 						</tr>
 						<tr>
-							<td><p class="levelsButton buttonDesign" onclick="screenChange('mode3D'); levelLoad(3,7,4); setLevel(10);">10</p></td>
-							<td><p class="levelsButton buttonDesign" onclick="screenChange('mode3D'); levelLoad(3,8,4); setLevel(11);">11</p></td>
-							<td><p class="levelsButton buttonDesign" onclick="screenChange('mode3D'); levelLoad(3,9,4); setLevel(12);">12</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(3,7,4); setLevel(10);">10</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(3,8,4); setLevel(11);">11</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(3,9,4); setLevel(12);">12</p></td>
 						</tr>
 						<tr>
-							<td><p class="levelsButton buttonDesign" onclick="screenChange('mode3D'); levelLoad(0,0,5); setLevel(13);">13</p></td>
-							<td><p class="levelsButton buttonDesign" onclick="screenChange('mode3D'); levelLoad(0,0,5); setLevel(14);">14</p></td>
-							<td><p class="levelsButton buttonDesign" onclick="screenChange('mode3D'); levelLoad(0,0,5); setLevel(15);">15</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(0,0,5); setLevel(13);">13</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(0,0,5); setLevel(14);">14</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(0,0,5); setLevel(15);">15</p></td>
 						</tr>
 					</table>					
-				</div>
+				</div>				
 				<ul>
 					<li><button id="setDifficulty" class="buttonDesign menuBSize" onclick="setDifficulty();">Standard</button></li>
 				</ul>
@@ -318,11 +359,7 @@
 			<div id="modalBox" class="modal">
 			
 				<div class="modalContent">
-					<h1>Quit?</h1>
-					<ul>
-						<li><button class="buttonDesign menuBSize" onclick="screenChange('mainMenu'); hideModal(); clearTimer();">Yes</button></li>
-						<li><button class="buttonDesign menuBSize" onclick="hideModal();">No</button></li>
-					</ul>
+					
 				</div>
 				
 			</div>

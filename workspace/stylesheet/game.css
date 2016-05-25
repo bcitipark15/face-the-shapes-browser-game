@@ -43,6 +43,7 @@ section {
 #leaderboard,
 #store,
 #settings,
+#badges,
 #gameMode,
 #levelSelect,
 #selectShape,
@@ -70,6 +71,29 @@ section {
     background-image: linear-gradient(120deg, #155799, #159957);
     overflow: hidden;
 }
+
+/* Position badges on the left */
+#badges {
+    margin: 0.2%;
+    margin-top: 80px;
+    text-align: center;
+    height: 100px;
+    width: 100px;
+    background: url("../image/orangeGemBadge.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    float: left;
+    position: absolute;
+}
+
+/* Format standard badges sizes*/
+#standardBadge {
+    color: white; 
+    font-size: 35px;
+    line-height: 200%;
+}
+
 .foldoutFace {
 	cursor: pointer;
 }

@@ -74,12 +74,15 @@ section {
 
 /* Position badges on the left */
 #badges {
-    margin: 0;
+    margin: 0.2%;
+    margin-top: 80px;
     text-align: center;
-    height: 30%;
-    width: 150px;
-    padding-top: 5%;
-    background: url("../image/blueTetrahedronGem.png");
+    height: 100px;
+    width: 100px;
+    background: url("../image/orangeGemBadge.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
     float: left;
     position: absolute;
 }
@@ -87,9 +90,9 @@ section {
 /* Format standard badges sizes*/
 #standardBadge {
     color: white; 
-    font-size: 135px;
+    font-size: 35px;
+    line-height: 200%;
 }
-
 
 .foldoutFace {
 	cursor: pointer;

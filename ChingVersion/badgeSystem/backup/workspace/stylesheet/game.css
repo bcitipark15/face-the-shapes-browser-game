@@ -1,0 +1,236 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: juneGull;
+    src: url(../font/junegullrg.ttf);
+}
+
+body {
+    font-family: juneGull;
+}
+
+/** A list containing the buttons **/
+ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+
+/** Section is what will display to the user **/
+section {
+    width: 100%;
+    height: 100%;
+    max-width: 900px;
+    position: relative;
+	-webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+}
+/*  ****Interferes with foldout resizing, to be retested later. ****
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}*/
+
+/* Hide from the user */
+#leaderboard,
+#store,
+#settings,
+#badges,
+#gameMode,
+#levelSelect,
+#selectShape,
+#selectModel,
+#mode3D,
+#mode2D,
+#resultScreen,
+#answerScreen {
+	display: none;
+}
+
+/* The container where the game is being displayed */
+#gameContainer {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    position: relative;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 900px;
+    height: 700px;
+	max-height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #159957;
+    background-image: linear-gradient(120deg, #155799, #159957);
+    overflow: hidden;
+}
+
+/* Position badges on the left */
+#badges {
+    margin: 0.2%;
+    margin-top: 80px;
+    text-align: center;
+    height: 100px;
+    width: 100px;
+    padding-top: 5%;
+    background: url("../image/orangeGemBadge.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    float: left;
+    position: absolute;
+}
+
+/* Format standard badges sizes*/
+#standardBadge {
+    color: white; 
+    font-size: 35px;
+    line-height: 200%;
+}
+
+.foldoutFace {
+	cursor: pointer;
+}
+/* The text box for the user to input a Name */
+#username {
+	border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    box-sizing: border-box;
+	text-align: center;
+	width: 100%;
+	height: 40px;
+	margin: auto;
+	font-size: 25px;
+	font-family: juneGull;
+	background-color: rgba(255, 255, 255, 0.00);
+}
+#username:focus {
+	border: 1px solid rgba(255, 255, 255, 1);
+}
+
+/* Level table is stored in */
+.levelList {
+	margin-left: auto;
+	margin-right: auto;
+}
+.levelList td {
+	padding: 5px;
+	
+}
+#setDifficulty {
+	margin-top: 5%;
+}
+
+/* Where the message will display for the user to read */
+.messageBox {
+	padding-top: 5%;
+	margin: auto;
+    width: 40%;
+	font-size: 40px;
+	
+}
+
+/* Increase the size of the title */
+#resultScreen .title {
+	font-size: 50px;
+}
+#answerScreen .title {
+	font-size: 50px;
+}
+
+/* Positioning of the main menu images */
+#titleImage {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Default Styling for Title */
+.title {
+    padding-top: 5%;
+    text-align: center;
+    font-size: 35px;
+    padding-bottom: 20px;
+    color: white;
+	text-shadow: 0px 4px 8px #000000;
+}
+
+/* To keep the nav on the top */
+.topNav {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    margin: auto;
+    padding-top: 2%;
+    width: 95%;
+}
+
+/* To keep the nav on the bottom */
+.bottomNav {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    padding-top: 3%;
+    margin: auto;
+    width: 95%;
+}
+
+/* The screen where the fold out will be placed */
+#foldoutScreen {
+    position: absolute;
+    margin: auto;
+    bottom: 0%;
+    top: 0%;
+    right: 0%;
+    left: 0%;
+    height: 65%;
+    width: 90%;
+}
+
+/* foldout is the actual fold out container */
+#foldout {
+    margin: auto;
+}
+
+/* Where the cube is placed**/
+.cubeContainer {
+    top: 25%;
+}
+
+
+/* Frame for non-button containers */
+.infoCont {
+	padding: 20px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.3rem;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* Quick float right, left, and clear */
+.floatRight {
+    float: right;
+}
+.floatLeft {
+    float: left;
+}
+.clear {
+    clear: both;
+}

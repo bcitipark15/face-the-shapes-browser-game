@@ -24,6 +24,9 @@ function screenChange(screen) {
         x[i].style.display = "none"; 
     }
     document.getElementById(screen).style.display = "block"; 
+    if (screen != "mainMenu") {
+    	document.getElementById("badges").style.display = "block";
+    }
 }
 
 /** 
@@ -82,6 +85,9 @@ function validate(levelNumber){
 	//Appropriate message is displayed according to the result.
 	if (match) {
 		$('#resultMessage').append('Foldout is a perfect match!');
+			if (standardMode) {
+			setBadgeStandard();
+		}
 	} else {
 		$('#resultMessage').append('Foldout does not match!');
 	}

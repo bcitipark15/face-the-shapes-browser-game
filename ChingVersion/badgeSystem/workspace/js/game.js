@@ -23,7 +23,7 @@ function screenChange(screen) {
 	for (var i = 0; i < x.length; i++) {
         x[i].style.display = "none"; 
     }
-    document.getElementById(screen).style.display = "block";  
+    document.getElementById(screen).style.display = "block"; 
     if (screen != "mainMenu") {
     	document.getElementById("badges").style.display = "block";
     }
@@ -37,40 +37,6 @@ window.addEventListener('orientationchange', navBar, false);
  * Window resize listener.
  */
 window.onresize = resizeGame;
-
-/**
- * Fade in for modal
- */
-function modalFadeIn() {
-	$('#modalBox').fadeIn(400);
-}
-function modalFadeOut() {
-	$('#modalBox').fadeOut(400);
-}
-/** 
- * Will display the modal. 
- */
-function displayModal() {
-    modalFadeIn();
-	var timer = setTimeout(function() {document.getElementById('modalBox').style.display = 'block';}, 400);
-}
-
-/** 
- * Will hide the modal. 
- */
-function hideModal() {
-	modalFadeOut();
-	var timer = setTimeout(function() {document.getElementById('modalBox').style.display = 'none';}, 400);
-}
-
-/** 
- * When the user clicks anywhere outside of the modal, this will close it. 
- */
-window.onclick = function(event) {
-    if (event.target == document.getElementById('modalBox')) {
-        hideModal();
-    }
-}
 
 /**
  * levelLoad Loads the levels specifics once level is selected.
@@ -95,7 +61,7 @@ function levelLoad(lowerBound, upperBound, numAnswers) {
  *			
  * @return {undefined}
  */
-function validate(){
+function validate(levelNumber){
 	
 	
 	//Clears results screen along with answer screen before editing them.
@@ -107,6 +73,7 @@ function validate(){
 		if (getFace(faceNames[i]).trueValue != getFace(faceNames[i]).value){
 			match = false;
 		}
+		
 		//Only checks for color match on non-white faces.
 		if(getFace(faceNames[i]).trueValue != 4){
 			if(getFace(faceNames[i]).playerColor != getFace(faceNames[i]).trueColor){
@@ -118,10 +85,9 @@ function validate(){
 	//Appropriate message is displayed according to the result.
 	if (match) {
 		$('#resultMessage').append('Foldout is a perfect match!');
-		if (standardMode) {
+			if (standardMode) {
 			setBadgeStandard();
 		}
-
 	} else {
 		$('#resultMessage').append('Foldout does not match!');
 	}
@@ -185,7 +151,8 @@ function resizeGame(){
 	}
 	//Size is a portion of the screen to allow the full foldout to fit.
 	size = Math.floor(axis/4);
-	$('#foldout tr td').children().css({'width': size, 'height': size, 'border': 'solid 1px black'});
+	$('#foldout').css('border-collapse','collapse');
+	$('#foldout tr td').children().css({'width': size, 'height': size, 'border': 'solid 5px black'});
 	
 	$('#foldout tr td div').children().css({'width': size, 'height': size});
 }
@@ -220,7 +187,7 @@ function setDifficulty(){
 			difficulty = 'Advanced'
 			break;
 	}
-	$('#setDifficulty').text('Difficulty: ' + difficulty);
+	$('#setDifficulty').text(difficulty);
 }
 
 /** ~~~ Move to game.js ~~~

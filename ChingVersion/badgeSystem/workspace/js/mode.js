@@ -41,7 +41,6 @@ function startScoreMode(){
 	time = 60;
 	//User's score.
 	score = 0;
-	//Randomize levels **** NEEDS TO BE PUT INTO FUNCTION ****
 	levels = [0,1,2,3,4,5,6,7,8,9];
 	level = 0;
 	randomizeOrder(levels);
@@ -51,7 +50,6 @@ function startScoreMode(){
 	timer = setInterval(drawCountdownTimer, 1000, time);
 	$('#timer').text(time);
 	$('#score').text(score);
-	//Move to level 1 **** NEEDS TO BE PUT INTO FUNCTION (CALL IT nextLevel());
 	levelLoad(2,2,3);
 }
 

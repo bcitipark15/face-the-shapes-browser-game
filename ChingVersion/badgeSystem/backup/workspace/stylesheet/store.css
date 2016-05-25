@@ -1,0 +1,22 @@
+#storeContent li {
+	display: inline;
+}
+#storeContent ul {
+	background-color: white;
+	border-radius: 15px;
+	margin: auto;
+	padding: 20px;
+}
+#storeContent a {
+	text-decoration: none;
+	font-size: 30px;
+	cursor: pointer;
+}
+#storeContent a:hover {
+	
+	color: red;
+}
+.storeOptions {
+	display: none;
+	margin: auto;
+}

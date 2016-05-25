@@ -57,11 +57,11 @@
 		
 		<!-- Container for the shown screen -->
         <div id="gameContainer">
-
+			
 			<!-- Badges division -->
 			<section id="badges" >
 				<div id="standardBadge">0</span></div>
-			</section>			
+			</section>	
 
             <!-- Title Screen -->
             <section id="mainMenu">
@@ -144,7 +144,7 @@
 				<div id="settingContent">
 					<input id="volume" type="range" min="0" max="1" step="0.01" oninput="volume(value)" onchange="volume(value)"><br>
 					<button id="muteButton" class="buttonDesign muteButtons" type="button" onclick="mute()">Mute</button><br>
-        			<button id="unmuteButton" class="buttonDesign muteButtons" type="button" onclick="unmute()">Unmute</button>
+        			<button id="unmuteButton" class="buttonDesign muteButtons" type="button" onclick="unmute()">Unmute</button>     	
         			<button id="unmuteButton" class="buttonDesign muteButtons" type="button" onclick="resetCookies()">Reset</button>
 
 				</div>
@@ -239,7 +239,7 @@
 				
                 <h1 class="title">Level Select</h1>
 				<div class="levelContainer">
-					<table class="levelList">
+			<table class="levelList">
 						<tr>
 							<td><p class="levelsButton buttonDesign" onclick="levelLoad(0,0,1); setLevel(1);">1</p></td>
 							<td><p class="levelsButton buttonDesign" onclick="levelLoad(0,1,1); setLevel(2);">2</p></td>
@@ -266,7 +266,8 @@
 							<td><p class="levelsButton buttonDesign" onclick="levelLoad(0,0,5); setLevel(15);">15</p></td>
 						</tr>
 					</table>					
-				</div>				
+				
+				</div>
 				<ul>
 					<li><button id="setDifficulty" class="buttonDesign menuBSize" onclick="setDifficulty();">Standard</button></li>
 				</ul>

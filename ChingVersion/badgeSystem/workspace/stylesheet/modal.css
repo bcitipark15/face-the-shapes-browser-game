@@ -17,7 +17,10 @@
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
 }
-
+.modal ol {
+	text-align: center;
+	list-style-type: none;
+}
 /* The content inside the modal */
 .modalContent {
 	position: relative;
@@ -40,7 +43,9 @@
 }
 
 /* The modal list */
-.modalContent li {
-	padding-top: 5%;
+.modalContent  ul li {
+	padding-top: 2%;
+	margin: 1%;
+	display: inline;
 }
 

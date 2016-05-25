@@ -6,7 +6,7 @@
 //variable that determine if easter egg two is activated
 var easterEggTwoActivate = false;
 
-//Color array for face colors.
+ //Color array for face colors.
 var colors = ['red','lime','blue','purple','yellow','cyan','orange'];
 
 //Hard code 6 faces for cube
@@ -51,3 +51,6 @@ var difficultyNum = 0;
 
 //Image source for cube faces.
 var img = '<img src="./workspace/image/arrow3.png">';
+
+//Selected color for basic mode
+var selectedColor = 'red'
