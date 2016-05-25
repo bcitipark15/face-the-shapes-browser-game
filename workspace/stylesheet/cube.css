@@ -1,3 +1,140 @@
+/* titleCube container is where the titleCube is stored prevent
+the user from dragging and highlighting the titleCube */
+#titleCubeContainer {
+    display: block;
+    border: 10px solid white;
+    background: linear-gradient(240deg, #082445, #084524);
+    border-radius: 50%;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    margin-left: 0;
+    margin-right: 0;
+    margin: auto;
+    margin-bottom: 15px;
+    width: 250px;
+    height: 250px;
+}
+/* The modifies the image to match the size of the titleCube */
+.titleCubeCover {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+/* The titleCube itself where the transformation are applied */
+#titleCube {
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;/*
+    -webkit-transition: -webkit-transform 1s;
+    -moz-transition: -moz-transform 1s;
+    -o-transition: -o-transform 1s;
+    transition: transform 1s;*/
+    margin: auto;
+    height: 100px;
+    width: 100px;
+    top: 30%;
+    transform: rotateX(-15deg) rotateY(-45deg);
+}
+
+/* The face of the titleCube */
+#titleCube figure {
+    display: block;
+    position: absolute;
+    width: 95px;
+    height: 95px;
+    border: 5px solid black;
+    line-height: 100px;
+    font-size: 120px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+#titleCube.panels-backface-invisible figure {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Assigned the color white if the JS fails */
+#titleCube .front {
+    background-color: white;
+}
+#titleCube .back {
+    background-color: white;
+}
+#titleCube .right {
+    background-color: white;
+}
+#titleCube .left {
+    background-color: white;
+}
+#titleCube .top {
+    background-color: white;
+}
+#titleCube .bottom {
+    background-color: white;
+}
+
+
+/* For future uses */
+#titleCube .front {
+    background: hsla( 0, 100%, 50%, 0.7 );
+}
+#titleCube .back {
+    background: hsla( 60, 100%, 50%, 0.7 );
+}
+#titleCube .right {
+    background: hsla( 120, 100%, 50%, 0.7 );
+}
+#titleCube .left {
+    background: hsla( 180, 100%, 50%, 0.7 );
+}
+#titleCube .top {
+    background: hsla( 240, 100%, 50%, 0.7 );
+}
+#titleCube .bottom {
+    background: hsla( 300, 100%, 50%, 0.7 );
+}
+
+
+/* Rotates the titleCube to its proper orientation when moved */
+#titleCube .front {
+    transform: rotateY( 0deg ) translateZ( 50px );
+}
+
+#titleCube .back {
+    transform: rotateX( 180deg ) translateZ( 50px );
+}
+
+#titleCube .right {
+    transform: rotateY( 90deg ) translateZ( 50px );
+}
+
+#titleCube .left {
+    transform: rotateY( -90deg ) translateZ( 50px );
+}
+
+#titleCube .top {
+    transform: rotateX( 90deg ) translateZ( 50px );
+}
+
+#titleCube .bottom {
+    transform: rotateX( -90deg ) translateZ( 50px );
+}
+
+
 /* Cube container is where the Cube is stored prevent
 the user from dragging and highlighting the cube */
 .cubeContainer {

@@ -45,7 +45,7 @@
 
 		
     </head>
-    <body onresize="navBar();" onload="navBar(); checkCookies();">
+    <body onresize="navBar();" onload="navBar(); checkCookies(); spin();">
 
     	<!-- Button audio -->
     	<audio id="buttonSound" src="./workspace/audio/Buttons/Bubble.mp3" autostart="true"></audio>
@@ -68,7 +68,16 @@
 				
                 <h1 class="title">Face The Shapes</h1>
 				
-                <div id="titleImage"><img src="./workspace/image/cube.png" width="200em" height="200em" onclick="tutturu();"></div>
+                <div id="titleCubeContainer"><!-- <img src="./workspace/image/cube.png" width="200em" height="200em" onclick="tutturu();"> -->
+                	<div id="titleCube">
+        	            <figure class="front"></figure>
+                        <figure class="back"></figure>
+                        <figure class="right"></figure>
+                        <figure class="left"></figure>
+                        <figure class="top"></figure>
+                        <figure class="bottom"></figure>
+                    </div>
+                </div>
 
                 <ul>
                     <li><button class="buttonDesign menuBSize" onclick="screenChange('gameMode')">Play (need new back button)</button></li>

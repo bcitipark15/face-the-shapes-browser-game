@@ -1,15 +1,5 @@
-#achievements {
-	
-
-background: #000000; /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #000000 , #434343); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #000000 , #434343); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        
-}
-
 #achievementContent {
 	margin-top: 40px;
-	
 }
 
 .AchievementBlocks {
@@ -20,18 +10,18 @@ background: linear-gradient(to left, #000000 , #434343); /* W3C, IE 10+/ Edge, F
 	margin-left: auto;
 	margin-top: 20px;
 	border-radius: 15px;
-	background-image: linear-gradient(to left, rgb(255, 179, 71), rgb(255, 204, 51));
+
 }
 
 .badge {
-	border: 3px solid black;
+	border: 1px solid black;
 	height: 80px;
 	width: 80px;
 	border-radius: 50%;
 	margin-left: -25px;
 	margin-top: -15px;
+	background-color: white;
 	float: left;
-	background-image: linear-gradient(to left, rgb(115, 200, 169), rgb(55, 59, 68));
 }
 
 h3 {

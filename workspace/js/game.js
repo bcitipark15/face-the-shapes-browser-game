@@ -26,6 +26,11 @@ function screenChange(screen) {
     document.getElementById(screen).style.display = "block"; 
     if (screen != "mainMenu") {
     	document.getElementById("badges").style.display = "block";
+    	if (difficultyNum == 0) {
+    		updateBadge('standard', (levelStandardHigh - 1));
+    	} else if (difficultyNum == 1) {
+    		updateBadge('advanced', (levelAdvancedHigh - 1));
+    	}
     }
 }
 
@@ -85,8 +90,10 @@ function validate(levelNumber){
 	//Appropriate message is displayed according to the result.
 	if (match) {
 		$('#resultMessage').append('Foldout is a perfect match!');
-			if (standardMode) {
+		if (standardMode) {
 			setBadgeStandard();
+		} else if (advancedMode) {
+			setBadgeAdvanced();
 		}
 	} else {
 		$('#resultMessage').append('Foldout does not match!');
@@ -174,7 +181,7 @@ function colorChanger(){
 }
 
 /** ~~~Move to game.js ~~~
- * setDifficulty Difficulty button for number of pivots generated.
+ * 	 Difficulty button for number of pivots generated.
  * @return {undefined}
  */
 function setDifficulty(){
@@ -182,9 +189,11 @@ function setDifficulty(){
 	switch(difficultyNum){
 		case 0:
 			difficulty = 'Standard'
+			updateBadge('standard', levelStandardHigh - 1 );
 			break;
 		case 1:
 			difficulty = 'Advanced'
+			updateBadge('advanced', levelAdvancedHigh - 1 );
 			break;
 	}
 	$('#setDifficulty').text(difficulty);

@@ -37,14 +37,20 @@ var levels = [];
 //level is current level.
 var level;
 
-//Current level of standard mode.
-var currentLevelStandard;
+//Current level of standard or classic mode.
+var currentLevel;
 
 //Highest level of standard mode unlocked.
 var levelStandardHigh = 1;
 
-//Define if user is in standard mode.1
+//Highest level of advanced mode unlocked.
+var levelAdvancedHigh = 1;
+
+//Define if user is in standard mode.
 var standardMode = false;
+
+//Define if user is in advanced mode.
+var advancedMode = false;
 
 //base difficulty.
 var difficultyNum = 0;

@@ -145,10 +145,26 @@ section {
 }
 
 /* Positioning of the main menu images */
-#titleImage {
+/*#titleImage {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
+}
+*/
+
+#titleCubeContainer {
+    display: block;
+    border: 10px solid white;
+    background: linear-gradient(240deg, #082445, #084524);
+    border-radius: 50%;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    margin-left: 0;
+    margin-right: 0;
+    margin: auto;
+    margin-bottom: 15px;
+    width: 250px;
+    height: 250px;
 }
 
 /* Default Styling for Title */

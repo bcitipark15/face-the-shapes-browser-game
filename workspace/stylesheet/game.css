@@ -88,7 +88,7 @@ section {
 }
 
 /* Format standard badges sizes*/
-#standardBadge {
+#badgeOfCurrentHigh {
     color: white; 
     font-size: 35px;
     line-height: 200%;
@@ -114,6 +114,15 @@ section {
 	border: 1px solid rgba(255, 255, 255, 1);
 }
 
+/* Level table is stored in */
+.levelList {
+	margin-left: auto;
+	margin-right: auto;
+}
+.levelList td {
+	padding: 5px;
+	
+}
 #setDifficulty {
 	margin-top: 5%;
 }
@@ -136,10 +145,26 @@ section {
 }
 
 /* Positioning of the main menu images */
-#titleImage {
+/*#titleImage {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
+}
+*/
+
+#titleCubeContainer {
+    display: block;
+    border: 10px solid white;
+    background: linear-gradient(240deg, #082445, #084524);
+    border-radius: 50%;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    margin-left: 0;
+    margin-right: 0;
+    margin: auto;
+    margin-bottom: 15px;
+    width: 250px;
+    height: 250px;
 }
 
 /* Default Styling for Title */
@@ -200,7 +225,7 @@ section {
 /* Frame for non-button containers */
 .infoCont {
 	padding: 20px;
-    
+    display: inline-block;
     margin-bottom: 1rem;
     color: rgba(255, 255, 255, 0.7);
     background-color: rgba(255, 255, 255, 0.08);

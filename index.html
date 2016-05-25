@@ -15,7 +15,6 @@
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/button.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/store.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/leaderboard.css" media="screen">
-		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/levelSelect.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/easterEgg.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/settings.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="./workspace/stylesheet/achievements.css" media="screen">
@@ -39,7 +38,6 @@
         <script src="./workspace/js/foldout.js"></script>
 		<script src="./workspace/js/game.js"></script>
 		<script src="./workspace/js/mode.js"></script>
-		<script src="./workspace/js/levelSelect.js"></script>
 		<script src="./workspace/js/easterEgg.js"></script>
 		<script src="./workspace/js/modal.js"></script>
 		<script src="./workspace/js/audio.js"></script>
@@ -47,7 +45,7 @@
 
 		
     </head>
-    <body onresize="navBar();" onload="navBar(); checkCookies();">
+    <body onresize="navBar();" onload="navBar(); checkCookies(); spin();">
 
     	<!-- Button audio -->
     	<audio id="buttonSound" src="./workspace/audio/Buttons/Bubble.mp3" autostart="true"></audio>
@@ -62,7 +60,7 @@
 			
 			<!-- Badges division -->
 			<section id="badges" >
-				<div id="standardBadge">0</span></div>
+				<div id="badgeOfCurrentHigh">0</span></div>
 			</section>	
 
             <!-- Title Screen -->
@@ -70,10 +68,19 @@
 				
                 <h1 class="title">Face The Shapes</h1>
 				
-                <div id="titleImage"><img src="./workspace/image/cube.png" width="200em" height="200em" onclick="tutturu();"></div>
+                <div id="titleCubeContainer"><!-- <img src="./workspace/image/cube.png" width="200em" height="200em" onclick="tutturu();"> -->
+                	<div id="titleCube">
+        	            <figure class="front"></figure>
+                        <figure class="back"></figure>
+                        <figure class="right"></figure>
+                        <figure class="left"></figure>
+                        <figure class="top"></figure>
+                        <figure class="bottom"></figure>
+                    </div>
+                </div>
 
                 <ul>
-                    <li><button class="buttonDesign menuBSize" onclick="screenChange('gameMode');">Play</button></li>
+                    <li><button class="buttonDesign menuBSize" onclick="screenChange('gameMode')">Play (need new back button)</button></li>
                     <li><button class="buttonDesign menuBSize" onclick="screenChange('leaderboard'); getHighScores();">Leaderboard</button></li>
 					<li><button class="buttonDesign menuBSize" onclick="screenChange('store')">Store</button></li>
                 </ul>
@@ -82,7 +89,6 @@
 				</div>
             </section>
 			
-			<!-- Leaderboard -->
 			<section id="leaderboard">
 			
 				<div class="topNav">
@@ -242,47 +248,34 @@
 				
                 <h1 class="title">Level Select</h1>
 				<div class="levelContainer">
-					<div id="levelPage1" class="pageDiv">
-						<ol class="levelList">
-							<li><p id="level1" class="levelsButton buttonDesign" onclick="levelLoad(0,0,1); setLevel(1);">1</p></li>
-							<li><p id="level2" class="levelsButton buttonDesign" onclick="levelLoad(0,1,1); setLevel(2);">2</p></li>
-							<li><p id="level3" class="levelsButton buttonDesign" onclick="levelLoad(0,2,1); setLevel(3);">3</p></li>
-							
-						</ol>
-						<ol class="levelList">
-							<li><p id="level4" class="levelsButton buttonDesign" onclick="levelLoad(0,2,2); setLevel(4);">4</p></li>
-							<li><p id="level5" class="levelsButton buttonDesign" onclick="levelLoad(1,3,2); setLevel(5);">5</p></li>
-						</ol>
-					</div>
-					<div id="levelPage2" class="pageDiv">
-						<ol class="levelList">
-							<li><p id="level6" class="levelsButton buttonDesign" onclick="levelLoad(1,4,2); setLevel(6);">6</p></li>
-							<li><p id="level7" class="levelsButton buttonDesign" onclick="levelLoad(1,4,3); setLevel(7);">7</p></li>
-							<li><p id="level8" class="levelsButton buttonDesign" onclick="levelLoad(2,5,3); setLevel(8);">8</p></li>
-						</ol>
-						<ol class="levelList">
-							<li><p id="level9" class="levelsButton buttonDesign" onclick="levelLoad(2,6,3); setLevel(9);">9</p></li>
-							<li><p id="level10" class="levelsButton buttonDesign" onclick="levelLoad(3,7,4); setLevel(10);">10</p></li>
-						</ol>
-					</div>
-					<div id="levelPage3" class="pageDiv">
-						<ol class="levelList">
-							<li><p id="level11" class="levelsButton buttonDesign" onclick="levelLoad(3,8,4); setLevel(11);">11</p></li>
-							<li><p id="level12" class="levelsButton buttonDesign" onclick="levelLoad(3,9,4); setLevel(12);">12</p></li>
-							<li><p id="level13" class="levelsButton buttonDesign" onclick="levelLoad(0,0,5); setLevel(13);">13</p></li>
-						</ol>
-						<ol class="levelList">
-							<li><p id="level14" class="levelsButton buttonDesign" onclick="levelLoad(0,0,5); setLevel(14);">14</p></li>
-							<li><p id="level15" class="levelsButton buttonDesign" onclick="levelLoad(0,0,5); setLevel(15);">15</p></li>
-						</ol>
-					</div>
-					
-					<ol id="levelPageNav" class="infoCont">
-						<li><h2>Level Page</h2></li>
-						<li><a href="#levelPage1" onclick="changePage('levelPage1');">1</a></li>
-						<li><a href="#levelPage2" onclick="changePage('levelPage2');">2</a></li>
-						<li><a href="#levelPage3" onclick="changePage('levelPage3');">3</a></li>
-					</ol>
+			<table class="levelList">
+						<tr>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(0,0,1); setLevel(1);">1</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(0,1,1); setLevel(2);">2</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(0,2,1); setLevel(3);">3</p></td>
+						</tr>
+						<tr>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(0,2,2); setLevel(4);">4</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(1,3,2); setLevel(5);">5</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(1,4,2); setLevel(6);">6</p></td>
+						</tr>
+						<tr>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(1,4,3); setLevel(7);">7</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(2,5,3); setLevel(8);">8</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(2,6,3); setLevel(9);">9</p></td>
+						</tr>
+						<tr>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(3,7,4); setLevel(10);">10</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(3,8,4); setLevel(11);">11</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(3,9,4); setLevel(12);">12</p></td>
+						</tr>
+						<tr>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(0,0,5); setLevel(13);">13</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(0,0,5); setLevel(14);">14</p></td>
+							<td><p class="levelsButton buttonDesign" onclick="levelLoad(0,0,5); setLevel(15);">15</p></td>
+						</tr>
+					</table>					
+				
 				</div>
 				<ul>
 					<li><button id="setDifficulty" class="buttonDesign menuBSize" onclick="setDifficulty();">Standard</button></li>
