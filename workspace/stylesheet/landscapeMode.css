@@ -56,3 +56,6 @@ body {
 	height: 90%;
 	width: 90%;
 }
+.modalContent ol{
+	margin: 0;
+}
