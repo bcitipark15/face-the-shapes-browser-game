@@ -73,7 +73,9 @@ function modalIncorrect() {
 							+ 	'</div>');
 	displayModal();
 }
-
+/**
+ * Will display when the user presses the back button in game.
+ */
 function modalOption() {
 	$('.modalContent').html('');
 	$('.modalContent').append('<h1>Mini Menu</h1>' 
@@ -83,6 +85,32 @@ function modalOption() {
 							+ 			'<li><button class="buttonDesign menuBSize" onclick="screenChange(\'levelSelect\'); hideModal();">Level Select</button></li>'
 							+ 			'<li><button class="buttonDesign menuBSize" onclick="hideModal();">Cancel</button></li>'
 							+		'</ol>'
+							+ 	'</div>');
+	
+	displayModal();
+}
+/* Work In progress */
+function modalArrow() {
+	$('.modalContent').html('');
+	$('.modalContent').append('<h1>Select Arrow</h1>' 
+							+ 	'<div id="arrowBox">'
+							+ 		'<table>' 
+							+ 			'<tr>'
+							+				'<td></td>'
+							+				'<td><div id="modalArrow1" onclick=""><img src="./workspace/image/arrow3.png"></div></td>'
+							+				'<td></td>'
+							+			'</tr>'
+							+ 			'<tr>'
+							+				'<td><div id="modalArrow2" onclick=""><img src="./workspace/image/arrow3.png"></div></td>'
+							+				'<td></td>'
+							+				'<td><div id="modalArrow3" onclick=""><img src="./workspace/image/arrow3.png"></div></td>'
+							+			'</tr>'
+							+ 			'<tr>'
+							+				'<td></td>'
+							+				'<td><div id="modalArrow4" onclick=""><img src="./workspace/image/arrow3.png"></div></td>'
+							+				'<td></td>'
+							+			'</tr>'
+							+		'</table>'
 							+ 	'</div>');
 	
 	displayModal();
