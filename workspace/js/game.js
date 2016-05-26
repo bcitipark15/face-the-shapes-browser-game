@@ -65,7 +65,7 @@ function levelLoad(lowerBound, upperBound, numAnswers) {
 	//Revert mode2D if user was viewing answer version.
 	answerMode = false;
 	$('#mode2D div.topNav').html('');
-	$('#mode2D div.topNav').append('<button class="hamburger buttonDesign floatLeft" onclick="displayModal();"></button>'
+	$('#mode2D div.topNav').append('<button class="backButton buttonDesign floatLeft" onclick="modalOption(); buttonClick()"></button>'
 									+ '<button class="buttonDesign floatRight" onclick="screenChange(\'mode3D\');">To 3D</button>');
 	$('#mode2D div.bottomNav').html('');
 	$('#mode2D div.bottomNav').append('<button id="colorArrow" class="buttonDesign floatLeft" onclick="colorChanger();">Color</button>'
