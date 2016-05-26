@@ -8,7 +8,28 @@
     margin-top: 20px;
 }
 
-input[type=range]{
+#volumeControl {
+    display: inline;
+}
+
+#volume li {
+    display: inline;
+
+}
+
+#volumePercent {
+    width: 100px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#settingButtons {
+    clear: both;
+    margin: auto;
+}
+
+/*input[type=range]{
 	-webkit-appearance: none;
     width: 300px;
 }
@@ -42,4 +63,4 @@ input[type=range]::-ms-fill-lower {
 input[type=range]::-ms-fill-upper {
     background: black;
     border-radius: 10px;
-}
+}*/
