@@ -155,9 +155,11 @@ function modalArrow() {
 function compDiffSelect(mode){
 	difficultyNum = 0;
 	$('.modalContent').html('');
-	$('.modalContent').append('<ul>' 
-							+ '<li><button class="buttonDesign menuBSize setDifficulty" onclick="setDifficulty();">Standard</button></li>'
-							+ '<li><button class="buttonDesign menuBSize" onclick="screenChange(\'mode3D\'); selectMode(\'' + mode + '\');hideModal();">Start!</button></li>'
-							+ '</ul>');
+	$('.modalContent').append('<h1>Select Difficulty</h1>'
+							+	'<ol>' 
+							+		'<li><button id="modalStd" class="buttonDesign menuBSize" onclick="setDifficulty();">Standard</button></li>'
+							+		'<li><button id="modalAdv" class="buttonDesign menuBSize" onclick="setDifficulty();">Advance</button></li>'
+							+		'<li><button class="buttonDesign menuBSize" onclick="screenChange(\'mode3D\'); selectMode(\'' + mode + '\');hideModal();">Start!</button></li>'
+							+	'</ol>');
 	displayModal();
 }
