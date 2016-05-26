@@ -87,25 +87,6 @@ section {
     height: 100%;
     z-index: 3;
 }
-/*
-.classicHelp div {
-    width: 300px;
-    height: 200px;
-    padding: 30px;
-    font-size: 1.3em;
-    text-align: center;
-    color: #EEE;
-    position: absolute;
-    z-index: 4;
-    bottom: 0;
-    top: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
-    border: 5px solid #EEE;
-    background: linear-gradient(240deg, #082445, #084524);
-    border-radius: 10%;
-}*/
 
 
 #classicHelp1 div{
@@ -269,7 +250,7 @@ section {
 }
 
 /* Format standard badges sizes*/
-#badgeOfCurrentHigh {
+#standardBadge {
     color: white; 
     font-size: 35px;
     line-height: 200%;
@@ -295,15 +276,6 @@ section {
 	border: 1px solid rgba(255, 255, 255, 1);
 }
 
-/* Level table is stored in */
-.levelList {
-	margin-left: auto;
-	margin-right: auto;
-}
-.levelList td {
-	padding: 5px;
-	
-}
 #setDifficulty {
 	margin-top: 5%;
 }
@@ -326,16 +298,13 @@ section {
 }
 
 /* Positioning of the main menu images */
-/*#titleImage {
+#titleImage {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
 }
-*/
 
-/* Format the help tutorial icon next to the mode select buttons */
 .help {
-
     display: inline-block;
     position: absolute;
     width: 20px;
@@ -407,7 +376,7 @@ section {
 /* Frame for non-button containers */
 .infoCont {
 	padding: 20px;
-    display: inline-block;
+    
     margin-bottom: 1rem;
     color: rgba(255, 255, 255, 0.7);
     background-color: rgba(255, 255, 255, 0.08);
@@ -431,4 +400,3 @@ section {
 .clear {
     clear: both;
 }
-

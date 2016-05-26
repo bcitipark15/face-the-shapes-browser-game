@@ -19,7 +19,7 @@ function getCookies(cname) {
 			search 	= search.substring(1);
 		}
 
-		if (search.indexOf(name) == 0) {
+		if (search.indexOf(c) == 0) {
 			return search.substring(c.length, search.length);
 		}
 	}
@@ -98,12 +98,12 @@ function setBadgeStandard() {
 	
 	var badge = getCookies("badgeLevel");
 	
-	if (badge < currentLevelStandard) {
-		setCookies("badgeLevel", currentLevelStandard, 365);
+	if (badge < currentLevel) {
+		setCookies("badgeLevel", currentLevel, 365);
 		alert("low level detected and set success");
-		levelStandardHigh = currentLevelStandard + 1;
-		$("#standardBadge").html('');
-		$("#standardBadge").append(currentLevelStandard);
+		levelStandardHigh = currentLevel + 1;
+		$("#badgeOfCurrentHigh").html('');
+		$("#badgeOfCurrentHigh").append(currentLevel);
 	}
 }
 

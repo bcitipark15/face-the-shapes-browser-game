@@ -155,7 +155,6 @@ the user from dragging and highlighting the cube */
     -webkit-user-select: none;
     -ms-user-select: none;
 }
-
 /* The modifies the image to match the size of the cube */
 .cubeCover {
     width: 196px;

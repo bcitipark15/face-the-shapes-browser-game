@@ -19,7 +19,7 @@ function getCookies(cname) {
 			search 	= search.substring(1);
 		}
 
-		if (search.indexOf(c) == 0) {
+		if (search.indexOf(name) == 0) {
 			return search.substring(c.length, search.length);
 		}
 	}
@@ -66,7 +66,6 @@ function checkCookies() {
 	}
 }
 
-
 // Set the current level of standard mode to lv selected
 function setLevel(lv) {
 	alert("setLevel called");
@@ -92,21 +91,20 @@ function setLevel(lv) {
 		}
 	}
 }
-
 // Check and change badge level completed on classic standard mode
 function setBadgeStandard() {
 	
 	alert("function is called");
-
+	
 	var badge = getCookies("badgeLevel");
 	
-	if (badge < currentLevel) {
-		setCookies("badgeLevel", currentLevel, 365);
+	if (badge < currentLevelStandard) {
+		setCookies("badgeLevel", currentLevelStandard, 365);
 		alert("low level detected and set success");
-		levelStandardHigh = currentLevel + 1;
-		updateBadge('standard', currentLevel);
+		levelStandardHigh = currentLevelStandard + 1;
+		$("#standardBadge").html('');
+		$("#standardBadge").append(currentLevelStandard);
 	}
-
 }
 
 // Check and change badge level completed on classic standard mode
@@ -126,9 +124,8 @@ function setBadgeAdvanced() {
 
 }
 
-// Reset all cookies
+// Delete all cookies written by ElliotSchmelliot
 function resetCookies() {
 
 	setCookies("badgeLevel", 0, 365);
-	setCookies("badgeAdvancedLevel", 0, 365);
 }

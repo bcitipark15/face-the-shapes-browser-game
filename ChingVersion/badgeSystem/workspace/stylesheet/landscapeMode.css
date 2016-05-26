@@ -26,6 +26,7 @@ body {
 	padding-top: 5%;
 	padding-bottom: 0%;
 }
+
 #titleImage {
 	margin-top: 5%;
 	margin-bottom: 5%;
@@ -75,6 +76,9 @@ body {
 .modalContent {
 	height: 90%;
 	width: 90%;
+}
+.modalContent ol{
+	margin: 0;
 }
 
 /* Position badges on the left */

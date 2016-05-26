@@ -20,6 +20,7 @@
 .modal ol {
 	text-align: center;
 	list-style-type: none;
+	margin: 4%;
 }
 /* The content inside the modal */
 .modalContent {
@@ -45,7 +46,29 @@
 /* The modal list */
 .modalContent  ul li {
 	padding-top: 2%;
-	margin: 1%;
+	margin: 3%;
 	display: inline;
-}
 
+}
+/* Work In progress */
+#modalArrow1 {
+	-webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+#modalArrow3 {
+	-webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+#modalArrow4 {
+	-webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}

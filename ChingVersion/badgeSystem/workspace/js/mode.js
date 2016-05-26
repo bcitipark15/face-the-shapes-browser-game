@@ -32,6 +32,7 @@ function selectMode(mode){
 	}
 }
 
+
 /**
  * Classic mode tutorial screen activator.
  * @param {int} indicate which page is currently being referred to.
@@ -177,6 +178,7 @@ function classicHelper(page) {
 			$('#overlay').css('display', 'none');
 			$('#proceed').css('display', 'none');
 			$('#endHelp').css('display', 'none');
+			currentPage = 0;
 
 	}
 }

@@ -25,6 +25,7 @@ body {
     -webkit-transform: scale(0.8);
     -o-transform: scale(0.8);
 }
+
 #mode3D {
 	touch-action: none;
 }
@@ -52,7 +53,7 @@ body {
 	padding-top: 10%;
 }
 .modalContent li {
-	margin: 0;
+	margin: 3%;
 }
 /** iPhone 4 support **/
 @media screen and (max-width: 320px) {
@@ -60,4 +61,54 @@ body {
 		margin-top: 5px;
 		margin-bottom: 15px;
 	}
-}w
+}
+
+/* Position badges on the left */
+#badges {
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+
+#classicHelp1 div {
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+
+#classicHelp2 div{
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+
+#classicHelp3 div{
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+
+#classicHelp4 div {
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+
+#classicHelp5 div {
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+
+#classicHelp6 div {
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
