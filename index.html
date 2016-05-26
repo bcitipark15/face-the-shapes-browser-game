@@ -30,6 +30,9 @@
 		
 		
         <script src="https://cdn.jsdelivr.net/jquery/3.0.0-beta1/jquery.min.js"></script>
+        <!-- Leaderboard Scripts -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         
 		
 		<script src="./workspace/js/3DcubeNfold.js"></script>
@@ -107,40 +110,62 @@
 				</div>
             </section>
 			
-			<!-- Leaderboard -->
+			<!-- Leaderboard Screen -->
 			<section id="leaderboard">
-			
 				<div class="topNav">
-                    <button class="backButton buttonDesign floatLeft" href="#mainMenu" onclick="screenChange('mainMenu'); buttonClick()"></button>
+                    <div><a id="backButton" class="buttons floatLeft" href="#mainMenu" onclick="screenChange('leaderboard', 'mainMenu');"></a></div>
                 </div>
-				
                 <h1 class="title">Leaderboard</h1>
-				
-                <div>
+                <div id="tabs" class="leaderboards">
                     <nav>
-                        <ul>
-                            <li><a href="#leaderboardTime">Time Attack</a></li>
-                            <li><a href="#leaderboardScore">Score Attack</a></li>
+                        <ul class="nav-tabs">
+                            <li><a href="#timeAttackStd" onclick="getStdHighTimes();">Time (Std)</a></li>
+                            <li><a href="#timeAttackAdv">Time (Adv)</a></li>
+                            <li><a href="#scoreAttackStd" onclick="getStdHighScores();">Score (Std)</a></li>
+                            <li><a href="#scoreAttackAdv">Score (Adv)</a></li>
                         </ul>
                     </nav>
-                    <table id="leaderboardScore">
-					
+                    <table id="timeAttackStd">
                         <thead>
                             <tr>
-                                <th id="leaderboardRank">Rank</th>
-                                <th id="leaderboardName">Name</th>
-                                <th id="leaderboardScore">Score</th>
+                                <th>Rank</th>
+                                <th>Name</th>
+                                <th>Time</th>
                             </tr>
                         </thead>
-                        <tbody id = "ScoreAttackScores">
-							
-							
-                        </tbody>
-						
+                        <tbody id="timeAttackStdResult"></tbody>
                     </table>
-					
+                    <table id="timeAttackAdv">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Name</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="timeAttackAdvResult"></tbody>
+                    </table>
+                    <table id="scoreAttackStd">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                        </thead>
+                        <tbody id="scoreAttackStdResult"></tbody>
+                    </table>
+                    <table id="scoreAttackAdv">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                            </tr>
+                        </thead>
+                        <tbody id="scoreAttackAdvResult"></tbody>
+                    </table>
                 </div>
-				
             </section>
 			
 			<!-- Store Page -->
