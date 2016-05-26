@@ -36,16 +36,16 @@ function updateBadge(mode, lv) {
     }
 
 	$("#badgeOfCurrentHigh").html('');
-	$("#badgeOfCurrentHigh").append(lv);
-	alert("the level is " + lv);
+	$("#badgeOfCurrentHigh").append(lv);/*
+	alert("the level is " + lv);*/
 }
 
 // Check and change badge level completed on classic standard mode
 function checkCookies() {
 	
 	var badge	= getCookies("badgeLevel");
-	
-	alert("checkCookies = True\nbadge = " + badge);
+	/*
+	alert("checkCookies = True\nbadge = " + badge);*/
 
 	if (badge != "") {
 			updateBadge('standard', badge);
@@ -55,8 +55,8 @@ function checkCookies() {
 	}
 
 	var aBadge	= getCookies("badgeAdvancedLevel");
-		
-	alert("checkCookies = True\nAdvanced badge = " + aBadge);
+		/*
+	alert("checkCookies = True\nAdvanced badge = " + aBadge);*/
 
 	if (aBadge != "") {
 			updateBadge('advanced', aBadge);
@@ -67,11 +67,11 @@ function checkCookies() {
 }
 
 // Set the current level of standard mode to lv selected
-function setLevel(lv) {
-	alert("setLevel called");
+function setLevel(lv) {/*
+	alert("setLevel called");*/
 	if (difficultyNum == 0) {
-		if (lv <= levelStandardHigh) { 
-			alert("level difference sensed");
+		if (lv <= levelStandardHigh) { /*
+			alert("level difference sensed");*/
 			currentLevel = lv;
 			standardMode = true;
 			advancedmode = false;
@@ -80,8 +80,8 @@ function setLevel(lv) {
 			alert("Level Locked");
 		}
 	} else if (difficultyNum == 1) {
-		if (lv <= levelAdvancedHigh) { 
-			alert("level difference sensed");
+		if (lv <= levelAdvancedHigh) { /*
+			alert("level difference sensed");*/
 			currentLevel = lv;
 			advancedMode = true;
 			standardMode = false;
@@ -93,14 +93,14 @@ function setLevel(lv) {
 }
 // Check and change badge level completed on classic standard mode
 function setBadgeStandard() {
-	
+	/*
 	alert("function is called");
-	
+	*/
 	var badge = getCookies("badgeLevel");
 	
 	if (badge < currentLevel) {
-		setCookies("badgeLevel", currentLevel, 365);
-		alert("low level detected and set success");
+		setCookies("badgeLevel", currentLevel, 365);/*
+		alert("low level detected and set success");*/
 		levelStandardHigh = currentLevel + 1;
 		$("#badgeOfCurrentHigh").html('');
 		$("#badgeOfCurrentHigh").append(currentLevel);
@@ -109,14 +109,14 @@ function setBadgeStandard() {
 
 // Check and change badge level completed on classic standard mode
 function setBadgeAdvanced() {
-
-	alert("set badge advanced is called");
+/*
+	alert("set badge advanced is called");*/
 
 	var aBadge = getCookies("badgeAdvancedLevel");
 
 	if (aBadge < currentLevel) {
-		setCookies("badgeAdvancedLevel", currentLevel, 365);
-		alert("low level detected and set success");
+		setCookies("badgeAdvancedLevel", currentLevel, 365);/*
+		alert("low level detected and set success");*/
 		levelAdvancedHigh = currentLevel + 1;
 		updateBadge('advanced', currentLevel);
 

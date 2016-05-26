@@ -171,17 +171,13 @@
 				<h1 class="title">Settings</h1>
 				<div id="settingContent">
 					<!-- <input id="volume" type="range" min="0" max="1" step="0.01" oninput="volume(value)" onchange="volume(value)"><br> -->
-					<div id="volumeControl">
-						
-							<button class="buttonDesign" onclick="volumeDown()">-</button>
-							<div id="volumePercent">50%</div>
-							<button class="buttonDesign" onclick="volumeUp()">+</button>
-						
-					</div>
-
+						<ul>
+							<li><button class="buttonDesign" onclick="volumeDown()">-</button></li>
+							<li><div id="volumePercent">50%</div></li>
+							<li><button class="buttonDesign" onclick="volumeUp()">+</button></li>
+						</ul>
 					<div id="settingButtons">
-						<button id="muteButton" class="buttonDesign muteButtons" type="button" onclick="muteButton()">Mute</button>
-        				<button id="unmuteButton" class="buttonDesign muteButtons" type="button" onclick="unmute()">Unmute</button><br>   	
+						<button id="muteButton" class="buttonDesign muteButtons" type="button" onclick="muteButton()">Mute</button>   	
         				<button id="resetButton" class="buttonDesign muteButtons" type="button" onclick="resetCookies()">Reset</button>
         			</div>
 

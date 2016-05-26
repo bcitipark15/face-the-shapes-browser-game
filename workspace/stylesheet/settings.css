@@ -8,20 +8,9 @@
     margin-top: 20px;
 }
 
-#volumeControl {
-    display: inline;
-}
-
-#volume li {
-    display: inline;
-
-}
-
-#volumePercent {
-    width: 100px;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+#settingContent li {
+	display: inline-block;
+	padding-right: 10px;
 }
 
 #settingButtons {

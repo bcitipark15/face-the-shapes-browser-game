@@ -131,3 +131,6 @@ body {
     -o-transform: scale(0.8);
 }
 
+.AchievementBlocks {
+    zoom: 0.8;
+}
