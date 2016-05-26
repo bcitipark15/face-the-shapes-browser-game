@@ -283,11 +283,15 @@ section {
 
 /* Where the message will display for the user to read */
 .messageBox {
-	padding-top: 5%;
-	margin: auto;
-    width: 40%;
+	position: absolute;
+    bottom: 0%;
+    top: 0%;
+    right: 0%;
+    left: 0%;
+    width: 90%;
+	height: 65%;
 	font-size: 40px;
-	
+	margin: auto;
 }
 
 /* Increase the size of the title */
