@@ -293,7 +293,9 @@ section {
 	font-size: 40px;
 	margin: auto;
 }
-
+#foldoutClone {
+	margin: auto;
+}
 /* Increase the size of the title */
 #resultScreen .title {
 	font-size: 50px;
