@@ -130,7 +130,9 @@ body {
     -webkit-transform: scale(0.8);
     -o-transform: scale(0.8);
 }
-
+#achievements {
+	overflow: scroll;
+}
 .AchievementBlocks {
     zoom: 0.8;
 }
