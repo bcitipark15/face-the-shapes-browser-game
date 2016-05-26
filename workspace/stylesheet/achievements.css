@@ -31,7 +31,7 @@ background: linear-gradient(to right, #000000 , #434343); /* W3C, IE 10+/ Edge, 
 	margin-left: -25px;
 	margin-top: -15px;
 	float: left;
-	background-image: linear-gradient(to left, rgb(115, 200, 169), rgb(55, 59, 68));
+	overflow: hidden;
 }
 
 .description {
