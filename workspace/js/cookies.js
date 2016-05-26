@@ -26,6 +26,20 @@ function getCookies(cname) {
 	return "";
 }
 
+// Update the html badge currenet highest level completed
+function updateBadge(mode, lv) {
+
+	if (mode == 'standard') {
+   		document.getElementById("badges").style.backgroundImage = "url('./workspace/image/orangeGemBadge.png')";
+    } else if (mode == 'advanced') {
+    	document.getElementById("badges").style.backgroundImage = "url('./workspace/image/blueGemBadge.png')";	
+    }
+
+	$("#badgeOfCurrentHigh").html('');
+	$("#badgeOfCurrentHigh").append(lv);
+	alert("the level is " + lv);
+}
+
 // Check and change badge level completed on classic standard mode
 function checkCookies() {
 	
@@ -34,28 +48,49 @@ function checkCookies() {
 	alert("checkCookies = True\nbadge = " + badge);
 
 	if (badge != "") {
-			$("#standardBadge").html('');
-			$("#standardBadge").append(badge);
+			updateBadge('standard', badge);
 			levelStandardHigh = parseInt(badge) + 1;
 	} else {
 			setCookies("badgeLevel", 0, 365);
 	}
-}
 
+	var aBadge	= getCookies("badgeAdvancedLevel");
+		
+	alert("checkCookies = True\nAdvanced badge = " + aBadge);
+
+	if (aBadge != "") {
+			updateBadge('advanced', aBadge);
+			levelAdvancedHigh = parseInt(aBadge) + 1;
+	} else {
+			setCookies("badgeAdvancedLevel", 0, 365);
+	}
+}
 
 // Set the current level of standard mode to lv selected
 function setLevel(lv) {
 	alert("setLevel called");
-	if (lv <= levelStandardHigh) { 
-		alert("level difference sensed");
-		currentLevelStandard = lv;
-		standardMode = true;
-		screenChange('mode3D')
-	} else {
-		alert("Level Locked");
+	if (difficultyNum == 0) {
+		if (lv <= levelStandardHigh) { 
+			alert("level difference sensed");
+			currentLevel = lv;
+			standardMode = true;
+			advancedmode = false;
+			screenChange('mode3D')
+		} else {
+			alert("Level Locked");
+		}
+	} else if (difficultyNum == 1) {
+		if (lv <= levelAdvancedHigh) { 
+			alert("level difference sensed");
+			currentLevel = lv;
+			advancedMode = true;
+			standardMode = false;
+			screenChange('mode3D')
+		} else {
+			alert("Level Locked");
+		}
 	}
 }
-
 // Check and change badge level completed on classic standard mode
 function setBadgeStandard() {
 	
@@ -70,6 +105,23 @@ function setBadgeStandard() {
 		$("#standardBadge").html('');
 		$("#standardBadge").append(currentLevelStandard);
 	}
+}
+
+// Check and change badge level completed on classic standard mode
+function setBadgeAdvanced() {
+
+	alert("set badge advanced is called");
+
+	var aBadge = getCookies("badgeAdvancedLevel");
+
+	if (aBadge < currentLevel) {
+		setCookies("badgeAdvancedLevel", currentLevel, 365);
+		alert("low level detected and set success");
+		levelAdvancedHigh = currentLevel + 1;
+		updateBadge('advanced', currentLevel);
+
+	}
+
 }
 
 // Delete all cookies written by ElliotSchmelliot

@@ -46,6 +46,9 @@ var levelStandardHigh = 1;
 //Define if user is in standard mode.1
 var standardMode = false;
 
+//Define if user is in advanced mode.
+var advancedMode = false;
+
 //base difficulty.
 var difficultyNum = 0;
 
@@ -54,3 +57,9 @@ var img = '<img src="./workspace/image/arrow3.png">';
 
 //Selected color for basic mode
 var selectedColor = 'red'
+
+//Define the current page.
+var currentPage = 0;
+
+//Define which tutorial is activated
+var helperMode = 0;

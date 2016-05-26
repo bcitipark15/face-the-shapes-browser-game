@@ -48,6 +48,7 @@ var unfoldingBegin;
 var foldingBegin;
 var translate 			= 0;
 var pressed 			= false;
+var spinDeg				= -45;
 
 
 /**
@@ -235,6 +236,15 @@ function applyRotation() {
 	document.querySelector('#cube .bottom').style.transform = 'rotateX( '
 		+ bottom_rX +'deg ) rotateY( '+ bottom_rY +'deg ) rotateZ( '
 		+ bottom_rZ +'deg ) translateZ( 100px ) translateY('+translate+'px)';
+}
+
+function spin() {
+	setInterval(spinning, 20);
+}
+
+function spinning() {
+	document.querySelector("#titleCube").style.transform = 'rotateX(-15deg) rotateY(' + spinDeg + 'deg) ';
+	spinDeg = (spinDeg - 1) % 360;
 }
 
 /*function unfold() {

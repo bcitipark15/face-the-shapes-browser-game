@@ -11,6 +11,21 @@ body {
 	margin: 0%;
 	border-radius: 0px;
 }
+
+#titleCubeContainer {
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+
+#cubeContainer {
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+
 #mode3D {
 	touch-action: none;
 }
@@ -46,4 +61,54 @@ body {
 		margin-top: 5px;
 		margin-bottom: 15px;
 	}
+}
+
+/* Position badges on the left */
+#badges {
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+
+#classicHelp1 div {
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+
+#classicHelp2 div{
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+
+#classicHelp3 div{
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+
+#classicHelp4 div {
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+
+#classicHelp5 div {
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+
+#classicHelp6 div {
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
 }
