@@ -35,8 +35,8 @@ function updateBadge(mode, lv) {
     	document.getElementById("badges").style.backgroundImage = "url('./workspace/image/blueGemBadge.png')";	
     }
 
-	$("#badgeOfCurrentHigh").html('');
-	$("#badgeOfCurrentHigh").append(lv);/*
+	$(".badgeOfCurrentHigh").html('');
+	$(".badgeOfCurrentHigh").append(lv);/*
 	alert("the level is " + lv);*/
 }
 
@@ -102,8 +102,8 @@ function setBadgeStandard() {
 		setCookies("badgeLevel", currentLevel, 365);/*
 		alert("low level detected and set success");*/
 		levelStandardHigh = currentLevel + 1;
-		$("#badgeOfCurrentHigh").html('');
-		$("#badgeOfCurrentHigh").append(currentLevel);
+		$(".badgeOfCurrentHigh").html('');
+		$(".badgeOfCurrentHigh").append(currentLevel);
 	}
 }
 
