@@ -20,6 +20,7 @@
 .modal ol {
 	text-align: center;
 	list-style-type: none;
+	margin: 4%;
 }
 /* The content inside the modal */
 .modalContent {
@@ -45,7 +46,8 @@
 /* The modal list */
 .modalContent  ul li {
 	padding-top: 2%;
-	margin: 1%;
+	margin: 3%;
 	display: inline;
+
 }
 
