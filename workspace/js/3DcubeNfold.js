@@ -7,7 +7,7 @@
 document.onmousedown 	= mouseDown;
 document.onmouseup 		= mouseUp;
 document.onmousemove 	= mouseMove;
-document.onkeydown 		= rotateCubeOnKeyPress;
+document.onkeydown = rotateCubeOnKeyPress;
 
 
 // List of variables used in the rotation of the 3D cube.

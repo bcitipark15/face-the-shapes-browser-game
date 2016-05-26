@@ -37,16 +37,13 @@ var levels = [];
 //level is current level.
 var level;
 
-//Current level of standard or classic mode.
-var currentLevel;
+//Current level of standard mode.
+var currentLevelStandard;
 
 //Highest level of standard mode unlocked.
 var levelStandardHigh = 1;
 
-//Highest level of advanced mode unlocked.
-var levelAdvancedHigh = 1;
-
-//Define if user is in standard mode.
+//Define if user is in standard mode.1
 var standardMode = false;
 
 //Define if user is in advanced mode.
@@ -60,3 +57,9 @@ var img = '<img src="./workspace/image/arrow3.png">';
 
 //Selected color for basic mode
 var selectedColor = 'red'
+
+//Define the current page.
+var currentPage = 0;
+
+//Define which tutorial is activated
+var helperMode = 0;
