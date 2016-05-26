@@ -49,8 +49,10 @@
     </head>
     <body onresize="navBar();" onload="navBar(); checkCookies();">
 
-    	<!-- Button audio -->
+    	<!-- Audio -->
     	<audio id="buttonSound" src="./workspace/audio/Buttons/Bubble.mp3" autostart="true"></audio>
+    	<audio id="correctTada" src="./workspace/audio/TaDa.mp3" autostart="true"></audio>
+    	<audio id="incorrectDoh" src="./workspace/audio/Doh.mp3" autostart="true"></audio>
 
     	<!-- Background Music -->
     	<audio id="bgm" autoplay loop muted="true">
@@ -73,12 +75,12 @@
                 <div id="titleImage"><img src="./workspace/image/cube.png" width="200em" height="200em" onclick="tutturu();"></div>
 
                 <ul>
-                    <li><button class="buttonDesign menuBSize" onclick="screenChange('gameMode');">Play</button></li>
-                    <li><button class="buttonDesign menuBSize" onclick="screenChange('leaderboard'); getHighScores();">Leaderboard</button></li>
-					<li><button class="buttonDesign menuBSize" onclick="screenChange('store')">Store</button></li>
+                    <li><button class="buttonDesign menuBSize" onclick="screenChange('gameMode'); buttonClick()">Play</button></li>
+                    <li><button class="buttonDesign menuBSize" onclick="screenChange('leaderboard'); getHighScores(); buttonClick()">Leaderboard</button></li>
+					<li><button class="buttonDesign menuBSize" onclick="screenChange('achievements'); buttonClick()">Achievements</button></li>
                 </ul>
 				<div class="bottomNav">
-					<button class="gear buttonDesign floatRight" onclick="screenChange('settings');" title="settings"></button>
+					<button class="gear buttonDesign floatRight" onclick="screenChange('settings'); buttonClick()" title="settings"></button>
 				</div>
             </section>
 			
@@ -86,7 +88,7 @@
 			<section id="leaderboard">
 			
 				<div class="topNav">
-                    <button class="backButton buttonDesign floatLeft" href="#mainMenu" onclick="screenChange('mainMenu');"></button>
+                    <button class="backButton buttonDesign floatLeft" href="#mainMenu" onclick="screenChange('mainMenu'); buttonClick()"></button>
                 </div>
 				
                 <h1 class="title">Leaderboard</h1>
@@ -119,7 +121,7 @@
             </section>
 			
 			<!-- Store Page -->
-			<section id="store">
+<!-- 			<section id="store">
 				<div class="topNav">
                     <button class="backButton buttonDesign floatLeft" onclick="screenChange('mainMenu');"></button>
                 </div>
@@ -135,17 +137,21 @@
 					<div id="shapes" class="storeOptions">
 						<h1>Shapes</h1>
 					</div>
-				</div>
+				</div> -->
 			</section>
 			
 			<!-- Settings Page -->
 			<section id="settings">
 				<div class="topNav">
-                    <button class="backButton buttonDesign floatLeft" onclick="screenChange('mainMenu');"></button>
+                    <button class="backButton buttonDesign floatLeft" onclick="screenChange('mainMenu'); buttonClick()"></button>
                 </div>
 				<h1 class="title">Settings</h1>
 				<div id="settingContent">
-					<input id="volume" type="range" min="0" max="1" step="0.01" oninput="volume(value)" onchange="volume(value)"><br>
+					<!-- <input id="volume" type="range" min="0" max="1" step="0.01" oninput="volume(value)" onchange="volume(value)"><br> -->
+					<ul>
+						<li>
+					</ul>
+
 					<button id="muteButton" class="buttonDesign muteButtons" type="button" onclick="mute()">Mute</button><br>
         			<button id="unmuteButton" class="buttonDesign muteButtons" type="button" onclick="unmute()">Unmute</button>     	
         			<button id="unmuteButton" class="buttonDesign muteButtons" type="button" onclick="resetCookies()">Reset</button>
@@ -156,26 +162,29 @@
 			<!-- Achievements Page -->
 			<section id="achievements">
 				<div class="topNav">
-                    <button class="backButton buttonDesign floatLeft" onclick="screenChange('mainMenu');"></button>
+                    <button class="backButton buttonDesign floatLeft" onclick="screenChange('mainMenu'); buttonClick()"></button>
                 </div>
                 <h1 class="title">Achievements</h1>
                 <div id="achievementContent">
                 	<div id = "badge1" class="AchievementBlocks">
-						<h3>Achievement 1</h3>
+						<h3>Progression Badge</h3>
 						<div class="badge"></div>
-						<p>Finish solving a cube</p>
+						<div class="description"><p>Track your progression</p></div>
 					</div>
 					<div id = "badge2" class="AchievementBlocks">
 						<h3>Achievement 2</h3>
 						<div class="badge"></div>
+						<div class="description"><p>Solve your first cube</p></div>
 					</div>
 					<div id = "badge3" class="AchievementBlocks">
 						<h3>Achievement 3</h3>
 						<div class="badge"></div>
+						<div class="description"><p>Get a score of 100 on Score Attack</p></div>
 					</div>
 					<div id = "badge4" class="AchievementBlocks">
 						<h3>Achievement 4</h3>
 						<div class="badge"></div>
+						<div class="description"><p>Solve a cube in 30 seconds on Time Attack</p></div>
 					</div>
 
                 </div>
@@ -186,18 +195,18 @@
             <section id="gameMode">
 			
 				<div class="topNav">
-                    <button class="backButton buttonDesign floatLeft" onclick="screenChange('mainMenu');"></button>
+                    <button class="backButton buttonDesign floatLeft" onclick="screenChange('mainMenu'); buttonClick()"></button>
                 </div>
 				
                 <h1 class="title">Game Mode</h1>
 				
                 <ul>
-                    <li><button class="buttonDesign menuBSize" onclick="screenChange('levelSelect'); selectMode('classic');">Classic</button></li>
-                    <li><button class="buttonDesign menuBSize" onclick="screenChange('mode3D');selectMode('time');">Time Attack</button></li>
+                    <li><button class="buttonDesign menuBSize" onclick="screenChange('levelSelect'); selectMode('classic'); buttonClick()">Classic</button></li>
+                    <li><button class="buttonDesign menuBSize" onclick="screenChange('mode3D');selectMode('time'); buttonClick()">Time Attack</button></li>
 				</ul>
 				<ul>
-                    <li><button class="buttonDesign menuBSize" onclick="screenChange('mode3D');selectMode('score');">Score Attack</button></li>
-                    <li><button id="easterEggTwo" class="buttonDesign menuBSize" onclick="easterEggTwo(); screenChange('mainMenu');">Death</button></li>
+                    <li><button class="buttonDesign menuBSize" onclick="screenChange('mode3D');selectMode('score'); buttonClick()">Score Attack</button></li>
+                    <li><button id="easterEggTwo" class="buttonDesign menuBSize" onclick="easterEggTwo(); screenChange('mainMenu'); buttonClick()">Death</button></li>
                 </ul>
 			</section>
 			
@@ -237,55 +246,55 @@
             <section id="levelSelect">
 				
 				<div class="topNav">
-                    <button class="backButton buttonDesign floatLeft" onclick="screenChange('gameMode');"></button>
+                    <button class="backButton buttonDesign floatLeft" onclick="screenChange('gameMode'); buttonClick()"></button>
                 </div>
 				
                 <h1 class="title">Level Select</h1>
 				<div class="levelContainer">
 					<div id="levelPage1" class="pageDiv">
 						<ol class="levelList">
-							<li><p id="level1" class="levelsButton buttonDesign" onclick="levelLoad(0,0,1); setLevel(1);">1</p></li>
-							<li><p id="level2" class="levelsButton buttonDesign" onclick="levelLoad(0,1,1); setLevel(2);">2</p></li>
-							<li><p id="level3" class="levelsButton buttonDesign" onclick="levelLoad(0,2,1); setLevel(3);">3</p></li>
+							<li><p id="level1" class="levelsButton buttonDesign" onclick="levelLoad(0,0,1); setLevel(1); buttonClick()">1</p></li>
+							<li><p id="level2" class="levelsButton buttonDesign" onclick="levelLoad(0,1,1); setLevel(2); buttonClick()">2</p></li>
+							<li><p id="level3" class="levelsButton buttonDesign" onclick="levelLoad(0,2,1); setLevel(3); buttonClick()">3</p></li>
 							
 						</ol>
 						<ol class="levelList">
-							<li><p id="level4" class="levelsButton buttonDesign" onclick="levelLoad(0,2,2); setLevel(4);">4</p></li>
-							<li><p id="level5" class="levelsButton buttonDesign" onclick="levelLoad(1,3,2); setLevel(5);">5</p></li>
+							<li><p id="level4" class="levelsButton buttonDesign" onclick="levelLoad(0,2,2); setLevel(4); buttonClick()">4</p></li>
+							<li><p id="level5" class="levelsButton buttonDesign" onclick="levelLoad(1,3,2); setLevel(5); buttonClick()">5</p></li>
 						</ol>
 					</div>
 					<div id="levelPage2" class="pageDiv">
 						<ol class="levelList">
-							<li><p id="level6" class="levelsButton buttonDesign" onclick="levelLoad(1,4,2); setLevel(6);">6</p></li>
-							<li><p id="level7" class="levelsButton buttonDesign" onclick="levelLoad(1,4,3); setLevel(7);">7</p></li>
-							<li><p id="level8" class="levelsButton buttonDesign" onclick="levelLoad(2,5,3); setLevel(8);">8</p></li>
+							<li><p id="level6" class="levelsButton buttonDesign" onclick="levelLoad(1,4,2); setLevel(6); buttonClick()">6</p></li>
+							<li><p id="level7" class="levelsButton buttonDesign" onclick="levelLoad(1,4,3); setLevel(7); buttonClick()">7</p></li>
+							<li><p id="level8" class="levelsButton buttonDesign" onclick="levelLoad(2,5,3); setLevel(8); buttonClick()">8</p></li>
 						</ol>
 						<ol class="levelList">
-							<li><p id="level9" class="levelsButton buttonDesign" onclick="levelLoad(2,6,3); setLevel(9);">9</p></li>
-							<li><p id="level10" class="levelsButton buttonDesign" onclick="levelLoad(3,7,4); setLevel(10);">10</p></li>
+							<li><p id="level9" class="levelsButton buttonDesign" onclick="levelLoad(2,6,3); setLevel(9); buttonClick()">9</p></li>
+							<li><p id="level10" class="levelsButton buttonDesign" onclick="levelLoad(3,7,4); setLevel(10); buttonClick()">10</p></li>
 						</ol>
 					</div>
 					<div id="levelPage3" class="pageDiv">
 						<ol class="levelList">
-							<li><p id="level11" class="levelsButton buttonDesign" onclick="levelLoad(3,8,4); setLevel(11);">11</p></li>
-							<li><p id="level12" class="levelsButton buttonDesign" onclick="levelLoad(3,9,4); setLevel(12);">12</p></li>
-							<li><p id="level13" class="levelsButton buttonDesign" onclick="levelLoad(0,0,5); setLevel(13);">13</p></li>
+							<li><p id="level11" class="levelsButton buttonDesign" onclick="levelLoad(3,8,4); setLevel(11); buttonClick()">11</p></li>
+							<li><p id="level12" class="levelsButton buttonDesign" onclick="levelLoad(3,9,4); setLevel(12); buttonClick()">12</p></li>
+							<li><p id="level13" class="levelsButton buttonDesign" onclick="levelLoad(0,0,5); setLevel(13); buttonClick()">13</p></li>
 						</ol>
 						<ol class="levelList">
-							<li><p id="level14" class="levelsButton buttonDesign" onclick="levelLoad(0,0,5); setLevel(14);">14</p></li>
-							<li><p id="level15" class="levelsButton buttonDesign" onclick="levelLoad(0,0,5); setLevel(15);">15</p></li>
+							<li><p id="level14" class="levelsButton buttonDesign" onclick="levelLoad(0,0,5); setLevel(14); buttonClick()">14</p></li>
+							<li><p id="level15" class="levelsButton buttonDesign" onclick="levelLoad(0,0,5); setLevel(15); buttonClick()">15</p></li>
 						</ol>
 					</div>
 					
 					<ol id="levelPageNav" class="infoCont">
 						<li><h2>Level Page</h2></li>
-						<li><a href="#levelPage1" onclick="changePage('levelPage1');">1</a></li>
-						<li><a href="#levelPage2" onclick="changePage('levelPage2');">2</a></li>
-						<li><a href="#levelPage3" onclick="changePage('levelPage3');">3</a></li>
+						<li><a href="#levelPage1" onclick="changePage('levelPage1'); buttonClick()">1</a></li>
+						<li><a href="#levelPage2" onclick="changePage('levelPage2'); buttonClick()">2</a></li>
+						<li><a href="#levelPage3" onclick="changePage('levelPage3'); buttonClick()">3</a></li>
 					</ol>
 				</div>
 				<ul>
-					<li><button id="setDifficulty" class="buttonDesign menuBSize" onclick="setDifficulty();">Standard</button></li>
+					<li><button id="setDifficulty" class="buttonDesign menuBSize" onclick="setDifficulty(); buttonClick()">Standard</button></li>
 				</ul>
             </section>
 
@@ -294,8 +303,8 @@
             <section id="mode3D">
 
                 <div class="topNav">
-                    <button class="backButton buttonDesign floatLeft" onclick="displayModal();"></button>
-                    <button class="buttonDesign floatRight" onclick="screenChange('mode2D'); resizeGame();">To 2D</button>
+                    <button class="backButton buttonDesign floatLeft" onclick="displayModal(); buttonClick()"></button>
+                    <button class="buttonDesign floatRight" onclick="screenChange('mode2D'); resizeGame(); buttonClick()">To 2D</button>
                 </div>
 				
 				<!-- Divs for each face of the cube -->
@@ -331,15 +340,15 @@
             <section id="mode2D">
 
                 <div class="topNav">
-                    <button class="backButton buttonDesign floatLeft" onclick="displayModal();"></button>
-                    <button class="buttonDesign floatRight" onclick="screenChange('mode3D');">To 3D</button>
+                    <button class="backButton buttonDesign floatLeft" onclick="displayModal(); buttonClick()"></button>
+                    <button class="buttonDesign floatRight" onclick="screenChange('mode3D'); buttonClick()">To 3D</button>
                 </div>
 
                 <div id="foldoutScreen"></div>
 
                 <div class="bottomNav">
-                    <button id="colorArrow" class="buttonDesign floatLeft" onclick="colorChanger();">Color</button>
-                    <button class="buttonDesign floatRight" onclick="validate(); screenChange('resultScreen');">Submit</button>
+                    <button id="colorArrow" class="buttonDesign floatLeft" onclick="colorChanger(); buttonClick()">Color</button>
+                    <button class="buttonDesign floatRight" onclick="validate(); screenChange('resultScreen'); buttonClick()">Submit</button>
                 </div>
 
             </section>
@@ -352,8 +361,8 @@
                 <div class="messageBox" id="resultMessage"></div>
 
                 <div class="bottomNav">
-                    <button class="buttonDesign floatLeft menuBSize" onclick="screenChange('levelSelect');">Levels</button>
-                    <button class="buttonDesign floatRight menuBSize" onclick="screenChange('answerScreen');showAnswer();">Answer</button>
+                    <button class="buttonDesign floatLeft menuBSize" onclick="screenChange('levelSelect'); buttonClick()">Levels</button>
+                    <button class="buttonDesign floatRight menuBSize" onclick="screenChange('answerScreen');showAnswer(); buttonClick()">Answer</button>
                 </div>
 
             </section>
@@ -366,8 +375,8 @@
 				<div class="messageBox" id="correctAnswer"></div>
 				
 				<div class="bottomNav">
-                    <button class="buttonDesign floatLeft menuBSize" onclick="screenChange('levelSelect');">Levels</button>
-                    <button class="buttonDesign floatRight menuBSize" onclick="screenChange('mainMenu');">Menu</button>
+                    <button class="buttonDesign floatLeft menuBSize" onclick="screenChange('levelSelect'); buttonClick()">Levels</button>
+                    <button class="buttonDesign floatRight menuBSize" onclick="screenChange('mainMenu'); buttonClick()">Menu</button>
                 </div>
 				
 			</section>

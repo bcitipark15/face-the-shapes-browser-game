@@ -2,8 +2,8 @@
 	
 
 background: #000000; /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #000000 , #434343); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #000000 , #434343); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: -webkit-linear-gradient(to right, #000000 , #434343); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #000000 , #434343); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         
 }
 
@@ -24,7 +24,7 @@ background: linear-gradient(to left, #000000 , #434343); /* W3C, IE 10+/ Edge, F
 }
 
 .badge {
-	border: 3px solid black;
+	border: 3px ridge black;
 	height: 80px;
 	width: 80px;
 	border-radius: 50%;
@@ -34,10 +34,15 @@ background: linear-gradient(to left, #000000 , #434343); /* W3C, IE 10+/ Edge, F
 	background-image: linear-gradient(to left, rgb(115, 200, 169), rgb(55, 59, 68));
 }
 
-h3 {
+.description {
+	text-align: center;
+	margin-top: 13px;
+}
+
+#achievements h3 {
 	margin-top: 0px;
 	text-align: center;
-	margin-left: 40px;
+	margin-left: 60px;
 }
 
 h1 {

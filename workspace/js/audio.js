@@ -1,8 +1,16 @@
-var state = 0;
-
 function buttonClick() {
 	var click = document.getElementById("buttonSound");
     click.play();
+}
+
+function correctSound() {
+	var correct = document.getElementById("correctTada");
+    correct.play();
+}
+
+function incorrectSound() {
+	var wrong = document.getElementById("incorrectDoh");
+    wrong.play();
 }
 
 function mute() {
@@ -20,14 +28,13 @@ function volume(value) {
 	document.getElementById("buttonSound").volume = value;
 }
 
+var state = 0;
 function muteButton() {
 	if (state == 0) {
 		mute();
 		document.getElementById(muteToggle).innerhtml = "Unmute";
 		state++;
-	} 
-
-	if (state == 1) {
+	} else if (state == 1) {
 		unmute();
 		document.getElementById(muteToggle).innerhtml = "Mute";
 		state--;
