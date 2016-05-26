@@ -251,6 +251,7 @@ function showAnswer(){
 			$('#' + faceArray[i].id + 'Clone').css('background-color', faceArray[i].trueColor);
 			$('#' + faceArray[i].id + 'Clone').css('transform','rotate(' + 90 * faceArray[i].trueValue + 'deg)');
 		} else {
+			$('#' + faceArray[i].id + 'Clone img').css('display','none');
 			$('#' + faceArray[i].id + 'Clone').css('background-color', 'white');
 		}
 	}
@@ -277,29 +278,31 @@ function getFace(id){
  * @return {undefined}
  */
 function rotateFace(id){
-	
-	//Takes the passed id and determines which face in the array it is.
-    currentFace = getFace(id);
-	
-	//Changes the arrow rotation if the face clicked is not the pivot face and if the color flag is not on.
-	if(currentFace.trueColor !== pivotColor && !colorFlag){
-		currentFace.value = (currentFace.value + 1) % 5;
-		if(currentFace.value === 4){
-			$('#' + id + ' img').css('display','none');
-			$('#' + id).css('background-color','white');
-		} else {
-			$('#' + id + ' img').css('display','block');
-			$('#' + id).css('transform','rotateZ(' + currentFace.value * 90 + 'deg)');
-			$('#' + id).css('background-color',currentFace.playerColor);
+	//When comparing answers, player cannot rotate their arrows.
+	if(!answerMode){
+		//Takes the passed id and determines which face in the array it is.
+		currentFace = getFace(id);
+		
+		//Changes the arrow rotation if the face clicked is not the pivot face and if the color flag is not on.
+		if(currentFace.trueColor !== pivotColor && !colorFlag){
+			currentFace.value = (currentFace.value + 1) % 5;
+			if(currentFace.value === 4){
+				$('#' + id + ' img').css('display','none');
+				$('#' + id).css('background-color','white');
+			} else {
+				$('#' + id + ' img').css('display','block');
+				$('#' + id).css('transform','rotateZ(' + currentFace.value * 90 + 'deg)');
+				$('#' + id).css('background-color',currentFace.playerColor);
+			}
 		}
-	}
-	
-	//Changes face color if the face clicked is not the pivot face and if the color flag is on.
-	if(currentFace.trueColor !== pivotColor && colorFlag && difficultyNum == 1){
-		//Changes color to next color in the colors array.
-		currentFace.playerColor = colors[(colors.indexOf(currentFace.playerColor) + 1) % colors.length];
-		//Sets background color to newly adjusted color.
-		$('#' + id).children().css('background-color',currentFace.playerColor);
+		
+		//Changes face color if the face clicked is not the pivot face and if the color flag is on.
+		if(currentFace.trueColor !== pivotColor && colorFlag && difficultyNum == 1){
+			//Changes color to next color in the colors array.
+			currentFace.playerColor = colors[(colors.indexOf(currentFace.playerColor) + 1) % colors.length];
+			//Sets background color to newly adjusted color.
+			$('#' + id).children().css('background-color',currentFace.playerColor);
+		}
 	}
 }
 

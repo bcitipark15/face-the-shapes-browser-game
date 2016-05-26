@@ -18,13 +18,11 @@ function selectMode(mode){
 			$('#scoreBox').css('display', 'none');
 			break;
 		case 'time':
-			difficultyNum = 0;
 			$('#timerBox').css('display', 'initial');
 			$('#scoreBox').css('display', 'none');
 			startTimeMode();
 			break;
 		case 'score':
-			difficultyNum = 0;
 			$('#timerBox').css('display', 'initial');
 			$('#scoreBox').css('display', 'initial');
 			startScoreMode();
@@ -179,7 +177,6 @@ function classicHelper(page) {
 			$('#proceed').css('display', 'none');
 			$('#endHelp').css('display', 'none');
 			currentPage = 0;
-
 	}
 }
 
@@ -211,7 +208,7 @@ function startScoreMode(){
 	//User's score.
 	score = 0;
 	levels = [0,1,2,3,4,5,6,7,8,9];
-	level = 0;
+	level = 1;
 	randomizeOrder(levels);
 	//flag set for screen rendering.
 	scoreModeFlag = true;
@@ -219,7 +216,7 @@ function startScoreMode(){
 	timer = setInterval(drawCountdownTimer, 1000, time);
 	$('#timer').text(time);
 	$('#score').text(score);
-	levelLoad(2,2,3);
+	levelLoad(0,1,1);
 }
 
 /**
@@ -236,11 +233,11 @@ function startTimeMode(){
 	//List of all levels.
 	levels = [0,1,2,3,4,5,6,7,8,9];
 	//Starting level
-	level = 0;
+	level = 1;
 	randomizeOrder(levels);
 	$('#timer').text(time);
 	//Build foldout and apply generated faces to 3D cube.
-	levelLoad(2,2,3);
+	levelLoad(2,4,3);
 }
 
 /**

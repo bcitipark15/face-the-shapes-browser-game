@@ -190,10 +190,10 @@
 				
                 <ul>
                     <li><button class="buttonDesign menuBSize" onclick="screenChange('levelSelect'); selectMode('classic');">Classic</button></li>
-                    <li><button class="buttonDesign menuBSize" onclick="selectMode('time');">Time Attack</button></li>
+                    <li><button class="buttonDesign menuBSize" onclick="compDiffSelect('time');">Time Attack</button></li>
 				</ul>
 				<ul>
-                    <li><button class="buttonDesign menuBSize" onclick="selectMode('score');">Score Attack</button></li>
+                    <li><button class="buttonDesign menuBSize" onclick="compDiffSelect('score');">Score Attack</button></li>
                     <li><button id="easterEggTwo" class="buttonDesign menuBSize" onclick="easterEggTwo(); screenChange('mainMenu');">Death</button></li>
                 </ul>
 			</section>
@@ -269,7 +269,7 @@
 				
 				</div>
 				<ul>
-					<li><button id="setDifficulty" class="buttonDesign menuBSize" onclick="setDifficulty();">Standard</button></li>
+					<li><button class="setDifficulty buttonDesign menuBSize" onclick="setDifficulty();">Standard</button></li>
 				</ul>
             </section>
 
@@ -339,14 +339,13 @@
                     <button class="buttonDesign floatLeft menuBSize" onclick="screenChange('levelSelect');">Levels</button>
                     <button class="buttonDesign floatRight menuBSize" onclick="screenChange('answerScreen');showAnswer();">Answer</button>
                 </div>
-
             </section>
 			
 			<!-- Answer Screen -->
 			<section id="answerScreen">
-				
-				<h1 class="title">Answer</h1>
-				
+				<div class="topNav">
+                    <button class="buttonDesign floatLeft menuBSize" onclick="screenChange('mode2D'); compareAnswer();">Your Answer</button>
+				</div>
 				<div class="messageBox" id="correctAnswer"></div>
 				
 				<div class="bottomNav">

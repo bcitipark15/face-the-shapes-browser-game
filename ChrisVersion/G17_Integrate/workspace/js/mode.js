@@ -20,7 +20,6 @@ function selectMode(mode){
 		case 'time':
 			$('#timerBox').css('display', 'initial');
 			$('#scoreBox').css('display', 'none');
-			compDiffSelect();
 			startTimeMode();
 			break;
 		case 'score':
@@ -45,8 +44,6 @@ function startScoreMode(){
 	randomizeOrder(levels);
 	//flag set for screen rendering.
 	scoreModeFlag = true;
-	
-	compDiffSelect();
 	//Sets interval for when to update countdown timer.
 	timer = setInterval(drawCountdownTimer, 1000, time);
 	$('#timer').text(time);

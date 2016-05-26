@@ -51,7 +51,7 @@
 
     	<!-- Audio -->
     	<audio id="buttonSound" src="./workspace/audio/Buttons/Bubble.mp3" autostart="true"></audio>
-    	<audio id="correctTada" src="./workspace/audio/TaDa.mp3" autostart="true"></audio>
+    	<audio id="correctTada" src="./workspace/audio/TaDa.wav" autostart="true"></audio>
     	<audio id="incorrectDoh" src="./workspace/audio/Doh.mp3" autostart="true"></audio>
 
     	<!-- Background Music -->
@@ -231,10 +231,10 @@
 				
                 <ul>
                     <li><button class="buttonDesign menuBSize" onclick="screenChange('levelSelect'); selectMode('classic'); buttonClick()">Classic</button> <div class="help" onclick="screenChange('mode3D'); selectMode('classic'); classicHelper(0);">?</div> </li>
-                    <li><button class="buttonDesign menuBSize" onclick="screenChange('mode3D');selectMode('time'); buttonClick()">Time Attack</button> <div id="timeHelp" class="help">?</div> </li>
+                    <li><button class="buttonDesign menuBSize" onclick="compDiffSelect('time');">Time Attack</button><div id="timeHelp" class="help">?</div> </li>
 				</ul>
 				<ul>
-                    <li><button class="buttonDesign menuBSize" onclick="screenChange('mode3D');selectMode('score'); buttonClick()">Score Attack</button> <div class="help" id="scoreHelp">?</div> </li>
+                    <li><button class="buttonDesign menuBSize" onclick="compDiffSelect('score');">Score Attack</button><div class="help" id="scoreHelp">?</div> </li>
                     <li><button id="easterEggTwo" class="buttonDesign menuBSize" onclick="easterEggTwo(); screenChange('mainMenu'); buttonClick()">Death</button></li>
                 </ul>
 			</section>
@@ -285,7 +285,6 @@
 							<li><p id="level1" class="levelsButton buttonDesign" onclick="levelLoad(0,0,1); setLevel(1); buttonClick()">1</p></li>
 							<li><p id="level2" class="levelsButton buttonDesign" onclick="levelLoad(0,1,1); setLevel(2); buttonClick()">2</p></li>
 							<li><p id="level3" class="levelsButton buttonDesign" onclick="levelLoad(0,2,1); setLevel(3); buttonClick()">3</p></li>
-							
 						</ol>
 						<ol class="levelList">
 							<li><p id="level4" class="levelsButton buttonDesign" onclick="levelLoad(0,2,2); setLevel(4); buttonClick()">4</p></li>
@@ -381,7 +380,7 @@
 
                 <div class="bottomNav">
                     <button id="colorArrow" class="buttonDesign floatLeft" onclick="colorChanger(); buttonClick()">Color</button>
-                    <button id="mode2DSubmit" class="buttonDesign floatRight" onclick="validate(); screenChange('resultScreen'); nextPage('next'); buttonClick()">Submit</button>
+                    <button id="mode2DSubmit" class="buttonDesign floatRight" onclick="validate(); nextPage('next'); buttonClick()">Submit</button>
                 </div>
 
             </section>
@@ -402,9 +401,9 @@
 			
 			<!-- Answer Screen -->
 			<section id="answerScreen">
-				
-				<h1 class="title">Answer</h1>
-				
+				<div class="topNav">
+                    <button class="buttonDesign floatRight menuBSize" onclick="screenChange('mode2D'); compareAnswer();">Your Answer</button>
+				</div>
 				<div class="messageBox" id="correctAnswer"></div>
 				
 				<div class="bottomNav">

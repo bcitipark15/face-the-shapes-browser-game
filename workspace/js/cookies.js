@@ -72,7 +72,7 @@ function setLevel(lv) {
 	if (difficultyNum == 0) {
 		if (lv <= levelStandardHigh) { 
 			alert("level difference sensed");
-			currentLevel = lv;
+			currentlevel = lv;
 			standardMode = true;
 			advancedmode = false;
 			screenChange('mode3D')
@@ -82,7 +82,7 @@ function setLevel(lv) {
 	} else if (difficultyNum == 1) {
 		if (lv <= levelAdvancedHigh) { 
 			alert("level difference sensed");
-			currentLevel = lv;
+			currentlevel = lv;
 			advancedMode = true;
 			standardMode = false;
 			screenChange('mode3D')
@@ -115,10 +115,10 @@ function setBadgeAdvanced() {
 	var aBadge = getCookies("badgeAdvancedLevel");
 
 	if (aBadge < currentLevel) {
-		setCookies("badgeAdvancedLevel", currentLevel, 365);
+		setCookies("badgeAdvancedLevel", currentlevel, 365);
 		alert("low level detected and set success");
-		levelAdvancedHigh = currentLevel + 1;
-		updateBadge('advanced', currentLevel);
+		levelAdvancedHigh = currentlevel + 1;
+		updateBadge('advanced', currentlevel);
 
 	}
 
