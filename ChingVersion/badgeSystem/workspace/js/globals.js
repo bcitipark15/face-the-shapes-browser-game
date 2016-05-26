@@ -60,3 +60,9 @@ var img = '<img src="./workspace/image/arrow3.png">';
 
 //Selected color for basic mode
 var selectedColor = 'red'
+
+//Define the current page.
+var currentPage = 0;
+
+//Define which tutorial is activated
+var helperMode = 0;

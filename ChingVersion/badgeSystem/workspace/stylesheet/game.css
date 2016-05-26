@@ -40,6 +40,16 @@ section {
 }*/
 
 /* Hide from the user */
+#overlay,
+#proceed,
+#preceed,
+#endHelp,
+#classicHelpContainer,
+#classicHelp1,
+#classicHelp2,
+#classicHelp3,
+#classicHelp4,
+#classicHelp5,
 #leaderboard,
 #store,
 #settings,
@@ -53,6 +63,177 @@ section {
 #resultScreen,
 #answerScreen {
 	display: none;
+}
+
+#overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background: black;
+    opacity: 0.7;
+}
+
+#classicHelpContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+.classicHelp {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+/*
+.classicHelp div {
+    width: 300px;
+    height: 200px;
+    padding: 30px;
+    font-size: 1.3em;
+    text-align: center;
+    color: #EEE;
+    position: absolute;
+    z-index: 4;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    border: 5px solid #EEE;
+    background: linear-gradient(240deg, #082445, #084524);
+    border-radius: 10%;
+}*/
+
+
+#classicHelp1 div{
+    width: 300px;
+    height: 200px;
+    padding: 30px;
+    font-size: 1.3em;
+    text-align: center;
+    color: #EEE;
+    position: absolute;
+    z-index: 4;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    border: 5px solid #EEE;
+    background: linear-gradient(240deg, #082445, #084524);
+    border-radius: 10%;
+}
+
+#classicHelp1 p {
+    padding-left: 15px;
+}
+
+#classicHelp2 div{
+    width: 300px;
+    height: 150px;
+    padding: 30px;
+    text-align: center;
+    font-size: 1.3em;
+    color: #EEE;
+    position: absolute;
+    z-index: 4;
+    bottom: 70px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    border: 5px solid #EEE;
+    background: linear-gradient(240deg, #082445, #084524);
+    border-radius: 5%;
+}
+
+#classicHelp3 div{
+    width: 300px;
+    height: 150px;
+    padding: 30px;
+    text-align: center;
+    font-size: 1.3em;
+    color: #EEE;
+    position: absolute;
+    z-index: 4;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    border: 5px solid #EEE;
+    background: linear-gradient(240deg, #082445, #084524);
+    border-radius: 5%;
+}
+
+#classicHelp4 div{
+    width: 280px;
+    height: 140px;
+    padding: 30px;
+    text-align: center;
+    font-size: 1.3em;
+    color: #EEE;
+    position: absolute;
+    z-index: 4;
+    bottom: 70px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    border: 5px solid #EEE;
+    background: linear-gradient(240deg, #082445, #084524);
+    border-radius: 5%;
+}
+
+#classicHelp5 div{
+    width: 280px;
+    height: 140px;
+    padding: 30px;
+    text-align: center;
+    font-size: 1.3em;
+    color: #EEE;
+    position: absolute;
+    z-index: 4;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    border: 5px solid #EEE;
+    background: linear-gradient(240deg, #082445, #084524);
+    border-radius: 5%;
+}
+
+#proceed,
+#endHelp {
+    position: absolute;
+    z-index: 4;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #EEE;
+    bottom: 0;
+    right: 0;
+    border: 5px solid #EEE;
+    background: linear-gradient(240deg, #082445, #084524);
+    border-radius: 50%;    
+}
+
+#preceed {
+    position: absolute;
+    z-index: 4;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #EEE;
+    bottom: 0;
+    left: 0;
+    border: 5px solid #EEE;
+    background: linear-gradient(240deg, #082445, #084524);
+    border-radius: 50%;    
 }
 
 /* The container where the game is being displayed */
@@ -152,19 +333,20 @@ section {
 }
 */
 
-#titleCubeContainer {
-    display: block;
-    border: 10px solid white;
-    background: linear-gradient(240deg, #082445, #084524);
+/* Format the help tutorial icon next to the mode select buttons */
+.help {
+
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+    font-size: 1.2em;
+    margin-top: 2%;
+    margin-left: 1%;
+    border: 4px solid #AAA;
+    color: #AAA;
     border-radius: 50%;
-    margin-top: 30px;
-    margin-bottom: 100px;
-    margin-left: 0;
-    margin-right: 0;
-    margin: auto;
-    margin-bottom: 15px;
-    width: 250px;
-    height: 250px;
 }
 
 /* Default Styling for Title */
@@ -217,7 +399,7 @@ section {
 }
 
 /* Where the cube is placed**/
-.cubeContainer {
+#cubeContainer {
     top: 25%;
 }
 
@@ -249,3 +431,4 @@ section {
 .clear {
     clear: both;
 }
+

@@ -13,24 +13,18 @@ body {
 }
 
 #titleCubeContainer {
-    display: block;
-    border: 10px solid white;
-    background: linear-gradient(240deg, #082445, #084524);
-    border-radius: 50%;
-    margin-top: 30px;
-    margin-bottom: 100px;
-    margin-left: 0;
-    margin-right: 0;
-    margin: auto;
-    margin-bottom: 15px;
-    width: 250px;
-    height: 250px;
     zoom: 0.8;
     -moz-transform: scale(0.8);
     -webkit-transform: scale(0.8);
     -o-transform: scale(0.8);
 }
 
+#cubeContainer {
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
 #mode3D {
 	touch-action: none;
 }
@@ -67,3 +61,54 @@ body {
 		margin-bottom: 15px;
 	}
 }
+
+/* Position badges on the left */
+#badges {
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+
+#classicHelp1 div {
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+
+#classicHelp2 div{
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+
+#classicHelp3 div{
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+
+#classicHelp4 div {
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+
+#classicHelp5 div {
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+
+#classicHelp6 div {
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
+

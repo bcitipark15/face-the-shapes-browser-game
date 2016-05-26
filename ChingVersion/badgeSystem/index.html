@@ -46,7 +46,6 @@
 		
     </head>
     <body onresize="navBar();" onload="navBar(); checkCookies(); spin();">
-
     	<!-- Button audio -->
     	<audio id="buttonSound" src="./workspace/audio/Buttons/Bubble.mp3" autostart="true"></audio>
 
@@ -57,7 +56,21 @@
 		
 		<!-- Container for the shown screen -->
         <div id="gameContainer">
+		
+			<div id="overlay"></div>
 			
+			<div id="classicHelpContainer">
+				<!-- Tutorial instructions -->
+		        <div class="classicHelp" id="classicHelp1"><div><h1>Objective</h1><br><p>Study the cube in 3D</p><br><p>Map it onto 2D foldout</p></div></div>
+		        <div id="proceed" onclick="nextPage('next');">></div>
+		        <div id="preceed" onclick="nextPage('previous');"><</div>
+		        <div class="classicHelp" id="classicHelp2"><div><h1>Examine</h1><br><p>Click and drag to rotate</p><br><p>Black arrow is a reference</p></div></div>
+		        <div class="classicHelp" id="classicHelp3"><div><h1>Next</h1><br><p>When ready, click the 2D </p><br><p>button to input answer</p></div></div>
+		        <div class="classicHelp" id="classicHelp4"><div><p>Click foldout for arrow</p><br><p>Color is for advanced</p><br><p>Submit when ready</div></div>
+		        <div class="classicHelp" id="classicHelp5"><div><h1>Well Done!</h1><p>That's it for classic mode!</p></div></div>
+		        <div id="endHelp" onclick="nextPage('next');">end</div>
+		    </div>
+
 			<!-- Badges division -->
 			<section id="badges" >
 				<div id="badgeOfCurrentHigh">0</span></div>
@@ -198,15 +211,17 @@
                 <h1 class="title">Game Mode</h1>
 				
                 <ul>
-                    <li><button class="buttonDesign menuBSize" onclick="screenChange('levelSelect'); selectMode('classic');">Classic</button></li>
-                    <li><button class="buttonDesign menuBSize" onclick="screenChange('mode3D');selectMode('time');">Time Attack</button></li>
+                    <li><button class="buttonDesign menuBSize" onclick="screenChange('levelSelect'); selectMode('classic');">Classic</button><div class="help" onclick="screenChange('mode3D'); selectMode('classic'); classicHelper(0);">?</div></li>
+                    <li><button class="buttonDesign menuBSize" onclick="screenChange('mode3D');selectMode('time');">Time Attack</button><div class="help" id="timeHelp">?</div></li>
 				</ul>
 				<ul>
-                    <li><button class="buttonDesign menuBSize" onclick="screenChange('mode3D');selectMode('score');">Score Attack</button></li>
+                    <li><button class="buttonDesign menuBSize" onclick="screenChange('mode3D');selectMode('score');">Score Attack</button><div class="help" id="scoreHelp">?</div></li>
                     <li><button id="easterEggTwo" class="buttonDesign menuBSize" onclick="easterEggTwo(); screenChange('mainMenu');">Death</button></li>
                 </ul>
+
+
 			</section>
-			
+
 			<!-- Experimental -->
             <section id="selectShape">
 			
@@ -282,17 +297,19 @@
 				</ul>
             </section>
 
-
+          
             <!-- 3D mode Screen -->
             <section id="mode3D">
 
+
+
                 <div class="topNav">
                     <button class="hamburger buttonDesign floatLeft" onclick="displayModal();"></button>
-                    <button class="buttonDesign floatRight" onclick="screenChange('mode2D'); resizeGame();">To 2D</button>
+                    <button id="to2D" class="buttonDesign floatRight" onclick="screenChange('mode2D'); resizeGame(); nextPage('next');">To 2D</button>
                 </div>
 				
 				<!-- Divs for each face of the cube -->
-                <div class="cubeContainer">
+                <div id="cubeContainer">
                     <div id="cube">
                         <figure class="front"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
                         <figure class="back"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
@@ -302,7 +319,7 @@
                         <figure class="bottom"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
                     </div>
                 </div>
-				
+
 				<div class="bottomNav">
                     <div id="timerBox" class="infoCont floatLeft mobileBSize">
 						<ul>
@@ -317,7 +334,7 @@
 						</ul>
 					</div>
                 </div>
-				
+
             </section>
 
             <!-- 2D Mode Screen-->
@@ -332,7 +349,7 @@
 
                 <div class="bottomNav">
                     <button id="colorArrow" class="buttonDesign floatLeft" onclick="colorChanger();">Color</button>
-                    <button class="buttonDesign floatRight" onclick="validate(); screenChange('resultScreen');">Submit</button>
+                    <button id="mode2DSubmit" class="buttonDesign floatRight" onclick="validate(); screenChange('resultScreen'); nextPage(currentPage);">Submit</button>
                 </div>
 
             </section>

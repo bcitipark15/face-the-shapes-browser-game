@@ -14,6 +14,7 @@ the user from dragging and highlighting the titleCube */
     width: 250px;
     height: 250px;
 }
+
 /* The modifies the image to match the size of the titleCube */
 .titleCubeCover {
     height: 100%;
@@ -137,7 +138,7 @@ the user from dragging and highlighting the titleCube */
 
 /* Cube container is where the Cube is stored prevent
 the user from dragging and highlighting the cube */
-.cubeContainer {
+#cubeContainer {
     width: 196px;
     height: 196px;
     position: relative;
@@ -154,6 +155,7 @@ the user from dragging and highlighting the cube */
     -webkit-user-select: none;
     -ms-user-select: none;
 }
+
 /* The modifies the image to match the size of the cube */
 .cubeCover {
     width: 196px;

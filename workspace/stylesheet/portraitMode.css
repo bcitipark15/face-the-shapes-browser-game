@@ -58,7 +58,7 @@ body {
 	padding-top: 10%;
 }
 .modalContent li {
-	margin: 0;
+	margin: 3%;
 }
 /** iPhone 4 support **/
 @media screen and (max-width: 320px) {
