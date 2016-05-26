@@ -40,6 +40,7 @@ section {
 }*/
 
 /* Hide from the user */
+#achievements,
 #overlay,
 #proceed,
 #preceed,
@@ -251,7 +252,7 @@ section {
 }
 
 /* Format standard badges sizes*/
-#badgeOfCurrentHigh {
+.badgeOfCurrentHigh {
     color: white; 
     font-size: 35px;
     line-height: 200%;

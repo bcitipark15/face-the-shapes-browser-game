@@ -69,7 +69,7 @@ function levelLoad(lowerBound, upperBound, numAnswers) {
 									+ '<button class="buttonDesign floatRight" onclick="screenChange(\'mode3D\');">To 3D</button>');
 	$('#mode2D div.bottomNav').html('');
 	$('#mode2D div.bottomNav').append('<button id="colorArrow" class="buttonDesign floatLeft" onclick="colorChanger();">Color</button>'
-									+ '<button class="buttonDesign floatRight" onclick="validate();">Submit</button>');
+									+ '<button id="mode2DSubmit" class="buttonDesign floatRight" onclick="validate();">Submit</button>');
 }
 
 /**

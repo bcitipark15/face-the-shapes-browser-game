@@ -35,6 +35,11 @@ background: linear-gradient(to right, #000000 , #434343); /* W3C, IE 10+/ Edge, 
 }
 
 .progressionBadge {
+	background: url("../image/orangeGemBadge.png");
+	background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+	text-align: center;
 	border: 3px ridge black;
 	height: 80px;
 	width: 80px;

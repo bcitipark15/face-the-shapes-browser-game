@@ -81,7 +81,7 @@
 			
 			<!-- Badges division -->
 			<section id="badges">
-				<div id="badgeOfCurrentHigh">0</span></div>
+				<div class="badgeOfCurrentHigh">0</div>
 			</section>
 			
             <!-- Title Screen -->
@@ -102,7 +102,7 @@
 
                 <ul>
                     <li><button class="buttonDesign menuBSize" onclick="screenChange('gameMode'); buttonClick()">Play</button></li>
-                    <li><button class="buttonDesign menuBSize" onclick="screenChange('leaderboard'); getHighScores(); buttonClick()">Leaderboard</button></li>
+                    <li><button class="buttonDesign menuBSize" onclick="screenChange('leaderboard'); getStdHighTimes(); buttonClick()">Leaderboard</button></li>
 					<li><button class="buttonDesign menuBSize" onclick="screenChange('achievements'); buttonClick()">Achievements</button></li>
                 </ul>
 				<div class="bottomNav">
@@ -218,7 +218,7 @@
                 <div id="achievementContent">
                 	<div id = "badge1" class="AchievementBlocks">
 						<h3>Progression Badge</h3>
-						<div class="progressionBadge"><img src="./workspace/image/orangeGemBadge.png" alt="achievement1" width="80" height="80"></div>
+						<div class="progressionBadge"><div class="badgeOfCurrentHigh">0</div></div>
 						<div class="description"><p>Track your progression</p></div>
 					</div>
 					<div id = "badge2" class="AchievementBlocks">
