@@ -49,7 +49,7 @@ function modalCorrect() {
 	$('.modalContent').html('');
 	var additionalInfo = '';
 	var levelSelectButton = '<li><button class="buttonDesign menuBSize" onclick="screenChange(\'levelSelect\');hideModal();">Level List</button></li>';
-	var nextLevelButton = '<li><button class="buttonDesign menuBSize" onclick="$(\'#level'+ currentlevel + '\').click(); screenChange(\'mode3D\');hideModal();">Next Level</button></li>'
+	var nextLevelButton = '<li><button class="buttonDesign menuBSize" onclick="$(\'#level'+ currentLevel + '\').click(); screenChange(\'mode3D\');hideModal();">Next Level</button></li>'
 	
 	if(timeModeFlag){
 		var levelSelectButton = ''
