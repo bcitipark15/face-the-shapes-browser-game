@@ -55,11 +55,11 @@ var state = 0;
 function muteButton() {
 	if (state == 0) {
 		mute();
-		document.getElementById(muteButton).innerhtml = "Unmute";
+		document.getElementById("muteButton").innerHTML = "Unmute";
 		state++;
 	} else if (state == 1) {
 		unmute();
-		document.getElementById(muteToggle).innerhtml = "Mute";
+		document.getElementById("muteButton").innerHTML = "Mute";
 		state--;
 	}
 }
