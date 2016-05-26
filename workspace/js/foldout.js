@@ -331,11 +331,11 @@ function applyFaces(foldoutNum){
 		
 		//Finds class of each face name and rotates it's arrow image according to the trueValue that was generated.
 		if(getFace(faceNames[i]).trueValue === 4){
-			$('.' + faceNames[i].substring(4)).children().css('display','none');
-			$('.' + faceNames[i].substring(4)).css('background-color','white');
+			$('#cube .' + faceNames[i].substring(4)).children().css('display','none');
+			$('#cube .' + faceNames[i].substring(4)).css('background-color','white');
 		} else {
-			$('.' + faceNames[i].substring(4)).children().css('display','block');
-			$('.' + faceNames[i].substring(4)).children().css('transform','rotateZ(' 
+			$('#cube .' + faceNames[i].substring(4)).children().css('display','block');
+			$('#cube .' + faceNames[i].substring(4)).children().css('transform','rotateZ(' 
 				+ (getFace(faceNames[i]).trueValue + offsets[foldoutNum][i]) * 90 + 'deg)');
 			$('#cube .' + faceNames[i].substring(4)).css('background-color',faceArray[i].trueColor);
 		}
