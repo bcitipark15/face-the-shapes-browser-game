@@ -349,11 +349,11 @@ function applyFaces(foldoutNum){
 function toLeaderboard(){
 	var name = $('#username').val();
 	if(scoreModeFlag){
-		inputHighScore(name,score);
+		setStdHighScore(name,score);
 		alert("Sent\nYour Name: " + name + "\nYour Score: " + score);
 	}
 	if(timeModeFlag){
-		inputHighTime(name, time)
+		setStdHighTime(name, time)
 		alert("Sent\nYour Name: " + name + "\nYour Time: " + time);
 	}
 	
