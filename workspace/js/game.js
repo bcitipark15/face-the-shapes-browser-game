@@ -58,9 +58,17 @@ function levelLoad(lowerBound, upperBound, numAnswers) {
 	foldoutT(levels[generatedLevel], numAnswers);
 	applyFaces(levels[generatedLevel]);
 	
+	//Revert mode2D if user was viewing answer version.
+	answerMode = false;
+	$('#mode2D div.topNav').html('');
+	$('#mode2D div.topNav').append('<button class="hamburger buttonDesign floatLeft" onclick="displayModal();"></button>'
+									+ '<button class="buttonDesign floatRight" onclick="screenChange(\'mode3D\');">To 3D</button>');
+	$('#mode2D div.bottomNav').html('');
+	$('#mode2D div.bottomNav').append('<button id="colorArrow" class="buttonDesign floatLeft" onclick="colorChanger();">Color</button>'
+									+ '<button class="buttonDesign floatRight" onclick="validate(); screenChange(\'resultScreen\');">Submit</button>');
 }
 
-/** ~~~ Move to game.js ~~~
+/**
  * validate Tests user's arrow orientation vs true arrow orientation along with user's colors vs true colors.
  * 			If user's answers perfectly align, results screen displays success message. Otherwise it displays
  *			
@@ -87,19 +95,41 @@ function validate(levelNumber){
 		}
 	}
 
+	
+	/*******Added on May 26th 1:05am *********/
 	//Appropriate message is displayed according to the result.
 	if (match) {
+		modalCorrect();
 		$('#resultMessage').append('Foldout is a perfect match!');
 		if (standardMode) {
 			setBadgeStandard();
 		} else if (advancedMode) {
 			setBadgeAdvanced();
 		}
+		if(scoreModeFlag){
+			//Score is determined by base and level multiplier.
+			updateScore(scoreBase * (level + 1));
+			//Give player additional time when level is completed.
+			time += 30;
+		}
+		level++;
 	} else {
+		modalIncorrect();
 		$('#resultMessage').append('Foldout does not match!');
+		
+		if(scoreModeFlag){
+				//Score is determined by base and level multiplier.
+				updateScore(-1 * scoreBase);
+			}
+		if(timeModeFlag){
+			//Penalty of 20 seconds is applied on wrong submission in time mode.
+			time += 20;
+		}
 	}
 	
-	//Set resultScreen buttons depending on which game mode you are in.
+	
+	//Deprecated.
+	/* //Set resultScreen buttons depending on which game mode you are in.
 	$('#resultScreen div.bottomNav').html('');
 	if(timeModeFlag || scoreModeFlag){
 		//If user completed all x time mode levels, send to end game screen. ~~Specify how many levels later, 2 set for testing purposes.~~
@@ -134,10 +164,10 @@ function validate(levelNumber){
 	} else {
 		$('#resultScreen div.bottomNav').append('<button class="buttonDesign floatLeft" onclick="screenChange(\'levelSelect\')">Levels</button>');
 		$('#resultScreen div.bottomNav').append('<button class="buttonDesign floatRight" onclick="screenChange(\'answerScreen\');showAnswer();">Answer</button>');
-	}
+	} */
 }
 
-/** ~~ Move to game.js ~~
+/**
  * resizeGame Resizes the foldout according to the new screen size.
  * @return {undefined}
  */
@@ -164,7 +194,7 @@ function resizeGame(){
 	$('#foldout tr td div').children().css({'width': size, 'height': size});
 }
 
-/** ~~~Move to game.js~~~
+/**
  * colorChanger Turns on/off color changing flag.
  *				true = on, false = off
  * @return {undefined}
@@ -180,7 +210,7 @@ function colorChanger(){
 	}
 }
 
-/** ~~~Move to game.js ~~~
+/**
  * 	 Difficulty button for number of pivots generated.
  * @return {undefined}
  */
@@ -199,7 +229,7 @@ function setDifficulty(){
 	$('#setDifficulty').text(difficulty);
 }
 
-/** ~~~ Move to game.js ~~~
+/**
  * generatePivots Generates number of pivots on the cube depending on selected difficulty.
  * @param {integer} difficultyNum The difficulty selected, 0 = easy, 1 = medium, 2 = hard.
  * @return {undefined}
@@ -233,4 +263,16 @@ function generatePivots(difficultyNum){
 			pivots++;
 		}
 	}
+}
+/**
+ * compareAnswer Alters some game screens to be fit for comparing your answer to the real answer.
+ * @return {undefined}
+ */
+function compareAnswer(){
+	answerMode = true;
+	$('#mode2D div.topNav').html('');
+	$('#mode2D div.topNav').append('<button class="buttonDesign floatLeft menuBSize" onclick="screenChange(\'answerScreen\');">Answer</button>');
+	$('#mode2D div.bottomNav').html('');
+	$('#mode2D div.bottomNav').append('<button class="buttonDesign floatLeft menuBSize" onclick="screenChange(\'levelSelect\');">Levels</button>'
+									+ '<button class="buttonDesign floatRight menuBSize" onclick="screenChange(\'mainMenu\');">Menu</button>');
 }

@@ -339,14 +339,13 @@
                     <button class="buttonDesign floatLeft menuBSize" onclick="screenChange('levelSelect');">Levels</button>
                     <button class="buttonDesign floatRight menuBSize" onclick="screenChange('answerScreen');showAnswer();">Answer</button>
                 </div>
-
             </section>
 			
 			<!-- Answer Screen -->
 			<section id="answerScreen">
-				
-				<h1 class="title">Answer</h1>
-				
+				<div class="topNav">
+                    <button class="buttonDesign floatLeft menuBSize" onclick="screenChange('mode2D'); compareAnswer();">Your Answer</button>
+				</div>
 				<div class="messageBox" id="correctAnswer"></div>
 				
 				<div class="bottomNav">

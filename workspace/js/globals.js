@@ -38,7 +38,7 @@ var levels = [];
 var level;
 
 //Current level of standard mode.
-var currentLevelStandard;
+var currentlevel;
 
 //Highest level of standard mode unlocked.
 var levelStandardHigh = 1;
@@ -63,3 +63,12 @@ var currentPage = 0;
 
 //Define which tutorial is activated
 var helperMode = 0;
+
+//Set screens up for answer mode.
+var answerMode = false;
+
+//Highest level of advance mode unlocked.
+var levelAdvancedHigh = 1;
+
+//Base score added on completing score attack mode level.
+var scoreBase = 100;

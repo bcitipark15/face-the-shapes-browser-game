@@ -178,7 +178,7 @@ function classicHelper(page) {
 			$('#overlay').css('display', 'none');
 			$('#proceed').css('display', 'none');
 			$('#endHelp').css('display', 'none');
-
+			currentPage = 0;
 	}
 }
 

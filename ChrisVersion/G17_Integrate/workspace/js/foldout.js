@@ -256,6 +256,24 @@ function showAnswer(){
 		}
 	}
 }
+	/**							**
+	 **		ADD THIS TO MAIN	**
+	 **							**
+	 **							**
+	 **							**
+	 **/
+/** ~~~~MOVE TO GAME.JS ~~~~~
+ * compareAnswer Alters some game screens to be fit for comparing your answer to the real answer.
+ * @return {undefined}
+ */
+function compareAnswer(){
+	answerMode = true;
+	$('#mode2D div.topNav').html('');
+	$('#mode2D div.topNav').append('<button class="buttonDesign floatLeft menuBSize" onclick="screenChange(\'answerScreen\');">Answer</button>');
+	$('#mode2D div.bottomNav').html('');
+	$('#mode2D div.bottomNav').append('<button class="buttonDesign floatLeft menuBSize" onclick="screenChange(\'levelSelect\');">Levels</button>'
+									+ '<button class="buttonDesign floatRight menuBSize" onclick="screenChange(\'mainMenu\');">Menu</button>');
+}
 
 /**
  * getFace Finds the face object associated with given id
@@ -278,29 +296,30 @@ function getFace(id){
  * @return {undefined}
  */
 function rotateFace(id){
-	
-	//Takes the passed id and determines which face in the array it is.
-    currentFace = getFace(id);
-	
-	//Changes the arrow rotation if the face clicked is not the pivot face and if the color flag is not on.
-	if(currentFace.trueColor !== pivotColor && !colorFlag){
-		currentFace.value = (currentFace.value + 1) % 5;
-		if(currentFace.value === 4){
-			$('#' + id + ' img').css('display','none');
-			$('#' + id).css('background-color','white');
-		} else {
-			$('#' + id + ' img').css('display','block');
-			$('#' + id).css('transform','rotateZ(' + currentFace.value * 90 + 'deg)');
-			$('#' + id).css('background-color',currentFace.playerColor);
+	if(!answerMode){
+		//Takes the passed id and determines which face in the array it is.
+		currentFace = getFace(id);
+		
+		//Changes the arrow rotation if the face clicked is not the pivot face and if the color flag is not on.
+		if(currentFace.trueColor !== pivotColor && !colorFlag){
+			currentFace.value = (currentFace.value + 1) % 5;
+			if(currentFace.value === 4){
+				$('#' + id + ' img').css('display','none');
+				$('#' + id).css('background-color','white');
+			} else {
+				$('#' + id + ' img').css('display','block');
+				$('#' + id).css('transform','rotateZ(' + currentFace.value * 90 + 'deg)');
+				$('#' + id).css('background-color',currentFace.playerColor);
+			}
 		}
-	}
-	
-	//Changes face color if the face clicked is not the pivot face and if the color flag is on.
-	if(currentFace.trueColor !== pivotColor && colorFlag && difficultyNum == 1){
-		//Changes color to next color in the colors array.
-		currentFace.playerColor = colors[(colors.indexOf(currentFace.playerColor) + 1) % colors.length];
-		//Sets background color to newly adjusted color.
-		$('#' + id).children().css('background-color',currentFace.playerColor);
+		
+		//Changes face color if the face clicked is not the pivot face and if the color flag is on.
+		if(currentFace.trueColor !== pivotColor && colorFlag && difficultyNum == 1){
+			//Changes color to next color in the colors array.
+			currentFace.playerColor = colors[(colors.indexOf(currentFace.playerColor) + 1) % colors.length];
+			//Sets background color to newly adjusted color.
+			$('#' + id).children().css('background-color',currentFace.playerColor);
+		}
 	}
 }
 

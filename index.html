@@ -51,7 +51,7 @@
 
     	<!-- Audio -->
     	<audio id="buttonSound" src="./workspace/audio/Buttons/Bubble.mp3" autostart="true"></audio>
-    	<audio id="correctTada" src="./workspace/audio/TaDa.mp3" autostart="true"></audio>
+    	<audio id="correctTada" src="./workspace/audio/TaDa.wav" autostart="true"></audio>
     	<audio id="incorrectDoh" src="./workspace/audio/Doh.mp3" autostart="true"></audio>
 
     	<!-- Background Music -->
@@ -78,7 +78,7 @@
 			
 			<!-- Badges division -->
 			<section id="badges" >
-				<div id="standardBadge">0</span></div>
+				<div id="badgeOfCurrentHigh">0</span></div>
 			</section>
 			
             <!-- Title Screen -->
@@ -334,7 +334,7 @@
                 <div class="topNav">
 
                     <button class="backButton buttonDesign floatLeft" onclick="modalOption(); buttonClick()"></button>
-                    <button id="to2D" class="buttonDesign floatRight" onclick="screenChange('mode2D'); resizeGame(); buttonClick()">To 2D</button>
+                    <button id="to2D" class="buttonDesign floatRight" onclick="screenChange('mode2D'); resizeGame(); buttonClick(); nextPage('next');">To 2D</button>
 
                 </div>
 				
