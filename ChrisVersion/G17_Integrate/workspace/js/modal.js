@@ -143,12 +143,26 @@ function modalIncorrect() {
  **/
 	 
 function compDiffSelect(mode){
+	difficultyNum = 0;
 	$('.modalContent').html('');
 	$('.modalContent').append('<ul>' 
-							+ '<li><button class="buttonDesign menuBSize" onclick="screenChange(\'mode3D\');setDifficulty(0);">Standard</button></li>'
-							+ '<li><button class="buttonDesign menuBSize" onclick="screenChange(\'mode3D\');setDifficulty(1);">Advanced</button></li>'
+							+ '<li><button class="buttonDesign menuBSize setDifficulty" onclick="setDifficulty();">Standard</button></li>'
+							+ '<li><button class="buttonDesign menuBSize" onclick="screenChange(\'mode3D\'); selectMode(\'' + mode + '\');">Start!</button></li>'
 							+ '</ul>');
 	modalFadeIn();
 	var timer = setTimeout(function() {document.getElementById('modalBox').style.display = 'block';}, 400);
 }
 /**** END OF ADDITION****/
+
+
+
+
+
+
+
+
+
+
+
+
+

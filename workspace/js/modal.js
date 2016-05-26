@@ -49,17 +49,23 @@ function modalCorrect() {
 	$('.modalContent').html('');
 	var additionalInfo = '';
 	var levelSelectButton = '<li><button class="buttonDesign menuBSize" onclick="screenChange(\'levelSelect\');hideModal();">Level List</button></li>';
-	var nextLevelButton = '<li><button class="buttonDesign menuBSize" onclick="$(\'level'+ currentlevel + '\').click(); screenChange(\'mode3D\');hideModal();">Next Level</button></li>'
+	var nextLevelButton = '<li><button class="buttonDesign menuBSize" onclick="$(\'#level'+ currentlevel + '\').click(); screenChange(\'mode3D\');hideModal();">Next Level</button></li>'
 	
 	if(timeModeFlag){
 		var levelSelectButton = ''
-		var nextLevelButton = '<li><button class="buttonDesign menuBSize" onclick="$(\'level'+ level + '\').click(); screenChange(\'mode3D\');hideModal();">Next Level</button></li>'
+		var nextLevelButton = '<li><button class="buttonDesign menuBSize" onclick="levelLoad(2,4,' + (level + 1) + '); screenChange(\'mode3D\');hideModal();">Next Level</button></li>'
 	}
 	
 	if(scoreModeFlag){
-		var additionalInfo = '<p style="color: green;"> +30 seconds <br> +100 points!</p>';
+		var additionalInfo = '<p style="color: green;"> +30 seconds <br> +' + scoreBase + ' points!</p>';
 		var levelSelectButton = ''
-		var nextLevelButton = '<li><button class="buttonDesign menuBSize" onclick="$(\'level'+ level + '\').click(); screenChange(\'mode3D\');hideModal();">Next Level</button></li>'
+		var nextLevelButton = '<li><button class="buttonDesign menuBSize" onclick="levelLoad(' 
+								+ Math.floor(level/3) % 10//Minimum foldout type
+								+ ',' 
+								+ Math.floor((level)/2 + 1) % 10 //maximum foldout type
+								+ ',' 
+								+ Math.floor((level)/3 + 1)
+								+ '); screenChange(\'mode3D\');hideModal();">Next Level</button></li>'
 	}
 	$('.modalContent').append('<h1>' + msg + '</h1>' 
 								+ 	additionalInfo
@@ -69,6 +75,7 @@ function modalCorrect() {
 								+ 			nextLevelButton
 								+		'</ul>'
 								+ 	'</div>');
+	/**Insert function for completion of all levels*/
 	displayModal();
 }
 
@@ -146,10 +153,11 @@ function modalArrow() {
 }
 
 function compDiffSelect(mode){
+	difficultyNum = 0;
 	$('.modalContent').html('');
 	$('.modalContent').append('<ul>' 
-							+ '<li><button class="buttonDesign menuBSize" onclick="screenChange(\'mode3D\');setDifficulty(0);">Standard</button></li>'
-							+ '<li><button class="buttonDesign menuBSize" onclick="screenChange(\'mode3D\');setDifficulty(1);">Advanced</button></li>'
+							+ '<li><button class="buttonDesign menuBSize setDifficulty" onclick="setDifficulty();">Standard</button></li>'
+							+ '<li><button class="buttonDesign menuBSize" onclick="screenChange(\'mode3D\'); selectMode(\'' + mode + '\');hideModal();">Start!</button></li>'
 							+ '</ul>');
 	displayModal();
 }

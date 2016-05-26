@@ -52,6 +52,10 @@ window.onresize = resizeGame;
  */
 function levelLoad(lowerBound, upperBound, numAnswers) {
 	levels = [0,1,2,3,4,5,6,7,8,9];
+	//Hard cap answer count to 5.
+	if(numAnswers > 5){
+		numAnswers = 5;
+	}
 	
 	generatedLevel = Math.floor(Math.random() * (upperBound - lowerBound + 1)) + lowerBound;
 	
@@ -65,7 +69,7 @@ function levelLoad(lowerBound, upperBound, numAnswers) {
 									+ '<button class="buttonDesign floatRight" onclick="screenChange(\'mode3D\');">To 3D</button>');
 	$('#mode2D div.bottomNav').html('');
 	$('#mode2D div.bottomNav').append('<button id="colorArrow" class="buttonDesign floatLeft" onclick="colorChanger();">Color</button>'
-									+ '<button class="buttonDesign floatRight" onclick="validate(); screenChange(\'resultScreen\');">Submit</button>');
+									+ '<button class="buttonDesign floatRight" onclick="validate();">Submit</button>');
 }
 
 /**
@@ -108,9 +112,14 @@ function validate(levelNumber){
 		}
 		if(scoreModeFlag){
 			//Score is determined by base and level multiplier.
-			updateScore(scoreBase * (level + 1));
+			updateScore(scoreBase);
 			//Give player additional time when level is completed.
 			time += 30;
+		}
+		if(timeModeFlag){
+			if(level > numLevels){
+				endGame();
+			}
 		}
 		level++;
 	} else {
@@ -119,7 +128,7 @@ function validate(levelNumber){
 		
 		if(scoreModeFlag){
 				//Score is determined by base and level multiplier.
-				updateScore(-1 * scoreBase);
+				updateScore(-25);
 			}
 		if(timeModeFlag){
 			//Penalty of 20 seconds is applied on wrong submission in time mode.
@@ -226,7 +235,8 @@ function setDifficulty(){
 			updateBadge('advanced', levelAdvancedHigh - 1 );
 			break;
 	}
-	$('#setDifficulty').text(difficulty);
+	alert(difficultyNum);
+	$('.setDifficulty').text(difficulty);
 }
 
 /**
@@ -269,9 +279,16 @@ function generatePivots(difficultyNum){
  * @return {undefined}
  */
 function compareAnswer(){
+	//Set flag so arrows are not rotatable.
 	answerMode = true;
+	
+	//3D screen button changes.
+	
+	
+	//2D screen button changes.
 	$('#mode2D div.topNav').html('');
-	$('#mode2D div.topNav').append('<button class="buttonDesign floatLeft menuBSize" onclick="screenChange(\'answerScreen\');">Answer</button>');
+	$('#mode2D div.topNav').append('<button class="buttonDesign floatRight menuBSize" onclick="screenChange(\'answerScreen\');">Answer</button>');
+	$('#mode2D div.topNav').append('<button class="buttonDesign floatLeft menuBSize" onclick="screenChange(\'mode3D\');">To 3D</button>');
 	$('#mode2D div.bottomNav').html('');
 	$('#mode2D div.bottomNav').append('<button class="buttonDesign floatLeft menuBSize" onclick="screenChange(\'levelSelect\');">Levels</button>'
 									+ '<button class="buttonDesign floatRight menuBSize" onclick="screenChange(\'mainMenu\');">Menu</button>');

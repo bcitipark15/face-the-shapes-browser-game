@@ -250,7 +250,7 @@ function setDifficulty(givenDifficulty){
 			difficultyText = 'Advanced'
 			break;
 	}
-	$('#setDifficulty').text(difficultyText);
+	$('.setDifficulty').text(difficultyText);
 }
 
 /** ~~~ Move to game.js ~~~

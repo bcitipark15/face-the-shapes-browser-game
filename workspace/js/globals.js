@@ -72,3 +72,6 @@ var levelAdvancedHigh = 1;
 
 //Base score added on completing score attack mode level.
 var scoreBase = 100;
+
+//Number of levels to complete in time mode.
+var numLevels = 3;
