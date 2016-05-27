@@ -5,11 +5,8 @@ the user from dragging and highlighting the titleCube */
     border: 10px solid white;
     background: linear-gradient(240deg, #082445, #084524);
     border-radius: 50%;
-    margin-top: 30px;
-    margin-bottom: 100px;
-    margin-left: 0;
-    margin-right: 0;
-    margin: auto;
+    margin-right: auto;
+	margin-left: auto;
     margin-bottom: 15px;
     width: 250px;
     height: 250px;

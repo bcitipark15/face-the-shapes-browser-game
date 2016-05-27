@@ -239,11 +239,11 @@ function foldoutT(foldoutNum, numAnswers){
 function showAnswer(){
 	//Create clone
 	$('#foldout').clone().appendTo('#correctAnswer').attr('id','foldoutClone');
-	$('#foldoutClone > tr > td > div#facetop').attr('id','facetopClone');
+	$('#foldoutClone > tbody > tr > td > div#facetop').attr('id','facetopClone');
 	
 	for(var i = 0; i < faceArray.length; i++){
 		//Change all cloned id's to reflect in actual id.
-		$('#foldoutClone > tr > td > div#' + faceArray[i].id).attr('id', faceArray[i].id + 'Clone');
+		$('#foldoutClone > tbody > tr > td > div#' + faceArray[i].id).attr('id', faceArray[i].id + 'Clone');
 		
 		//Reapply image if face isn't white.
 		if(faceArray[i].trueValue !== 4){
@@ -348,12 +348,21 @@ function applyFaces(foldoutNum){
  */
 function toLeaderboard(){
 	var name = $('#username').val();
+	
 	if(scoreModeFlag){
-		setStdHighScore(name,score);
+		if(difficultyNum == 0){
+			setStdHighScore(name,score);
+		} else {
+			setAdvHighScore(name,score);
+		}
 		alert("Sent\nYour Name: " + name + "\nYour Score: " + score);
 	}
 	if(timeModeFlag){
-		setStdHighTime(name, time)
+		if(difficultyNum == 0){
+			setStdHighTime(name, time);
+		} else {
+			setAdvHighTime(name, time);
+		}
 		alert("Sent\nYour Name: " + name + "\nYour Time: " + time);
 	}
 	

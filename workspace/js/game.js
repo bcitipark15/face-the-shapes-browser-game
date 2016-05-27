@@ -197,10 +197,15 @@ function resizeGame(){
 	}
 	//Size is a portion of the screen to allow the full foldout to fit.
 	size = Math.floor(axis/4);
-	$('#foldout').css('border-collapse','collapse');
-	$('#foldout tr td').children().css({'width': size, 'height': size, 'border': 'solid 5px black'});
-	
-	$('#foldout tr td div').children().css({'width': size, 'height': size});
+	if($('#foldoutScreen').width() > $('#correctAnswer').width()){
+		$('#foldout').css('border-collapse','collapse');
+		$('#foldout tr td').children().css({'width': size, 'height': size, 'border': 'solid 5px black'});
+		$('#foldout tr td div').children().css({'width': size, 'height': size});
+	} else {
+		$('#foldoutClone').css('border-collapse','collapse');
+		$('#foldoutClone tbody tr td').children().css({'width': size, 'height': size, 'border': 'solid 5px black'});
+		$('#foldoutClone tbody tr td div').children().css({'width': size, 'height': size});
+	}
 }
 
 /**
@@ -227,16 +232,16 @@ function setDifficulty(){
 	difficultyNum = (difficultyNum + 1) % 2;
 	switch(difficultyNum){
 		case 0:
-			difficulty = 'Standard'
+			difficulty = 'Mode: Standard'
 			updateBadge('standard', levelStandardHigh - 1 );
 			break;
 		case 1:
-			difficulty = 'Advanced'
+			difficulty = 'Mode: Advanced'
 			updateBadge('advanced', levelAdvancedHigh - 1 );
 			break;
 	}
 	alert(difficultyNum);
-	$('.setDifficulty').text(difficulty);
+	$('#setDifficulty').text(difficulty);
 }
 
 /**
@@ -283,13 +288,15 @@ function compareAnswer(){
 	answerMode = true;
 	
 	//3D screen button changes.
-	
+	/* $('#mode3D div.bottomNav').html('');
+	$('#mode3D div.bottomNav').append('<button class="buttonDesign floatRight menuBSize" onclick="screenChange(\'levelSelect\');">Levels</button>'
+									+ '<button class="buttonDesign floatLeft menuBSize" onclick="screenChange(\'mainMenu\');">Menu</button>'); */
 	
 	//2D screen button changes.
 	$('#mode2D div.topNav').html('');
 	$('#mode2D div.topNav').append('<button class="buttonDesign floatRight menuBSize" onclick="screenChange(\'answerScreen\');">Answer</button>');
 	$('#mode2D div.topNav').append('<button class="buttonDesign floatLeft menuBSize" onclick="screenChange(\'mode3D\');">To 3D</button>');
 	$('#mode2D div.bottomNav').html('');
-	$('#mode2D div.bottomNav').append('<button class="buttonDesign floatLeft menuBSize" onclick="screenChange(\'levelSelect\');">Levels</button>'
-									+ '<button class="buttonDesign floatRight menuBSize" onclick="screenChange(\'mainMenu\');">Menu</button>');
+	$('#mode2D div.bottomNav').append('<button class="buttonDesign floatRight menuBSize" onclick="screenChange(\'levelSelect\');">Levels</button>'
+									+ '<button class="buttonDesign floatLeft menuBSize" onclick="screenChange(\'mainMenu\');">Menu</button>');
 }

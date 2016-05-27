@@ -19,7 +19,9 @@ ul {
     text-align: center;
 }
 
-
+ul li {
+	z-index: 999;
+}
 /** Section is what will display to the user **/
 section {
     width: 100%;
@@ -52,6 +54,7 @@ section {
 #classicHelp4,
 #classicHelp5,
 #leaderboard,
+#achievements,
 #store,
 #settings,
 #badges,
@@ -283,13 +286,19 @@ section {
 
 /* Where the message will display for the user to read */
 .messageBox {
-	padding-top: 5%;
-	margin: auto;
-    width: 40%;
+	position: absolute;
+    bottom: 0%;
+    top: 0%;
+    right: 0%;
+    left: 0%;
+    width: 90%;
+	height: 65%;
 	font-size: 40px;
-	
+	margin: auto;
 }
-
+#foldoutClone {
+	margin: auto;
+}
 /* Increase the size of the title */
 #resultScreen .title {
 	font-size: 50px;
@@ -343,7 +352,7 @@ section {
 /* To keep the nav on the bottom */
 .bottomNav {
     position: absolute;
-    bottom: 0%;
+    bottom: 2%;
     left: 0%;
     right: 0%;
     padding-top: 3%;
@@ -361,11 +370,13 @@ section {
     left: 0%;
     height: 65%;
     width: 90%;
+	z-index: 1;
 }
 
 /* foldout is the actual fold out container */
 #foldout {
     margin: auto;
+	
 }
 
 /* Where the cube is placed**/
