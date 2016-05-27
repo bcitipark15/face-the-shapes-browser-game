@@ -139,16 +139,22 @@ function validate(levelNumber){
 		}
 		$('#resultMessage').append('Foldout is a perfect match!');
 		if (standardMode) {
+			// If the player is in standard mode, set the badges accordingly.
 			setBadgeStandard();
 		} else if (advancedMode) {
+			// If the player is in advanced mode, set the badges accordingly.
 			setBadgeAdvanced();
 		}
+
+		// Is currently selected mode the score attack mode?
 		if(scoreModeFlag){
 			//Score is determined by base and level multiplier.
 			updateScore(scoreBase);
 			//Give player additional time when level is completed.
 			time += 30;
 		}
+
+		// Is currently selected mode the time attack mode?
 		if(timeModeFlag){
 			unlockSpeedy();
 		}
@@ -160,7 +166,8 @@ function validate(levelNumber){
 		if(scoreModeFlag){
 				//Score is determined by base and level multiplier.
 				updateScore(-25);
-			}
+		}
+
 		if(timeModeFlag){
 			//Penalty of 20 seconds is applied on wrong submission in time mode.
 			time += 20;

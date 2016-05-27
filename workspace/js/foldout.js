@@ -346,20 +346,29 @@ function applyFaces(foldoutNum){
 function toLeaderboard(){
 	var name = $('#username').val();
 	
-	if(scoreModeFlag){
-		if(difficultyNum == 0){
+	// Is currently selected mode the score attack mode?
+	if(scoreModeFlag) {
+		if(difficultyNum == 0) {
+			// Is it the standard mode?
 			setStdHighScore(name,score);
 		} else {
+			// Or is it the advanced mode?
 			setAdvHighScore(name,score);
 		}
+		// Show the confirmation.
 		alert("Sent\nYour Name: " + name + "\nYour Score: " + score);
 	}
+
+	// Is currently selected mode the time attack mode?
 	if(timeModeFlag){
-		if(difficultyNum == 0){
+		if(difficultyNum == 0) {
+			// Is it the standard mode?
 			setStdHighTime(name, time);
 		} else {
+			// Or is it the advanced mode?
 			setAdvHighTime(name, time);
 		}
+		// Show the confirmation.
 		alert("Sent\nYour Name: " + name + "\nYour Time: " + time);
 	}
 	

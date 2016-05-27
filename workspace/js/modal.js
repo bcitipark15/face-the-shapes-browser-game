@@ -104,11 +104,13 @@ function modalIncorrect() {
 	var retryLevelButton = '<li><button class="buttonDesign " onclick="screenChange(\'mode3D\');hideModal();">retry</button></li>';
 	var answerButton = '<li><button class="buttonDesign " onclick="screenChange(\'answerScreen\');showAnswer();hideModal();">answer</button></li>'
 	
+	// Is it currently on time attack mode?
 	if(timeModeFlag){
 		var additionalInfo = '<p style="color: red; text-align: center; font-size: 50px;"> +20 sec </p>';
 		var answerButton = ''
 	}
 	
+	// is It currently on score attack mode?
 	if(scoreModeFlag){
 		var additionalInfo = '<p style="color: red; text-align: center; font-size: 50px;"> -25 points!</p>';
 		var answerButton = ''

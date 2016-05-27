@@ -129,9 +129,11 @@ function getAdvHighTimes() {
 	xmlhttp.send();
 }
 
+/* Adds jQuery dynamic tabs. */
 $(function() {
 	$("#tabs").tabs();
 });
+
 /**
  * activeTab Creates tab-like effect on leaderboard screen.
  * @param id The button being pressed(receives tab focus).
