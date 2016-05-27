@@ -56,15 +56,15 @@
     border-color: rgba(255, 255, 255, 0.3);
 }
 
-.activeTab {
+/*.activeTab {
     background-color: rgba(255, 255, 255, 0.2);
-}
+}*/
 
 @media screen and (max-width: 40em) {
-/*    section {
-        overflow: scroll !important;
+    #leaderboard {
+        overflow: auto !important;
     }
-*/
+
     .leaderboards {
         width: 100%;
     }
