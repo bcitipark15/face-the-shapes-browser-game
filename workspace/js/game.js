@@ -232,16 +232,16 @@ function setDifficulty(){
 	difficultyNum = (difficultyNum + 1) % 2;
 	switch(difficultyNum){
 		case 0:
-			difficulty = 'Standard'
+			difficulty = 'Mode: Standard'
 			updateBadge('standard', levelStandardHigh - 1 );
 			break;
 		case 1:
-			difficulty = 'Advanced'
+			difficulty = 'Mode: Advanced'
 			updateBadge('advanced', levelAdvancedHigh - 1 );
 			break;
 	}
 	alert(difficultyNum);
-	$('.setDifficulty').text(difficulty);
+	$('#setDifficulty').text(difficulty);
 }
 
 /**

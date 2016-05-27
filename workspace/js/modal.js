@@ -48,24 +48,24 @@ function modalCorrect() {
 	var msg = msgList[Math.floor(Math.random() * msgList.length)];
 	$('.modalContent').html('');
 	var additionalInfo = '';
-	var levelSelectButton = '<li><button class="buttonDesign menuBSize" onclick="screenChange(\'levelSelect\');hideModal();">Level List</button></li>';
-	var nextLevelButton = '<li><button class="buttonDesign menuBSize" onclick="$(\'#level'+ currentLevel + '\').click(); screenChange(\'mode3D\');hideModal();">Next Level</button></li>'
+	var levelSelectButton = '<li><button class="buttonDesign" onclick="screenChange(\'levelSelect\');hideModal();">Levels</button></li>';
+	var nextLevelButton = '<li><button class="buttonDesign" onclick="$(\'#level'+ currentLevel + '\').click(); screenChange(\'mode3D\');hideModal();">Next</button></li>'
 	
 	if(timeModeFlag){
 		var levelSelectButton = ''
-		var nextLevelButton = '<li><button class="buttonDesign menuBSize" onclick="levelLoad(2,4,' + (level + 1) + '); screenChange(\'mode3D\');hideModal();">Next Level</button></li>'
+		var nextLevelButton = '<li><button class="buttonDesign" onclick="levelLoad(2,4,' + (level + 1) + '); screenChange(\'mode3D\');hideModal();">Next</button></li>'
 	}
 	
 	if(scoreModeFlag){
 		var additionalInfo = '<p style="color: green;"> +30 seconds <br> +' + scoreBase + ' points!</p>';
 		var levelSelectButton = ''
-		var nextLevelButton = '<li><button class="buttonDesign menuBSize" onclick="levelLoad(' 
+		var nextLevelButton = '<li><button class="buttonDesign" onclick="levelLoad(' 
 								+ Math.floor(level/3) % 10//Minimum foldout type
 								+ ',' 
 								+ Math.floor((level)/2 + 1) % 10 //maximum foldout type
 								+ ',' 
 								+ Math.floor((level)/3 + 1)
-								+ '); screenChange(\'mode3D\');hideModal();">Next Level</button></li>'
+								+ '); screenChange(\'mode3D\');hideModal();">Next</button></li>'
 	}
 	$('.modalContent').append('<h1>' + msg + '</h1>' 
 								+ 	additionalInfo
@@ -87,8 +87,8 @@ function modalIncorrect() {
 	var msg = msgList[Math.floor(Math.random() * msgList.length)];
 	$('.modalContent').html('');
 	var additionalInfo = '';
-	var retryLevelButton = '<li><button class="buttonDesign menuBSize" onclick="screenChange(\'mode3D\');hideModal();">retry</button></li>';
-	var answerButton = '<li><button class="buttonDesign menuBSize" onclick="screenChange(\'answerScreen\');showAnswer();hideModal();">answer</button></li>'
+	var retryLevelButton = '<li><button class="buttonDesign " onclick="screenChange(\'mode3D\');hideModal();">retry</button></li>';
+	var answerButton = '<li><button class="buttonDesign " onclick="screenChange(\'answerScreen\');showAnswer();hideModal();">answer</button></li>'
 	
 	if(timeModeFlag){
 		var additionalInfo = '<p style="color: red;"> +20 seconds!</p>';
