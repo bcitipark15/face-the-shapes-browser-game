@@ -13,6 +13,11 @@ function incorrectSound() {
     wrong.play();
 }
 
+function achievementSound() {
+	var unlock = document.getElementById("achievementMagic");
+    unlock.play();
+}
+
 function mute() {
 	document.getElementById("bgm").muted = true;
 	document.getElementById("buttonSound").muted = true;
