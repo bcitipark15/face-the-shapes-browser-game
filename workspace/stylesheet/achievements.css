@@ -12,6 +12,17 @@ background: linear-gradient(to right, #000000 , #434343); /* W3C, IE 10+/ Edge, 
 	
 }
 
+#achievementIcon1 {
+	display:none;
+}
+
+#achievementIcon2 {
+	display:none;
+}
+#achievementIcon3 {
+	display:none;
+}
+
 .AchievementBlocks {
 	border: 5px ridge gold;
 	width: 75%;
@@ -32,6 +43,7 @@ background: linear-gradient(to right, #000000 , #434343); /* W3C, IE 10+/ Edge, 
 	margin-top: -15px;
 	float: left;
 	overflow: hidden;
+	background: white;
 }
 
 .progressionBadge {

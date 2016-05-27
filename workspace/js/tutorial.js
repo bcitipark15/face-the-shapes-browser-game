@@ -7,7 +7,7 @@ function classicHelper(page) {
 	switch(page){
 		case 0:
 			levelLoad(0,0,1); 
-			$('#classicHelpContainer').css('display', 'initial');
+			$('#helpContainer').css('display', 'initial');
 			$('#overlay').css('display', 'initial');
 			$('#classicHelp1').css('display', 'initial');
 			$('#classicHelp2').css('display', 'none');
@@ -136,12 +136,38 @@ function classicHelper(page) {
 		case 5:
 			screenChange('gameMode');
 			$('#classicHelp5').css('display', 'none');
-			$('#classicHelpContainer').css('display', 'none');
+			$('#helpContainer').css('display', 'none');
 			$('#overlay').css('display', 'none');
 			$('#proceed').css('display', 'none');
 			$('#endHelp').css('display', 'none');
 			currentPage = 0;
 			helperMode = 0;
+	}
+}
+
+/**
+ * Time attack mode tutorial screen activator.
+ * @param {int} indicate which page is currently being referred to.
+ */
+function timeHelper(page) {
+	helperMode = 2;
+	switch(page){
+		case 0:
+			levelLoad(0,0,1); 
+			$('#helpContainer').css('display', 'initial');
+			$('#overlay').css('display', 'initial');
+			$('#classicHelp1').css('display', 'initial');
+			$('#classicHelp2').css('display', 'none');
+			$('#proceed').css('display', 'initial');
+			$('#preceed').css('display', 'none');
+			$('#cubeContainer').css({
+				'z-index' 	: '0',
+				'position'	: 'relative',
+				'left'		: '0',
+				'right'		: '0', 
+				'margin'	: "auto"
+			});
+			break;
 	}
 }
 
@@ -155,10 +181,16 @@ function nextPage(direction) {
 		if (helperMode == 1) {
 			classicHelper(currentPage);
 		}
+		if (helperMode == 2) {
+			timeHelper(currentPage);
+		}
 	} else if (direction == 'previous') {
 		currentPage--;
 		if (helperMode == 1) {
 			classicHelper(currentPage);
+		}
+		if (helperMode == 2) {
+			timeHelper(currentPage);
 		}
 	}
 }
