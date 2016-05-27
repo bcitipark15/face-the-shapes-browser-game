@@ -1,28 +1,33 @@
+/*Container for the achievements screen*/
 #achievements {
-	
-
 background: #000000; /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #000000 , #434343); /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #000000 , #434343); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         
 }
 
+/*Creates some space between the title and content*/
 #achievementContent {
 	margin-top: 40px;
 	
 }
 
+/*Initially do not display the achievement icon*/
 #achievementIcon1 {
 	display:none;
 }
 
+/*Initially do not display the achievement icon*/
 #achievementIcon2 {
 	display:none;
 }
+
+/*Initially do not display the achievement icon*/
 #achievementIcon3 {
 	display:none;
 }
 
+/*Style the block for each achievement*/
 .AchievementBlocks {
 	border: 5px ridge gold;
 	width: 75%;
@@ -34,6 +39,7 @@ background: linear-gradient(to right, #000000 , #434343); /* W3C, IE 10+/ Edge, 
 	background-image: linear-gradient(to left, rgb(255, 179, 71), rgb(255, 204, 51));
 }
 
+/*Style the badge for each of the achievements*/
 .badge {
 	border: 3px ridge black;
 	height: 80px;
@@ -46,6 +52,7 @@ background: linear-gradient(to right, #000000 , #434343); /* W3C, IE 10+/ Edge, 
 	background: white;
 }
 
+/*Style the progression badge*/
 .progressionBadge {
 	text-align: center;
 	border: 3px ridge black;
@@ -58,6 +65,7 @@ background: linear-gradient(to right, #000000 , #434343); /* W3C, IE 10+/ Edge, 
 	background-color: gold;	
 }
 
+/*The div containing the image of the badge*/
 #progressBadgeHolder {	
 
 	background: url("../image/orangeGemBadge.png");
@@ -70,17 +78,15 @@ background: linear-gradient(to right, #000000 , #434343); /* W3C, IE 10+/ Edge, 
 	zoom: 0.8;
 }
 
+/*Style the description of each achievement*/
 .description {
 	text-align: center;
 	margin-top: 13px;
 }
 
+/*Styles the title of each achievement*/
 #achievements h3 {
 	margin-top: 0px;
 	text-align: center;
 	margin-left: 60px;
-}
-
-h1 {
-	text-align: center;
 }
