@@ -11,8 +11,18 @@ body {
 	border-radius: 0px;
 }
 
+.bottomRight {
+    bottom: 4%;
+}
+
+.bottomLeft {
+	bottom: 4%;
+}
 #titleCubeContainer {
     zoom: 0.8;
+	float: left;
+	margin-top: 3%;
+	margin-left: 4%;
 }
 
 #classicHelp {

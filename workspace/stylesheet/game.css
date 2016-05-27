@@ -19,7 +19,9 @@ ul {
     text-align: center;
 }
 
-
+ul li {
+	z-index: 999;
+}
 /** Section is what will display to the user **/
 section {
     width: 100%;
@@ -350,7 +352,7 @@ section {
 /* To keep the nav on the bottom */
 .bottomNav {
     position: absolute;
-    bottom: 0%;
+    bottom: 2%;
     left: 0%;
     right: 0%;
     padding-top: 3%;
@@ -368,11 +370,13 @@ section {
     left: 0%;
     height: 65%;
     width: 90%;
+	z-index: 1;
 }
 
 /* foldout is the actual fold out container */
 #foldout {
     margin: auto;
+	
 }
 
 /* Where the cube is placed**/
