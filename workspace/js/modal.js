@@ -57,7 +57,7 @@ function modalCorrect() {
 	}
 	
 	if(scoreModeFlag){
-		var additionalInfo = '<p style="color: green;"> +30 seconds <br> +' + scoreBase + ' points!</p>';
+		var additionalInfo = '<p style="color: green; text-align: center; font-size: 50px;"> +30 seconds <br> +' + scoreBase + ' points!</p>';
 		var levelSelectButton = ''
 		var nextLevelButton = '<li><button class="buttonDesign" onclick="levelLoad(' 
 								+ Math.floor(level/3) % 10//Minimum foldout type
@@ -91,7 +91,7 @@ function modalIncorrect() {
 	var answerButton = '<li><button class="buttonDesign " onclick="screenChange(\'answerScreen\');showAnswer();hideModal();">answer</button></li>'
 	
 	if(timeModeFlag){
-		var additionalInfo = '<p style="color: red;"> +20 seconds!</p>';
+		var additionalInfo = '<p style="color: red; text-align: center; font-size: 50px;"> +20 sec </p>';
 		var answerButton = ''
 	}
 	
@@ -150,6 +150,10 @@ function modalArrow() {
 							+ 	'</div>');
 	
 	displayModal();
+}
+/* Work In progress */
+function modalColor() {
+	
 }
 
 function compDiffSelect(mode){
