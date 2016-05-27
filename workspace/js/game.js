@@ -317,6 +317,6 @@ function compareAnswer(){
 	$('#mode2D div.topNav').append('<button class="buttonDesign floatRight menuBSize" onclick="screenChange(\'answerScreen\');">Answer</button>');
 	$('#mode2D div.topNav').append('<button class="buttonDesign floatLeft menuBSize" onclick="screenChange(\'mode3D\');">To 3D</button>');
 	$('#mode2D div.bottomNav').html('');
-	$('#mode2D div.bottomNav').append('<button class="buttonDesign floatRight menuBSize" onclick="screenChange(\'levelSelect\');resizeGame();">Levels</button>'
+	$('#mode2D div.bottomNav').append('<button class="buttonDesign floatRight menuBSize" onclick="lockLevelButtons(); screenChange(\'levelSelect\');resizeGame();">Levels</button>'
 									+ '<button class="buttonDesign floatLeft menuBSize" onclick="screenChange(\'mainMenu\');resizeGame();">Menu</button>');
 }
