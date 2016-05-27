@@ -17,12 +17,22 @@ function navBar() {
 
 function lockLevelButtons(){
 	for(var i = 1; i <= 15;i++){
-		if(i > levelStandardHigh){
-			$('p#level' + i).removeClass('levelButton');
-			$('p#level' + i).addClass('levelDeadBtn');
+		if(difficultyNum == 0){
+			if(i > levelStandardHigh){
+				$('p#level' + i).removeClass('levelButton');
+				$('p#level' + i).addClass('levelDeadBtn');
+			} else {
+				$('p#level' + i).removeClass('levelDeadBtn');
+				$('p#level' + i).addClass('levelButton');
+			}
 		} else {
-			$('p#level' + i).removeClass('levelDeadBtn');
-			$('p#level' + i).addClass('levelButton');
+			if(i > levelAdvancedHigh){
+				$('p#level' + i).removeClass('levelButton');
+				$('p#level' + i).addClass('levelDeadBtn');
+			} else {
+				$('p#level' + i).removeClass('levelDeadBtn');
+				$('p#level' + i).addClass('levelButton');
+			}
 		}
 	}
 }
@@ -261,6 +271,7 @@ function setDifficulty(num){
 			break;
 	}
 	alert(difficultyNum);
+	lockLevelButtons();
 	$('#setDifficulty').text(difficulty);
 }
 
