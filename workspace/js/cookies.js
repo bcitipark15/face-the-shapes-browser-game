@@ -127,6 +127,11 @@ function setBadgeAdvanced() {
 function resetCookies() {
 
 	setCookies("badgeLevel", 0, 365);
+	setCookies("badgeAdvancedLevel", 0, 365);
+	setCookies("achievementOne", false, 365);
+	setCookies("achievementTwo", false, 365);
+	setCookies("achievementThree", false, 365);
+	setCookies("achievementFour", false, 365);
 }
 
 function setAchievement(number, state) {
@@ -145,7 +150,6 @@ function setAchievement(number, state) {
 
 function getAchievement(number) {
 
-	alert("get called");
 	if (number == 1) {
 		var a = getCookies("achievementOne");
 		if (a == 'true') {
