@@ -40,12 +40,18 @@ function unlockSpeedy(){
 function displayAchievements(){
 	if(getAchievement(1)){
 		$('#achievementIcon1').css('display','initial');
+	} else {
+		$('#achievementIcon1').css('display','none');
 	}
 	if(getAchievement(2)){
 		$('#achievementIcon2').css('display','initial');
+	} else {
+		$('#achievementIcon2').css('display','none');
 	}
 	if(getAchievement(3)){
 		$('#achievementIcon3').css('display','initial');
+	} else {
+		$('#achievementIcon2').css('display','none');
 	}
 	
 }
