@@ -33,6 +33,7 @@ button {
     border-radius: 0.3rem;
     transition: color 0.2s, background-color 0.2s, border-color 0.2s;
 }
+
 .buttonDesign:hover {
 	color: rgba(255, 255, 255, 0.8);
 	background-color: rgba(255, 255, 255, 0.2);
@@ -71,13 +72,24 @@ button {
 }
 
 /* The settings button */
-.gear {
-    background-image: url("../image/gears.png");
+.cogwheel {
+    background-image: url("../image/cogwheels/03.png");
     background-repeat: no-repeat;
     background-position: center;
-    height: 20px;
-    width: 20px;
 }
+
+.cogwheel:hover {
+    background-image: url("../image/cogwheels/03_hovered.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#settingsButton {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    box-shadow: none;
+}
+
 .levelsButton {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	cursor: pointer;
