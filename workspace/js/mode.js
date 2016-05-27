@@ -278,6 +278,9 @@ function drawTimer(){
 function drawCountdownTimer(){
 	time--;
 	$('#timer').text(time);
+	if(helperMode != 0 && time < 2){
+		clearTimer();
+	}
 	if(time <= 0){
 		endGame();
 		clearTimer();

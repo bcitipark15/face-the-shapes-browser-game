@@ -369,6 +369,7 @@ function scoreHelper(page) {
 			break;			
 		case 4:
 			screenChange('gameMode');
+			clearTimer();
 			$('#scoreHelp4').css('display', 'none');
 			$('#helpContainer').css('display', 'none');
 			$('#overlay').css('display', 'none');
