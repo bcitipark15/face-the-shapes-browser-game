@@ -14,20 +14,6 @@ body {
 	border-radius: 0px;
 }
 
-#titleCubeContainer {
-    zoom: 0.8;
-    -moz-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    -o-transform: scale(0.8);
-}
-
-#cubeContainer {
-    zoom: 0.8;
-    -moz-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    -o-transform: scale(0.8);
-}
-
 #mode3D {
 	touch-action: none;
 }
@@ -65,80 +51,10 @@ body {
 	}
 }
 
-/* Position badges on the left */
-#badges {
+/* Zoom out content on mobile */
+.zoomOutOnMobile {
     zoom: 0.8;
     -moz-transform: scale(0.8);
     -webkit-transform: scale(0.8);
-    -o-transform: scale(0.8);
-}
-
-#classicHelp1 div {
-    zoom: 0.8;
-    -moz-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    -o-transform: scale(0.8);
-}
-
-#classicHelp2 div{
-    zoom: 0.8;
-    -moz-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    -o-transform: scale(0.8);
-}
-
-#classicHelp3 div{
-    zoom: 0.8;
-    -moz-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    -o-transform: scale(0.8);
-}
-
-#classicHelp4 div {
-    zoom: 0.8;
-    -moz-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    -o-transform: scale(0.8);
-}
-
-#classicHelp5 div {
-    zoom: 0.8;
-    -moz-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    -o-transform: scale(0.8);
-}
-
-#classicHelp6 div {
-    zoom: 0.8;
-    -moz-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    -o-transform: scale(0.8);
-}
-
-#timeHelp1 div {
-    zoom: 0.8;
-    -moz-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    -o-transform: scale(0.8);
-}
-
-#timeHelp2 div {
-    zoom: 0.8;
-    -moz-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    -o-transform: scale(0.8);
-}
-
-#timeHelp3 div {
-    zoom: 0.8;
-    -moz-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    -o-transform: scale(0.8);
-}
-
-.AchievementBlocks {
-    zoom: 0.8;
-    -moz-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    -o-transform: scale(0.8);
+    -o-transform: scale(0.8); 
 }
