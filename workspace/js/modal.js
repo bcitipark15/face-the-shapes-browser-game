@@ -103,7 +103,7 @@ function modalIncorrect() {
 	}
 	
 	if(scoreModeFlag){
-		var additionalInfo = '<p style="color: red;"> -25 points!</p>';
+		var additionalInfo = '<p style="color: red; text-align: center; font-size: 50px;"> -25 points!</p>';
 		var answerButton = ''
 	}
 	$('.modalContent').append('<h1>' + msg + '</h1>' 

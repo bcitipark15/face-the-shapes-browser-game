@@ -55,3 +55,13 @@
     background-color: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.3);
 }
+
+@media screen and (max-width: 40em) {
+    .leaderboards {
+        width: 100%;
+    }
+    
+    #leaderboard > div > nav li {
+        float: none;
+    }
+}
