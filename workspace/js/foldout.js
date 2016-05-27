@@ -87,7 +87,7 @@ function scaleDifficulty(numAnswers){
 	while(blankCount + numAnswers != 5){
 		var newBlank = Math.floor(Math.random() * faceArray.length);
 		//if selected face is not a pivot, turn it into a blank. If it's already blank, reselect.
-		if(faceArray[newBlank].trueColor !== 'black' && faceArray[newBlank].trueValue != 4){
+		if(faceArray[newBlank].trueColor !== pivotColor && faceArray[newBlank].trueValue != 4){
 			faceArray[newBlank].trueValue = 4;
 			blankCount++;
 		}
@@ -224,10 +224,10 @@ function foldoutT(foldoutNum, numAnswers){
 	
 	//Image centering happens after all images are applied.
 	if(easterEggTwoActivate){
-		$('.foldoutFace').children().css({'position':'absolute','left':'0','right':'0','bottom':'0','top':'0','margin':'auto'})
-	}
-	//Alter image size.
-	$('.foldoutFace').children().css({'height': size, 'width': size});
+        $('#cube figure').children().css({'position':'absolute','left':'0','right':'0','bottom':'0','top':'0','margin':'auto'})
+    } else {
+        $('.foldoutFace').children().css({'height': size, 'width': size});
+    }
 	//Alter image container size.
 	//$('.foldoutFace').css({'width': size, 'height': size, 'border': 'solid 5px black'});
 }
