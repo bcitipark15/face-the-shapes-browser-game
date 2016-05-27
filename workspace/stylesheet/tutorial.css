@@ -1,3 +1,18 @@
+#overlay,
+#proceed,
+#preceed,
+#endHelp,
+#helpContainer,
+#classicHelp1,
+#classicHelp2,
+#classicHelp3,
+#classicHelp4,
+#classicHelp5,
+#timeHelp1, 
+#timeHelp2, 
+#timeHelp3 {
+    display: none;
+}
 
 #overlay {
     position: absolute;
@@ -8,37 +23,40 @@
     opacity: 0.7;
 }
 
-#classicHelpContainer {
+#helpContainer {
     position: relative;
     width: 100%;
     height: 100%;
     float: left;
 }
 
-.classicHelp {
+.helperDiv {
     position: absolute;
     width: 100%;
     height: 100%;
     z-index: 3;
 }
 
-
-#classicHelp1 div{
-    width: 300px;
-    height: 200px;
+.helperDiv div {
     padding: 30px;
     font-size: 1.3em;
     text-align: center;
     color: #EEE;
     position: absolute;
     z-index: 4;
+    border: 5px solid #EEE;
+    background: linear-gradient(240deg, #082445, #084524);
+}
+
+
+#classicHelp1 div{    
+    width: 300px;
+    height: 200px;
     bottom: 0;
     top: 0;
     right: 0;
     left: 0;
     margin: auto;
-    border: 5px solid #EEE;
-    background: linear-gradient(240deg, #082445, #084524);
     border-radius: 10%;
 }
 
@@ -49,18 +67,10 @@
 #classicHelp2 div{
     width: 300px;
     height: 150px;
-    padding: 30px;
-    text-align: center;
-    font-size: 1.3em;
-    color: #EEE;
-    position: absolute;
-    z-index: 4;
     bottom: 70px;
     right: 0;
     left: 0;
     margin: auto;
-    border: 5px solid #EEE;
-    background: linear-gradient(240deg, #082445, #084524);
     border-radius: 5%;
 }
 
@@ -68,55 +78,32 @@
     width: 300px;
     height: 150px;
     padding: 30px;
-    text-align: center;
-    font-size: 1.3em;
-    color: #EEE;
-    position: absolute;
-    z-index: 4;
     bottom: 0;
     top: 0;
     right: 0;
     left: 0;
     margin: auto;
-    border: 5px solid #EEE;
-    background: linear-gradient(240deg, #082445, #084524);
     border-radius: 5%;
 }
 
 #classicHelp4 div{
     width: 280px;
     height: 140px;
-    padding: 30px;
-    text-align: center;
-    font-size: 1.3em;
-    color: #EEE;
-    position: absolute;
-    z-index: 4;
     bottom: 70px;
     right: 0;
     left: 0;
     margin: auto;
-    border: 5px solid #EEE;
-    background: linear-gradient(240deg, #082445, #084524);
     border-radius: 5%;
 }
 
 #classicHelp5 div{
     width: 280px;
     height: 140px;
-    padding: 30px;
-    text-align: center;
-    font-size: 1.3em;
-    color: #EEE;
-    position: absolute;
-    z-index: 4;
     bottom: 0;
     top: 0;
     right: 0;
     left: 0;
     margin: auto;
-    border: 5px solid #EEE;
-    background: linear-gradient(240deg, #082445, #084524);
     border-radius: 5%;
 }
 

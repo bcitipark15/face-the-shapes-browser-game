@@ -67,19 +67,26 @@
 		<!-- Container for the shown screen -->
         <div id="gameContainer">
 			
+			<!-- A layer to darken the game screen during tutorial -->
 			<div id="overlay"></div>
 			
-			<div id="classicHelpContainer">
-				<!-- Tutorial instructions -->
-		        <div class="classicHelp" id="classicHelp1"><div><h1>Objective</h1><br><p>Study the cube in 3D</p><br><p>Map it onto 2D foldout</p></div></div>
+			<!-- Contain all tutorial messages for all modes -->
+			<div id="helpContainer">
+				<!-- Tutorial instructions and buttons-->
+		        <div class="helperDiv" id="classicHelp1"><div><h1>Objective</h1><br><p>Study the cube in 3D</p><br><p>Map it onto 2D foldout</p></div></div>
+		        <div class="helperDiv" id="classicHelp2"><div><h1>Examine</h1><br><p>Click and drag to rotate</p><br><p>Black arrow is a reference</p></div></div>
+		        <div class="helperDiv" id="classicHelp3"><div><h1>Next</h1><br><p>When ready, click the 2D </p><br><p>button to input answer</p></div></div>
+		        <div class="helperDiv" id="classicHelp4"><div><p>Click foldout for arrow</p><br><p>Color is for advanced</p><br><p>Submit when ready</div></div>
+		        <div class="helperDiv" id="classicHelp5"><div><h1>Well Done!</h1><p>That's it for classic mode!</p></div></div>
+		        
+		        <div class="helperDiv" id="timeHelp1"><div><h1>Objective</h1><br><p>Study the cube in 3D</p><br><p>Map onto multiple foldout ASAP.</p></div></div>
+
 		        <div id="proceed" onclick="nextPage('next');">></div>
 		        <div id="preceed" onclick="nextPage('previous');"><</div>
-		        <div class="classicHelp" id="classicHelp2"><div><h1>Examine</h1><br><p>Click and drag to rotate</p><br><p>Black arrow is a reference</p></div></div>
-		        <div class="classicHelp" id="classicHelp3"><div><h1>Next</h1><br><p>When ready, click the 2D </p><br><p>button to input answer</p></div></div>
-		        <div class="classicHelp" id="classicHelp4"><div><p>Click foldout for arrow</p><br><p>Color is for advanced</p><br><p>Submit when ready</div></div>
-		        <div class="classicHelp" id="classicHelp5"><div><h1>Well Done!</h1><p>That's it for classic mode!</p></div></div>
 		        <div id="endHelp" onclick="nextPage('next');">end</div>
 		    </div>
+
+
 			
 			<!-- Badges division -->
 			<section id="badges">
@@ -253,11 +260,11 @@
                 <h1 class="title">Game Mode</h1>
 				
                 <ul>
-                    <li><button class="buttonDesign menuBSize" onclick="screenChange('levelSelect'); selectMode('classic'); buttonClick()">Classic</button> <div class="help" onclick="screenChange('mode3D'); selectMode('classic'); classicHelper(0);">?</div> </li>
-                    <li><button class="buttonDesign menuBSize" onclick="compDiffSelect('time');">Time Attack</button><div id="timeHelp" class="help">?</div> </li>
+                    <li><button class="buttonDesign menuBSize" onclick="screenChange('levelSelect'); selectMode('classic'); buttonClick()">Classic</button> <div class="help" onclick="screenChange('mode3D'); selectMode('classic'); classicHelper(0);">?</div></li>
+                    <li><button class="buttonDesign menuBSize" onclick="compDiffSelect('time');">Time Attack</button><div id="timeHelp" class="help" onclick="screenChange('mode3D'); selectMode('time'); timeHelper(0);">?</div></li>
 				</ul>
 				<ul>
-                    <li><button class="buttonDesign menuBSize" onclick="compDiffSelect('score');">Score Attack</button><div class="help" id="scoreHelp">?</div> </li>
+                    <li><button class="buttonDesign menuBSize" onclick="compDiffSelect('score');">Score Attack</button><div class="help" id="scoreHelp">?</div></li>
                     <li><button id="easterEggTwo" class="buttonDesign menuBSize" onclick="easterEggTwo(); screenChange('mainMenu'); buttonClick()">Death</button></li>
                 </ul>
 			</section>
