@@ -231,7 +231,7 @@ function colorChanger(){
 function setDifficulty(num){
 	
 	if(num){
-		difficultyNum = num;
+		difficultyNum = parseInt(num);
 	} else {
 		difficultyNum = (difficultyNum + 1) % 2;
 	}
