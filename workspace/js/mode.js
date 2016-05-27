@@ -245,7 +245,7 @@ function startTimeMode(){
  */
 function updateScore(value){
 	score += value;
-	$('#score p').text(score);
+	$('#score').text(score);
 }
 
 /**
