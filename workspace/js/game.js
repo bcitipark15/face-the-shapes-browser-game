@@ -197,10 +197,15 @@ function resizeGame(){
 	}
 	//Size is a portion of the screen to allow the full foldout to fit.
 	size = Math.floor(axis/4);
-	$('#foldout').css('border-collapse','collapse');
-	$('#foldout tr td').children().css({'width': size, 'height': size, 'border': 'solid 5px black'});
-	
-	$('#foldout tr td div').children().css({'width': size, 'height': size});
+	if($('#foldoutScreen').width() > $('#correctAnswer').width()){
+		$('#foldout').css('border-collapse','collapse');
+		$('#foldout tr td').children().css({'width': size, 'height': size, 'border': 'solid 5px black'});
+		$('#foldout tr td div').children().css({'width': size, 'height': size});
+	} else {
+		$('#foldoutClone').css('border-collapse','collapse');
+		$('#foldoutClone tbody tr td').children().css({'width': size, 'height': size, 'border': 'solid 5px black'});
+		$('#foldoutClone tbody tr td div').children().css({'width': size, 'height': size});
+	}
 }
 
 /**
