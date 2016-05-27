@@ -50,6 +50,9 @@ body {
 #mode3D {
 	touch-action: none;
 }
+#levelSelect {
+	touch-action: none;
+}
 .levelContainer {
 	padding-top: 2%;
 	padding-left: 3%;

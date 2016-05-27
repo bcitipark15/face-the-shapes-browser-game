@@ -172,6 +172,7 @@ function classicHelper(page) {
  */
 function timeHelper(page) {
 	helperMode = 2;
+	clearTimer();
 	switch(page){
 		case 0:
 			$('#helpContainer').css('display', 'initial');
@@ -256,6 +257,7 @@ function timeHelper(page) {
  */
 function scoreHelper(page) {
 	helperMode = 3;
+	clearTimer();
 	switch(page){
 		case 0:
 			$('#helpContainer').css('display', 'initial');
