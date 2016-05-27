@@ -70,9 +70,6 @@ var helperMode = 0;
 //Set screens up for answer mode.
 var answerMode = false;
 
-//Highest level of advance mode unlocked.
-var levelAdvancedHigh = 1;
-
 //Base score added on completing score attack mode level.
 var scoreBase = 100;
 

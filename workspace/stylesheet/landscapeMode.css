@@ -89,3 +89,6 @@ body {
 #achievements {
 	overflow: scroll;
 }
+#settingContent {
+	margin-top: 10%;
+}
