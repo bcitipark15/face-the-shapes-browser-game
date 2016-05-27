@@ -273,7 +273,6 @@ function setDifficulty(num){
 			updateBadge('advanced', levelAdvancedHigh - 1 );
 			break;
 	}
-	alert(difficultyNum);
 	lockLevelButtons();
 	$('#setDifficulty').text(difficulty);
 }

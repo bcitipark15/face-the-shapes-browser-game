@@ -47,8 +47,6 @@ function updateBadge(mode, lv) {
 function checkCookies() {
 	
 	var badge	= getCookies("badgeLevel");
-	/*
-	alert("checkCookies = True\nbadge = " + badge);*/
 
 	if (badge != "") {
 			updateBadge('standard', badge);
@@ -58,8 +56,6 @@ function checkCookies() {
 	}
 
 	var aBadge	= getCookies("badgeAdvancedLevel");
-		/*
-	alert("checkCookies = True\nAdvanced badge = " + aBadge);*/
 
 	if (aBadge != "") {
 			updateBadge('advanced', aBadge);
@@ -70,27 +66,20 @@ function checkCookies() {
 }
 
 // Set the current level of standard mode to lv selected
-function setLevel(lv) {/*
-	alert("setLevel called");*/
+function setLevel(lv) {
 	if (difficultyNum == 0) {
-		if (lv <= levelStandardHigh) { /*
-			alert("level difference sensed");*/
+		if (lv <= levelStandardHigh) {
 			currentLevel = lv;
 			standardMode = true;
 			advancedmode = false;
 			screenChange('mode3D')
-		} else {
-			alert("Level Locked");
 		}
 	} else if (difficultyNum == 1) {
-		if (lv <= levelAdvancedHigh) { /*
-			alert("level difference sensed");*/
+		if (lv <= levelAdvancedHigh) {
 			currentLevel = lv;
 			advancedMode = true;
 			standardMode = false;
 			screenChange('mode3D')
-		} else {
-			alert("Level Locked");
 		}
 	}
 }
@@ -101,8 +90,7 @@ function setBadgeStandard() {
 	*/
 	var badge = getCookies("badgeLevel");
 	if (badge < currentLevel) {
-		setCookies("badgeLevel", currentLevel, 365);/*
-		alert("low level detected and set success");*/
+		setCookies("badgeLevel", currentLevel, 365);
 		levelStandardHigh = currentLevel + 1;
 		$(".badgeOfCurrentHigh").html('');
 		$(".badgeOfCurrentHigh").append(currentLevel);
@@ -117,8 +105,7 @@ function setBadgeAdvanced() {
 	var aBadge = getCookies("badgeAdvancedLevel");
 
 	if (aBadge < currentLevel) {
-		setCookies("badgeAdvancedLevel", currentLevel, 365);/*
-		alert("low level detected and set success");*/
+		setCookies("badgeAdvancedLevel", currentLevel, 365);
 		levelAdvancedHigh = currentLevel + 1;
 		updateBadge('advanced', currentLevel);
 
@@ -139,7 +126,6 @@ function resetCookies() {
 
 function setAchievement(number, state) {
 
-	alert("set called");
 	if (number == 1) {
 		setCookies("achievementOne", state, 365);
 	} else if (number == 2) {
