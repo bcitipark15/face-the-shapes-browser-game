@@ -21,17 +21,19 @@ function navBar() {
 function screenChange(screen) {
 	var x = document.getElementsByTagName('section');
 	for (var i = 0; i < x.length; i++) {
-        x[i].style.display = "none"; 
+        x[i].style.display = 'none'; 
     }
     document.getElementById(screen).style.display = "block"; 
-    if (screen != "mainMenu") {
+    if (screen == 'gameMode' || screen == 'levelSelect' || screen == 'mode3D' || screen == 'mode2D' || screen == 'answerScreen') {
     	document.getElementById("badges").style.display = "block";
     	if (difficultyNum == 0) {
     		updateBadge('standard', (levelStandardHigh - 1));
     	} else if (difficultyNum == 1) {
     		updateBadge('advanced', (levelAdvancedHigh - 1));
     	}
-    }
+    } else {
+		document.getElementById("badges").style.display = "none";
+	}
 }
 
 /** 

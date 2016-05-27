@@ -126,6 +126,18 @@ section {
 .messageBox {
 	position: absolute;
     bottom: 0%;
+    top: 15%;
+    right: 0%;
+    left: 0%;
+    width: 90%;
+	height: 65%;
+	font-size: 40px;
+	margin: auto;
+}
+
+#correctAnswer {
+	position: absolute;
+    bottom: 0%;
     top: 0%;
     right: 0%;
     left: 0%;
@@ -134,6 +146,7 @@ section {
 	font-size: 40px;
 	margin: auto;
 }
+
 #foldoutClone {
 	margin: auto;
 }
