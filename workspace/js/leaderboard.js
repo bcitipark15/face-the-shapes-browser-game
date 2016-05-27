@@ -129,7 +129,7 @@ $(function() {
 	$("#tabs").tabs();
 });
 
-function tabFocus(id){
-    $('#leaderboardTabs li').children().removeClass('testDeadBtn');
-    $('#' + id).addClass('testDeadBtn');
+function activeTab(id){
+    $('#leaderboardTabs li').children().removeClass('activeTab');
+    $('#' + id).addClass('activeTab');
 }
