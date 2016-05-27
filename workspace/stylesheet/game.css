@@ -19,8 +19,8 @@ body {
 html {
     position: fixed;
     width: 100%;
-    background-color: #159957;
-    background-image: linear-gradient(120deg, #155799, #159957);
+    background-color: #EEEEEE;
+    background-image: linear-gradient(120deg, #082345, #084523);
 }
 
 /** A list containing the buttons **/
@@ -82,6 +82,8 @@ section {
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
+    background-color: #159957;
+    background-image: linear-gradient(120deg, #155799, #159957);
 }
 
 /* Position badges on the left */
