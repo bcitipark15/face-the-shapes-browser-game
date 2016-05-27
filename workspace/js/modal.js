@@ -157,8 +157,8 @@ function compDiffSelect(mode){
 	$('.modalContent').html('');
 	$('.modalContent').append('<h1>Select Difficulty</h1>'
 							+	'<ol>' 
-							+		'<li><button id="modalStd" class="testDeadBtn menuBSize" onclick="setDifficulty(0);compDiffSelectButtonChange();">Standard</button></li>'
-							+		'<li><button id="modalAdv" class="buttonDesign menuBSize" onclick="setDifficulty(1);compDiffSelectButtonChange();">Advance</button></li>'
+							+		'<li><button id="modalStd" class="testDeadBtn menuBSize" onclick="setDifficulty(\'0\');compDiffSelectButtonChange();">Standard</button></li>'
+							+		'<li><button id="modalAdv" class="buttonDesign menuBSize" onclick="setDifficulty(\'1\');compDiffSelectButtonChange();">Advance</button></li>'
 							+		'<li><button class="buttonDesign menuBSize" onclick="screenChange(\'mode3D\'); selectMode(\'' + mode + '\');hideModal();">Start!</button></li>'
 							+	'</ol>');
 	displayModal();
@@ -166,10 +166,10 @@ function compDiffSelect(mode){
 
 function compDiffSelectButtonChange(){
 	if(difficultyNum == 0){
-		$('#modalStd').replaceWith('<button id="modalStd" class="testDeadBtn menuBSize" onclick="setDifficulty(0);compDiffSelectButtonChange();">Standard</button>');
-		$('#modalAdv').replaceWith('<button id="modalAdv" class="buttonDesign menuBSize" onclick="setDifficulty(1);compDiffSelectButtonChange();">Advance</button>');
+		$('#modalStd').replaceWith('<button id="modalStd" class="testDeadBtn menuBSize" onclick="setDifficulty(\'0\');compDiffSelectButtonChange();">Standard</button>');
+		$('#modalAdv').replaceWith('<button id="modalAdv" class="buttonDesign menuBSize" onclick="setDifficulty(\'1\');compDiffSelectButtonChange();">Advance</button>');
 	} else {
-		$('#modalStd').replaceWith('<button id="modalStd" class="buttonDesign menuBSize" onclick="setDifficulty(0);compDiffSelectButtonChange();">Standard</button>');
-		$('#modalAdv').replaceWith('<button id="modalAdv" class="testDeadBtn menuBSize" onclick="setDifficulty(1);compDiffSelectButtonChange();">Advance</button>');
+		$('#modalStd').replaceWith('<button id="modalStd" class="buttonDesign menuBSize" onclick="setDifficulty(\'0\');compDiffSelectButtonChange();">Standard</button>');
+		$('#modalAdv').replaceWith('<button id="modalAdv" class="testDeadBtn menuBSize" onclick="setDifficulty(\'1\');compDiffSelectButtonChange();">Advance</button>');
 	}
 }
