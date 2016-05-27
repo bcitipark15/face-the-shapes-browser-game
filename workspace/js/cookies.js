@@ -129,3 +129,29 @@ function resetCookies() {
 
 	setCookies("badgeLevel", 0, 365);
 }
+
+function setAchievement(number, state) {
+
+	if (number == 1) {
+		setCookies("achievementOne", state, 365);
+	} else if (number == 2) {
+		setCookies("achievementTwo", state, 365);
+	} else if (number == 3) {
+		setCookies("achievementThree", state, 365);
+	} else if (number == 4) {
+		setCookies("achievementFour", state, 365);
+	}
+}
+
+function getAchievement(number) {
+
+	if (number == 1) {
+		return getCookies("achievementOne");
+	} else if (number == 2) {
+		return getCookies("achievementTwo");
+	} else if (number == 3) {
+		return getCookies("achievementThree");
+	} else if (number == 4) {
+		return getCookies("achievementFour");
+	}	
+}
