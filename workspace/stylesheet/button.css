@@ -6,7 +6,7 @@ button {
 	font-family: juneGull;
 	cursor: pointer;
 	font-size: 20px;
-	padding: 20px;
+	padding: 18px;
 	margin-bottom: 1%;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	
@@ -15,7 +15,7 @@ button {
 .menuBSize {
     width: 47%;
 	max-width: 170px;
-	padding: 20px 0px;
+	padding: 18px 0px;
 }
 
 /*  B = Button **/

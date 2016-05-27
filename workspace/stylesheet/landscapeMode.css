@@ -1,6 +1,17 @@
 body {
-    margin: 0;
+	margin: 0;
     padding: 0;
+    position: fixed;
+    width: 100%;
+    height: 95%;
+}
+
+html {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #159957;
+    background-image: linear-gradient(120deg, #155799, #159957);
 }
 
 /** Change the game container to fit for mobile devices **/
@@ -11,6 +22,7 @@ body {
     max-height: 100%;
 	margin: 0%;
 	border-radius: 0px;
+	background: transparent;
 }
 
 .bottomRight {

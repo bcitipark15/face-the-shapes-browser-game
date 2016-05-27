@@ -105,6 +105,8 @@ function classicHelper(page) {
 				'bottom'	: '220px',
 				'right'		: '0'
 			});
+			$('#proceed').css('display', 'initial');
+			$('#endHelp').css('display', 'none');
 			break;
 
 		case 4:
@@ -193,6 +195,8 @@ function timeHelper(page) {
 			$('#timeHelp2').css('display', 'initial');
 			$('#timeHelp3').css('display', 'none');
 			$('#preceed').css('display', 'initial');
+			$('#proceed').css('display', 'initial');
+			$('#endHelp').css('display', 'none');
 			break;
 			
 		case 2:
@@ -314,6 +318,9 @@ function scoreHelper(page) {
 			});	
 			$('#scoreHelp2').css('display', 'none');
 			$('#scoreHelp3').css('display', 'initial');
+			$('#scoreHelp4').css('display', 'none');
+			$('#proceed').css('display', 'initial');
+			$('#endHelp').css('display', 'none');
 			break;
 
 		case 3:
@@ -337,7 +344,6 @@ function scoreHelper(page) {
 				'right'		: '0', 
 				'bottom'	: '0'
 			});	
-			screenChange('gameMode');
 			$('#scoreHelp3').css('display', 'none');
 			$('#scoreHelp4').css('display', 'initial');
 			$('#proceed').css('display', 'none');

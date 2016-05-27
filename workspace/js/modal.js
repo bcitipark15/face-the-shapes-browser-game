@@ -3,14 +3,14 @@
  * Fade in the modal.
  */
 function modalFadeIn() {
-	$('#modalBox').fadeIn(400);
+	$('#modalBox').fadeIn(200);
 }
 
 /**
  * Face out the modal.
  */
 function modalFadeOut() {
-	$('#modalBox').fadeOut(400);
+	$('#modalBox').fadeOut(200);
 }
 
 /** 
@@ -18,7 +18,7 @@ function modalFadeOut() {
  */
 function displayModal() {
     modalFadeIn();
-	var timer = setTimeout(function() {document.getElementById('modalBox').style.display = 'block';}, 400);
+	var timer = setTimeout(function() {document.getElementById('modalBox').style.display = 'block';}, 200);
 }
 
 /** 
@@ -26,7 +26,7 @@ function displayModal() {
  */
 function hideModal() {
 	modalFadeOut();
-	var timer = setTimeout(function() {document.getElementById('modalBox').style.display = 'none';}, 400);
+	var timer = setTimeout(function() {document.getElementById('modalBox').style.display = 'none';}, 200);
 }
 
 /** 
