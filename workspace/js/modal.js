@@ -53,7 +53,12 @@ function modalCorrect() {
 	
 	if(timeModeFlag){
 		var levelSelectButton = ''
-		var nextLevelButton = '<li><button class="buttonDesign" onclick="levelLoad(2,4,' + (level + 1) + '); screenChange(\'mode3D\');hideModal();">Next</button></li>'
+		if(level >= numLevels){
+			clearInterval(timer);
+			var nextLevelButton = '<li><button class="buttonDesign" onclick="endGame();hideModal();">Done!</button></li>'
+		} else {
+			var nextLevelButton = '<li><button class="buttonDesign" onclick="levelLoad(2,4,' + (level + 1) + '); screenChange(\'mode3D\');hideModal();">Next</button></li>'
+		}
 	}
 	
 	if(scoreModeFlag){

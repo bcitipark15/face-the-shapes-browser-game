@@ -118,11 +118,6 @@ function validate(levelNumber){
 			//Give player additional time when level is completed.
 			time += 30;
 		}
-		if(timeModeFlag){
-			if(level > numLevels){
-				endGame();
-			}
-		}
 		level++;
 	} else {
 		modalIncorrect();
