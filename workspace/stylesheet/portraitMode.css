@@ -8,9 +8,10 @@ body {
 
 html {
     position: fixed;
+    height: 100%;
     width: 100%;
-    background-color: #EEEEEE;
-    background-image: linear-gradient(120deg, #082345, #084523);
+    background-color: #159957;
+    background-image: linear-gradient(120deg, #155799, #159957);
 }
 
 /** Change the game container to fit for mobile devices **/
@@ -21,6 +22,7 @@ html {
     max-height: 100%;
 	margin: 0%;
 	border-radius: 0px;
+	background: transparent;
 }
 
 #mode3D {
