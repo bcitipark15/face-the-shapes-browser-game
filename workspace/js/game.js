@@ -229,6 +229,7 @@ function colorChanger(){
  * @return {undefined}
  */
 function setDifficulty(num){
+	
 	if(num){
 		difficultyNum = num;
 	} else {
