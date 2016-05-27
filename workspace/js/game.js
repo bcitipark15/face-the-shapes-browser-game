@@ -45,6 +45,7 @@ window.addEventListener('orientationchange', navBar, false);
  */
 window.onresize = resizeGame;
 
+
 /**
  * levelLoad Loads the levels specifics once level is selected.
  * @param lowerBound The lowest foldout difficulty to be generated.
@@ -118,6 +119,9 @@ function validate(levelNumber){
 			updateScore(scoreBase);
 			//Give player additional time when level is completed.
 			time += 30;
+		}
+		if(timeModeFlag){
+			unlockSpeedy();
 		}
 		level++;
 	} else {

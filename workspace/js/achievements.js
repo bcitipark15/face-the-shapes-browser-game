@@ -28,9 +28,7 @@ function unlockScoringBig(){
 function unlockSpeedy(){
 	if(time < 30 && !getAchievement(3)){
 		setAchievement(3, true);
-		achievementSound();
 		setUnlock = true;
-		achievementModal(3);
 	}
 }
 

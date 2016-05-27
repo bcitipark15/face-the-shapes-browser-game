@@ -314,6 +314,10 @@ function endGame(){
 	}
 	if(timeModeFlag){
 		$('#resultScreen div.messageBox').append('<p>Your time: ' + time + '</p>');
+		if(setUnlock){
+			achievementSound();
+			achievementModal(3);
+		}
 	}
 	//Input field for name
 	$('#resultScreen div.messageBox').append('<br><p>Enter Your Name:</p>' +

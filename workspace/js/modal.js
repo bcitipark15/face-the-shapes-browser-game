@@ -195,14 +195,14 @@ function achievementModal(achivementNum) {
 			var achievementText = '<li><p>Solve your first cube</p></li>';
 			break;
 		case 2:
-			var achievementName = '<h1>The First Step</h1>';
-			var achievementImage = '<li><img src="./workspace/image/Quas.png" alt="achievement1" width="50%" height="50%"></li>';
-			var achievementText = '<li><p>Solve your first cube</p></li>';
+			var achievementName = '<h1>Scoring Big</h1>';
+			var achievementImage = '<li><img src="./workspace/image/Wex.png" alt="achievement1" width="50%" height="50%"></li>';
+			var achievementText = '<li><p>Score over 1000pts!</p></li>';
 			break;
 		case 3:
-			var achievementName = '<h1>The First Step</h1>';
-			var achievementImage = '<li><img src="./workspace/image/Quas.png" alt="achievement1" width="50%" height="50%"></li>';
-			var achievementText = '<li><p>Solve your first cube</p></li>';
+			var achievementName = '<h1>Speedy the<br>Speedster</h1>';
+			var achievementImage = '<li><img src="./workspace/image/Exort.png" alt="achievement1" width="50%" height="50%"></li>';
+			var achievementText = '<li><p>Solve a cube in under 30 seconds!</p></li>';
 			break;
 	}
 	$('.modalContent').append(achievementName
