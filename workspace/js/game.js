@@ -15,6 +15,19 @@ function navBar() {
 	$('#gameContainer').css('height', Math.round(difference));
 }
 
+function lockLevelButtons(){
+	for(var i = 1; i <= 15;i++){
+		if(i > levelStandardHigh){
+			$('p#level' + i).removeClass('levelButton');
+			$('p#level' + i).addClass('levelDeadBtn');
+		} else {
+			$('p#level' + i).removeClass('levelDeadBtn');
+			$('p#level' + i).addClass('levelButton');
+		}
+	}
+}
+
+
 /** 
  * Will perform the screen change by removing the current and display the next. 
  */

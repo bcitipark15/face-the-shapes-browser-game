@@ -250,7 +250,7 @@
                 <h1 class="title">Game Mode</h1>
 				
                 <ul>
-                    <li><button class="buttonDesign menuBSize" onclick="screenChange('levelSelect'); selectMode('classic'); buttonClick()">Classic</button> <div class="help" onclick="screenChange('mode3D'); selectMode('classic'); classicHelper(0); buttonClick();">?</div></li>
+                    <li><button class="buttonDesign menuBSize" onclick="screenChange('levelSelect'); lockLevelButtons(); selectMode('classic'); buttonClick()">Classic</button> <div class="help" onclick="screenChange('mode3D'); selectMode('classic'); classicHelper(0); buttonClick();">?</div></li>
                     <li><button class="buttonDesign menuBSize" onclick="compDiffSelect('time'); buttonClick()">Time Attack</button><div id="timeHelp" class="help" onclick="screenChange('mode3D'); selectMode('time'); timeHelper(0); buttonClick()">?</div></li>
 				</ul>
 				<ul>
