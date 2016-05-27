@@ -9,7 +9,7 @@ var easterEggTwoActivate = false;
  //Color array for face colors.
 var colors = ['red','lime','blue','purple','yellow','cyan','orange'];
 
-//Hard code 6 faces for cube
+//Hard code 6 faces for cubeR
 var faces = 6;
 
 //Array of objects that contain face info
@@ -56,7 +56,7 @@ var advancedMode = false;
 var difficultyNum = 0;
 
 //Image source for cube faces.
-var img = '<img src="./workspace/image/arrow3.png">';
+var img = '<img src="./workspace/image/arrow4.png">';
 
 //Selected color for basic mode
 var selectedColor = 'red'
