@@ -3,6 +3,7 @@
 require_once("dbHelper.php");
 //include_once("setRanks.php");
 
+/* Get top 10 scores in descending order with corresponding names. */
 $query = "SELECT name, score FROM score_point_std ORDER BY score DESC LIMIT 10";
 $queryResult = performQuery($query);
 

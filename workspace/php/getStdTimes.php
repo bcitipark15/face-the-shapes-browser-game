@@ -2,7 +2,8 @@
 
 require_once("dbHelper.php");
 
-$query = "SELECT name, score FROM score_time_std LIMIT 10";
+/* Get top 10 scores in ascending order with corresponding names. */
+$query = "SELECT name, score FROM score_time_std ORDER BY score LIMIT 10";
 $queryResult = performQuery($query);
 
 $i = 0;

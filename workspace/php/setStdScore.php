@@ -2,11 +2,11 @@
 
 require_once("dbHelper.php");
 
-// Store the values sent from the function inputHighScore into variables.
+// Store the values sent from the function setStdHighScore into variables.
 $name = ($_GET['name']);
 $score = intval($_GET['score']);
 
-// Query to insert the name and score values to the table 'scores'. 
+// Insert the name and score values to the table. 
 $query = "INSERT INTO score_point_std(name, score) VALUES('$name', '$score')";
 
 performQuery($query);
