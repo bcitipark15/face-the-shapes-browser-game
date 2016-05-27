@@ -36,8 +36,11 @@ function updateBadge(mode, lv) {
     }
 
 	$(".badgeOfCurrentHigh").html('');
-	$(".badgeOfCurrentHigh").append(lv);/*
-	alert("the level is " + lv);*/
+	if (lv != 0) {
+		$(".badgeOfCurrentHigh").append(lv);
+	} else {
+		document.getElementById("badges").style.display = "none";
+	}
 }
 
 // Check and change badge level completed on classic standard mode
