@@ -310,13 +310,14 @@ function endGame(){
 	//Change score message depending on mode
 	if(scoreModeFlag){
 		$('#resultScreen div.messageBox').append('<p>Your score: ' + score + '</p>');
+		unlockScoringBig();
 	}
 	if(timeModeFlag){
 		$('#resultScreen div.messageBox').append('<p>Your time: ' + time + '</p>');
 	}
 	//Input field for name
 	$('#resultScreen div.messageBox').append('<br><p>Enter Your Name:</p>' +
-											'<input type="text" id="username" name="username"style="z-index: 999; position: relative"></input>');
+											'<input type="text" id="username" name="username"style="position: relative"></input>');
 	//Weird bug where input field is unclickable. Added this as temporary work around.
 	$('#username').focus();
 }

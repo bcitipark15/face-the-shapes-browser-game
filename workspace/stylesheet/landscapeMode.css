@@ -21,17 +21,9 @@ body {
 	bottom: 4%;
 }
 #titleCubeContainer {
-    zoom: 0.8;
 	float: left;
 	margin-top: 3%;
 	margin-left: 4%;
-}
-
-#classicHelp {
-	zoom: 0.8;
-    -moz-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    -o-transform: scale(0.8);
 }
 
 .title {
@@ -86,58 +78,14 @@ body {
 	margin: 0;
 }
 
-/* Position badges on the left */
-#badges {
+/* Zoom out content on mobile */
+.zoomOutOnMobile {
     zoom: 0.8;
     -moz-transform: scale(0.8);
     -webkit-transform: scale(0.8);
-    -o-transform: scale(0.8);
+    -o-transform: scale(0.8); 
 }
 
-#classicHelp1 div {
-    zoom: 0.8;
-    -moz-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    -o-transform: scale(0.8);
-}
-
-#classicHelp2 div {
-    zoom: 0.8;
-    -moz-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    -o-transform: scale(0.8);
-}
-
-#classicHelp3 div {
-    zoom: 0.8;
-    -moz-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    -o-transform: scale(0.8);
-}
-
-#classicHelp4 div {
-    zoom: 0.8;
-    -moz-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    -o-transform: scale(0.8);
-}
-
-#classicHelp5 div {
-    zoom: 0.8;
-    -moz-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    -o-transform: scale(0.8);
-}
-
-#classicHelp6 div {
-    zoom: 0.8;
-    -moz-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    -o-transform: scale(0.8);
-}
 #achievements {
 	overflow: scroll;
-}
-.AchievementBlocks {
-    zoom: 0.8;
 }

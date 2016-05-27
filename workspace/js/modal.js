@@ -49,7 +49,7 @@ function modalCorrect() {
 	$('.modalContent').html('');
 	var additionalInfo = '';
 	var levelSelectButton = '<li><button class="buttonDesign" onclick="screenChange(\'levelSelect\');hideModal();">Levels</button></li>';
-	var nextLevelButton = '<li><button class="buttonDesign" onclick="$(\'#level'+ currentLevel + '\').click(); screenChange(\'mode3D\');hideModal();">Next</button></li>'
+	var nextLevelButton = '<li><button class="buttonDesign" onclick="$(\'#level'+ (currentLevel + 1) + '\').click(); screenChange(\'mode3D\');hideModal();">Next</button></li>'
 	
 	if(timeModeFlag){
 		var levelSelectButton = ''
@@ -174,12 +174,32 @@ function compDiffSelectButtonChange(){
 	}
 }
 
-function achievementModal(get) {
+function achievementModal(achivementNum) {
 	$('.modalContent').html('');
-	$('.modalContent').append('<h1>Achievement Get</h1>'
+	var achivementName;
+	var achievementImage;
+	var achivementText;
+	switch(achivementNum){
+		case 1:
+			var achievementName = '<h1>The First Step</h1>';
+			var achievementImage = '<li><img src="./workspace/image/Quas.png" alt="achievement1" width="50%" height="50%"></li>';
+			var achievementText = '<li><p>Solve your first cube</p></li>';
+			break;
+		case 2:
+			var achievementName = '<h1>The First Step</h1>';
+			var achievementImage = '<li><img src="./workspace/image/Quas.png" alt="achievement1" width="50%" height="50%"></li>';
+			var achievementText = '<li><p>Solve your first cube</p></li>';
+			break;
+		case 3:
+			var achievementName = '<h1>The First Step</h1>';
+			var achievementImage = '<li><img src="./workspace/image/Quas.png" alt="achievement1" width="50%" height="50%"></li>';
+			var achievementText = '<li><p>Solve your first cube</p></li>';
+			break;
+	}
+	$('.modalContent').append(achievementName
 							+	'<ol>' 
-							+		'<li><img src="something"></li>'
-							+		'<li><p>Text for something</p></li>'
+							+		achievementImage
+							+		achievementText
 							+		'<li><button class="buttonDesign menuBSize" onclick="hideModal();">Okay</button></li>'
 							+	'</ol>');
 	displayModal();
