@@ -1,4 +1,3 @@
-/* Level table is stored in */
 
 #levelSelect ol {
 	list-style: none;
@@ -27,7 +26,7 @@
 	margin-right: auto;
 	margin-left: auto;
 }
-
+/* The dots to display the pages */
 #levelPageNavDotContainer {
 	position: relative;
 	width: 30%;
@@ -45,6 +44,7 @@
 	position: relative;
 }
 
+/* The dot that represent the pages */
 .levelPageNavDot {
 	position: absolute;
 	left: 0;

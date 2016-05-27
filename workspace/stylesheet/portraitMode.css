@@ -28,13 +28,15 @@ html {
 section li {
 	padding-bottom: 4%;
 }
-
+/** Disable pull down reload for chrome **/
 #mode3D {
 	touch-action: none;
 }
 #levelSelect {
 	touch-action: none;
 }
+
+
 .levelContainer {
 	padding-top: 5%;
 	width: 90%;

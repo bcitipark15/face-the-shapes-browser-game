@@ -1,3 +1,4 @@
+
 #overlay,
 #proceed,
 #preceed,
@@ -17,7 +18,7 @@
 #scoreHelp4 {
     display: none;
 }
-
+/* The overlay where the tutorial is located */
 #overlay {
     position: absolute;
     height: 100%;
@@ -54,6 +55,7 @@
     background: linear-gradient(240deg, #082445, #084524);
 }
 
+/* Tutorial content for classic mode */
 #classicHelp1 div{    
     width: 300px;
     height: 200px;
@@ -111,7 +113,7 @@
     margin: auto;
     border-radius: 5%;
 }
-
+/* Tutorial content for time mode */
 #timeHelp1 div{    
     width: 300px;
     height: 200px;
@@ -144,6 +146,7 @@
     border-radius: 10%;
 }
 
+/* Tutorial content for score mode */
 #scoreHelp1 div{    
     width: 300px;
     height: 200px;
@@ -183,6 +186,7 @@
     border-radius: 10%;
 }
 
+/* The forward button in the tutorial */
 #proceed,
 #endHelp {
     z-index: 4;
@@ -197,6 +201,7 @@
 	cursor: pointer;
 }
 
+/* The back button in the tutorial */
 #preceed {
     z-index: 4;
     width: 50px;

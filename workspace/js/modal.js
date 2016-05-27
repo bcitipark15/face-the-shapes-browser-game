@@ -135,37 +135,10 @@ function modalOption() {
 	
 	displayModal();
 }
-/* Work In progress */
-function modalArrow() {
-	$('.modalContent').html('');
-	$('.modalContent').append('<h1>Select Arrow</h1>' 
-							+ 	'<div id="arrowBox">'
-							+ 		'<table>' 
-							+ 			'<tr>'
-							+				'<td></td>'
-							+				'<td><div id="modalArrow1" onclick=""><img src="./workspace/image/arrow3.png"></div></td>'
-							+				'<td></td>'
-							+			'</tr>'
-							+ 			'<tr>'
-							+				'<td><div id="modalArrow2" onclick=""><img src="./workspace/image/arrow3.png"></div></td>'
-							+				'<td></td>'
-							+				'<td><div id="modalArrow3" onclick=""><img src="./workspace/image/arrow3.png"></div></td>'
-							+			'</tr>'
-							+ 			'<tr>'
-							+				'<td></td>'
-							+				'<td><div id="modalArrow4" onclick=""><img src="./workspace/image/arrow3.png"></div></td>'
-							+				'<td></td>'
-							+			'</tr>'
-							+		'</table>'
-							+ 	'</div>');
-	
-	displayModal();
-}
-/* Work In progress */
-function modalColor() {
-	
-}
 
+/**
+ * Set the difficulty for the game mode
+ */
 function compDiffSelect(mode){
 	difficultyNum = 0;
 	$('.modalContent').html('');
@@ -181,6 +154,9 @@ function compDiffSelect(mode){
 	displayModal();
 }
 
+/**
+ * Changes the game mode displayed on the button
+ */
 function compDiffSelectButtonChange(){
 	if(difficultyNum == 0){
 		$('#modalStd').replaceWith('<button id="modalStd" class="testDeadBtn menuBSize" onclick="setDifficulty(\'0\');compDiffSelectButtonChange();">Standard</button>');
@@ -191,6 +167,9 @@ function compDiffSelectButtonChange(){
 	}
 }
 
+/**
+ * The modal that appears when you unlock an achievement and displays the achievement.
+ */
 function achievementModal(achivementNum) {
 	$('.modalContent').html('');
 	var achivementName;
@@ -223,6 +202,9 @@ function achievementModal(achivementNum) {
 	
 }
 
+/**
+ * Ask the user if they want to reset their progress by deleting the cookie.
+ */
 function resetCookieModal() {
 	$('.modalContent').html('');
 	$('.modalContent').append('<h1>Reset Progress?</h1>'

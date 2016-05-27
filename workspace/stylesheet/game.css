@@ -134,7 +134,7 @@ section {
 	font-size: 40px;
 	margin: auto;
 }
-
+/* Sets the correctAnswer to center of div */
 #correctAnswer {
 	position: absolute;
     bottom: 0%;
@@ -164,7 +164,7 @@ section {
     margin-top: 30px;
     margin-bottom: 30px;
 }
-
+/* Sets the question marks on gamemode */
 .help {
     display: inline-block;
     position: absolute;
@@ -239,7 +239,6 @@ section {
 /* Frame for non-button containers */
 .infoCont {
 	padding: 20px;
-    
     margin-bottom: 1rem;
     color: rgba(255, 255, 255, 0.7);
     background-color: rgba(255, 255, 255, 0.08);
