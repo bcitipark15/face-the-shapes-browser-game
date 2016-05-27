@@ -153,11 +153,10 @@ function timeHelper(page) {
 	helperMode = 2;
 	switch(page){
 		case 0:
-			levelLoad(0,0,1); 
 			$('#helpContainer').css('display', 'initial');
 			$('#overlay').css('display', 'initial');
-			$('#classicHelp1').css('display', 'initial');
-			$('#classicHelp2').css('display', 'none');
+			$('#timeHelp1').css('display', 'initial');
+			$('#timeHelp2').css('display', 'none');
 			$('#proceed').css('display', 'initial');
 			$('#preceed').css('display', 'none');
 			$('#cubeContainer').css({
@@ -167,8 +166,62 @@ function timeHelper(page) {
 				'right'		: '0', 
 				'margin'	: "auto"
 			});
+			$('#timerBox').css({
+				'z-index' 	: '0',
+				'position' 	: 'relative',
+				'bottom'	: '0'
+			});	
 			break;
-	}
+
+		case 1:
+			$('#cubeContainer').css({
+				'z-index' 	: '2',
+				'position'	: 'absolute',
+				'left'		: '0',
+				'right'		: '0', 
+				'margin'	: "auto"
+			});
+			$('#timerBox').css({
+				'z-index' 	: '4',
+				'position' 	: 'absolute',
+				'bottom'	: '50px'
+			});				
+			$('#timeHelp1').css('display', 'none');
+			$('#timeHelp2').css('display', 'initial');
+			$('#timeHelp3').css('display', 'none');
+			$('#preceed').css('display', 'initial');
+			break;
+			
+		case 2:
+			
+			$('#timerBox').css({
+				'z-index' 	: '0',
+				'position' 	: 'relative',
+				'bottom'	: '0'
+			});			
+			$('#cubeContainer').css({
+				'z-index' 	: '0',
+				'position'	: 'relative',
+				'left'		: '0',
+				'right'		: '0', 
+				'margin'	: "auto"
+			});
+			$('#timeHelp2').css('display', 'none');
+			$('#timeHelp3').css('display', 'initial');
+			$('#proceed').css('display', 'none');
+			$('#endHelp').css('display', 'initial');
+			break;
+		case 3:
+			screenChange('gameMode');
+			$('#classicHelp5').css('display', 'none');
+			$('#helpContainer').css('display', 'none');
+			$('#overlay').css('display', 'none');
+			$('#proceed').css('display', 'none');
+			$('#endHelp').css('display', 'none');
+			currentPage = 0;
+			helperMode = 0;
+			break;
+		}
 }
 
 /**
