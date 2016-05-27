@@ -228,8 +228,12 @@ function colorChanger(){
  * 	 Difficulty button for number of pivots generated.
  * @return {undefined}
  */
-function setDifficulty(){
-	difficultyNum = (difficultyNum + 1) % 2;
+function setDifficulty(num){
+	if(num){
+		difficultyNum = num;
+	} else {
+		difficultyNum = (difficultyNum + 1) % 2;
+	}
 	switch(difficultyNum){
 		case 0:
 			difficulty = 'Mode: Standard'
@@ -297,6 +301,6 @@ function compareAnswer(){
 	$('#mode2D div.topNav').append('<button class="buttonDesign floatRight menuBSize" onclick="screenChange(\'answerScreen\');">Answer</button>');
 	$('#mode2D div.topNav').append('<button class="buttonDesign floatLeft menuBSize" onclick="screenChange(\'mode3D\');">To 3D</button>');
 	$('#mode2D div.bottomNav').html('');
-	$('#mode2D div.bottomNav').append('<button class="buttonDesign floatRight menuBSize" onclick="screenChange(\'levelSelect\');">Levels</button>'
-									+ '<button class="buttonDesign floatLeft menuBSize" onclick="screenChange(\'mainMenu\');">Menu</button>');
+	$('#mode2D div.bottomNav').append('<button class="buttonDesign floatRight menuBSize" onclick="screenChange(\'levelSelect\');resizeGame();">Levels</button>'
+									+ '<button class="buttonDesign floatLeft menuBSize" onclick="screenChange(\'mainMenu\');resizeGame();">Menu</button>');
 }
