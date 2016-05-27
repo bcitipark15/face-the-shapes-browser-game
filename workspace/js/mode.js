@@ -128,7 +128,7 @@ function classicHelper(page) {
 				'z-index'	: '4'
 			});
 			$('#colorArrow').css({
-				'z-index'	: '4',
+				'z-index'	: '1',
 				'position'	: 'absolute',
 				'bottom'	: '220px'
 			});
