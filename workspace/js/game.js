@@ -267,10 +267,12 @@ function setDifficulty(num){
 		case 0:
 			difficulty = 'Mode: Standard'
 			updateBadge('standard', levelStandardHigh - 1 );
+			$('.levelsButton').css('background-color', 'initial');
 			break;
 		case 1:
 			difficulty = 'Mode: Advanced'
 			updateBadge('advanced', levelAdvancedHigh - 1 );
+			$('.levelsButton').css('background-color', 'rgba(255,0,0,0.5)');
 			break;
 	}
 	lockLevelButtons();
