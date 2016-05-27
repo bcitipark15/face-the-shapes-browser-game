@@ -28,15 +28,37 @@
 	margin-left: auto;
 }
 
-#levelPageNav ol {
-	text-align: center
+#levelPageNavDotContainer {
+	position: relative;
+	width: 30%;
+	height: 50px;
+	padding-top: 5%;
+	margin-left: 0;
+	margin-right: 0;
+	margin: auto;
 }
 
-#levelPageNav li{
-	display:inline-block;
+.levelPageNavDotInnerContainer {
+	width: 33%;
+	height: 50px;
+	float: left;
+	position: relative;
 }
 
-#levelPageNav  a{
-	text-decoration: none;
-	font-size: 35px;
+.levelPageNavDot {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 20px;
+	height: 20px;
+	border: 5px #AAA solid;
+	border-radius: 50%;
+	background-color: #AAA;
+}
+
+#levelPageNavDotOne {
+	background-color: #FFF;
 }
