@@ -138,10 +138,10 @@
                 <div id="tabs" class="leaderboards">
                     <nav>
                         <ul id="leaderboardTabs" class="nav-tabs">
-                            <li class="activeTab"><a id="buttonTimeStd" class="activeTab" href="#timeAttackStd" onclick="getStdHighTimes(); buttonClick(); activeTab('buttonTimeStd');">Time (Std)</a></li>
-                            <li class="activeTab"><a id="buttonTimeAdv" href="#timeAttackAdv" onclick="getAdvHighTimes(); buttonClick(); activeTab('buttonTimeAdv');">Time (Adv)</a></li>
-                            <li class="activeTab"><a id="buttonScoreStd" href="#scoreAttackStd" onclick="getStdHighScores(); buttonClick(); activeTab('buttonScoreStd');">Score (Std)</a></li>
-                            <li class="activeTab"><a id="buttonScoreAdv" href="#scoreAttackAdv" onclick="getAdvHighScores(); buttonClick(); activeTab('buttonScoreAdv');">Score (Adv)</a></li>
+                            <li><a id="stdTime" href="#timeAttackStd" class="testDeadBtn" onclick="getStdHighTimes(); tabFocus('stdTime');buttonClick()">Time (Std)</a></li>
+                            <li><a id="advTime" href="#timeAttackAdv" onclick="getAdvHighTimes();tabFocus('advTime'); buttonClick()">Time (Adv)</a></li>
+                            <li><a id="stdScore" href="#scoreAttackStd" onclick="getStdHighScores();tabFocus('stdScore'); buttonClick()">Score (Std)</a></li>
+                            <li><a id="advScore" href="#scoreAttackAdv" onclick="getAdvHighScores();tabFocus('advScore'); buttonClick()">Score (Adv)</a></li>
                         </ul>
                     </nav>
                     <table id="timeAttackStd">

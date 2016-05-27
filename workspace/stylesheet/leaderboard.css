@@ -63,10 +63,10 @@ section {
 }
 
 @media screen and (max-width: 40em) {
-    section {
+/*    section {
         overflow: scroll !important;
     }
-
+*/
     .leaderboards {
         width: 100%;
     }
