@@ -137,11 +137,11 @@
                 <h1 class="title">Leaderboard</h1>
                 <div id="tabs" class="leaderboards">
                     <nav>
-                        <ul class="nav-tabs">
-                            <li><a href="#timeAttackStd" onclick="getStdHighTimes(); buttonClick()">Time (Std)</a></li>
-                            <li><a href="#timeAttackAdv" onclick="getAdvHighTimes(); buttonClick()">Time (Adv)</a></li>
-                            <li><a href="#scoreAttackStd" onclick="getStdHighScores(); buttonClick()">Score (Std)</a></li>
-                            <li><a href="#scoreAttackAdv" onclick="getAdvHighScores(); buttonClick()">Score (Adv)</a></li>
+                        <ul id="leaderboardTabs" class="nav-tabs">
+                            <li><a id="stdTime" href="#timeAttackStd" class="testDeadBtn" onclick="getStdHighTimes(); tabFocus('stdTime');buttonClick()">Time (Std)</a></li>
+                            <li><a id="advTime" href="#timeAttackAdv" onclick="getAdvHighTimes();tabFocus('advTime'); buttonClick()">Time (Adv)</a></li>
+                            <li><a id="stdScore" href="#scoreAttackStd" onclick="getStdHighScores();tabFocus('stdScore'); buttonClick()">Score (Std)</a></li>
+                            <li><a id="advScore" href="#scoreAttackAdv" onclick="getAdvHighScores();tabFocus('advScore'); buttonClick()">Score (Adv)</a></li>
                         </ul>
                     </nav>
                     <table id="timeAttackStd">
