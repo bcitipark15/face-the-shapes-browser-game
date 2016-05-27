@@ -11,16 +11,6 @@
 
 body {
     font-family: juneGull;
-    position: fixed;
-    width: 100%;
-    height: 95%;
-}
-
-html {
-    position: fixed;
-    width: 100%;
-    background-color: #EEEEEE;
-    background-image: linear-gradient(120deg, #082345, #084523);
 }
 
 /** A list containing the buttons **/
