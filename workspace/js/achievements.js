@@ -18,6 +18,7 @@ function unlockScoringBig(){
 		setAchievement(2, true);
 		achievementSound();
 		achievementModal(2);
+		achievementTwo = true;
 	}
 }
 /**
@@ -51,7 +52,7 @@ function displayAchievements(){
 	if(getAchievement(3)){
 		$('#achievementIcon3').css('display','initial');
 	} else {
-		$('#achievementIcon2').css('display','none');
+		$('#achievementIcon3').css('display','none');
 	}
 	
 }

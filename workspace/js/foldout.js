@@ -368,6 +368,6 @@ function toLeaderboard(){
 	
 	//Edit buttons to prevent posting same information more than one time.
 	$('#resultScreen div.bottomNav').html('');
-	$('#resultScreen div.bottomNav').append('<button class="deadButton floatRight mobileBSize">Post!</button>');
-	$('#resultScreen div.bottomNav').append('<button class="buttonDesign floatleft mobileBSize" onclick="screenChange(\'mainMenu\')">back</button>');
+	$('#resultScreen div.bottomNav').append('<button class="testDeadBtn floatRight">Post!</button>');
+	$('#resultScreen div.bottomNav').append('<button class="buttonDesign floatLeft" onclick="screenChange(\'mainMenu\')">back</button>');
 }
