@@ -45,6 +45,7 @@ window.addEventListener('orientationchange', navBar, false);
  */
 window.onresize = resizeGame;
 
+
 /**
  * levelLoad Loads the levels specifics once level is selected.
  * @param lowerBound The lowest foldout difficulty to be generated.
@@ -105,6 +106,7 @@ function validate(levelNumber){
 	/*******Added on May 26th 1:05am *********/
 	//Appropriate message is displayed according to the result.
 	if (match) {
+		unlockFirstStep(match);
 		modalCorrect();
 		$('#resultMessage').append('Foldout is a perfect match!');
 		if (standardMode) {
@@ -117,6 +119,9 @@ function validate(levelNumber){
 			updateScore(scoreBase);
 			//Give player additional time when level is completed.
 			time += 30;
+		}
+		if(timeModeFlag){
+			unlockSpeedy();
 		}
 		level++;
 	} else {

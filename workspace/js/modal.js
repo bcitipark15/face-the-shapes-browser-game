@@ -17,16 +17,18 @@ function modalFadeOut() {
  * Will display the modal. 
  */
 function displayModal() {
-    modalFadeIn();
-	var timer = setTimeout(function() {document.getElementById('modalBox').style.display = 'block';}, 200);
+	document.getElementById('modalBox').style.display = 'block';
+    /* modalFadeIn();
+	var timer = setTimeout(function() {document.getElementById('modalBox').style.display = 'block';}, 200); */
 }
 
 /** 
  * Will hide the modal. 
  */
 function hideModal() {
-	modalFadeOut();
-	var timer = setTimeout(function() {document.getElementById('modalBox').style.display = 'none';}, 200);
+	document.getElementById('modalBox').style.display = 'none';
+	/* modalFadeOut();
+	var timer = setTimeout(function() {document.getElementById('modalBox').style.display = 'none';}, 200); */
 }
 
 /** 
@@ -101,7 +103,7 @@ function modalIncorrect() {
 	}
 	
 	if(scoreModeFlag){
-		var additionalInfo = '<p style="color: red;"> -25 points!</p>';
+		var additionalInfo = '<p style="color: red; text-align: center; font-size: 50px;"> -25 points!</p>';
 		var answerButton = ''
 	}
 	$('.modalContent').append('<h1>' + msg + '</h1>' 
@@ -168,7 +170,10 @@ function compDiffSelect(mode){
 							+	'<ol>' 
 							+		'<li><button id="modalStd" class="testDeadBtn menuBSize" onclick="setDifficulty(\'0\');compDiffSelectButtonChange();">Standard</button></li>'
 							+		'<li><button id="modalAdv" class="buttonDesign menuBSize" onclick="setDifficulty(\'1\');compDiffSelectButtonChange();">Advance</button></li>'
+							+	'</ol>'
+							+	'<ol>' 							
 							+		'<li><button class="buttonDesign menuBSize" onclick="screenChange(\'mode3D\'); selectMode(\'' + mode + '\');hideModal();">Start!</button></li>'
+							+		'<li><button class="buttonDesign menuBSize" onclick="hideModal();">Cancel</button></li>'
 							+	'</ol>');
 	displayModal();
 }
@@ -195,14 +200,14 @@ function achievementModal(achivementNum) {
 			var achievementText = '<li><p>Solve your first cube</p></li>';
 			break;
 		case 2:
-			var achievementName = '<h1>The First Step</h1>';
-			var achievementImage = '<li><img src="./workspace/image/Quas.png" alt="achievement1" width="50%" height="50%"></li>';
-			var achievementText = '<li><p>Solve your first cube</p></li>';
+			var achievementName = '<h1>Scoring Big</h1>';
+			var achievementImage = '<li><img src="./workspace/image/Wex.png" alt="achievement1" width="50%" height="50%"></li>';
+			var achievementText = '<li><p>Score over 1000pts!</p></li>';
 			break;
 		case 3:
-			var achievementName = '<h1>The First Step</h1>';
-			var achievementImage = '<li><img src="./workspace/image/Quas.png" alt="achievement1" width="50%" height="50%"></li>';
-			var achievementText = '<li><p>Solve your first cube</p></li>';
+			var achievementName = '<h1>Speedy the<br>Speedster</h1>';
+			var achievementImage = '<li><img src="./workspace/image/Exort.png" alt="achievement1" width="50%" height="50%"></li>';
+			var achievementText = '<li><p>Solve a cube in under 30 seconds!</p></li>';
 			break;
 	}
 	$('.modalContent').append(achievementName

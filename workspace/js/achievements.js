@@ -2,7 +2,7 @@
  * unlockFirstStep Unlocks the achivement if given requirement is met.
  * @return {undefined}
  */
-function unlockFirstStep(){
+function unlockFirstStep(match){
 	if(match && !getAchievement(1)){
 		setAchievement(1, true);
 		achievementSound();
@@ -28,9 +28,7 @@ function unlockScoringBig(){
 function unlockSpeedy(){
 	if(time < 30 && !getAchievement(3)){
 		setAchievement(3, true);
-		achievementSound();
 		setUnlock = true;
-		achievementModal(3);
 	}
 }
 

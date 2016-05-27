@@ -81,3 +81,6 @@ var achievementOne = false;
 var achievementTwo = false;
 var achievementThree = false;
 var achievementFour = false;
+
+//Third achievement flag
+setUnlock = false;
