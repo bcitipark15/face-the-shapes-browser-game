@@ -169,6 +169,7 @@ function timeHelper(page) {
 			$('#timerBox').css({
 				'z-index' 	: '0',
 				'position' 	: 'relative',
+				'zoom'		: '1',
 				'bottom'	: '0'
 			});	
 			break;
@@ -184,7 +185,8 @@ function timeHelper(page) {
 			$('#timerBox').css({
 				'z-index' 	: '4',
 				'position' 	: 'absolute',
-				'bottom'	: '50px'
+				'zoom'		: '0.8',
+				'bottom'	: '240px'
 			});				
 			$('#timeHelp1').css('display', 'none');
 			$('#timeHelp2').css('display', 'initial');
@@ -197,6 +199,7 @@ function timeHelper(page) {
 			$('#timerBox').css({
 				'z-index' 	: '0',
 				'position' 	: 'relative',
+				'zoom'		: '1',
 				'bottom'	: '0'
 			});			
 			$('#cubeContainer').css({
