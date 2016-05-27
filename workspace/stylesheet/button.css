@@ -54,10 +54,11 @@ button {
 
 /* The backButton */
 .backButton {
-    background-image: url("../image/chevron2.png");
+    background-image: url("../image/arrow5.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    border: none;
 	width: 5%;
 }
 
