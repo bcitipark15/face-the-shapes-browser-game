@@ -97,7 +97,6 @@ function setBadgeStandard() {
 	alert("function is called");
 	*/
 	var badge = getCookies("badgeLevel");
-	
 	if (badge < currentLevel) {
 		setCookies("badgeLevel", currentLevel, 365);/*
 		alert("low level detected and set success");*/
@@ -124,7 +123,7 @@ function setBadgeAdvanced() {
 
 }
 
-// Delete all cookies written by ElliotSchmelliot
+// Reset all cookies to zero.
 function resetCookies() {
 
 	setCookies("badgeLevel", 0, 365);
@@ -132,6 +131,7 @@ function resetCookies() {
 
 function setAchievement(number, state) {
 
+	alert("set called");
 	if (number == 1) {
 		setCookies("achievementOne", state, 365);
 	} else if (number == 2) {
@@ -145,10 +145,14 @@ function setAchievement(number, state) {
 
 function getAchievement(number) {
 
+	alert("get called");
 	if (number == 1) {
+		var one = getCookies("achievementOne");
+		alert(one);
 		return getCookies("achievementOne");
 	} else if (number == 2) {
 		return getCookies("achievementTwo");
+		alert(getCookies("achievementTwo"));
 	} else if (number == 3) {
 		return getCookies("achievementThree");
 	} else if (number == 4) {
