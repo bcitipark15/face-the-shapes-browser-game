@@ -235,7 +235,7 @@ function startTimeMode(){
 	randomizeOrder(levels);
 	$('#timer').text(time);
 	//Build foldout and apply generated faces to 3D cube.
-	levelLoad(2,4,3);
+	levelLoad(2,4,1);
 }
 
 /**
