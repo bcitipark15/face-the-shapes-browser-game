@@ -92,7 +92,7 @@ function modalCorrect() {
 function modalIncorrect() {
 	var msgList = ['You failed it!',
 					'Try Again.', 
-					'Don\'t Give Up!'
+					'Don\'t Give Up!',
 					'Wrong.'];
 	var msg = msgList[Math.floor(Math.random() * msgList.length)];
 	$('.modalContent').html('');

@@ -126,6 +126,14 @@ button {
     transition: color 0.2s, background-color 0.2s, border-color 0.2s;
 	cursor: default;
 }
+
+.levelDeadBtn:hover {
+	box-shadow: inset 0 4px 40px 0 rgba(0, 0, 0, 0.2), inset 0 6px 40px 0 rgba(0, 0, 0, 0.19);
+	color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
 /* Set Buttons to the bottom right */
 .bottomRight {
 	position: absolute;
