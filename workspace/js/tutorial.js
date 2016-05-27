@@ -139,6 +139,7 @@ function classicHelper(page) {
 			$('#helpContainer').css('display', 'none');
 			$('#overlay').css('display', 'none');
 			$('#proceed').css('display', 'none');
+			$('#preceed').css('display', 'none');
 			$('#endHelp').css('display', 'none');
 			currentPage = 0;
 			helperMode = 0;
@@ -215,10 +216,11 @@ function timeHelper(page) {
 			break;
 		case 3:
 			screenChange('gameMode');
-			$('#classicHelp5').css('display', 'none');
+			$('#timeHelp3').css('display', 'none');
 			$('#helpContainer').css('display', 'none');
 			$('#overlay').css('display', 'none');
-			$('#proceed').css('display', 'none');
+			$('#proceed').css('display', 'none');		
+			$('#preceed').css('display', 'none');
 			$('#endHelp').css('display', 'none');
 			currentPage = 0;
 			helperMode = 0;
@@ -290,7 +292,31 @@ function scoreHelper(page) {
 			break;
 			
 		case 2:
-			
+			$('#cubeContainer').css({
+				'z-index' 	: '2',
+				'position'	: 'absolute',
+				'left'		: '0',
+				'right'		: '0', 
+				'margin'	: "auto"
+			});
+			$('#timerBox').css({
+				'z-index' 	: '2',
+				'position' 	: 'absolute',
+				'zoom'		: '0.8',
+				'bottom'	: '240px'
+			});		
+			$('#scoreBox').css({
+				'z-index' 	: '2',
+				'position' 	: 'absolute',
+				'zoom'		: '0.8',
+				'right'		: "0", 
+				'bottom'	: '240px'
+			});	
+			$('#scoreHelp2').css('display', 'none');
+			$('#scoreHelp3').css('display', 'initial');
+			break;
+
+		case 3:
 			$('#timerBox').css({
 				'z-index' 	: '0',
 				'position' 	: 'relative',
@@ -311,20 +337,11 @@ function scoreHelper(page) {
 				'right'		: '0', 
 				'bottom'	: '0'
 			});	
-			$('#scoreHelp2').css('display', 'none');
-			$('#scoreHelp3').css('display', 'initial');
+			screenChange('gameMode');
+			$('#scoreHelp3').css('display', 'none');
+			$('#scoreHelp4').css('display', 'initial');
 			$('#proceed').css('display', 'none');
 			$('#endHelp').css('display', 'initial');
-			break;
-		case 4:
-			screenChange('gameMode');
-			$('#classicHelp5').css('display', 'none');
-			$('#helpContainer').css('display', 'none');
-			$('#overlay').css('display', 'none');
-			$('#proceed').css('display', 'none');
-			$('#endHelp').css('display', 'none');
-			currentPage = 0;
-			helperMode = 0;
 			break;			
 		case 4:
 			screenChange('gameMode');
@@ -332,6 +349,7 @@ function scoreHelper(page) {
 			$('#helpContainer').css('display', 'none');
 			$('#overlay').css('display', 'none');
 			$('#proceed').css('display', 'none');
+			$('#preceed').css('display', 'none');
 			$('#endHelp').css('display', 'none');
 			currentPage = 0;
 			helperMode = 0;
