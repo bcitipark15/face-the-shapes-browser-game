@@ -127,8 +127,8 @@ function modalOption() {
 	$('.modalContent').append('<h1>Mini Menu</h1>' 
 							+ 	'<div>'
 							+ 		'<ol>' 
-							+			'<li><button class="buttonDesign menuBSize" onclick="screenChange(\'mainMenu\'); hideModal();">Main Menu</button></li>'
-							+ 			'<li><button class="buttonDesign menuBSize" onclick="screenChange(\'levelSelect\');lockLevelButtons(); hideModal();">Level Select</button></li>'
+							+			'<li><button class="buttonDesign menuBSize" onclick="screenChange(\'mainMenu\'); hideModal(); clearTimer();">Main Menu</button></li>'
+							+ 			'<li><button class="buttonDesign menuBSize" onclick="screenChange(\'levelSelect\');lockLevelButtons(); hideModal(); clearTimer();">Level Select</button></li>'
 							+ 			'<li><button class="buttonDesign menuBSize" onclick="hideModal();">Cancel</button></li>'
 							+		'</ol>'
 							+ 	'</div>');
