@@ -129,8 +129,11 @@ function validate(levelNumber){
 	/*******Added on May 26th 1:05am *********/
 	//Appropriate message is displayed according to the result.
 	if (match) {
-		unlockFirstStep(match);
-		modalCorrect();
+		if(!getAchievement(1)){
+			unlockFirstStep(match);
+		} else {
+			modalCorrect();
+		}
 		$('#resultMessage').append('Foldout is a perfect match!');
 		if (standardMode) {
 			setBadgeStandard();
