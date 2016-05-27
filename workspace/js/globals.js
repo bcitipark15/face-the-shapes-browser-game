@@ -78,3 +78,9 @@ var scoreBase = 100;
 
 //Number of levels to complete in time mode.
 var numLevels = 3;
+
+//Define if the achievements are unlocked.
+var achievementOne = false;
+var achievementTwo = false;
+var achievementThree = false;
+var achievementFour = false;

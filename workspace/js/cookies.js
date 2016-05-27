@@ -147,15 +147,36 @@ function getAchievement(number) {
 
 	alert("get called");
 	if (number == 1) {
-		var one = getCookies("achievementOne");
-		alert(one);
-		return getCookies("achievementOne");
-	} else if (number == 2) {
-		return getCookies("achievementTwo");
-		alert(getCookies("achievementTwo"));
+		var a = getCookies("achievementOne");
+		if (a == 'true') {
+			achievementOne = true;
+		} else if (a == 'false') {
+			achievementOne = false;
+		}
+		return achievementOne;
+	} else if (number == 2) {	
+		var a = getCookies("achievementTwo");
+		if (a == 'true') {
+			achievementTwo = true;
+		} else if (a == 'false') {
+			achievementTwo = false;
+		}
+		return achievementTwo;
 	} else if (number == 3) {
-		return getCookies("achievementThree");
+		var a = getCookies("achievementThree");
+		if (a == 'true') {
+			achievementThree = true;
+		} else if (a == 'false') {
+			achievementThree = false;
+		}
+		return achievementThree;
 	} else if (number == 4) {
-		return getCookies("achievementFour");
+		var a = getCookies("achievementFour");
+		if (a == 'true') {
+			achievementFour = true;
+		} else if (a == 'false') {
+			achievementFour = false;
+		}
+		return achievementFour;
 	}	
 }
