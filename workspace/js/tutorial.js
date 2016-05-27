@@ -62,7 +62,12 @@ function classicHelper(page) {
 
 			$('#foldoutScreen').css({
 				'zoom'		: '1',
-				'z-index'	: '0'
+				'-moz-transform' : 'scale(1)',
+    			'-webkit-transform'	: 'scale(1)',
+    			'-o-transform'	: 'scale(1)', 
+				'z-index'	: '0',
+				'bottom'	: '0',
+				'top'		: '0'
 			});
 
 			$('#colorArrow').css({
@@ -92,10 +97,18 @@ function classicHelper(page) {
 			});
 			$('#foldoutScreen').css({
 				'zoom'		: '0.7',
-				'z-index'	: '4'
+				'-moz-transform' : 'scale(0.7)',
+    			'-webkit-transform'	: 'scale(0.7)',
+    			'-o-transform'	: 'scale(0.7)', 
+				'z-index'	: '4',
+				'bottom'	: 'initial',
+				'top'		: '0'
 			});
 			$('#colorArrow').css({
 				'z-index'	: '1',
+				'-moz-transform' : 'scale(1)',
+    			'-webkit-transform'	: 'scale(1)',
+    			'-o-transform'	: 'scale(1)', 
 				'position'	: 'absolute',
 				'bottom'	: '220px'
 			});
@@ -115,7 +128,12 @@ function classicHelper(page) {
 
 			$('#foldoutScreen').css({
 				'zoom'		: '1',
-				'z-index'	: '0'
+				'-moz-transform' : 'scale(1)',
+    			'-webkit-transform'	: 'scale(1)',
+    			'-o-transform'	: 'scale(1)', 
+				'z-index'	: '0',
+				'bottom'	: '0',
+				'top'		: '0'
 			});
 
 			$('#colorArrow').css({

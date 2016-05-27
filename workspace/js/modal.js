@@ -43,10 +43,10 @@ window.onclick = function(event) {
  * Will display when the user has a matching fold-out.
  */
 function modalCorrect() {
-	var msgList = ['Well done. Here come the test results: "You are a horrible person." That\'s what it says. We weren\'t even testing for that.', 
+	var msgList = ['Well done.', 
 				'You did it!', 
-				'*Generic congratulatory Message*', 
-				'Well Done.']
+				'*Applauds*', 
+				'Good Job!']
 	var msg = msgList[Math.floor(Math.random() * msgList.length)];
 	$('.modalContent').html('');
 	var additionalInfo = '';
@@ -90,7 +90,10 @@ function modalCorrect() {
  * Will display when the user has a mismatch fold-out.
  */
 function modalIncorrect() {
-	var msgList = ['You failed it!'];
+	var msgList = ['You failed it!',
+					'Try Again.', 
+					'Don\'t Give Up!'
+					'Wrong.'];
 	var msg = msgList[Math.floor(Math.random() * msgList.length)];
 	$('.modalContent').html('');
 	var additionalInfo = '';

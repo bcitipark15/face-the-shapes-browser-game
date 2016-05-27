@@ -13,10 +13,8 @@ button {
 }
 /*  B = Button  */
 .menuBSize {
-    width: 47%;
-	max-width: 170px;
-	min-width: 170px;
-	padding: 18px 0px;
+    width: 170px;
+	
 }
 
 /*  B = Button **/

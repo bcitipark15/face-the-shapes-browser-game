@@ -202,7 +202,7 @@
 						</ul>
 					<div id="settingButtons">
 						<button id="muteButton" class="buttonDesign muteButtons" type="button" onclick="muteButton()">Mute</button>   	
-        				<button id="resetButton" class="buttonDesign muteButtons" type="button" onclick="resetCookies(); buttonClick()">Reset</button>
+        				<button id="resetButton" class="buttonDesign muteButtons" type="button" onclick="resetCookieModal(); buttonClick()">Reset</button>
         			</div>
 
 				</div>
@@ -333,13 +333,19 @@
 							<li><p id="level15" class="levelsButton buttonDesign" onclick="levelLoad(0,0,5); setLevel(15); buttonClick()">15</p></li>
 						</ol>
 					</div>
-					
-					<ol id="levelPageNav" class="infoCont">
-						<li><h2>Page</h2></li>
-						<li><a href="#levelPage1" onclick="changePage('levelPage1'); buttonClick()">1</a></li>
-						<li><a href="#levelPage2" onclick="changePage('levelPage2'); buttonClick()">2</a></li>
-						<li><a href="#levelPage3" onclick="changePage('levelPage3'); buttonClick()">3</a></li>
-					</ol>
+
+					<div id="levelPageNavDotContainer">
+						<div class="levelPageNavDotInnerContainer">
+							<div id="levelPageNavDotOne" class="levelPageNavDot" onclick="changePage('levelPage1'); buttonClick();"></div>
+						</div>
+						<div class="levelPageNavDotInnerContainer">
+							<div id="levelPageNavDotTwo" class="levelPageNavDot" onclick="changePage('levelPage2'); buttonClick();"></div>
+						</div>
+						<div class="levelPageNavDotInnerContainer">
+							<div id="levelPageNavDotThree" class="levelPageNavDot" onclick="changePage('levelPage3'); buttonClick();"></div>
+						</div>
+					</div>
+
 				</div>
 				<ul>
 					<li><button id="setDifficulty" class="buttonDesign menuBSize" onclick="setDifficulty(); buttonClick()">Mode: Standard</button></li>
