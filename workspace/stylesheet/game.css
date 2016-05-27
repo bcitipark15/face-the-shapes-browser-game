@@ -11,6 +11,16 @@
 
 body {
     font-family: juneGull;
+    position: fixed;
+    width: 100%;
+    height: 90%;
+}
+
+html {
+    position: fixed;
+    width: 100%;
+    background-color: #159957;
+    background-image: linear-gradient(120deg, #155799, #159957);
 }
 
 /** A list containing the buttons **/
@@ -71,8 +81,6 @@ section {
 	max-height: 700px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #159957;
-    background-image: linear-gradient(120deg, #155799, #159957);
     overflow: hidden;
 }
 
