@@ -75,16 +75,20 @@
 			<!-- Contain all tutorial messages for all modes -->
 			<div id="helpContainer">
 				<!-- Tutorial instructions and buttons-->
-		        <div class="helperDiv" id="classicHelp1"><div><h1>Objective</h1><br><p>Study the cube in 3D</p><br><p>Map it onto 2D foldout</p></div></div>
-		        <div class="helperDiv" id="classicHelp2"><div><h1>Examine</h1><br><p>Click and drag to rotate</p><br><p>Black arrow is a reference</p></div></div>
-		        <div class="helperDiv" id="classicHelp3"><div><h1>Next</h1><br><p>When ready, click the 2D </p><br><p>button to input answer</p></div></div>
-		        <div class="helperDiv" id="classicHelp4"><div><p>Click foldout for arrow</p><br><p>Color is for advanced</p><br><p>Submit when ready</div></div>
-		        <div class="helperDiv" id="classicHelp5"><div><h1>Well Done!</h1><p>That's it for classic mode!</p></div></div>
+		        <div class="helperDiv zoomOutOnMobile" id="classicHelp1"><div><h1>Objective</h1><br><p>Study the cube in 3D</p><br><p>Map it onto 2D foldout</p></div></div>
+		        <div class="helperDiv zoomOutOnMobile" id="classicHelp2"><div><h1>Examine</h1><br><p>Click and drag to rotate</p><br><p>Black arrow is a reference</p></div></div>
+		        <div class="helperDiv zoomOutOnMobile" id="classicHelp3"><div><h1>Next</h1><br><p>When ready, click the 2D </p><br><p>button to input answer</p></div></div>
+		        <div class="helperDiv zoomOutOnMobile" id="classicHelp4"><div><p>Click foldout for arrow</p><br><p>Color is for advanced</p><br><p>Submit when ready</div></div>
+		        <div class="helperDiv zoomOutOnMobile" id="classicHelp5"><div><h1>Well Done!</h1><p>That's it for classic mode!</p></div></div>
 		        
-		        <div class="helperDiv" id="timeHelp1"><div><h1>Objective</h1><br><p>Study the cube in 3D</p><br><p>Map onto multiple foldout quickly.</p></div></div>
-		        <div class="helperDiv" id="timeHelp2"><div><h1>Timer</h1><br><p>Faster you solve all the given cubes</p><br><p>higher the score</p></div></div>
-				<div class="helperDiv" id="timeHelp3"><div><h1>Time is mana!</h1><br><p>That's it for time attack mode!</p></div></div>
+		        <div class="helperDiv zoomOutOnMobile" id="timeHelp1"><div><h1>Objective</h1><br><p>Study the cube in 3D</p><br><p>Map onto multiple foldout quickly.</p></div></div>
+		        <div class="helperDiv zoomOutOnMobile" id="timeHelp2"><div><h1>Timer</h1><br><p>Faster you solve all cubes</p><br><p>higher the score</p></div></div>
+				<div class="helperDiv zoomOutOnMobile" id="timeHelp3"><div><h1>Time is mana!</h1><br><p>That's it for time attack mode!</p></div></div>
 
+		 		<div class="helperDiv zoomOutOnMobile" id="scoreHelp1"><div><h1>Objective</h1><br><p>Study the cube in 3D</p><br><p>Map onto multiple foldout quickly.</p></div></div>
+		        <div class="helperDiv zoomOutOnMobile" id="scoreHelp2"><div><h1>Timer</h1><br><p>Solve as many cubes</p><br><p>until timer reach zero</p></div></div>
+		        <div class="helperDiv zoomOutOnMobile" id="scoreHelp3"><div><h1>Timer</h1><br><p>Correct answer adds timer</p><br><p>Incorrect one drops instead</p></div></div>
+				<div class="helperDiv zoomOutOnMobile" id="scoreHelp4"><div><h1>Mind and Body</h1><br><p>That's it for score attack mode!</p></div></div>
 
 		        <div id="proceed" onclick="nextPage('next'); buttonClick()">></div>
 		        <div id="preceed" onclick="nextPage('previous'); buttonClick()"><</div>
@@ -94,7 +98,7 @@
 
 			
 			<!-- Badges division -->
-			<section id="badges">
+			<section class="zoomOutOnMobile" id="badges">
 				<div class="badgeOfCurrentHigh">0</div>
 			</section>
 			
@@ -103,7 +107,7 @@
 				
                 <h1 class="title">Face The Shapes</h1>
 				
-                <div id="titleCubeContainer"><!-- <img src="./workspace/image/cube.png" width="200em" height="200em" onclick="tutturu();"> -->
+                <div class="zoomOutOnMobile" id="titleCubeContainer"><!-- <img src="./workspace/image/cube.png" width="200em" height="200em" onclick="tutturu();"> -->
                 	<div id="titleCube">
         	            <figure class="front"></figure>
                         <figure class="back"></figure>
@@ -210,22 +214,22 @@
                 </div>
                 <h1 class="title">Achievements</h1>
                 <div id="achievementContent">
-                	<div id = "badge1" class="AchievementBlocks">
+                	<div id = "badge1" class="AchievementBlocks zoomOutOnMobile">
 						<h3>Progression Badge</h3>
 						<div class="progressionBadge"><div id="progressBadgeHolder"><div class="badgeOfCurrentHigh">0</div></div></div>
 						<div class="description"><p>Track your progression</p></div>
 					</div>
-					<div id = "badge2" class="AchievementBlocks">
+					<div id = "badge2" class="AchievementBlocks zoomOutOnMobile">
 						<h3>The First Step</h3>
 						<div class="badge"><img id="achievementIcon1" src="./workspace/image/Quas.png" alt="achievement1" width="80" height="80"></div>
 						<div class="description"><p>Solve your first cube</p></div>
 					</div>
-					<div id = "badge3" class="AchievementBlocks">
+					<div id = "badge3" class="AchievementBlocks zoomOutOnMobile">
 						<h3>Scoring Big</h3>
 						<div class="badge"><img id="achievementIcon2" src="./workspace/image/Wex.png" alt="achievement2" width="80" height="80"></div>
 						<div class="description"><p>Get a score of 1000 on Score Attack</p></div>
 					</div>
-					<div id = "badge4" class="AchievementBlocks">
+					<div id = "badge4" class="AchievementBlocks zoomOutOnMobile">
 						<h3>Speedy the Speedster</h3>
 						<div class="badge"><img id="achievementIcon3" src="./workspace/image/Exort.png" alt="achievement3" width="80" height="80"></div>
 						<div class="description"><p>Solve a cube in 30 seconds on Time Attack</p></div>
@@ -249,7 +253,7 @@
                     <li><button class="buttonDesign menuBSize" onclick="compDiffSelect('time'); buttonClick()">Time Attack</button><div id="timeHelp" class="help" onclick="screenChange('mode3D'); selectMode('time'); timeHelper(0); buttonClick()">?</div></li>
 				</ul>
 				<ul>
-                    <li><button class="buttonDesign menuBSize" onclick="compDiffSelect('score'); buttonClick()">Score Attack</button><div class="help" id="scoreHelp">?</div></li>
+                    <li><button class="buttonDesign menuBSize" onclick="compDiffSelect('score'); buttonClick()">Score Attack</button><div class="help" id="scoreHelp" onclick="screenChange('mode3D'); selectMode('score'); scoreHelper(0); buttonClick()">?</div></li>
                     <li><button id="easterEggTwo" class="buttonDesign menuBSize" onclick="easterEggTwo(); screenChange('mainMenu'); buttonClick()">Death</button></li>
                 </ul>
 			</section>
@@ -353,7 +357,7 @@
                 </div>
 				
 				<!-- Divs for each face of the cube -->
-                <div id="cubeContainer">
+                <div class="zoomOutOnMobile" id="cubeContainer">
                     <div id="cube">
                         <figure class="front"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
                         <figure class="back"><img class="cubeCover" src="./workspace/image/arrow3.png" alt="arrow"></figure>
