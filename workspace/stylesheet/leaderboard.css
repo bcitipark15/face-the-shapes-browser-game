@@ -1,6 +1,4 @@
-
-
-/* Leaderboard Screen */
+/* Leaderboard Tables */
 #leaderboard > div > table {
     padding: 20px;
     color: rgba(255, 255, 255, 0.7);
@@ -15,23 +13,27 @@
     width: 100%;
 }
 
+/* Table Header Cells */
 #rank,
 #name,
 #score {
     padding: 0px 1em 0px 1em;
 }
+
 /*
 #leaderboard {
     margin-left: 3em;
     margin-right: 3em;
 }*/
 
+/* Container of Tables */
 .leaderboards {
     width: 40em;
     margin: 0 auto;
     /*float: left;*/
 }
 
+/* Navigation Bar Tabs/Buttons */
 #leaderboard > div > nav li {
     float: left;
     color: rgba(255, 255, 255, 0.7);
@@ -60,6 +62,7 @@
     background-color: rgba(255, 255, 255, 0.2);
 }
 
+/* Change the following attributes if the screen resolution shrinks down to 40em and below. */
 @media screen and (max-width: 40em) {
     #leaderboard {
         overflow: auto !important;
