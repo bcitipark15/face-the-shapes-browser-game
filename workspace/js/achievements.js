@@ -2,7 +2,7 @@
  * unlockFirstStep Unlocks the achivement if given requirement is met.
  * @return {undefined}
  */
-function unlockFirstStep(){
+function unlockFirstStep(match){
 	if(match && !getAchievement(1)){
 		setAchievement(1, true);
 		achievementSound();

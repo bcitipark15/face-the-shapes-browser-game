@@ -105,7 +105,7 @@ function validate(levelNumber){
 	/*******Added on May 26th 1:05am *********/
 	//Appropriate message is displayed according to the result.
 	if (match) {
-		unlockFirstStep();
+		unlockFirstStep(match);
 		modalCorrect();
 		$('#resultMessage').append('Foldout is a perfect match!');
 		if (standardMode) {
