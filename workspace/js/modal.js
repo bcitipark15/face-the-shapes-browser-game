@@ -17,16 +17,18 @@ function modalFadeOut() {
  * Will display the modal. 
  */
 function displayModal() {
-    modalFadeIn();
-	var timer = setTimeout(function() {document.getElementById('modalBox').style.display = 'block';}, 200);
+	document.getElementById('modalBox').style.display = 'block';
+    /* modalFadeIn();
+	var timer = setTimeout(function() {document.getElementById('modalBox').style.display = 'block';}, 200); */
 }
 
 /** 
  * Will hide the modal. 
  */
 function hideModal() {
-	modalFadeOut();
-	var timer = setTimeout(function() {document.getElementById('modalBox').style.display = 'none';}, 200);
+	document.getElementById('modalBox').style.display = 'none';
+	/* modalFadeOut();
+	var timer = setTimeout(function() {document.getElementById('modalBox').style.display = 'none';}, 200); */
 }
 
 /** 
@@ -168,7 +170,10 @@ function compDiffSelect(mode){
 							+	'<ol>' 
 							+		'<li><button id="modalStd" class="testDeadBtn menuBSize" onclick="setDifficulty(\'0\');compDiffSelectButtonChange();">Standard</button></li>'
 							+		'<li><button id="modalAdv" class="buttonDesign menuBSize" onclick="setDifficulty(\'1\');compDiffSelectButtonChange();">Advance</button></li>'
+							+	'</ol>'
+							+	'<ol>' 							
 							+		'<li><button class="buttonDesign menuBSize" onclick="screenChange(\'mode3D\'); selectMode(\'' + mode + '\');hideModal();">Start!</button></li>'
+							+		'<li><button class="buttonDesign menuBSize" onclick="hideModal();">Cancel</button></li>'
 							+	'</ol>');
 	displayModal();
 }
