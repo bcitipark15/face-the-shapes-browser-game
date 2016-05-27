@@ -43,14 +43,14 @@ window.onclick = function(event) {
  * Will display when the user has a matching fold-out.
  */
 function modalCorrect() {
-	var msgList = ['Well done. Here come the test results: "You are a horrible person." That\'s what it says. We weren\'t even testing for that.', 
+	var msgList = ['Well done.', 
 				'You did it!', 
-				'*Generic congratulatory Message*', 
-				'Well Done.']
+				'*Applauds*', 
+				'Good Job!']
 	var msg = msgList[Math.floor(Math.random() * msgList.length)];
 	$('.modalContent').html('');
 	var additionalInfo = '';
-	var levelSelectButton = '<li><button class="buttonDesign" onclick="screenChange(\'levelSelect\');hideModal();">Levels</button></li>';
+	var levelSelectButton = '<li><button class="buttonDesign" onclick="lockLevelButtons(); screenChange(\'levelSelect\'); lockLevelButtons(); hideModal();">Levels</button></li>';
 	var nextLevelButton = '<li><button class="buttonDesign" onclick="$(\'#level'+ (currentLevel + 1) + '\').click(); screenChange(\'mode3D\');hideModal();">Next</button></li>'
 	
 	if(timeModeFlag){
@@ -90,7 +90,10 @@ function modalCorrect() {
  * Will display when the user has a mismatch fold-out.
  */
 function modalIncorrect() {
-	var msgList = ['You failed it!'];
+	var msgList = ['You failed it!',
+					'Try Again.', 
+					'Don\'t Give Up!',
+					'Wrong.'];
 	var msg = msgList[Math.floor(Math.random() * msgList.length)];
 	$('.modalContent').html('');
 	var additionalInfo = '';
@@ -125,7 +128,7 @@ function modalOption() {
 							+ 	'<div>'
 							+ 		'<ol>' 
 							+			'<li><button class="buttonDesign menuBSize" onclick="screenChange(\'mainMenu\'); hideModal();">Main Menu</button></li>'
-							+ 			'<li><button class="buttonDesign menuBSize" onclick="screenChange(\'levelSelect\'); hideModal();">Level Select</button></li>'
+							+ 			'<li><button class="buttonDesign menuBSize" onclick="screenChange(\'levelSelect\');lockLevelButtons(); hideModal();">Level Select</button></li>'
 							+ 			'<li><button class="buttonDesign menuBSize" onclick="hideModal();">Cancel</button></li>'
 							+		'</ol>'
 							+ 	'</div>');

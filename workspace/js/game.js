@@ -15,6 +15,19 @@ function navBar() {
 	$('#gameContainer').css('height', Math.round(difference));
 }
 
+function lockLevelButtons(){
+	for(var i = 1; i <= 15;i++){
+		if(i > levelStandardHigh){
+			$('p#level' + i).removeClass('levelButton');
+			$('p#level' + i).addClass('levelDeadBtn');
+		} else {
+			$('p#level' + i).removeClass('levelDeadBtn');
+			$('p#level' + i).addClass('levelButton');
+		}
+	}
+}
+
+
 /** 
  * Will perform the screen change by removing the current and display the next. 
  */
@@ -304,6 +317,6 @@ function compareAnswer(){
 	$('#mode2D div.topNav').append('<button class="buttonDesign floatRight menuBSize" onclick="screenChange(\'answerScreen\');">Answer</button>');
 	$('#mode2D div.topNav').append('<button class="buttonDesign floatLeft menuBSize" onclick="screenChange(\'mode3D\');">To 3D</button>');
 	$('#mode2D div.bottomNav').html('');
-	$('#mode2D div.bottomNav').append('<button class="buttonDesign floatRight menuBSize" onclick="screenChange(\'levelSelect\');resizeGame();">Levels</button>'
+	$('#mode2D div.bottomNav').append('<button class="buttonDesign floatRight menuBSize" onclick="lockLevelButtons(); screenChange(\'levelSelect\');resizeGame();">Levels</button>'
 									+ '<button class="buttonDesign floatLeft menuBSize" onclick="screenChange(\'mainMenu\');resizeGame();">Menu</button>');
 }
