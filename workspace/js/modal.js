@@ -173,3 +173,15 @@ function compDiffSelectButtonChange(){
 		$('#modalAdv').replaceWith('<button id="modalAdv" class="testDeadBtn menuBSize" onclick="setDifficulty(\'1\');compDiffSelectButtonChange();">Advance</button>');
 	}
 }
+
+function achievementModal(get) {
+	$('.modalContent').html('');
+	$('.modalContent').append('<h1>Achievement Get</h1>'
+							+	'<ol>' 
+							+		'<li><img src="something"></li>'
+							+		'<li><p>Text for something</p></li>'
+							+		'<li><button class="buttonDesign menuBSize" onclick="hideModal();">Okay</button></li>'
+							+	'</ol>');
+	displayModal();
+	
+}
