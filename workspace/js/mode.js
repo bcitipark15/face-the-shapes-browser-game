@@ -174,6 +174,7 @@ function classicHelper(page) {
 			$('#proceed').css('display', 'none');
 			$('#endHelp').css('display', 'none');
 			currentPage = 0;
+			helperMode = 0;
 	}
 }
 
