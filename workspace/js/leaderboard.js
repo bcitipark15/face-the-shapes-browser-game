@@ -128,3 +128,8 @@ function getAdvHighTimes() {
 $(function() {
 	$("#tabs").tabs();
 });
+
+function activeTab(id){
+    $('#leaderboardTabs li').children().removeClass('activeTab');
+    $('#' + id).addClass('activeTab');
+}
