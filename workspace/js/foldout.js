@@ -348,12 +348,21 @@ function applyFaces(foldoutNum){
  */
 function toLeaderboard(){
 	var name = $('#username').val();
+	
 	if(scoreModeFlag){
-		setStdHighScore(name,score);
+		if(difficultyNum == 0){
+			setStdHighScore(name,score);
+		} else {
+			setAdvHighScore(name,score);
+		}
 		alert("Sent\nYour Name: " + name + "\nYour Score: " + score);
 	}
 	if(timeModeFlag){
-		setStdHighTime(name, time)
+		if(difficultyNum == 0){
+			setStdHighTime(name, time);
+		} else {
+			setAdvHighTime(name, time);
+		}
 		alert("Sent\nYour Name: " + name + "\nYour Time: " + time);
 	}
 	

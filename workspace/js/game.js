@@ -288,13 +288,15 @@ function compareAnswer(){
 	answerMode = true;
 	
 	//3D screen button changes.
-	
+	/* $('#mode3D div.bottomNav').html('');
+	$('#mode3D div.bottomNav').append('<button class="buttonDesign floatRight menuBSize" onclick="screenChange(\'levelSelect\');">Levels</button>'
+									+ '<button class="buttonDesign floatLeft menuBSize" onclick="screenChange(\'mainMenu\');">Menu</button>'); */
 	
 	//2D screen button changes.
 	$('#mode2D div.topNav').html('');
 	$('#mode2D div.topNav').append('<button class="buttonDesign floatRight menuBSize" onclick="screenChange(\'answerScreen\');">Answer</button>');
 	$('#mode2D div.topNav').append('<button class="buttonDesign floatLeft menuBSize" onclick="screenChange(\'mode3D\');">To 3D</button>');
 	$('#mode2D div.bottomNav').html('');
-	$('#mode2D div.bottomNav').append('<button class="buttonDesign floatLeft menuBSize" onclick="screenChange(\'levelSelect\');">Levels</button>'
-									+ '<button class="buttonDesign floatRight menuBSize" onclick="screenChange(\'mainMenu\');">Menu</button>');
+	$('#mode2D div.bottomNav').append('<button class="buttonDesign floatRight menuBSize" onclick="screenChange(\'levelSelect\');">Levels</button>'
+									+ '<button class="buttonDesign floatLeft menuBSize" onclick="screenChange(\'mainMenu\');">Menu</button>');
 }
