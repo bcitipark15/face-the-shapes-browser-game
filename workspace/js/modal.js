@@ -205,3 +205,13 @@ function achievementModal(achivementNum) {
 	displayModal();
 	
 }
+
+function resetCookieModal() {
+	$('.modalContent').html('');
+	$('.modalContent').append('<h1>Reset Progress?</h1>'
+							+	'<ol>' 
+							+		'<li><button class="buttonDesign menuBSize" onclick="resetCookies(); hideModal();">Continue</button></li>'
+							+		'<li><button class="buttonDesign menuBSize" onclick="hideModal();">Cancel</button></li>'
+							+	'</ol>');
+	displayModal();
+}
