@@ -131,20 +131,17 @@ function classicHelper(page) {
 				'z-index'	: '4',
 				'position'	: 'absolute',
 				'bottom'	: '220px'
-
 			});
 			$('#mode2DSubmit').css({
-				'z-index'	: '4',
+				'z-index'	: '2',
 				'position'	: 'absolute',
 				'bottom'	: '220px',
 				'right'		: '0'
-
 			});
 			break;
 
 		case 4:
 			screenChange('resultScreen');
-			validate();
 			resizeGame();
 
 			$('#foldoutScreen').css({
