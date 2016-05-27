@@ -4,7 +4,7 @@
  */
 
  
-/** ~~~ Move to game.js ~~~
+/**
  * selectMode Pre renders certain pages and activates modes depending on selected mode.
  * @param {String} mode The mode selected.
  */
@@ -196,7 +196,7 @@ function nextPage(direction) {
 	}
 }
 
-/** ~~~ Move to game.js ~~~
+/**
  * startScoreMode Manages transition into score mode.
  * @return {undefined}
  */
@@ -270,7 +270,7 @@ function drawTimer(){
 	$('#timer').text(time);
 }
 
-/** ~~~ Move to game.js ~~~
+/** 
  * drawCountdownTimer Updates the text for the timer on the 3D screen. 
  *					  Timer goes towards 0 and ends game when length <= 0.
  * @return {undefined}

@@ -1,4 +1,8 @@
-
+/* 
+ * Author: Team 17 (Chris Centenera, Evan Chen, Ching Choi, John Park, Ian Park)
+ * Description: JavaScript file that focuses on modal related events.
+ */
+ 
 /**
  * Fade in the modal.
  */

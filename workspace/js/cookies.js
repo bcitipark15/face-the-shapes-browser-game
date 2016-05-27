@@ -1,4 +1,10 @@
-// Stores cookies
+/**
+ * setCookies creates a new cookie.
+ * @param cname The name of the cookie.
+ * @param cvalue The value of the cookie as a string.
+ * @param exdays Days until cookie expires.
+ * @return {undefined}
+ */
 function setCookies(cname, cvalue, exdays) {
 
 	var d			= new Date();
@@ -7,7 +13,11 @@ function setCookies(cname, cvalue, exdays) {
 	document.cookie	= cname + "=" + cvalue + "; " + expires;
 }
 
-// Get cookies
+/**
+ * getCookies gets a cookie's value based on the cookie name
+ * @param cname The name of the cookie.
+ * @return {undefined}
+ */
 function getCookies(cname) {
 
 	var c 			= cname + "=";
@@ -26,7 +36,12 @@ function getCookies(cname) {
 	return "";
 }
 
-// Update the html badge currenet highest level completed
+/**
+ * updateBadge Updates the progression badge when level is cleared.
+ * @param mode The difficulty mode of classic. Either standard or advanced.
+ * @param lv The current level of the badge.
+ * @return {undefined}
+ */
 function updateBadge(mode, lv) {
 
 	if (mode == 'standard') {
@@ -43,7 +58,10 @@ function updateBadge(mode, lv) {
 	}
 }
 
-// Check and change badge level completed on classic standard mode
+/**
+ * checkCookies Checks if progression cookies exist and creates them if they don't.
+ * @return {undefined}
+ */
 function checkCookies() {
 	
 	var badge	= getCookies("badgeLevel");
@@ -65,7 +83,11 @@ function checkCookies() {
 	}
 }
 
-// Set the current level of standard mode to lv selected
+/**
+ * setLevel Determines if selected level was unlocked by the player.
+ * @param lv The level being tested.
+ * @return {undefined}
+ */
 function setLevel(lv) {
 	if (difficultyNum == 0) {
 		if (lv <= levelStandardHigh) {
@@ -83,7 +105,11 @@ function setLevel(lv) {
 		}
 	}
 }
-// Check and change badge level completed on classic standard mode
+
+/**
+ * setBadgeStandard Updates the badge level for standard difficulty in the cookie.
+ * @return {undefined}
+ */
 function setBadgeStandard() {
 	/*
 	alert("function is called");
@@ -97,7 +123,10 @@ function setBadgeStandard() {
 	}
 }
 
-// Check and change badge level completed on classic standard mode
+/**
+ * setBadgeAdvanced Updates the badge level for advanced difficulty in the cookie.
+ * @return {undefined}
+ */
 function setBadgeAdvanced() {
 /*
 	alert("set badge advanced is called");*/
@@ -113,7 +142,10 @@ function setBadgeAdvanced() {
 
 }
 
-// Reset all cookies to zero.
+/**
+ * resetCookies Resets all cookies to premodified states. Used in clearing player's progression.
+ * @return {undefined}
+ */
 function resetCookies() {
 
 	setCookies("badgeLevel", 0, 365);
@@ -124,6 +156,12 @@ function resetCookies() {
 	setCookies("achievementFour", false, 365);
 }
 
+/**
+ * setAchievement Creates cookies for achievements with the given states.
+ * @param number The achievement number in the list of achievements.
+ * @param state Boolean representing if the achievement was unlocked or not.
+ * @return {undefined}
+ */
 function setAchievement(number, state) {
 
 	if (number == 1) {
@@ -133,10 +171,16 @@ function setAchievement(number, state) {
 	} else if (number == 3) {
 		setCookies("achievementThree", state, 365);
 	} else if (number == 4) {
+		//Four is unused as we only have 3 achievements.
 		setCookies("achievementFour", state, 365);
 	}
 }
 
+/**
+ * getAchievement Gets value of the achievement cookie to determine if it was unlocked.
+ * @param number The achievement number in the list of achievements.
+ * @return {undefined}
+ */
 function getAchievement(number) {
 
 	if (number == 1) {

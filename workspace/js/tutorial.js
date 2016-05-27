@@ -1,3 +1,7 @@
+/* 
+ * Author: Team 17 (Chris Centenera, Evan Chen, Ching Choi, John Park, Ian Park)
+ * Description: JavaScript file that focuses on making the tutorial interactive.
+ */
 /**
  * Classic mode tutorial screen activator.
  * @param {int} indicate which page is currently being referred to.

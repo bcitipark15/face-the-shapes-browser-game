@@ -6,7 +6,7 @@
  
 
 /**
- * inputHighScore sends the player's highscore info to inputScore.php
+ * setStdHighScore sends the player's highscore info to inputScore.php for standard mode.
  * @param {string} name The player's name.
  * @param {integer} score The player's high score.
  * @return {undefined}
@@ -19,7 +19,7 @@ function setStdHighScore(name, score) {
 }
 
 /**
- * getHighScores returns a string of elements and values from getScores.php
+ * getStdHighScores returns a string of elements and values from getScores.php for standard mode.
  * @return {string} Rows of data from database.
  */
 function getStdHighScores() {
@@ -37,12 +37,11 @@ function getStdHighScores() {
 }
 
 /**
- * inputHighScore sends the player's highscore info to inputScore.php
+ * setAdvHighScore sends the player's highscore info to inputScore.php for advanced mode
  * @param {string} name The player's name.
  * @param {integer} score The player's high score.
  * @return {undefined}
  */
-
 function setAdvHighScore(name, score) {
 	xmlhttp = new XMLHttpRequest();
 
@@ -51,14 +50,7 @@ function setAdvHighScore(name, score) {
 }
 
 /**
- * inputHighTime sends the player's highscore info to inputTime.php
- * @param {string} name The player's name.
- * @param {integer} score The player's high score.
- * @return {undefined}
-*/
-
-/**
- * getHighScores returns a string of elements and values from getScores.php
+ * getAdvHighScores returns a string of elements and values from getScores.php for advanced mode.
  * @return {string} Rows of data from database.
  */
 function getAdvHighScores() {
@@ -75,6 +67,12 @@ function getAdvHighScores() {
 	xmlhttp.send();
 }
 
+/**
+ * setStdHighTime sends the players time and name in time mode through php to the database.Used for standard mode.
+ * @param name The player's name.
+ * @param time The time it took the player to complete time mode.
+ * @return {undefined}
+ */
 function setStdHighTime(name, time) {
 	xmlhttp = new XMLHttpRequest();
 
@@ -83,7 +81,7 @@ function setStdHighTime(name, time) {
 }
 
 /**
- * getHighTimes returns a string of elements and values from getTimes.php
+ * getStdHighTimes returns a string of elements and values from getTimes.php for times in standard difficulty.
  * @return {string} Rows of data from database.
  */
 function getStdHighTimes() {
@@ -100,6 +98,12 @@ function getStdHighTimes() {
 	xmlhttp.send();
 }
 
+/**
+ * setAdvHighTime sends the players time and name in time mode through php to the database. Used for advanced mode.
+ * @param name The player's name.
+ * @param time The time it took the player to complete time mode.
+ * @return {undefined}
+ */
 function setAdvHighTime(name, time) {
 	xmlhttp = new XMLHttpRequest();
 
@@ -108,7 +112,7 @@ function setAdvHighTime(name, time) {
 }
 
 /**
- * getHighTimes returns a string of elements and values from getTimes.php
+ * getAdvHighTimes returns a string of elements and values from getTimes.php for times in advanced difficulty.
  * @return {string} Rows of data from database.
  */
 function getAdvHighTimes() {
@@ -128,7 +132,10 @@ function getAdvHighTimes() {
 $(function() {
 	$("#tabs").tabs();
 });
-
+/**
+ * activeTab Creates tab-like effect on leaderboard screen.
+ * @param id The button being pressed(receives tab focus).
+ */
 function activeTab(id){
     $('#leaderboardTabs li').children().removeClass('activeTab');
     $('#' + id).addClass('activeTab');

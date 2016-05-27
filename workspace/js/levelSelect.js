@@ -1,3 +1,8 @@
+/* 
+ * Author: Team 17 (Chris Centenera, Evan Chen, Ching Choi, John Park, Ian Park)
+ * Description: JavaScript file that focuses on the level selection process.
+ */
+
 function changePage(pageNum) {
 	var x = document.getElementsByClassName('pageDiv');
     for (var i = 0; i < x.length; i++) {

@@ -11,9 +11,6 @@ $(document).ready(function(){
 });
 
 
-
-
-
 /**
  * makeFace creates a face object with a generated arrow value
  * @param {integer} trueValue The true orientation of the arrow.
