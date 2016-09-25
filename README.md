@@ -51,7 +51,7 @@
 			phpMyAdmin for our database can be accessed through cPanel at <a href="http://www.facetheshapes.tk/cpanel">www.facetheshapes.tk/cpanel</a> using the following account information.
 			<br><br>
 			ID: group17<br>
-			Passwords: parkian93
+			Passwords: ERASED
 		</p>
 		
 		<h2>MySQL Database Access</h2>
@@ -60,7 +60,7 @@
 			<br><br>
 			Host: localhost<br>
 			User: group17<br>
-			Passwords: parkian93<br>
+			Passwords: ERASED<br>
 			Database: group17_FaceThsShapes<br>
 		</p>
 	</p>
